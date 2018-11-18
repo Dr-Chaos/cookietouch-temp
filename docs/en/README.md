@@ -8,6 +8,7 @@
 - [Configuration](configuration.md)
 - [Exchange](exchange.md)
 - [Fight](fight.md)
+- [Craft](craft.md)
 - [Gather](gather.md)
 - [Global](global.md)
 - [Inventory](inventory.md)

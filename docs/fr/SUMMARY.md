@@ -11,6 +11,7 @@
 * [Configuration](configuration.md)
 * [Echange](echange.md)
 * [Combat](combat.md)
+* [Craft](craft.md)
 * [Récolte](recolte.md)
 * [Global](global.md)
 * [Inventaire](inventaire.md)

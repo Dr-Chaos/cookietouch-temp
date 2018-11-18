@@ -111,7 +111,7 @@ Retourne true si le bot a pu interagir avec l'élement, sinon retourne false.
 **Exemple:**
 
 ```js
-yield * (await use(1545, 1));
+yield * (await use(400, 1));
 ```
 
 <hr>

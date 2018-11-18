@@ -50,6 +50,8 @@
 - [Fight](fight.md)
   - [canFight](fight.md#canfightforbiddenmonsters-mandatorymonsters-minmonsters-maxmonsters-minlevel-maxlevel)
   - [fight](fight.md#fightforbiddenmonsters-mandatorymonsters-minmonsters-maxmonsters-minlevel-maxlevel)
+- [Craft](craft.md)
+  - [craft](craft.md#craft)
 - [Gather](gather.md)
   - [canGather](gather.md#cangatherresourcesids-number)
   - [gather](gather.md#gatherresourcesids-number)
