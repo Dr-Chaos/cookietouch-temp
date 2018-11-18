@@ -6,7 +6,7 @@ import {
   INotificationData,
   IUserInformation,
   NotificationType
-} from "@/utils/Pushbullet/types";
+} from "@/core/pushbullet/types";
 import axios, { AxiosInstance } from "axios";
 
 export default class Pushbullet {

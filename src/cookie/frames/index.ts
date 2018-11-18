@@ -9,6 +9,7 @@ import AchievementsFrame from "@/frames/game/AchievementsFrames";
 import BidFrame from "@/frames/game/BidFrame";
 import CharacterFrame from "@/frames/game/CharacterFrame";
 import ChatFrame from "@/frames/game/ChatFrame";
+import CraftFrame from "@/frames/game/CraftFrame";
 import ExchangeFrame from "@/frames/game/ExchangeFrame";
 import FightFrame from "@/frames/game/FightFrame";
 import InventoryFrame from "@/frames/game/InventoryFrame";
@@ -45,7 +46,8 @@ export default class Frames {
     new FightFrame(),
     new AveragePricesFrame(),
     new GoultinesFrame(),
-    new MountFrame()
+    new MountFrame(),
+    new CraftFrame()
   ];
 
   public static Init() {

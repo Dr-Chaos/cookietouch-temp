@@ -453,7 +453,7 @@
   "installRelaunch": "Install and Relaunch",
   "later": "Later",
   "releaseAvailable": "The version ? is now available. It will be installed the next time you restart the application.",
-  "releaseNotes": "\n\nRelease notes:\n?",
+  "releaseNotes": "\n\nRelease notes:\n\n?",
   "update": "Update",
   "sync": "Sync",
   "itemsForSale": "Items in sales:",

@@ -1,5 +1,7 @@
 import Account from "@/account";
 import LanguageManager from "@/configurations/language/LanguageManager";
+import Pushbullet from "@/core/pushbullet";
+import { NotificationType } from "@/core/pushbullet/types";
 import JobEntry from "@/game/character/jobs/JobEntry";
 import DataManager from "@/protocol/data";
 import Jobs from "@/protocol/data/classes/Jobs";
@@ -9,8 +11,6 @@ import JobExperienceMultiUpdateMessage from "@/protocol/network/messages/JobExpe
 import JobExperienceUpdateMessage from "@/protocol/network/messages/JobExperienceUpdateMessage";
 import JobLevelUpMessage from "@/protocol/network/messages/JobLevelUpMessage";
 import LiteEvent from "@/utils/LiteEvent";
-import Pushbullet from "@/utils/Pushbullet";
-import { NotificationType } from "@/utils/Pushbullet/types";
 import { sleep } from "@/utils/Time";
 import { List } from "linqts";
 

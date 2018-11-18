@@ -6,7 +6,7 @@ import { PlayerLifeStatusEnum } from "@/protocol/enums/PlayerLifeStatusEnum";
 import FightAction from "@/scripts/actions/fight/FightAction";
 import ScriptAction from "@/scripts/actions/ScriptAction";
 import IEntity from "@/utils/IEntity";
-import ResetEvent, { IToken } from "@/utils/ResetEvent";
+import ResetEvent from "@/utils/ResetEvent";
 import { sleep } from "@/utils/Time";
 import { List } from "linqts";
 
@@ -207,14 +207,17 @@ export default class Group implements IEntity {
   }
 
   public async waitForAllActionsFinished() {
-    const events = this._membersAccountsFinished.map(m => m.event);
-    const tasks: IToken[] = [];
-
-    for (const e of events) {
-      tasks.push(e.wait(() => Promise.resolve()));
+    const events = new List(this._membersAccountsFinished.map(m => m.event));
+    while (events.Any(x => x !== undefined && x.isSignaled === false)) {
+      await sleep(500);
     }
+    // const tasks: IToken[] = [];
 
-    await Promise.all(tasks.map(t => t.callback())); // TODO: Check this
+    // for (const e of events) {
+    //   tasks.push(e.wait(() => Promise.resolve()));
+    // }
+
+    // await Promise.all(tasks.map(t => t.callback())); // TODO: Check this
   }
 
   private chiefFightIdReceived = () => {
@@ -235,7 +238,7 @@ export default class Group implements IEntity {
     const test = this._membersAccountsFinished.find(
       e => e.account === data.account
     );
-    if (test !== undefined) {
+    if (test !== undefined && !test.event.isSignaled) {
       test.event.set();
     }
   };

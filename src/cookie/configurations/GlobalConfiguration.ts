@@ -25,36 +25,17 @@ interface IGlobalConfigurationJSON {
 }
 
 export default class GlobalConfiguration {
-  public static Init() {
-    let initialized = false;
-    firebase.auth().onAuthStateChanged(async user => {
-      if (!user) {
-        return;
-      }
-      GlobalConfiguration.globalDoc = firebase
-        .firestore()
-        .doc(`users/${user.uid}/config/global`);
-
-      if (!initialized) {
-        GlobalConfiguration.globalDoc.onSnapshot(snapshot =>
-          GlobalConfiguration.updateFields(snapshot)
-        );
-        initialized = true;
-      }
-    });
-  }
-
   // TODO: Put this private and fix validate method on CharacterCreator
   public static _accounts: AccountConfiguration[] = [];
   public static anticaptchaKey: string = "";
   public static pushBulletAccessToken: string = "";
   public static lang: Languages = Languages.FRENCH;
-
   public static showDebugMessages = false;
-
   public static updatesChannel: UpdatesChannel = UpdatesChannel.LATEST;
 
-  private static globalDoc: firebase.firestore.DocumentReference;
+  private static globalDoc: firebase.firestore.DocumentReference | undefined;
+  private static authChangedUnsuscribe: firebase.Unsubscribe | undefined;
+  private static stopDataSnapshot: (() => void) | undefined;
 
   public static get accountsList(): AccountConfiguration[] {
     let list = new List<AccountConfiguration>(this._accounts).ToArray();
@@ -112,14 +93,41 @@ export default class GlobalConfiguration {
   }
 
   public static async load() {
-    if (!GlobalConfiguration.globalDoc) {
+    this.authChangedUnsuscribe = firebase
+      .auth()
+      .onAuthStateChanged(async user => {
+        if (!user) {
+          return;
+        }
+        this.globalDoc = firebase
+          .firestore()
+          .doc(`/users/${user.uid}/config/global`);
+
+        this.stopDataSnapshot = this.globalDoc.onSnapshot(snapshot => {
+          this.updateFields(snapshot);
+        });
+      });
+
+    if (!this.globalDoc) {
       return;
     }
-    const data = await GlobalConfiguration.globalDoc.get();
+    const data = await this.globalDoc.get();
     this.updateFields(data);
   }
 
+  public static removeListeners = () => {
+    if (GlobalConfiguration.authChangedUnsuscribe) {
+      GlobalConfiguration.authChangedUnsuscribe();
+    }
+    if (GlobalConfiguration.stopDataSnapshot) {
+      GlobalConfiguration.stopDataSnapshot();
+    }
+  };
+
   public static async save() {
+    if (!this.globalDoc) {
+      return;
+    }
     const toSave: IGlobalConfigurationJSON = {
       accounts: this._accounts.map(o => o.toJSON()),
       anticaptchaKey: this.anticaptchaKey,
@@ -129,7 +137,7 @@ export default class GlobalConfiguration {
       updatesChannel: this.updatesChannel
     };
 
-    await GlobalConfiguration.globalDoc.set(toSave);
+    await this.globalDoc.set(toSave);
   }
 
   private static updateFields(snapshot: firebase.firestore.DocumentSnapshot) {
@@ -139,9 +147,7 @@ export default class GlobalConfiguration {
     const json = snapshot.data() as IGlobalConfigurationJSON;
     this._accounts = json.accounts.map(o => AccountConfiguration.fromJSON(o));
     this.anticaptchaKey = json.anticaptchaKey;
-    this.pushBulletAccessToken = json.pushBulletAccessToken
-      ? json.pushBulletAccessToken
-      : "";
+    this.pushBulletAccessToken = json.pushBulletAccessToken || "";
     this.lang = json.lang;
     this.showDebugMessages = json.showDebugMessages;
     this.updatesChannel = json.updatesChannel;

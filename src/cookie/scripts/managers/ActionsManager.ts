@@ -4,6 +4,11 @@ import LanguageManager from "@/configurations/language/LanguageManager";
 import { GatherResults } from "@/game/managers/gathers";
 import StartBuyingAction from "@/scripts/actions/bid/StartBuyingAction";
 import StartSellingAction from "@/scripts/actions/bid/StartSellingAction";
+import ReadyAction from "@/scripts/actions/craft/ReadyAction";
+import SetQuantityAction from "@/scripts/actions/craft/SetQuantityAction";
+import SetRecipeAction from "@/scripts/actions/craft/SetRecipeAction";
+import ExchangePutItemAction from "@/scripts/actions/exchange/ExchangePutItemAction";
+import ExchangeRemoveItemAction from "@/scripts/actions/exchange/ExchangeRemoveItemAction";
 import SendReadyAction from "@/scripts/actions/exchange/SendReadyAction";
 import StartExchangeAction from "@/scripts/actions/exchange/StartExchangeAction";
 import FightAction from "@/scripts/actions/fight/FightAction";
@@ -18,9 +23,12 @@ import UseLockedHouseAction from "@/scripts/actions/map/UseLockedHouseAction";
 import UseLockedStorageAction from "@/scripts/actions/map/UseLockedStorageAction";
 import UseTeleportableAction from "@/scripts/actions/map/UseTeleportableAction";
 import WaitMapChangeAction from "@/scripts/actions/map/WaitMapChangeAction";
+import BuyAction from "@/scripts/actions/npcs/BuyAction";
 import NpcAction from "@/scripts/actions/npcs/NpcAction";
 import NpcBankAction from "@/scripts/actions/npcs/NpcBankAction";
 import ReplyAction from "@/scripts/actions/npcs/ReplyAction";
+import SellAction from "@/scripts/actions/npcs/SellAction";
+
 import ScriptAction, {
   ScriptActionResults
 } from "@/scripts/actions/ScriptAction";
@@ -86,6 +94,15 @@ export default class ActionsManager {
     this.account.game.managers.teleportables.UseFinished.on(
       this.teleportables_useFinished
     );
+    this.account.game.npcs.NpcShopUpdated.on(this.npcs_shopUpdated);
+    this.account.game.exchange.ExchangeContentChanged.on(
+      this.exchange_exchangeChanged
+    );
+    this.account.game.craft.CraftStarted.on(this.craft_craftStarted);
+    this.account.game.craft.CraftQuantityChanged.on(
+      this.craft_craftQuantityChanged
+    );
+    this.account.game.craft.CraftLeft.on(this.craft_craftLeft);
   }
 
   public get ActionsFinished() {
@@ -487,7 +504,8 @@ export default class ActionsManager {
     }
     if (
       this.currentAction instanceof SendReadyAction ||
-      this.currentAction instanceof LeaveDialogAction
+      this.currentAction instanceof LeaveDialogAction ||
+      this.currentAction instanceof ReadyAction
     ) {
       await this.dequeueActions(400);
     }
@@ -535,6 +553,57 @@ export default class ActionsManager {
           )
         );
       }
+    }
+  };
+
+  private npcs_shopUpdated = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (
+      this.currentAction instanceof SellAction ||
+      this.currentAction instanceof BuyAction
+    ) {
+      await this.dequeueActions(400);
+    }
+  };
+
+  private exchange_exchangeChanged = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (
+      this.currentAction instanceof ExchangePutItemAction ||
+      this.currentAction instanceof ExchangeRemoveItemAction
+    ) {
+      await this.dequeueActions(400);
+    }
+  };
+
+  private craft_craftStarted = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof SetRecipeAction) {
+      await this.dequeueActions(400);
+    }
+  };
+
+  private craft_craftLeft = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof ReadyAction) {
+      await this.dequeueActions(400);
+    }
+  };
+
+  private craft_craftQuantityChanged = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof SetQuantityAction) {
+      await this.dequeueActions(400);
     }
   };
 

@@ -3,21 +3,22 @@ import ScriptAction, {
   ScriptActionResults
 } from "@/scripts/actions/ScriptAction";
 
-export default class ExchangePutItemAction extends ScriptAction {
-  public _name: string = "ExchangePutItemAction";
-  public gid: number;
+export default class SellAction extends ScriptAction {
+  public _name: string = "SellAction";
+  public objectToSellId: number;
   public quantity: number;
 
-  constructor(gid: number, quantity: number) {
+  constructor(objectToSellId: number, quantity: number) {
     super();
-    this.gid = gid;
+    this.objectToSellId = objectToSellId;
     this.quantity = quantity;
   }
 
   public async process(account: Account): Promise<ScriptActionResults> {
-    if (account.game.exchange.putItem(this.gid, this.quantity)) {
+    if (account.game.npcs.sellItem(this.objectToSellId, this.quantity)) {
       return ScriptAction.processingResult();
     }
+
     return ScriptAction.doneResult();
   }
 }

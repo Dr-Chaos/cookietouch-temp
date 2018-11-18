@@ -1,7 +1,9 @@
 import Account from "@/account";
+import BuyAction from "@/scripts/actions/npcs/BuyAction";
 import NpcAction from "@/scripts/actions/npcs/NpcAction";
 import NpcBankAction from "@/scripts/actions/npcs/NpcBankAction";
 import ReplyAction from "@/scripts/actions/npcs/ReplyAction";
+import SellAction from "@/scripts/actions/npcs/SellAction";
 
 export default class NpcAPI {
   private account: Account;
@@ -37,5 +39,21 @@ export default class NpcAPI {
       new ReplyAction(replyId),
       true
     );
+  }
+
+  public async sell(gid: number, quantity: number): Promise<boolean> {
+    await this.account.scripts.actionsManager.enqueueAction(
+      new SellAction(gid, quantity),
+      true
+    );
+    return true;
+  }
+
+  public async buy(gid: number, quantity: number): Promise<boolean> {
+    await this.account.scripts.actionsManager.enqueueAction(
+      new BuyAction(gid, quantity),
+      true
+    );
+    return true;
   }
 }

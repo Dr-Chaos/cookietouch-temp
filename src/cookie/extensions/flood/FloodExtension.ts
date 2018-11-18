@@ -80,7 +80,7 @@ export default class FloodExtension {
     this.onRunningChanged.trigger();
   }
 
-  private async SeekChannel_Callback() {
+  private SeekChannel_Callback() {
     if (!this.running) {
       return;
     }
@@ -90,14 +90,14 @@ export default class FloodExtension {
     if (seekChannelSentences.length > 0) {
       const sentence =
         seekChannelSentences[getRandomInt(0, seekChannelSentences.length - 1)];
-      await this.account.game.chat.sendMessage(
+      this.account.game.chat.sendMessage(
         this.setAttributes(sentence.content),
         sentence.channel
       );
     }
   }
 
-  private async SalesChannel_Callback() {
+  private SalesChannel_Callback() {
     if (!this.running) {
       return;
     }
@@ -109,14 +109,14 @@ export default class FloodExtension {
         salesChannelSentences[
           getRandomInt(0, salesChannelSentences.length - 1)
         ];
-      await this.account.game.chat.sendMessage(
+      this.account.game.chat.sendMessage(
         this.setAttributes(sentence.content),
         sentence.channel
       );
     }
   }
 
-  private async GeneralChannel_Callback() {
+  private GeneralChannel_Callback() {
     if (!this.running) {
       return;
     }
@@ -128,14 +128,14 @@ export default class FloodExtension {
         generalChannelSentences[
           getRandomInt(0, generalChannelSentences.length - 1)
         ];
-      await this.account.game.chat.sendMessage(
+      this.account.game.chat.sendMessage(
         this.setAttributes(sentence.content),
         sentence.channel
       );
     }
   }
 
-  private map_PlayerJoined = async (player?: PlayerEntry) => {
+  private map_PlayerJoined = (player?: PlayerEntry) => {
     if (!this.running || !player) {
       return;
     }
@@ -145,14 +145,14 @@ export default class FloodExtension {
         privateChannelSentences[
           getRandomInt(0, privateChannelSentences.length - 1)
         ];
-      await this.account.game.chat.sendMessageTo(
+      this.account.game.chat.sendMessageTo(
         this.setAttributes(sentence.content, player),
         player.name
       );
     }
   };
 
-  private map_PlayerLeft = async (player?: PlayerEntry) => {
+  private map_PlayerLeft = (player?: PlayerEntry) => {
     if (!this.running || !player) {
       return;
     }
@@ -162,7 +162,7 @@ export default class FloodExtension {
         privateChannelSentences[
           getRandomInt(0, privateChannelSentences.length - 1)
         ];
-      await this.account.game.chat.sendMessageTo(
+      this.account.game.chat.sendMessageTo(
         this.setAttributes(sentence.content, player),
         player.name
       );

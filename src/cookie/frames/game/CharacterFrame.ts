@@ -1,5 +1,7 @@
 import Account from "@/account";
 import LanguageManager from "@/configurations/language/LanguageManager";
+import Pushbullet from "@/core/pushbullet";
+import { NotificationType } from "@/core/pushbullet/types";
 import Frames, { IFrame } from "@/frames";
 import CharacterExperienceGainMessage from "@/protocol/network/messages/CharacterExperienceGainMessage";
 import CharacterLevelUpMessage from "@/protocol/network/messages/CharacterLevelUpMessage";
@@ -16,8 +18,6 @@ import PlayerStatusUpdateMessage from "@/protocol/network/messages/PlayerStatusU
 import SpellListMessage from "@/protocol/network/messages/SpellListMessage";
 import SpellUpgradeSuccessMessage from "@/protocol/network/messages/SpellUpgradeSuccessMessage";
 import UpdateLifePointsMessage from "@/protocol/network/messages/UpdateLifePointsMessage";
-import Pushbullet from "@/utils/Pushbullet";
-import { NotificationType } from "@/utils/Pushbullet/types";
 
 export default class CharacterFrame implements IFrame {
   public register() {

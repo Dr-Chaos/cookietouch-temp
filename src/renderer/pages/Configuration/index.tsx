@@ -2,7 +2,7 @@ import GlobalConfiguration, {
   UpdatesChannel
 } from "@/configurations/GlobalConfiguration";
 import LanguageManager from "@/configurations/language/LanguageManager";
-import Pushbullet from "@/utils/Pushbullet";
+import Pushbullet from "@/core/pushbullet";
 import { isEmpty } from "@/utils/String";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";

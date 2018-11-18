@@ -1,3 +1,4 @@
+import DataConfiguration from "@/configurations/DataConfiguration";
 import CellData from "@/core/pathfinder/CellData";
 import CellPath from "@/core/pathfinder/CellPath";
 import MapPoint from "@/core/pathfinder/MapPoint";
@@ -6,7 +7,6 @@ import MonstersGroupEntry from "@/game/map/entities/MonstersGroupEntry";
 import Map from "@/protocol/data/map";
 import Cell from "@/protocol/data/map/Cell";
 import { notEmpty, union } from "@/utils/Arrays";
-import agroData from "./agroData.json";
 
 export default class Pathfinder {
   private readonly OCCUPIED_CELL_WEIGHT = 10;
@@ -54,9 +54,10 @@ export default class Pathfinder {
     monstersGroup: MonstersGroupEntry[],
     allowDiagonal: boolean,
     stopNextToTarget: boolean,
-    antiAgro: boolean = false
+    antiAgro: boolean = false,
+    isPhantom: boolean = false
   ): number[] {
-    this.antiAgro(monstersGroup, antiAgro);
+    this.antiAgro(monstersGroup, antiAgro, isPhantom);
     let c = 0;
     let candidate: CellPath | null = null;
     const srcPos = MapPoint.fromCellId(source);
@@ -479,7 +480,8 @@ export default class Pathfinder {
 
   private antiAgro(
     monstersGroup: MonstersGroupEntry[],
-    antiAgro: boolean = false
+    antiAgro: boolean = false,
+    isPhantom: boolean = false
   ) {
     if (this.oldGrid) {
       // we must iterate through the oldGrid array because if we do
@@ -497,7 +499,7 @@ export default class Pathfinder {
 
     const aggressiveMonstersGroups: MonstersGroupEntry[] = [];
     for (const m of monstersGroup) {
-      for (const a of agroData.monsters) {
+      for (const a of DataConfiguration.aggressiveMonsters) {
         if (m.containsMonster(a) && !aggressiveMonstersGroups.includes(m)) {
           aggressiveMonstersGroups.push(m);
         }
@@ -514,7 +516,7 @@ export default class Pathfinder {
 
     cells = union(cells);
 
-    if (antiAgro) {
+    if (antiAgro && !isPhantom) {
       // then write walls instead of free cells \o/
       for (const cell of cells) {
         const gridPoint = this.grid[cell.x + 1][cell.y + 1];

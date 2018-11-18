@@ -1,6 +1,8 @@
 import Account from "@/account";
 import LanguageManager from "@/configurations/language/LanguageManager";
 import { ChannelColors } from "@/core/logger/ChannelColors";
+import Pushbullet from "@/core/pushbullet";
+import { NotificationType } from "@/core/pushbullet/types";
 import Frames, { IFrame } from "@/frames";
 import { ChatActivableChannelsEnum } from "@/protocol/enums/ChatActivableChannelsEnum";
 import { ChatChannelsMultiEnum } from "@/protocol/enums/ChatChannelsMultiEnum";
@@ -13,8 +15,6 @@ import ChatServerWithObjectMessage from "@/protocol/network/messages/ChatServerW
 import ObjectErrorMessage from "@/protocol/network/messages/ObjectErrorMessage";
 import SystemMessageDisplayMessage from "@/protocol/network/messages/SystemMessageDisplayMessage";
 import TextInformationMessage from "@/protocol/network/messages/TextInformationMessage";
-import Pushbullet from "@/utils/Pushbullet";
-import { NotificationType } from "@/utils/Pushbullet/types";
 
 export default class ChatFrame implements IFrame {
   public register() {

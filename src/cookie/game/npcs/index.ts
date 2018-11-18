@@ -1,15 +1,18 @@
 import Account from "@/account";
 import { AccountStates } from "@/account/AccountStates";
 import NpcEntry from "@/game/map/entities/NpcEntry";
+import ObjectItemToSellInNpcShop from "@/protocol/network/types/ObjectItemToSellInNpcShop";
 import LiteEvent from "@/utils/LiteEvent";
 
 export default class Npcs {
   public possibleReplies: number[] = [];
 
   private account: Account;
+  private objectsInSale: ObjectItemToSellInNpcShop[] = [];
   private readonly onDialogCreated = new LiteEvent<void>();
   private readonly onQuestionReceived = new LiteEvent<void>();
   private readonly onDialogLeft = new LiteEvent<void>();
+  private readonly onNpcShopUpdated = new LiteEvent<void>();
 
   constructor(account: Account) {
     this.account = account;
@@ -25,6 +28,10 @@ export default class Npcs {
 
   public get DialogLeft() {
     return this.onDialogLeft.expose();
+  }
+
+  public get NpcShopUpdated() {
+    return this.onNpcShopUpdated.expose();
   }
 
   public reply(replyId: number): boolean {
@@ -94,6 +101,30 @@ export default class Npcs {
     return true;
   }
 
+  public async sellItem(gid: number, qty: number): Promise<boolean> {
+    const obj = this.account.game.character.inventory.getObjectByGid(gid);
+    if (obj === null) {
+      return false;
+    }
+    qty = qty <= 0 ? obj.quantity : qty > obj.quantity ? obj.quantity : qty;
+    this.account.network.sendMessageFree("ExchangeSellMessage", {
+      objectToSellId: obj.uid,
+      quantity: qty
+    });
+    return true;
+  }
+
+  public async buyItem(gid: number, qty: number): Promise<boolean> {
+    if (this.objectsInSale.length === 0) {
+      return false;
+    }
+    this.account.network.sendMessageFree("ExchangeBuyMessage", {
+      objectToBuyId: gid,
+      quantity: qty
+    });
+    return true;
+  }
+
   public async UpdateNpcDialogCreationMessage(message: any) {
     this.account.state = AccountStates.TALKING;
     this.onDialogCreated.trigger();
@@ -116,5 +147,20 @@ export default class Npcs {
     this.account.state = AccountStates.NONE;
     this.possibleReplies = [];
     this.onDialogLeft.trigger();
+  }
+
+  public async UpdateNpcShopMessage(message: any) {
+    this.objectsInSale = message.objectsInfos;
+    this.onQuestionReceived.trigger();
+  }
+
+  public async UpdateExchangeBuyOkMessage(message: any) {
+    this.account.state = AccountStates.TALKING;
+    this.onNpcShopUpdated.trigger();
+  }
+
+  public async UpdateExchangeSellOkMessage(message: any) {
+    this.account.state = AccountStates.TALKING;
+    this.onNpcShopUpdated.trigger();
   }
 }

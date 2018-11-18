@@ -1,6 +1,7 @@
 import Account from "@/account";
 import BidAPI from "@/scripts/api/BidAPI";
 import CharacterAPI from "@/scripts/api/CharacterAPI";
+import CraftAPI from "@/scripts/api/CraftAPI";
 import ExchangeAPI from "@/scripts/api/ExchangeAPI";
 import FightAPI from "@/scripts/api/FightAPI";
 import GatherAPI from "@/scripts/api/GatherAPI";
@@ -23,6 +24,7 @@ export default class API {
   public mount: MountAPI;
   public npc: NpcAPI;
   public storage: StorageAPI;
+  public craft: CraftAPI;
 
   constructor(account: Account) {
     this.bid = new BidAPI(account);
@@ -36,5 +38,6 @@ export default class API {
     this.mount = new MountAPI(account);
     this.npc = new NpcAPI(account);
     this.storage = new StorageAPI(account);
+    this.craft = new CraftAPI(account);
   }
 }

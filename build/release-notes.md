@@ -2,14 +2,18 @@
 
 ## FR
 
-- Correction d'un bug avec l'utilisation de pushbullet
-- Ajout d'une notification en cas d'erreur de script
-- Ajout de la notification d'un level up de métier
-- Correction de l'envoi de la notification lors d'un up du personnage
+- Correction des combats en groupes
+- Ajout des crafts dans les scripts (fonctions customs)
+- Ajout de la possibilité d'ajouté des items dans son mode marchand et de l'activé (fonctions customs)
+- Ajout de la possibilité d'acheter et vendre à des PNJs
+- Les monstres aggressifs sont dorénavant sauvegardés sur le serveur CookieTouch pour éviter de faire des MAJs pour changer seulement la liste
+- En mode fantôme les monstres aggressifs ne bloquent plus
 
 ## EN
 
-- Fix a bug with pushbullet
-- Add a notification when you get a script error
-- Add job level up notification
-- Fix notification sending after a character's level up
+- Fix groups fights
+- Add crafting (customs functions)
+- We can now add items to our merchant mod and activate it (customs functions)
+- We can now buy and sell to NPCs
+- Aggressive monsters are now saved in CookieTouch server to avoid updates to only change the list
+- In Phantom mode, aggressive monsters doesn't block anymore

@@ -7,6 +7,7 @@ import PathDuration from "@/core/pathfinder/PathDuration";
 import { MapChangeDirections } from "@/game/managers/movements/MapChangeDirections";
 import { MovementRequestResults } from "@/game/managers/movements/MovementRequestResults";
 import MapGame from "@/game/map";
+import { PlayerLifeStatusEnum } from "@/protocol/enums/PlayerLifeStatusEnum";
 import IClearable from "@/utils/IClearable";
 import LiteEvent from "@/utils/LiteEvent";
 import { getRandomInt } from "@/utils/Random";
@@ -70,7 +71,9 @@ export default class MovementsManager implements IClearable {
       this.account.game.map.monstersGroups,
       true,
       stopNextToTarget,
-      this.account.config.antiAgro
+      this.account.config.antiAgro,
+      this.account.game.character.lifeStatus ===
+        PlayerLifeStatusEnum.STATUS_PHANTOM
     );
 
     if (path.length === 0) {

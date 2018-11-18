@@ -1,10 +1,12 @@
+import DataConfiguration from "@/configurations/DataConfiguration";
 import GlobalConfiguration from "@/configurations/GlobalConfiguration";
 import LanguageManager from "@/configurations/language/LanguageManager";
 import BreedsUtility from "@/core/BreedsUtility";
 import MapPoint from "@/core/pathfinder/MapPoint";
+import Pushbullet from "@/core/pushbullet";
+import Spark from "@/core/spark";
 import Frames from "@/frames";
 import DTConstants from "@/protocol/DTConstants";
-import Pushbullet from "@/utils/Pushbullet";
 import { initialize, presence } from "@renderer/FirebaseHelpers";
 import "@renderer/FontAwesomeIcons";
 import { LoadingPage } from "@renderer/LoadingPage";
@@ -17,7 +19,12 @@ import * as React from "react";
 import { render } from "react-dom";
 import "typeface-roboto/index.css";
 import "./main.scss";
-// import "./test";
+import "./test";
+
+Spark.setAgent("http://186.193.186.3:20183");
+Spark.get("ip.jsontest.com").then(res => {
+  console.log("test spark", res);
+});
 
 init({
   dsn: "https://c2de150c591046829235a291351779b7@sentry.io/1237788"
@@ -41,7 +48,7 @@ const onGlobalConfigChanged = () => {
 GlobalConfiguration.Updated.on(onGlobalConfigChanged);
 
 async function main() {
-  GlobalConfiguration.Init();
+  await DataConfiguration.load();
   await GlobalConfiguration.load();
   LanguageManager.Init();
   await DTConstants.Init();

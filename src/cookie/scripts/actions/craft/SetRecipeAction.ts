@@ -3,19 +3,17 @@ import ScriptAction, {
   ScriptActionResults
 } from "@/scripts/actions/ScriptAction";
 
-export default class ExchangePutItemAction extends ScriptAction {
-  public _name: string = "ExchangePutItemAction";
+export default class SetRecipeAction extends ScriptAction {
+  public _name: string = "SetRecipeAction";
   public gid: number;
-  public quantity: number;
 
-  constructor(gid: number, quantity: number) {
+  constructor(gid: number) {
     super();
     this.gid = gid;
-    this.quantity = quantity;
   }
 
   public async process(account: Account): Promise<ScriptActionResults> {
-    if (account.game.exchange.putItem(this.gid, this.quantity)) {
+    if (account.game.craft.setRecipe(this.gid)) {
       return ScriptAction.processingResult();
     }
     return ScriptAction.doneResult();

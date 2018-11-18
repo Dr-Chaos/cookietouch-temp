@@ -11,13 +11,16 @@ import ExchangeObjectAddedMessage from "@/protocol/network/messages/ExchangeObje
 import ExchangeObjectModifiedMessage from "@/protocol/network/messages/ExchangeObjectModifiedMessage";
 import ExchangeObjectRemovedMessage from "@/protocol/network/messages/ExchangeObjectRemovedMessage";
 import ExchangeRequestedTradeMessage from "@/protocol/network/messages/ExchangeRequestedTradeMessage";
+import ExchangeShopStockStartedMessage from "@/protocol/network/messages/ExchangeShopStockStartedMessage";
 import ExchangeStartedWithPodsMessage from "@/protocol/network/messages/ExchangeStartedWithPodsMessage";
+import ObjectItemToSell from "@/protocol/network/types/ObjectItemToSell";
 import LiteEvent from "@/utils/LiteEvent";
 import { sleep } from "@/utils/Time";
 
 export default class Exchange {
   public objects: ObjectEntry[];
   public remoteObjects: ObjectEntry[];
+  public objectsToSell: ObjectItemToSell[];
   public kamas: number = 0;
   public remoteKamas: number = 0;
   public currentWeight: number = 0;
@@ -38,6 +41,7 @@ export default class Exchange {
     this.account = account;
     this.objects = [];
     this.remoteObjects = [];
+    this.objectsToSell = [];
   }
 
   get weightPercent() {
@@ -113,8 +117,8 @@ export default class Exchange {
       quantity <= 0
         ? obj.quantity
         : quantity > obj.quantity
-          ? obj.quantity
-          : quantity;
+        ? obj.quantity
+        : quantity;
 
     this.account.network.sendMessageFree("ExchangeObjectMoveMessage", {
       objectUID: obj.uid,
@@ -142,8 +146,8 @@ export default class Exchange {
       quantity <= 0
         ? obj.quantity
         : quantity > obj.quantity
-          ? obj.quantity
-          : quantity;
+        ? obj.quantity
+        : quantity;
 
     this.account.network.sendMessageFree("ExchangeObjectMoveMessage", {
       objectUID: obj.uid,
@@ -263,8 +267,8 @@ export default class Exchange {
       quantity <= 0
         ? this.account.game.character.inventory.kamas
         : quantity > this.account.game.character.inventory.kamas
-          ? this.account.game.character.inventory.kamas
-          : quantity;
+        ? this.account.game.character.inventory.kamas
+        : quantity;
 
     this.account.logger.logInfo(
       LanguageManager.trans("exchange"),
@@ -285,8 +289,8 @@ export default class Exchange {
       quantity <= 0
         ? this.kamas
         : quantity > this.kamas
-          ? this.kamas
-          : quantity;
+        ? this.kamas
+        : quantity;
 
     this.account.logger.logInfo(
       LanguageManager.trans("exchange"),
@@ -294,6 +298,24 @@ export default class Exchange {
     );
     this.account.network.sendMessageFree("ExchangeObjectMoveKamaMessage", {
       quantity: this.kamas - quantity
+    });
+    return true;
+  }
+
+  public startShop(): boolean {
+    this.account.network.sendMessageFree(
+      "ExchangeRequestOnShopStockMessage",
+      {}
+    );
+    return true;
+  }
+
+  public addShopItem(gid: number, qty: number, prix: number): boolean {
+    const o = this.account.game.character.inventory.getObjectByGid(gid);
+    this.account.network.sendMessageFree("ExchangeObjectMovePricedMessage", {
+      objectUID: o.uid,
+      price: prix,
+      quantity: qty
     });
     return true;
   }
@@ -442,5 +464,11 @@ export default class Exchange {
     this.step = 0;
     this.account.state = AccountStates.NONE;
     this.onExchangeLeft.trigger();
+  }
+
+  public async UpdateExchangeShopStockStartedMessage(
+    message: ExchangeShopStockStartedMessage
+  ) {
+    this.objectsToSell = message.objectsInfos;
   }
 }

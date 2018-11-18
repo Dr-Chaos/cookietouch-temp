@@ -2,6 +2,7 @@ import Account from "@/account";
 import Bid from "@/game/bid";
 import Character from "@/game/character";
 import Chat from "@/game/chat";
+import Craft from "@/game/craft";
 import Exchange from "@/game/exchange";
 import Fight from "@/game/fight";
 import Managers from "@/game/managers";
@@ -22,6 +23,7 @@ export default class Game implements IClearable {
   public npcs: Npcs;
   public storage: Storage;
   public fight: Fight;
+  public craft: Craft;
 
   constructor(account: Account) {
     this.server = new Server(account);
@@ -34,6 +36,7 @@ export default class Game implements IClearable {
     this.storage = new Storage(account);
     this.exchange = new Exchange(account);
     this.bid = new Bid(account);
+    this.craft = new Craft(account);
   }
 
   public clear() {

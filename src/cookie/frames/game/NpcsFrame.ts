@@ -1,5 +1,8 @@
 import Account from "@/account";
 import Frames, { IFrame } from "@/frames";
+import ExchangeBuyOkMessage from "@/protocol/network/messages/ExchangeBuyOkMessage";
+import ExchangeSellOkMessage from "@/protocol/network/messages/ExchangeSellOkMessage";
+import ExchangeStartOkNpcShopMessage from "@/protocol/network/messages/ExchangeStartOkNpcShopMessage";
 import LeaveDialogMessage from "@/protocol/network/messages/LeaveDialogMessage";
 import NpcDialogCreationMessage from "@/protocol/network/messages/NpcDialogCreationMessage";
 import NpcDialogQuestionMessage from "@/protocol/network/messages/NpcDialogQuestionMessage";
@@ -19,6 +22,21 @@ export default class NpcsFrame implements IFrame {
     Frames.dispatcher.register(
       "LeaveDialogMessage",
       this.HandleLeaveDialogMessage,
+      this
+    );
+    Frames.dispatcher.register(
+      "ExchangeStartOkNpcShopMessage",
+      this.HandleExchangeStartOkNpcShopMessage,
+      this
+    );
+    Frames.dispatcher.register(
+      "ExchangeSellOkMessage",
+      this.HandleExchangeSellOkMessage,
+      this
+    );
+    Frames.dispatcher.register(
+      "ExchangeBuyOkMessage",
+      this.HandleExchangeBuyOkMessage,
       this
     );
   }
@@ -42,5 +60,26 @@ export default class NpcsFrame implements IFrame {
     message: LeaveDialogMessage
   ) {
     account.game.npcs.UpdateLeaveDialogMessage(message);
+  }
+
+  private async HandleExchangeStartOkNpcShopMessage(
+    account: Account,
+    message: ExchangeStartOkNpcShopMessage
+  ) {
+    account.game.npcs.UpdateNpcShopMessage(message);
+  }
+
+  private async HandleExchangeSellOkMessage(
+    account: Account,
+    message: ExchangeSellOkMessage
+  ) {
+    account.game.npcs.UpdateExchangeSellOkMessage(message);
+  }
+
+  private async HandleExchangeBuyOkMessage(
+    account: Account,
+    message: ExchangeBuyOkMessage
+  ) {
+    account.game.npcs.UpdateExchangeBuyOkMessage(message);
   }
 }

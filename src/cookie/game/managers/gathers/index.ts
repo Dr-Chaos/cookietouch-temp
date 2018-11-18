@@ -7,6 +7,7 @@ import MovementsManager from "@/game/managers/movements";
 import { MovementRequestResults } from "@/game/managers/movements/MovementRequestResults";
 import MapGame from "@/game/map";
 import InteractiveElementEntry from "@/game/map/interactives/InteractiveElementEntry";
+import { PlayerLifeStatusEnum } from "@/protocol/enums/PlayerLifeStatusEnum";
 import IClearable from "@/utils/IClearable";
 import LiteEvent from "@/utils/LiteEvent";
 
@@ -133,7 +134,9 @@ export default class GathersManager implements IClearable {
         this.account.game.map.monstersGroups,
         true,
         true,
-        this.account.config.antiAgro
+        this.account.config.antiAgro,
+        this.account.game.character.lifeStatus ===
+          PlayerLifeStatusEnum.STATUS_PHANTOM
       );
 
       // If the path if invalid.
