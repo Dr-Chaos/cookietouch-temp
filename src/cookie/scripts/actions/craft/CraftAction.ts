@@ -15,9 +15,11 @@ export default class CraftAction extends ScriptAction {
   }
 
   public async process(account: Account): Promise<ScriptActionResults> {
-    if (account.game.craft.setRecipe(this.gid) &&
+    if (
+      account.game.craft.setRecipe(this.gid) &&
       account.game.craft.setQuantity(this.qty) &&
-      account.game.craft.ready()) {
+      account.game.craft.ready()
+    ) {
       return ScriptAction.processingResult();
     }
     return ScriptAction.doneResult();
