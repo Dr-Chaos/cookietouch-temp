@@ -52,7 +52,7 @@
     "tslint-loader": "^3.6.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.1.6",
-    "webpack": "^4.24.0",
+    "webpack": "^4.26.0",
     "webpack-build-notifier": "^0.1.30"
   },
   "dependencies": {
@@ -73,12 +73,11 @@
     "linqts": "^1.12.2",
     "material-design-icons": "^3.0.1",
     "moment": "^2.22.2",
-    "react": "^16.6.3",
+    "react": "^16.7.0-alpha.2",
     "react-color": "^2.14.1",
-    "react-dom": "^16.6.3",
+    "react-dom": "^16.7.0-alpha.2",
     "react-loader-spinner": "^2.1.0",
     "source-map-support": "^0.5.9",
-    "typeface-roboto": "^0.0.54",
-    "ws": "^6.1.2"
+    "typeface-roboto": "^0.0.54"
   }
 }

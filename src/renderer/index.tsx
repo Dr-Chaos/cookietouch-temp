@@ -4,7 +4,7 @@ import LanguageManager from "@/configurations/language/LanguageManager";
 import BreedsUtility from "@/core/BreedsUtility";
 import MapPoint from "@/core/pathfinder/MapPoint";
 import Pushbullet from "@/core/pushbullet";
-import Spark from "@/core/spark";
+// import Spark from "@/core/spark";
 import Frames from "@/frames";
 import DTConstants from "@/protocol/DTConstants";
 import { initialize, presence } from "@renderer/FirebaseHelpers";
@@ -19,12 +19,11 @@ import * as React from "react";
 import { render } from "react-dom";
 import "typeface-roboto/index.css";
 import "./main.scss";
-import "./test";
 
-Spark.setAgent("http://186.193.186.3:20183");
-Spark.get("ip.jsontest.com").then(res => {
-  console.log("test spark", res);
-});
+// Spark.setAgent("http://186.193.186.3:20183");
+// Spark.get("ip.jsontest.com").then(res => {
+//   console.log("test spark", res);
+// });
 
 init({
   dsn: "https://c2de150c591046829235a291351779b7@sentry.io/1237788"

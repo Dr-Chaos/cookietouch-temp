@@ -23,6 +23,7 @@ export default class GathersManager implements IClearable {
   private account: Account;
   private blacklistedElements: number[];
   private elementToGather: InteractiveElementEntry | null = null;
+  private jobId: number = -1;
   private pathfinder: Pathfinder;
   private stolen: boolean = false;
   private readonly onGatherStarted = new LiteEvent<void>();
@@ -57,7 +58,7 @@ export default class GathersManager implements IClearable {
   }
 
   public clear() {
-    this.elementToGather = null;
+    this.cancelGather();
     this.blacklistedElements = [];
     this.stolen = false;
   }
@@ -68,9 +69,10 @@ export default class GathersManager implements IClearable {
 
   public cancelGather() {
     this.elementToGather = null;
+    this.jobId = -1;
   }
 
-  public gather(...resourcesIds: number[]): boolean {
+  public gather(jobId?: number, ...resourcesIds: number[]): boolean {
     if (this.account.isBusy || this.elementToGather !== null) {
       this.account.logger.logWarning(
         LanguageManager.trans("gathersManager"),
@@ -79,7 +81,7 @@ export default class GathersManager implements IClearable {
       return false;
     }
     for (const kvp of this.getUsableElements(...resourcesIds)) {
-      if (this.moveToElement(kvp)) {
+      if (this.moveToElement(kvp, jobId)) {
         return true;
       }
     }
@@ -173,8 +175,13 @@ export default class GathersManager implements IClearable {
     return usableElements;
   }
 
-  private moveToElement(element: [number, InteractiveElementEntry]): boolean {
+  private moveToElement(
+    element: [number, InteractiveElementEntry],
+    jobId?: number
+  ): boolean {
     this.elementToGather = element["1"];
+
+    this.jobId = jobId || -1;
 
     // Assuming there is no way statedElem will be null
     switch (
@@ -205,9 +212,17 @@ export default class GathersManager implements IClearable {
       if (!this.elementToGather) {
         return;
       }
+      let use = 0;
+      if (this.jobId !== -1) {
+        this.elementToGather.enabledSkills.forEach((element, index) => {
+          if (element.parentJobId === this.jobId) {
+            use = index;
+          }
+        });
+      }
       this.account.network.sendMessageFree("InteractiveUseRequestMessage", {
         elemId: this.elementToGather.id,
-        skillInstanceUid: this.elementToGather.enabledSkills[0].instanceUid
+        skillInstanceUid: this.elementToGather.enabledSkills[use].instanceUid
       });
     }
   }

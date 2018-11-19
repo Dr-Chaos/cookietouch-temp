@@ -34,8 +34,8 @@ async function* fight(forbiddenMonsters, mandatoryMonsters, minMonsters, maxMons
 }
 // Gather
 const canGather = API.gather.canGather.bind(API.gather)
-async function* gather(...resourcesIds) {
-  if (await API.gather.gather.bind(API.gather)(...resourcesIds)) {
+async function* gather(jobId, ...resourcesIds) {
+  if (await API.gather.gather.bind(API.gather)(jobId, ...resourcesIds)) {
     yield;
   }
 }

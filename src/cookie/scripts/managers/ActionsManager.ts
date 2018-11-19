@@ -4,9 +4,7 @@ import LanguageManager from "@/configurations/language/LanguageManager";
 import { GatherResults } from "@/game/managers/gathers";
 import StartBuyingAction from "@/scripts/actions/bid/StartBuyingAction";
 import StartSellingAction from "@/scripts/actions/bid/StartSellingAction";
-import ReadyAction from "@/scripts/actions/craft/ReadyAction";
-import SetQuantityAction from "@/scripts/actions/craft/SetQuantityAction";
-import SetRecipeAction from "@/scripts/actions/craft/SetRecipeAction";
+import CraftAction from "@/scripts/actions/craft/CraftAction";
 import ExchangePutItemAction from "@/scripts/actions/exchange/ExchangePutItemAction";
 import ExchangeRemoveItemAction from "@/scripts/actions/exchange/ExchangeRemoveItemAction";
 import SendReadyAction from "@/scripts/actions/exchange/SendReadyAction";
@@ -28,7 +26,6 @@ import NpcAction from "@/scripts/actions/npcs/NpcAction";
 import NpcBankAction from "@/scripts/actions/npcs/NpcBankAction";
 import ReplyAction from "@/scripts/actions/npcs/ReplyAction";
 import SellAction from "@/scripts/actions/npcs/SellAction";
-
 import ScriptAction, {
   ScriptActionResults
 } from "@/scripts/actions/ScriptAction";
@@ -97,10 +94,6 @@ export default class ActionsManager {
     this.account.game.npcs.NpcShopUpdated.on(this.npcs_shopUpdated);
     this.account.game.exchange.ExchangeContentChanged.on(
       this.exchange_exchangeChanged
-    );
-    this.account.game.craft.CraftStarted.on(this.craft_craftStarted);
-    this.account.game.craft.CraftQuantityChanged.on(
-      this.craft_craftQuantityChanged
     );
     this.account.game.craft.CraftLeft.on(this.craft_craftLeft);
   }
@@ -504,8 +497,7 @@ export default class ActionsManager {
     }
     if (
       this.currentAction instanceof SendReadyAction ||
-      this.currentAction instanceof LeaveDialogAction ||
-      this.currentAction instanceof ReadyAction
+      this.currentAction instanceof LeaveDialogAction
     ) {
       await this.dequeueActions(400);
     }
@@ -580,29 +572,11 @@ export default class ActionsManager {
     }
   };
 
-  private craft_craftStarted = async () => {
-    if (!this.account.scripts.running) {
-      return;
-    }
-    if (this.currentAction instanceof SetRecipeAction) {
-      await this.dequeueActions(400);
-    }
-  };
-
   private craft_craftLeft = async () => {
     if (!this.account.scripts.running) {
       return;
     }
-    if (this.currentAction instanceof ReadyAction) {
-      await this.dequeueActions(400);
-    }
-  };
-
-  private craft_craftQuantityChanged = async () => {
-    if (!this.account.scripts.running) {
-      return;
-    }
-    if (this.currentAction instanceof SetQuantityAction) {
+    if (this.currentAction instanceof CraftAction) {
       await this.dequeueActions(400);
     }
   };
