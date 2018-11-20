@@ -1,5 +1,7 @@
 {
   "title": "CookieTouch",
+  "whiteListedModules": ["react-loader-spinner"],
+
   "renderer": {
     "webpackConfig": "webpack.renderer.additions.js"
   }
