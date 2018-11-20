@@ -19,7 +19,7 @@ Toutes les fonctions relatives à la récolte.
 <hr>
 
 <h2 id="gather-can-gather">
-  canGather(<code>jobId?</code>: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Data_structures#Number_type">number</a>, <code>...resourcesIds</code>: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Reference/Global_Objects/Array">number[]</a>)
+  canGather(<code>...resourcesIds</code>: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Reference/Global_Objects/Array">number[]</a>)
 </h2>
 
 - Return type: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Data_structures#Boolean_type">boolean</a>
@@ -39,7 +39,7 @@ canGather(...[1, 28]);
 <hr>
 
 <h2 id="gather-gather">
-  gather(<code>...resourcesIds</code>: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Reference/Global_Objects/Array">number[]</a>)
+  gather(<code>jobId?</code>: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Data_structures#Number_type">number</a>, <code>...resourcesIds</code>: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Reference/Global_Objects/Array">number[]</a>)
 </h2>
 
 - Return type: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Data_structures#Boolean_type">boolean</a>

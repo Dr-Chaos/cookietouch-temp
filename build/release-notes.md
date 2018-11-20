@@ -4,7 +4,7 @@
 
 - Correction des combats en groupes
 - Ajout des crafts dans les scripts (fonctions customs)
-- Ajout de la possibilité d'ajouté des items dans son mode marchand et de l'activé (fonctions customs)
+- Ajout de la possibilité d'ajouter des items dans son mode marchand et de l'activer (fonctions customs)
 - Ajout de la possibilité d'acheter et vendre à des PNJs
 - Les monstres aggressifs sont dorénavant sauvegardés sur le serveur CookieTouch pour éviter de faire des MAJs pour changer seulement la liste
 - Il est désormais possible de récolter une ressource en fonction d'un métier donné
