@@ -39,7 +39,7 @@ class Spells extends React.Component<
 
     return (
       <div className={classes.root}>
-        <Typography variant="headline">
+        <Typography variant="h5">
           {LanguageManager.trans("spellsPoints", this.state.spellsPoints)}
         </Typography>
         <Table className={classes.table}>
@@ -66,7 +66,7 @@ class Spells extends React.Component<
                   <TableCell numeric={true}>{s.level}</TableCell>
                   <TableCell>
                     <Button
-                      variant="raised"
+                      variant="contained"
                       size="small"
                       color="primary"
                       disabled={

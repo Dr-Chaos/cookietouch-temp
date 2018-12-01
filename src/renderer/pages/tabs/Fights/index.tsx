@@ -422,7 +422,7 @@ class Fights extends React.Component<IFightsTabProps, IFightsTabState> {
                         disabled={this.state.characterConnected === false}
                         onClick={this.removeSpell(s)}
                         size="small"
-                        variant="raised"
+                        variant="contained"
                         color="primary"
                       >
                         X
@@ -687,7 +687,7 @@ class Fights extends React.Component<IFightsTabProps, IFightsTabState> {
                         />
                       </Tooltip>
                     </FormGroup>
-                    <Button type="submit" variant="raised" color="primary">
+                    <Button type="submit" variant="contained" color="primary">
                       {LanguageManager.trans("add")}
                     </Button>
                   </Grid>

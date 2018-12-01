@@ -46,7 +46,7 @@ class AccountsList extends React.Component<
 
     return (
       <Paper className={classes.root}>
-        <Typography variant="title" align="center">
+        <Typography variant="h6" align="center">
           {LanguageManager.trans("accountList")}
         </Typography>
         <List>
@@ -94,7 +94,7 @@ class AccountsList extends React.Component<
           disabled={this.state.accountsToConnect.length < 2}
           style={{ float: "right" }}
           onClick={this.connectSelectedAccounts}
-          variant="raised"
+          variant="contained"
           color="primary"
         >
           {LanguageManager.trans("connect")}
@@ -102,7 +102,7 @@ class AccountsList extends React.Component<
         <Button
           style={{ float: "right" }}
           onClick={this.importAccount}
-          variant="raised"
+          variant="contained"
           color="primary"
         >
           {LanguageManager.trans("importTxt")}

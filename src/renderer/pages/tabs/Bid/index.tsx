@@ -97,7 +97,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
             <div className={classes.leftSide}>
               <Card className={classes.card}>
                 <CardContent>
-                  <Typography variant="title" className={classes.title}>
+                  <Typography variant="h6" className={classes.title}>
                     {LanguageManager.trans("configSelling")}
                   </Typography>
                   <FormGroup>
@@ -141,7 +141,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                     size="small"
                     // style={{ marginLeft: "15px" }}
                     onClick={this.openDialog}
-                    variant="raised"
+                    variant="contained"
                     color="primary"
                     className={classes.leftSideButtom}
                   >
@@ -151,7 +151,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                     size="small"
                     // style={{ marginLeft: "15px" }}
                     onClick={this.removeScriptPath}
-                    variant="raised"
+                    variant="contained"
                     color="primary"
                     className={classes.leftSideButtom}
                   >
@@ -163,7 +163,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
             <div className={classes.leftSide}>
               <Card className={classes.card}>
                 <CardContent>
-                  <Typography variant="title" className={classes.title}>
+                  <Typography variant="h6" className={classes.title}>
                     {LanguageManager.trans("addItem")}
                   </Typography>
                   <Downshift onChange={this.selectedItem}>
@@ -268,7 +268,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                     />
                     <Button
                       type="submit"
-                      variant="raised"
+                      variant="contained"
                       color="primary"
                       className={classes.leftSideButtomAdd}
                     >
@@ -282,7 +282,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
           <Grid item={true} xs={7} className={classes.rightSide}>
             <Card className={classes.card}>
               <CardContent>
-                <Typography variant="title" className={classes.title}>
+                <Typography variant="h6" className={classes.title}>
                   {LanguageManager.trans("objectsForSale")}
                 </Typography>
                 <Table className={classes.table}>
@@ -318,7 +318,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                           <TableCell>
                             <Button
                               onClick={this.deleteObject(o)}
-                              variant="raised"
+                              variant="contained"
                               color="primary"
                             >
                               {LanguageManager.trans("delete")}
@@ -333,7 +333,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
             </Card>
             <Card className={classes.card}>
               <CardContent>
-                <Typography variant="title" className={classes.title}>
+                <Typography variant="h6" className={classes.title}>
                   {LanguageManager.trans("itemsForSale")}
                 </Typography>
                 <Table className={classes.table}>
@@ -371,7 +371,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                 <Button
                   className={classes.syncSell}
                   size="small"
-                  variant="raised"
+                  variant="contained"
                   onClick={this.syncObjects}
                   color="secondary"
                 >

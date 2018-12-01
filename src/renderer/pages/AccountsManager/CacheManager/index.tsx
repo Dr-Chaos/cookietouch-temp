@@ -34,12 +34,12 @@ class CacheManager extends React.Component<
     return (
       <div className={classes.root}>
         <Paper className={classes.paper}>
-          <Typography variant="title">
+          <Typography variant="h6">
             {LanguageManager.trans("cacheSize")}
             {(cacheSize / 1024).toFixed(2)} kb &nbsp;
             <Button
               color="primary"
-              variant="raised"
+              variant="contained"
               disabled={cacheSize === 0}
               onClick={this.deleteCache}
             >

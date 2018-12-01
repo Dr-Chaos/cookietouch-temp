@@ -18,7 +18,6 @@ import "material-design-icons/iconfont/material-icons.css";
 import * as React from "react";
 import { render } from "react-dom";
 import "typeface-roboto/index.css";
-import "./main.scss";
 
 // Spark.setAgent("http://186.193.186.3:20183");
 // Spark.get("ip.jsontest.com").then(res => {

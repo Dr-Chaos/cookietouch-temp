@@ -24,6 +24,7 @@ import QuestActiveDetailedInformations from "@/protocol/network/types/QuestActiv
 import { Deferred, IDeferred } from "@/utils/Deferred";
 import IClearable from "@/utils/IClearable";
 import { getRandomInt } from "@/utils/Random";
+import { capitalize } from "@/utils/String";
 import { sleep } from "@/utils/Time";
 import { List } from "linqts";
 
@@ -103,8 +104,8 @@ export default class CharacterCreatorExtension implements IClearable {
       this.account.accountConfig.characterCreation.colors.length === 5
         ? this.account.accountConfig.characterCreation.colors
         : sex
-          ? breedClass[0].object.femaleColors
-          : breedClass[0].object.maleColors;
+        ? breedClass[0].object.femaleColors
+        : breedClass[0].object.maleColors;
     // If the user want a random name, use DT's random name generator
     if (name === "") {
       this.name = Deferred<string>();
@@ -116,6 +117,8 @@ export default class CharacterCreatorExtension implements IClearable {
         LanguageManager.trans("characterCreator"),
         LanguageManager.trans("nameGenerate", name)
       );
+    } else {
+      name = capitalize(name);
     }
     await sleep(1000);
     // Send the character creation request message, take in consideration random stuff to generate

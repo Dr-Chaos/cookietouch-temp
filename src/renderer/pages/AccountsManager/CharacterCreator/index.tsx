@@ -264,7 +264,7 @@ class CharacterCreator extends React.Component<
             />
             <Button
               onClick={this.randomizeColors}
-              variant="raised"
+              variant="contained"
               color="primary"
             >
               {LanguageManager.trans("random")}
@@ -281,7 +281,7 @@ class CharacterCreator extends React.Component<
                 label={LanguageManager.trans("doTutorial")}
               />
             </FormGroup>
-            <Button onClick={this.validate} variant="raised" color="primary">
+            <Button onClick={this.validate} variant="contained" color="primary">
               {LanguageManager.trans("validate")}
             </Button>
           </ExpansionPanelDetails>

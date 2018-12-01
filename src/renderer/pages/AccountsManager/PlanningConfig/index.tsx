@@ -116,7 +116,7 @@ class PlanningConfig extends React.Component<
                 </FormControl>
                 <Button
                   onClick={this.validate}
-                  variant="raised"
+                  variant="contained"
                   color="primary"
                 >
                   {LanguageManager.trans("validate")}

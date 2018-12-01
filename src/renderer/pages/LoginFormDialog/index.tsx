@@ -84,10 +84,10 @@ class LoginFormDialog extends React.Component<
             </FormControl>
           </DialogContent>
           <DialogActions>
-            <Button onClick={closeDialog} variant="raised" color="primary">
+            <Button onClick={closeDialog} variant="contained" color="primary">
               {LanguageManager.trans("cancel")}
             </Button>
-            <Button onClick={this.signin} variant="raised" color="primary">
+            <Button onClick={this.signin} variant="contained" color="primary">
               {LanguageManager.trans("connect")}
             </Button>
           </DialogActions>

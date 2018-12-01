@@ -25,9 +25,9 @@ module.exports = {
   },
   plugins: [
     new SentryWebpackPlugin({
-      include: '.',
+      include: './dist',
       ignoreFile: '.sentrycliignore',
-      ignore: ['node_modules', 'webpack.renderer.additions.js'],
+      ignore: ['node_modules', 'primus.js', 'ScriptsHelpers.js'],
       configFile: 'sentry.properties'
     })
   ]

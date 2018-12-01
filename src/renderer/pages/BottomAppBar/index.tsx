@@ -48,7 +48,7 @@ class BottomAppBar extends React.Component<
       <div className={classes.root}>
         <AppBar className={classes.appbar} position="sticky">
           <Toolbar className={classes.toolbar}>
-            <Typography variant="subheading" color="inherit">
+            <Typography variant="subtitle1" color="inherit">
               {LanguageManager.trans(
                 "usersConnected",
                 usersConnected,

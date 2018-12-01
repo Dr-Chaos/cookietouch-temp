@@ -67,7 +67,7 @@ class Flood extends React.Component<IFloodTabProps, IFloodTabState> {
         <Button
           disabled={this.state.characterConnected === false}
           onClick={this.startStopFlood}
-          variant="raised"
+          variant="contained"
           color={this.state.running ? "secondary" : "primary"}
         >
           {this.state.running
@@ -103,7 +103,7 @@ class Flood extends React.Component<IFloodTabProps, IFloodTabState> {
                   <TableCell>
                     <Button
                       onClick={this.deleteSentence(s)}
-                      variant="raised"
+                      variant="contained"
                       color="primary"
                     >
                       {LanguageManager.trans("delete")}
@@ -227,7 +227,7 @@ class Flood extends React.Component<IFloodTabProps, IFloodTabState> {
               <Button
                 disabled={this.state.addSentenceForm.content === ""}
                 type="submit"
-                variant="raised"
+                variant="contained"
                 color="primary"
               >
                 {LanguageManager.trans("add")}

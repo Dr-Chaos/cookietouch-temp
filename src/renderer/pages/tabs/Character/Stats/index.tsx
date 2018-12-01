@@ -58,17 +58,17 @@ class Stats extends React.Component<
       <div className={classes.root}>
         <Grid container={true} spacing={16}>
           <Grid item={true} xs={4}>
-            <Typography variant="title">
+            <Typography variant="h6">
               {account.game.character.name} ({account.game.character.id})
             </Typography>
-            <Typography variant="subheading">
+            <Typography variant="subtitle1">
               {LanguageManager.trans("level")} {this.state.level}
             </Typography>
             <img src={this.state.skinUrl} alt="character" />
           </Grid>
           <Grid item={true} xs={4}>
             <Card className={classes.card}>
-              <Typography variant="headline">
+              <Typography variant="h5">
                 {LanguageManager.trans("summary")}
               </Typography>
               <div className={classes.lineStats}>
@@ -79,14 +79,12 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
+                  <Typography>
                     {LanguageManager.trans("actionPoints")}
                   </Typography>
                 </div>
                 <span className={classes.statsLabelSpan}>
-                  <Typography variant="body1">
-                    {this.state.actionPoints}
-                  </Typography>
+                  <Typography>{this.state.actionPoints}</Typography>
                 </span>
               </div>
               <div className={classes.lineStats}>
@@ -96,14 +94,12 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
+                  <Typography>
                     {LanguageManager.trans("movementPoints")}
                   </Typography>
                 </div>
                 <span className={classes.statsLabelSpan}>
-                  <Typography variant="body1">
-                    {this.state.movementPoints}
-                  </Typography>
+                  <Typography>{this.state.movementPoints}</Typography>
                 </span>
               </div>
               <div className={classes.lineStats}>
@@ -113,12 +109,10 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">Initiative</Typography>
+                  <Typography>Initiative</Typography>
                 </div>
                 <span className={classes.statsLabelSpan}>
-                  <Typography variant="body1">
-                    {this.state.initiative}
-                  </Typography>
+                  <Typography>{this.state.initiative}</Typography>
                 </span>
               </div>
 
@@ -129,14 +123,12 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
+                  <Typography>
                     {LanguageManager.trans("prospecting")}
                   </Typography>
                 </div>
                 <span className={classes.statsLabelSpan}>
-                  <Typography variant="body1">
-                    {this.state.prospecting}
-                  </Typography>
+                  <Typography>{this.state.prospecting}</Typography>
                 </span>
               </div>
 
@@ -147,12 +139,10 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("range")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("range")}</Typography>
                 </div>
                 <span className={classes.statsLabelSpan}>
-                  <Typography variant="body1">{this.state.range}</Typography>
+                  <Typography>{this.state.range}</Typography>
                 </span>
               </div>
 
@@ -163,21 +153,17 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("summons")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("summons")}</Typography>
                 </div>
                 <span className={classes.statsLabelSpan}>
-                  <Typography variant="body1">
-                    {this.state.summonableCreaturesBoost}
-                  </Typography>
+                  <Typography>{this.state.summonableCreaturesBoost}</Typography>
                 </span>
               </div>
             </Card>
           </Grid>
           <Grid item={true} xs={4}>
             <Card className={classes.card}>
-              <Typography variant="headline">
+              <Typography variant="h5">
                 {LanguageManager.trans("stats")}
               </Typography>
               <div className={classes.lineStats}>
@@ -187,11 +173,9 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("vitality")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("vitality")}</Typography>
                 </div>
-                <Typography variant="body1">{this.state.vitality}</Typography>
+                <Typography>{this.state.vitality}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
                   <Button
                     variant="fab"
@@ -212,12 +196,10 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("wisdom")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("wisdom")}</Typography>
                 </div>
 
-                <Typography variant="body1">{this.state.wisdom}</Typography>
+                <Typography>{this.state.wisdom}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
                   <Button
                     variant="fab"
@@ -238,12 +220,10 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("strength")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("strength")}</Typography>
                 </div>
 
-                <Typography variant="body1">{this.state.strength}</Typography>
+                <Typography>{this.state.strength}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
                   <Button
                     variant="fab"
@@ -264,13 +244,11 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
+                  <Typography>
                     {LanguageManager.trans("intelligence")}
                   </Typography>
                 </div>
-                <Typography variant="body1">
-                  {this.state.intelligence}
-                </Typography>
+                <Typography>{this.state.intelligence}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
                   <Button
                     variant="fab"
@@ -291,12 +269,10 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("chance")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("chance")}</Typography>
                 </div>
 
-                <Typography variant="body1">{this.state.chance}</Typography>
+                <Typography>{this.state.chance}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
                   <Button
                     variant="fab"
@@ -317,12 +293,10 @@ class Stats extends React.Component<
                   alt=""
                 />
                 <div className={classes.labelStats}>
-                  <Typography variant="body1">
-                    {LanguageManager.trans("agility")}
-                  </Typography>
+                  <Typography>{LanguageManager.trans("agility")}</Typography>
                 </div>
 
-                <Typography variant="body1">{this.state.agility}</Typography>
+                <Typography>{this.state.agility}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
                   <Button
                     variant="fab"
@@ -337,16 +311,12 @@ class Stats extends React.Component<
               </div>
             </Card>
             <div className={classes.labelPointsStats}>
-              <Typography variant="body1">
-                {LanguageManager.trans("points")}
-              </Typography>
+              <Typography>{LanguageManager.trans("points")}</Typography>
               <span
                 style={{ marginRight: 56 }}
                 className={classes.statsLabelSpanAdd}
               >
-                <Typography variant="body1">
-                  {this.state.statsPoints}
-                </Typography>
+                <Typography>{this.state.statsPoints}</Typography>
               </span>
             </div>
           </Grid>

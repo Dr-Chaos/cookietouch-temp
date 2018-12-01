@@ -84,12 +84,12 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
         <Paper className={classes.paper}>
           <Grid container={true} spacing={0}>
             <Grid item={true} xs={10}>
-              <Typography variant="subheading">
+              <Typography variant="subtitle1">
                 Script: {this.state.scriptName}
               </Typography>
               <Button
                 size="small"
-                variant="raised"
+                variant="contained"
                 style={{
                   marginLeft: "15px"
                 }}
@@ -101,7 +101,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
               <Button
                 size="small"
                 disabled={this.state.scriptLoaded ? false : true}
-                variant="raised"
+                variant="contained"
                 onClick={this.launchScript}
                 color="primary"
               >
@@ -110,7 +110,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
               <Button
                 size="small"
                 disabled={this.state.scriptLoaded ? false : true}
-                variant="raised"
+                variant="contained"
                 onClick={this.pauseScript}
                 color="primary"
               >
@@ -126,7 +126,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
               <Button
                 className={classes.buttonConnect}
                 size="small"
-                variant="raised"
+                variant="contained"
                 onClick={this.startStop}
                 color="primary"
               >
@@ -143,7 +143,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
                   !this.props.account.isGroupChief
                 }
                 size="small"
-                variant="raised"
+                variant="contained"
                 onClick={this.removeSelectedAccount}
                 color="secondary"
               >
@@ -155,26 +155,24 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
         <Paper className={classes.paper}>
           <Grid container={true} spacing={0}>
             <Grid item={true} xs={4}>
-              <Typography variant="subheading">
-                {this.state.position}
-              </Typography>
+              <Typography variant="subtitle1">{this.state.position}</Typography>
             </Grid>
             <Grid item={true} xs={6}>
-              <Typography variant="subheading">
+              <Typography variant="subtitle1">
                 {this.state.bonuspack}
               </Typography>
               <Button
                 onClick={this.buyBonusPack}
                 disabled={!this.state.characterConnected}
                 size="small"
-                variant="raised"
+                variant="contained"
                 color="secondary"
               >
                 {LanguageManager.trans("buyBonusPack")}
               </Button>
             </Grid>
             <Grid item={true} xs={2}>
-              <Typography style={{ float: "right" }} variant="subheading">
+              <Typography style={{ float: "right" }} variant="subtitle1">
                 Status: {AccountStates[this.state.status]}
               </Typography>
             </Grid>
@@ -189,7 +187,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
                   size="lg"
                   icon="heart"
                 />
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                   {(this.state.lifePoints !== -1
                     ? (this.state.lifePoints / this.state.lifePointsMax) * 100
                     : 0
@@ -218,7 +216,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
                   size="lg"
                   icon="briefcase"
                 />
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                   {(this.state.weight !== -1
                     ? (this.state.weight / this.state.weightMax) * 100
                     : 0
@@ -245,7 +243,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
                   size="lg"
                   icon="star"
                 />
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                   {(this.state.experiencePercent !== -1
                     ? this.state.experiencePercent
                     : 0
@@ -274,7 +272,7 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
                   size="lg"
                   icon="bolt"
                 />
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                   {(this.state.energyPoints !== -1
                     ? (this.state.energyPoints / this.state.energyPointsMax) *
                       100
@@ -307,12 +305,12 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
                   size="lg"
                   icon={faKickstarterK}
                 />
-                <Typography variant="subheading">{this.state.kamas}</Typography>
+                <Typography variant="subtitle1">{this.state.kamas}</Typography>
               </div>
             </Grid>
             <Grid item={true} xs={2}>
               <FontAwesomeIcon className={classes.icon} size="lg" icon="gem" />
-              <Typography variant="subheading">
+              <Typography variant="subtitle1">
                 {this.state.goultines}
               </Typography>
             </Grid>

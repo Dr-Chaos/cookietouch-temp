@@ -27,8 +27,7 @@
         "x64",
         "ia32"
       ]
-    }],
-    "icon": "build/icon.ico"
+    }]
   },
   "nsis": {
     "oneClick": false,

@@ -144,7 +144,7 @@ class Configuration extends React.Component<
                               disabled={this.state.characterConnected === false}
                               onClick={this.removeSpell(s)}
                               size="small"
-                              variant="raised"
+                              variant="contained"
                               color="primary"
                             >
                               X
@@ -194,7 +194,7 @@ class Configuration extends React.Component<
                   disabled={this.state.characterConnected === false}
                   onClick={this.addSpell}
                   size="small"
-                  variant="raised"
+                  variant="contained"
                   color="primary"
                 >
                   {LanguageManager.trans("add")}
@@ -343,7 +343,7 @@ class Configuration extends React.Component<
                               disabled={this.state.characterConnected === false}
                               onClick={this.removeAuthorized(a)}
                               size="small"
-                              variant="raised"
+                              variant="contained"
                               color="primary"
                             >
                               X
@@ -371,7 +371,7 @@ class Configuration extends React.Component<
                   disabled={this.state.characterConnected === false}
                   onClick={this.addAuthorized}
                   size="small"
-                  variant="raised"
+                  variant="contained"
                   color="primary"
                 >
                   {LanguageManager.trans("add")}

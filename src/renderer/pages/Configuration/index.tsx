@@ -104,7 +104,7 @@ class Configuration extends React.Component<
               />
               <Typography>Balance: {this.state.anticaptchaBalance}</Typography>
               <Button
-                variant="raised"
+                variant="contained"
                 size="small"
                 color="primary"
                 onClick={this.updateAnticaptchaBalance}
@@ -126,7 +126,7 @@ class Configuration extends React.Component<
               />
               <Typography>Email: {this.state.pushBulletEmail}</Typography>
               <Button
-                variant="raised"
+                variant="contained"
                 size="small"
                 color="primary"
                 onClick={this.updatePushBulletAccessToken}
@@ -161,7 +161,7 @@ class Configuration extends React.Component<
             </FormControl>
           </DialogContent>
           <DialogActions>
-            <Button onClick={closeDialog} variant="raised" color="primary">
+            <Button onClick={closeDialog} variant="contained" color="primary">
               {LanguageManager.trans("close")}
             </Button>
           </DialogActions>

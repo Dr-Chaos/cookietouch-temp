@@ -276,7 +276,7 @@ class Console extends React.Component<IConsoleTabProps, IConsoleTabState> {
             <Button
               className={classes.cleanConsole}
               onClick={this.clearConsole}
-              variant="raised"
+              variant="contained"
               color="primary"
             >
               {LanguageManager.trans("clearConsole")}

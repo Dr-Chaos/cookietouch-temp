@@ -46,11 +46,11 @@ class AddAccountForm extends React.Component<
 
     return (
       <Paper className={classes.root}>
-        <Typography variant="title" align="center">
+        <Typography variant="h6" align="center">
           {LanguageManager.trans("addAccount")}
         </Typography>
         <br />
-        <Typography variant="caption" align="left">
+        <Typography variant="subtitle2" align="left">
           {LanguageManager.trans("addAccountInfo")}
         </Typography>
         <FormControl className={classes.formControl}>
@@ -127,7 +127,7 @@ class AddAccountForm extends React.Component<
             }
             style={{ float: "right" }}
             onClick={this.addAccount}
-            variant="raised"
+            variant="contained"
             color="primary"
           >
             {LanguageManager.trans("add")}

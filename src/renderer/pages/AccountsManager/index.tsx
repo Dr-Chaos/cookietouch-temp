@@ -56,7 +56,7 @@ class AccountsManager extends React.Component<
             </Grid>
           </DialogContent>
           <DialogActions>
-            <Button onClick={closeDialog} variant="raised" color="primary">
+            <Button onClick={closeDialog} variant="contained" color="primary">
               {LanguageManager.trans("close")}
             </Button>
           </DialogActions>

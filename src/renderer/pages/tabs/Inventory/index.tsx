@@ -129,7 +129,7 @@ class Inventory extends React.Component<
                       </TableCell>
                       <TableCell className={classes.tablecell}>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.equipUnEquipItem(e)}
@@ -140,7 +140,7 @@ class Inventory extends React.Component<
                             : LanguageManager.trans("equip")}
                         </Button>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.dropItem(e)}
@@ -148,7 +148,7 @@ class Inventory extends React.Component<
                           {LanguageManager.trans("drop")}
                         </Button>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.deleteItem(e)}
@@ -192,7 +192,7 @@ class Inventory extends React.Component<
                       <TableCell numeric={true}>{c.quantity}</TableCell>
                       <TableCell>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.useObject(c)}
@@ -200,7 +200,7 @@ class Inventory extends React.Component<
                           {LanguageManager.trans("use")}
                         </Button>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.dropItem(c)}
@@ -208,7 +208,7 @@ class Inventory extends React.Component<
                           {LanguageManager.trans("drop")}
                         </Button>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.deleteItem(c)}
@@ -252,7 +252,7 @@ class Inventory extends React.Component<
                       <TableCell numeric={true}>{r.quantity}</TableCell>
                       <TableCell>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.dropItem(r)}
@@ -260,7 +260,7 @@ class Inventory extends React.Component<
                           {LanguageManager.trans("drop")}
                         </Button>
                         <Button
-                          variant="raised"
+                          variant="contained"
                           size="small"
                           color="primary"
                           onClick={this.deleteItem(r)}
@@ -346,7 +346,7 @@ class Inventory extends React.Component<
               {LanguageManager.trans("cancel")}
             </Button>
             <Button
-              variant="raised"
+              variant="contained"
               onClick={this.modalConfirm}
               color="primary"
             >
