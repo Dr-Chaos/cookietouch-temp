@@ -70,7 +70,7 @@ class GroupItem extends React.Component<IGroupItemProps, IGroupItemState> {
 
         <Collapse in={this.state.open} timeout="auto" unmountOnExit={true}>
           {group.members.ToArray().map((m, idx) => (
-            <List key={idx} component="div" disablePadding={true}>
+            <List key={idx} component="details" disablePadding={true}>
               <ListItem
                 button={true}
                 className={classes.nested}

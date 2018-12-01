@@ -1,8 +1,8 @@
 import LanguageManager from "@/configurations/language/LanguageManager";
 import { BoostableStats } from "@/game/character/BoostableStats";
 import CharacterBaseCharacteristic from "@/protocol/network/types/CharacterBaseCharacteristic";
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
+import Fab from "@material-ui/core/Fab";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
@@ -177,15 +177,14 @@ class Stats extends React.Component<
                 </div>
                 <Typography>{this.state.vitality}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
-                  <Button
-                    variant="fab"
-                    mini={true}
+                  <Fab
+                    size="small"
                     color="primary"
                     disabled={this.state.statsPoints <= 0}
                     onClick={this.boostStat(BoostableStats.VITALITY)}
                   >
                     +
-                  </Button>
+                  </Fab>
                 </span>
               </div>
 
@@ -201,15 +200,14 @@ class Stats extends React.Component<
 
                 <Typography>{this.state.wisdom}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
-                  <Button
-                    variant="fab"
-                    mini={true}
+                  <Fab
+                    size="small"
                     color="primary"
                     disabled={this.state.statsPoints <= 0}
                     onClick={this.boostStat(BoostableStats.WISDOM)}
                   >
                     +
-                  </Button>
+                  </Fab>
                 </span>
               </div>
 
@@ -225,15 +223,14 @@ class Stats extends React.Component<
 
                 <Typography>{this.state.strength}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
-                  <Button
-                    variant="fab"
-                    mini={true}
+                  <Fab
+                    size="small"
                     color="primary"
                     disabled={this.state.statsPoints <= 0}
                     onClick={this.boostStat(BoostableStats.STRENGTH)}
                   >
                     +
-                  </Button>
+                  </Fab>
                 </span>
               </div>
 
@@ -250,15 +247,14 @@ class Stats extends React.Component<
                 </div>
                 <Typography>{this.state.intelligence}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
-                  <Button
-                    variant="fab"
-                    mini={true}
+                  <Fab
+                    size="small"
                     color="primary"
                     disabled={this.state.statsPoints <= 0}
                     onClick={this.boostStat(BoostableStats.INTELLIGENCE)}
                   >
                     +
-                  </Button>
+                  </Fab>
                 </span>
               </div>
 
@@ -274,15 +270,14 @@ class Stats extends React.Component<
 
                 <Typography>{this.state.chance}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
-                  <Button
-                    variant="fab"
-                    mini={true}
+                  <Fab
+                    size="small"
                     color="primary"
                     disabled={this.state.statsPoints <= 0}
                     onClick={this.boostStat(BoostableStats.CHANCE)}
                   >
                     +
-                  </Button>
+                  </Fab>
                 </span>
               </div>
 
@@ -298,15 +293,14 @@ class Stats extends React.Component<
 
                 <Typography>{this.state.agility}</Typography>
                 <span className={classes.statsLabelSpanAdd}>
-                  <Button
-                    variant="fab"
-                    mini={true}
+                  <Fab
+                    size="small"
                     color="primary"
                     disabled={this.state.statsPoints <= 0}
                     onClick={this.boostStat(BoostableStats.AGILITY)}
                   >
                     +
-                  </Button>
+                  </Fab>
                 </span>
               </div>
             </Card>

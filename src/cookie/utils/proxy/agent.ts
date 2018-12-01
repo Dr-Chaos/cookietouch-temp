@@ -6,7 +6,7 @@ function isAgent(v: any) {
 }
 
 export default class Agent extends EventEmitter {
-  private _promisifiedCallback: boolean;
+  private _promisifiedCallback!: boolean;
   private timeout: number | null = null;
   private options: any;
 
