@@ -10,16 +10,16 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
-import { signout } from "@renderer/FirebaseHelpers";
-import AccountsManager from "@renderer/pages/AccountsManager";
-import Configuration from "@renderer/pages/Configuration";
-import LoginFormDialog from "@renderer/pages/LoginFormDialog";
+import * as React from "react";
+import { signout } from "renderer/FirebaseHelpers";
+import AccountsManager from "renderer/pages/AccountsManager";
+import Configuration from "renderer/pages/Configuration";
+import LoginFormDialog from "renderer/pages/LoginFormDialog";
 import {
   ITopAppBarProps,
   ITopAppBarState,
   topAppBarStyles
-} from "@renderer/pages/TopAppBar/types";
-import * as React from "react";
+} from "renderer/pages/TopAppBar/types";
 
 class TopAppBar extends React.Component<ITopAppBarProps, ITopAppBarState> {
   public state: ITopAppBarState = {

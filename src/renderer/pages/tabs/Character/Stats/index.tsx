@@ -6,12 +6,12 @@ import Fab from "@material-ui/core/Fab";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
+import * as React from "react";
 import {
   characterStatsTabStyles,
   ICharacterStatsTabProps,
   ICharacterStatsTabState
-} from "@renderer/pages/tabs/Character/Stats/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Character/Stats/types";
 
 class Stats extends React.Component<
   ICharacterStatsTabProps,
@@ -75,7 +75,7 @@ class Stats extends React.Component<
                 <img
                   className={classes.iconStats}
                   style={{ marginTop: -4 }}
-                  src={require("@renderer/img/starYellow.png")}
+                  src={require("renderer/img/starYellow.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -90,7 +90,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/movement.png")}
+                  src={require("renderer/img/movement.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -105,7 +105,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/initiative.png")}
+                  src={require("renderer/img/initiative.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -119,7 +119,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/prospecting.png")}
+                  src={require("renderer/img/prospecting.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -135,7 +135,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/range.png")}
+                  src={require("renderer/img/range.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -149,7 +149,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/summon.png")}
+                  src={require("renderer/img/summon.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -169,7 +169,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/vitality.png")}
+                  src={require("renderer/img/vitality.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -191,7 +191,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/wisdom.png")}
+                  src={require("renderer/img/wisdom.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -214,7 +214,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/strength.png")}
+                  src={require("renderer/img/strength.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -237,7 +237,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/intelligence.png")}
+                  src={require("renderer/img/intelligence.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -261,7 +261,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/chance.png")}
+                  src={require("renderer/img/chance.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>
@@ -284,7 +284,7 @@ class Stats extends React.Component<
               <div className={classes.lineStats}>
                 <img
                   className={classes.iconStats}
-                  src={require("@renderer/img/agility.png")}
+                  src={require("renderer/img/agility.png")}
                   alt=""
                 />
                 <div className={classes.labelStats}>

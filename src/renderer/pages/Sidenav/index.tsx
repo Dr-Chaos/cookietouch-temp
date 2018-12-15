@@ -1,14 +1,14 @@
 import ListRender from "@material-ui/core/List";
 import withStyles from "@material-ui/core/styles/withStyles";
-import CookieMain from "@renderer/CookieMain";
-import AccountItem from "@renderer/pages/Sidenav/AccountItem";
-import GroupItem from "@renderer/pages/Sidenav/GroupItem";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
+import AccountItem from "renderer/pages/Sidenav/AccountItem";
+import GroupItem from "renderer/pages/Sidenav/GroupItem";
 import {
   ISidenavProps,
   ISidenavState,
   sidenavStyles
-} from "@renderer/pages/Sidenav/types";
-import * as React from "react";
+} from "renderer/pages/Sidenav/types";
 
 class Sidenav extends React.Component<ISidenavProps, ISidenavState> {
   public state: ISidenavState = {

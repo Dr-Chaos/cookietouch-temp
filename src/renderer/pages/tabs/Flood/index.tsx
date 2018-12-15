@@ -20,12 +20,12 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import * as React from "react";
 import {
   floodTabStyles,
   IFloodTabProps,
   IFloodTabState
-} from "@renderer/pages/tabs/Flood/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Flood/types";
 
 class Flood extends React.Component<IFloodTabProps, IFloodTabState> {
   public state: IFloodTabState = {

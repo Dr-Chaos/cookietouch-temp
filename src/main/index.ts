@@ -1,4 +1,5 @@
 import { captureException, init } from "@sentry/electron";
+import { isDevelopment } from "common/env";
 import {
   app,
   BrowserWindow,
@@ -10,9 +11,11 @@ import {
 import log from "electron-log";
 import { appUpdater } from "./updater";
 
-init({
-  dsn: "https://c2de150c591046829235a291351779b7@sentry.io/1237788"
-});
+if (!isDevelopment) {
+  init({
+    dsn: "https://c2de150c591046829235a291351779b7@sentry.io/1237788"
+  });
+}
 
 const onError = (error: any) => {
   log.transports.file.level = "error";
@@ -70,8 +73,6 @@ if (process.platform === "darwin") {
     ]
   });
 }
-
-const isDevelopment = process.env.NODE_ENV !== "production";
 
 let mainWindow: BrowserWindow | null;
 

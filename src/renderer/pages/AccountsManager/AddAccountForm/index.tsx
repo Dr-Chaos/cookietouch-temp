@@ -16,13 +16,13 @@ import Select from "@material-ui/core/Select";
 import Typography from "@material-ui/core/Typography";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import CookieMain from "@renderer/CookieMain";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   addAccountFormStyles,
   IAddAccountFormProps,
   IAddAccountFormState
-} from "@renderer/pages/AccountsManager/AddAccountForm/types";
-import * as React from "react";
+} from "renderer/pages/AccountsManager/AddAccountForm/types";
 
 class AddAccountForm extends React.Component<
   IAddAccountFormProps,

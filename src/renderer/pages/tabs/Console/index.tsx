@@ -15,13 +15,13 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Switch from "@material-ui/core/Switch";
+import moment from "moment";
+import * as React from "react";
 import {
   consoleTabStyles,
   IConsoleTabProps,
   IConsoleTabState
-} from "@renderer/pages/tabs/Console/types";
-import moment from "moment";
-import * as React from "react";
+} from "renderer/pages/tabs/Console/types";
 
 class Console extends React.Component<IConsoleTabProps, IConsoleTabState> {
   public state: IConsoleTabState = {

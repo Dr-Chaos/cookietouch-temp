@@ -23,15 +23,15 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import {
-  bidTabStyles,
-  IBidTabProps,
-  IBidTabState
-} from "@renderer/pages/tabs/Bid/types";
 import Downshift from "downshift";
 import { remote } from "electron";
 import { basename } from "path";
 import * as React from "react";
+import {
+  bidTabStyles,
+  IBidTabProps,
+  IBidTabState
+} from "renderer/pages/tabs/Bid/types";
 
 class Bid extends React.Component<IBidTabProps, IBidTabState> {
   public state: IBidTabState = {

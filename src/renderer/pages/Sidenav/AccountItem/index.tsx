@@ -7,13 +7,13 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import withStyles from "@material-ui/core/styles/withStyles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import CookieMain from "@renderer/CookieMain";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   accountItemStyles,
   IAccountItemProps,
   IAccountItemState
-} from "@renderer/pages/Sidenav/AccountItem/types";
-import * as React from "react";
+} from "renderer/pages/Sidenav/AccountItem/types";
 
 class AccountItem extends React.Component<
   IAccountItemProps,
@@ -57,7 +57,7 @@ class AccountItem extends React.Component<
             <img
               width={16}
               height={16}
-              src={require(`@renderer/img/circle_${this.parseState(
+              src={require(`renderer/img/circle_${this.parseState(
                 account.state
               )}.png`)}
             />

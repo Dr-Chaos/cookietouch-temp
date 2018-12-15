@@ -1,6 +1,6 @@
-declare var __static: string;
+import { isDevelopment } from "common/env";
 
-const isDevelopment = process.env.NODE_ENV === "development";
+declare var __static: string;
 
 export const staticPath = isDevelopment
   ? __static

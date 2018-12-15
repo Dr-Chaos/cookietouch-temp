@@ -25,13 +25,13 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import * as React from "react";
 import {
   configurationTabStyles,
   IConfigurationTabProps,
   IConfigurationTabState,
   SpellLevels
-} from "@renderer/pages/tabs/Configuration/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Configuration/types";
 
 class Configuration extends React.Component<
   IConfigurationTabProps,

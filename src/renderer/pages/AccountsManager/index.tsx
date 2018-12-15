@@ -6,17 +6,17 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
-import AccountsList from "@renderer/pages/AccountsManager/AccountsList";
-import AddAccountForm from "@renderer/pages/AccountsManager/AddAccountForm";
-import CacheManager from "@renderer/pages/AccountsManager/CacheManager";
-import CharacterCreator from "@renderer/pages/AccountsManager/CharacterCreator";
-import PlanningConfig from "@renderer/pages/AccountsManager/PlanningConfig";
+import * as React from "react";
+import AccountsList from "renderer/pages/AccountsManager/AccountsList";
+import AddAccountForm from "renderer/pages/AccountsManager/AddAccountForm";
+import CacheManager from "renderer/pages/AccountsManager/CacheManager";
+import CharacterCreator from "renderer/pages/AccountsManager/CharacterCreator";
+import PlanningConfig from "renderer/pages/AccountsManager/PlanningConfig";
 import {
   accountsManagerStyles,
   IAccountsManagerProps,
   IAccountsManagerState
-} from "@renderer/pages/AccountsManager/types";
-import * as React from "react";
+} from "renderer/pages/AccountsManager/types";
 
 class AccountsManager extends React.Component<
   IAccountsManagerProps,

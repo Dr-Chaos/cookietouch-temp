@@ -22,14 +22,14 @@ import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Switch from "@material-ui/core/Switch";
+import { List } from "linqts";
+import * as React from "react";
 import {
   IMapViewerProps,
   IMapViewerState,
   mapViewerStyles
-} from "@renderer/pages/tabs/Map/MapViewer/types";
-import MapViewerCell from "@renderer/pages/tabs/Map/MapViewerCell";
-import { List } from "linqts";
-import * as React from "react";
+} from "renderer/pages/tabs/Map/MapViewer/types";
+import MapViewerCell from "renderer/pages/tabs/Map/MapViewerCell";
 
 class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
   public cells = new List<MapViewerCell>();

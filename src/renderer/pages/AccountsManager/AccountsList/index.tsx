@@ -13,15 +13,15 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import CookieMain from "@renderer/CookieMain";
+import { remote } from "electron";
+import { List as LinqList } from "linqts";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   accountsListStyles,
   IAccountsListProps,
   IAccountsListState
-} from "@renderer/pages/AccountsManager/AccountsList/types";
-import { remote } from "electron";
-import { List as LinqList } from "linqts";
-import * as React from "react";
+} from "renderer/pages/AccountsManager/AccountsList/types";
 
 class AccountsList extends React.Component<
   IAccountsListProps,

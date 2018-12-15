@@ -9,9 +9,7 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["cookie/*"],
-      "@main/*": ["main/*"],
       "@logger": ["cookie/core/logger"],
-      "@renderer/*": ["renderer/*"]
     }
   }
 }

@@ -26,14 +26,14 @@ import Select from "@material-ui/core/Select";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import CookieMain from "@renderer/CookieMain";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   characterCreatorStyles,
   ICharacterCreatorProps,
   ICharacterCreatorState
-} from "@renderer/pages/AccountsManager/CharacterCreator/types";
-import ColorPicker from "@renderer/pages/AccountsManager/ColorPicker";
-import * as React from "react";
+} from "renderer/pages/AccountsManager/CharacterCreator/types";
+import ColorPicker from "renderer/pages/AccountsManager/ColorPicker";
 
 class CharacterCreator extends React.Component<
   ICharacterCreatorProps,

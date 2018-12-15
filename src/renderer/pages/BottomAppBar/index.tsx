@@ -3,13 +3,13 @@ import AppBar from "@material-ui/core/AppBar";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import firebase from "firebase/app";
+import React from "react";
 import {
   bottomAppBarStyles,
   IBottomAppBarProps,
   IBottomAppBarState
-} from "@renderer/pages/BottomAppBar/types";
-import firebase from "firebase/app";
-import * as React from "react";
+} from "renderer/pages/BottomAppBar/types";
 
 class BottomAppBar extends React.Component<
   IBottomAppBarProps,

@@ -5,15 +5,15 @@ import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import {
-  cacheManagerStyles,
-  ICacheManagerProps,
-  ICacheManagerState
-} from "@renderer/pages/AccountsManager/CacheManager/types";
 import { remote } from "electron";
 import { mkdirSync } from "fs";
 import { join } from "path";
 import * as React from "react";
+import {
+  cacheManagerStyles,
+  ICacheManagerProps,
+  ICacheManagerState
+} from "renderer/pages/AccountsManager/CacheManager/types";
 
 class CacheManager extends React.Component<
   ICacheManagerProps,

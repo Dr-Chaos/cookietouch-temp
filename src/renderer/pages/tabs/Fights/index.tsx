@@ -30,12 +30,12 @@ import Tabs from "@material-ui/core/Tabs";
 import TextField from "@material-ui/core/TextField";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
+import * as React from "react";
 import {
   fightsTabStyles,
   IFightsTabProps,
   IFightsTabState
-} from "@renderer/pages/tabs/Fights/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Fights/types";
 
 class Fights extends React.Component<IFightsTabProps, IFightsTabState> {
   public state: IFightsTabState = {

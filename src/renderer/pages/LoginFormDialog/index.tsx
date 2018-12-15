@@ -11,14 +11,14 @@ import InputLabel from "@material-ui/core/InputLabel";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import { signin } from "@renderer/FirebaseHelpers";
+import { remote } from "electron";
+import * as React from "react";
+import { signin } from "renderer/FirebaseHelpers";
 import {
   ILoginFormDialogProps,
   ILoginFormDialogState,
   loginFormDialogStyles
-} from "@renderer/pages/LoginFormDialog/types";
-import { remote } from "electron";
-import * as React from "react";
+} from "renderer/pages/LoginFormDialog/types";
 
 class LoginFormDialog extends React.Component<
   ILoginFormDialogProps,

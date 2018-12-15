@@ -7,12 +7,12 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
+import * as React from "react";
 import {
   characterJobsTabStyles,
   ICharacterJobsTabProps,
   ICharacterJobsTabState
-} from "@renderer/pages/tabs/Character/Jobs/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Character/Jobs/types";
 
 class Jobs extends React.Component<
   ICharacterJobsTabProps,

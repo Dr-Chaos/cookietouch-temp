@@ -17,13 +17,13 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Tabs from "@material-ui/core/Tabs";
 import TextField from "@material-ui/core/TextField";
+import * as React from "react";
 import {
   DeleteDropUseChoice,
   IInventoryTabProps,
   IInventoryTabState,
   inventoryTabStyles
-} from "@renderer/pages/tabs/Inventory/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Inventory/types";
 
 class Inventory extends React.Component<
   IInventoryTabProps,

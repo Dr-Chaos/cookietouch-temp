@@ -6,12 +6,12 @@ import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Switch from "@material-ui/core/Switch";
+import * as React from "react";
 import {
   IPushbulletTabProps,
   IPushbulletTabState,
   pushbulletTabStyles
-} from "@renderer/pages/tabs/Pushbullet/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Pushbullet/types";
 
 class Pushbullet extends React.Component<
   IPushbulletTabProps,

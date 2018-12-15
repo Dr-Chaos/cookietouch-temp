@@ -19,14 +19,14 @@ import Select from "@material-ui/core/Select";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import CookieMain from "@renderer/CookieMain";
+import { Enumerable } from "linqts";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   IPlanningConfigProps,
   IPlanningConfigState,
   planningConfigStyles
-} from "@renderer/pages/AccountsManager/PlanningConfig/types";
-import { Enumerable } from "linqts";
-import * as React from "react";
+} from "renderer/pages/AccountsManager/PlanningConfig/types";
 
 class PlanningConfig extends React.Component<
   IPlanningConfigProps,

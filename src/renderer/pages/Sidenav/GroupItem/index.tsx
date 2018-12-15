@@ -10,13 +10,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import CookieMain from "@renderer/CookieMain";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   groupItemStyles,
   IGroupItemProps,
   IGroupItemState
-} from "@renderer/pages/Sidenav/GroupItem/types";
-import * as React from "react";
+} from "renderer/pages/Sidenav/GroupItem/types";
 
 class GroupItem extends React.Component<IGroupItemProps, IGroupItemState> {
   public state: IGroupItemState = {

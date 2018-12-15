@@ -32,14 +32,21 @@ export default class LanguageManager {
   }
 
   public static trans(key: string, ...params: any[]): string {
-    const lang = GlobalConfiguration.lang;
-    let value = this.langs.get(lang)[key] as string;
-    if (!value) {
-      value = this.langs.get(Languages.ENGLISH)[key] as string;
+    const pathh = key.split(".");
+    const lang = this.langs.get(GlobalConfiguration.lang);
+    const elang = this.langs.get(Languages.ENGLISH);
+
+    let value;
+    let evalue;
+
+    for (const p of pathh) {
+      value = value ? value[p] : lang[p];
+      evalue = evalue ? evalue[p] : elang[p];
       if (!value) {
-        return "<empty>";
+        value = evalue;
       }
     }
+
     if (params.length === 0) {
       return value;
     } else {

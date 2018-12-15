@@ -18,13 +18,13 @@ import Select from "@material-ui/core/Select";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
+import { AntiCaptcha } from "anticaptcha";
+import * as React from "react";
 import {
   configurationStyles,
   IConfigurationProps,
   IConfigurationState
-} from "@renderer/pages/Configuration/types";
-import { AntiCaptcha } from "anticaptcha";
-import * as React from "react";
+} from "renderer/pages/Configuration/types";
 
 class Configuration extends React.Component<
   IConfigurationProps,

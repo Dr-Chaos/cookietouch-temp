@@ -7,16 +7,17 @@ import Pushbullet from "@/core/pushbullet";
 // import Spark from "@/core/spark";
 import Frames from "@/frames";
 import DTConstants from "@/protocol/DTConstants";
-import { initialize, presence } from "@renderer/FirebaseHelpers";
-import "@renderer/FontAwesomeIcons";
-import { LoadingPage } from "@renderer/LoadingPage";
-import Main from "@renderer/pages/Main";
-import { spinnerService } from "@renderer/Spinner/Service";
 import { init } from "@sentry/electron";
+import { isDevelopment } from "common/env";
 import { ipcRenderer, remote } from "electron";
 import "material-design-icons/iconfont/material-icons.css";
 import * as React from "react";
 import { render } from "react-dom";
+import { initialize, presence } from "renderer/FirebaseHelpers";
+import "renderer/FontAwesomeIcons";
+import { LoadingPage } from "renderer/LoadingPage";
+import Main from "renderer/pages/Main";
+import { spinnerService } from "renderer/Spinner/Service";
 import "typeface-roboto/index.css";
 
 // Spark.setAgent("http://186.193.186.3:20183");
@@ -24,9 +25,11 @@ import "typeface-roboto/index.css";
 //   console.log("test spark", res);
 // });
 
-init({
-  dsn: "https://c2de150c591046829235a291351779b7@sentry.io/1237788"
-});
+if (!isDevelopment) {
+  init({
+    dsn: "https://c2de150c591046829235a291351779b7@sentry.io/1237788"
+  });
+}
 
 render(<LoadingPage />, document.getElementById("app"));
 

@@ -5,9 +5,9 @@ import AccountConfiguration, {
 import { Languages } from "@/configurations/language/Languages";
 import Group from "@/groups/Group";
 import LiteEvent, { ILiteEvent } from "@/utils/LiteEvent";
-import CookieMain from "@renderer/CookieMain";
 import firebase from "firebase/app";
 import { List } from "linqts";
+import CookieMain from "renderer/CookieMain";
 
 export enum UpdatesChannel {
   LATEST = "latest",

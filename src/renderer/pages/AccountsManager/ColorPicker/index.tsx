@@ -1,12 +1,12 @@
 import Color from "@/utils/Color";
 import { withStyles } from "@material-ui/core";
+import React from "react";
+import { ChromePicker } from "react-color";
 import {
   colorPickerStyles,
   IColorPickerProps,
   IColorPickerState
-} from "@renderer/pages/AccountsManager/ColorPicker/types";
-import React from "react";
-import { ChromePicker } from "react-color";
+} from "renderer/pages/AccountsManager/ColorPicker/types";
 
 class ColorPicker extends React.Component<
   IColorPickerProps,

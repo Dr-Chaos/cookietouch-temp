@@ -10,14 +10,14 @@ import Paper from "@material-ui/core/Paper";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-import CookieMain from "@renderer/CookieMain";
+import { remote } from "electron";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
 import {
   IInfosProps,
   IInfosState,
   infosStyles
-} from "@renderer/pages/Infos/types";
-import { remote } from "electron";
-import * as React from "react";
+} from "renderer/pages/Infos/types";
 
 class Infos extends React.Component<IInfosProps, IInfosState> {
   public readonly idleState: IInfosState = {

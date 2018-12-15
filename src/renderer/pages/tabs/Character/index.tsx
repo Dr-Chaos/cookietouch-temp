@@ -4,15 +4,15 @@ import Paper from "@material-ui/core/Paper";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
-import Jobs from "@renderer/pages/tabs/Character/Jobs";
-import Spells from "@renderer/pages/tabs/Character/Spells";
-import Stats from "@renderer/pages/tabs/Character/Stats";
+import * as React from "react";
+import Jobs from "renderer/pages/tabs/Character/Jobs";
+import Spells from "renderer/pages/tabs/Character/Spells";
+import Stats from "renderer/pages/tabs/Character/Stats";
 import {
   characterTabStyles,
   ICharacterTabProps,
   ICharacterTabState
-} from "@renderer/pages/tabs/Character/types";
-import * as React from "react";
+} from "renderer/pages/tabs/Character/types";
 
 class Character extends React.Component<
   ICharacterTabProps,

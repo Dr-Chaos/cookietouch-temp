@@ -36,7 +36,7 @@ export async function signin(
 }
 
 export async function signout() {
-  await firebase.auth().signOut();
+  return firebase.auth().signOut();
 }
 
 export function presence() {

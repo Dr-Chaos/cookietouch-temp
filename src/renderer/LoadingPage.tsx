@@ -1,6 +1,6 @@
-import { Spinner } from "@renderer/Spinner";
-import { spinnerService } from "@renderer/Spinner/Service";
 import * as React from "react";
+import { Spinner } from "renderer/Spinner";
+import { spinnerService } from "renderer/Spinner/Service";
 import "./LoadingPage.scss";
 
 export function LoadingPage() {

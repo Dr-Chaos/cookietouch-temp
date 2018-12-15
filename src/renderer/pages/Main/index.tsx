@@ -1,14 +1,14 @@
 import LanguageManager from "@/configurations/language/LanguageManager";
 import Paper from "@material-ui/core/Paper";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { signout } from "@renderer/FirebaseHelpers";
-import BottomAppBar from "@renderer/pages/BottomAppBar";
-import { IMainProps, IMainState, mainStyles } from "@renderer/pages/Main/types";
-import MainContent from "@renderer/pages/MainContent";
-import TopAppBar from "@renderer/pages/TopAppBar";
-import withRoot from "@renderer/withRoot";
 import firebase from "firebase/app";
 import * as React from "react";
+import { signout } from "renderer/FirebaseHelpers";
+import BottomAppBar from "renderer/pages/BottomAppBar";
+import { IMainProps, IMainState, mainStyles } from "renderer/pages/Main/types";
+import MainContent from "renderer/pages/MainContent";
+import TopAppBar from "renderer/pages/TopAppBar";
+import withRoot from "renderer/withRoot";
 
 class Main extends React.Component<IMainProps, IMainState> {
   public state: IMainState = {

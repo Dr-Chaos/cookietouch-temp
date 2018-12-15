@@ -2,16 +2,16 @@ import Account from "@/account";
 import LanguageManager from "@/configurations/language/LanguageManager";
 import Paper from "@material-ui/core/Paper";
 import withStyles from "@material-ui/core/styles/withStyles";
-import CookieMain from "@renderer/CookieMain";
-import AccountMain from "@renderer/pages/AccountMain";
-import Infos from "@renderer/pages/Infos";
+import * as React from "react";
+import CookieMain from "renderer/CookieMain";
+import AccountMain from "renderer/pages/AccountMain";
+import Infos from "renderer/pages/Infos";
 import {
   IMainContentProps,
   IMainContentState,
   mainContentStyles
-} from "@renderer/pages/MainContent/types";
-import Sidenav from "@renderer/pages/Sidenav";
-import * as React from "react";
+} from "renderer/pages/MainContent/types";
+import Sidenav from "renderer/pages/Sidenav";
 
 class MainContent extends React.Component<
   IMainContentProps,
