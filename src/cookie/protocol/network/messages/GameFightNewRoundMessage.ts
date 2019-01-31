@@ -6,6 +6,5 @@ export default class GameFightNewRoundMessage extends Message {
   constructor(roundNumber = 0) {
     super();
     this.roundNumber = roundNumber;
-
   }
 }

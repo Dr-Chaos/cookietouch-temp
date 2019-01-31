@@ -6,6 +6,5 @@ export default class ExchangeStartOkNpcTradeMessage extends Message {
   constructor(npcId = 0) {
     super();
     this.npcId = npcId;
-
   }
 }

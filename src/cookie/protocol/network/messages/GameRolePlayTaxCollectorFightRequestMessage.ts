@@ -6,6 +6,5 @@ export default class GameRolePlayTaxCollectorFightRequestMessage extends Message
   constructor(taxCollectorId = 0) {
     super();
     this.taxCollectorId = taxCollectorId;
-
   }
 }

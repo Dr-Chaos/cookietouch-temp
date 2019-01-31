@@ -8,6 +8,5 @@ export default class StatsUpgradeRequestMessage extends Message {
     super();
     this.statId = statId;
     this.boostPoint = boostPoint;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ExchangeBidHouseTypeMessage extends Message {
   constructor(type = 0) {
     super();
     this.type = type;
-
   }
 }

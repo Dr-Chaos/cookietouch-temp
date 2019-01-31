@@ -104,7 +104,7 @@ class Fights extends React.Component<IFightsTabProps, IFightsTabState> {
           <Tabs
             value={this.state.activeTab}
             onChange={this.handleChange}
-            fullWidth={true}
+            variant="fullWidth"
           >
             <Tab
               className={classes.tab}
@@ -384,13 +384,13 @@ class Fights extends React.Component<IFightsTabProps, IFightsTabState> {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell numeric={true}>ID</TableCell>
+                <TableCell align="center">ID</TableCell>
                 <TableCell>{LanguageManager.trans("name")}</TableCell>
                 <TableCell>{LanguageManager.trans("target")}</TableCell>
-                <TableCell numeric={true}>
+                <TableCell align="center">
                   {LanguageManager.trans("turns")}
                 </TableCell>
-                <TableCell numeric={true}>
+                <TableCell align="center">
                   {LanguageManager.trans("relaunchs")}
                 </TableCell>
                 <TableCell>CAC</TableCell>
@@ -402,11 +402,11 @@ class Fights extends React.Component<IFightsTabProps, IFightsTabState> {
               {this.state.spells.map((s, index) => {
                 return (
                   <TableRow key={index}>
-                    <TableCell numeric={true}>{s.spellId}</TableCell>
+                    <TableCell align="center">{s.spellId}</TableCell>
                     <TableCell>{s.spellName}</TableCell>
                     <TableCell>{SpellTargets[s.target]}</TableCell>
-                    <TableCell numeric={true}>{s.turns}</TableCell>
-                    <TableCell numeric={true}>{s.relaunchs}</TableCell>
+                    <TableCell align="center">{s.turns}</TableCell>
+                    <TableCell align="center">{s.relaunchs}</TableCell>
                     <TableCell>
                       {s.handToHand
                         ? LanguageManager.trans("yes")

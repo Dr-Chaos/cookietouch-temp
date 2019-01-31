@@ -6,11 +6,14 @@ export default class QuestListMessage extends Message {
   public finishedQuestsCounts: number[];
   public activeQuests: QuestActiveInformations[];
 
-  constructor(finishedQuestsIds: number[], finishedQuestsCounts: number[], activeQuests: QuestActiveInformations[]) {
+  constructor(
+    finishedQuestsIds: number[],
+    finishedQuestsCounts: number[],
+    activeQuests: QuestActiveInformations[]
+  ) {
     super();
     this.finishedQuestsIds = finishedQuestsIds;
     this.finishedQuestsCounts = finishedQuestsCounts;
     this.activeQuests = activeQuests;
-
   }
 }

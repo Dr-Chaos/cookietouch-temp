@@ -8,6 +8,5 @@ export default class BasicTimeMessage extends Message {
     super();
     this.timestamp = timestamp;
     this.timezoneOffset = timezoneOffset;
-
   }
 }

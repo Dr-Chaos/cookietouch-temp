@@ -6,6 +6,5 @@ export default class DownloadCurrentSpeedMessage extends Message {
   constructor(downloadSpeed = 0) {
     super();
     this.downloadSpeed = downloadSpeed;
-
   }
 }

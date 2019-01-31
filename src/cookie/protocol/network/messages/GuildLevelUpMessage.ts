@@ -6,6 +6,5 @@ export default class GuildLevelUpMessage extends Message {
   constructor(newLevel = 0) {
     super();
     this.newLevel = newLevel;
-
   }
 }

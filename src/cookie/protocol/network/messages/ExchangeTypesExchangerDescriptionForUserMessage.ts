@@ -6,6 +6,5 @@ export default class ExchangeTypesExchangerDescriptionForUserMessage extends Mes
   constructor(typeDescription: number[]) {
     super();
     this.typeDescription = typeDescription;
-
   }
 }

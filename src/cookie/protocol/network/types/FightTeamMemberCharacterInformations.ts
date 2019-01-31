@@ -1,7 +1,6 @@
 import FightTeamMemberInformations from "@/protocol/network/types/FightTeamMemberInformations";
 
 export default class FightTeamMemberCharacterInformations extends FightTeamMemberInformations {
-
   public name: string;
   public level: number;
 

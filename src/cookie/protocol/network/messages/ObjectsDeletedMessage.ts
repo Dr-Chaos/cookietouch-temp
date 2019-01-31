@@ -6,6 +6,5 @@ export default class ObjectsDeletedMessage extends Message {
   constructor(objectUID: number[]) {
     super();
     this.objectUID = objectUID;
-
   }
 }

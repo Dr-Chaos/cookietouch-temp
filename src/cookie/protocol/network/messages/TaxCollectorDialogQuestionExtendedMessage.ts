@@ -12,8 +12,18 @@ export default class TaxCollectorDialogQuestionExtendedMessage extends TaxCollec
   public pods: number;
   public itemsValue: number;
 
-  constructor(guildInfo: BasicGuildInformations, maxPods = 0, prospecting = 0, wisdom = 0,
-              taxCollectorsCount = 0, taxCollectorAttack = 0, kamas = 0, experience = 0, pods = 0, itemsValue = 0) {
+  constructor(
+    guildInfo: BasicGuildInformations,
+    maxPods = 0,
+    prospecting = 0,
+    wisdom = 0,
+    taxCollectorsCount = 0,
+    taxCollectorAttack = 0,
+    kamas = 0,
+    experience = 0,
+    pods = 0,
+    itemsValue = 0
+  ) {
     super(guildInfo);
     this.maxPods = maxPods;
     this.prospecting = prospecting;
@@ -24,6 +34,5 @@ export default class TaxCollectorDialogQuestionExtendedMessage extends TaxCollec
     this.experience = experience;
     this.pods = pods;
     this.itemsValue = itemsValue;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ObjectUseMessage extends Message {
   constructor(objectUID = 0) {
     super();
     this.objectUID = objectUID;
-
   }
 }

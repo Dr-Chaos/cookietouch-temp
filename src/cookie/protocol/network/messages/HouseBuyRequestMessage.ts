@@ -6,6 +6,5 @@ export default class HouseBuyRequestMessage extends Message {
   constructor(proposedPrice = 0) {
     super();
     this.proposedPrice = proposedPrice;
-
   }
 }

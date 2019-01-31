@@ -6,6 +6,5 @@ export default class GameContextRemoveMultipleElementsMessage extends Message {
   constructor(id: number[]) {
     super();
     this.id = id;
-
   }
 }

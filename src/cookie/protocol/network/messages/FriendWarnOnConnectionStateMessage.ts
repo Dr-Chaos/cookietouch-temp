@@ -6,6 +6,5 @@ export default class FriendWarnOnConnectionStateMessage extends Message {
   constructor(enable = false) {
     super();
     this.enable = enable;
-
   }
 }

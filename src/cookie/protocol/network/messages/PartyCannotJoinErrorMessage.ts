@@ -6,6 +6,5 @@ export default class PartyCannotJoinErrorMessage extends AbstractPartyMessage {
   constructor(partyId = 0, reason = 0) {
     super(partyId);
     this.reason = reason;
-
   }
 }

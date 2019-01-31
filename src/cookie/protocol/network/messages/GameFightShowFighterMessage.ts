@@ -7,6 +7,5 @@ export default class GameFightShowFighterMessage extends Message {
   constructor(informations: GameFightFighterInformations) {
     super();
     this.informations = informations;
-
   }
 }

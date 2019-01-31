@@ -8,6 +8,5 @@ export default class JobMultiCraftAvailableSkillsMessage extends JobAllowMultiCr
     super(enabled);
     this.skills = skills;
     this.playerId = playerId;
-
   }
 }

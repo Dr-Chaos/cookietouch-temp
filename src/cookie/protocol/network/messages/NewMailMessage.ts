@@ -6,6 +6,5 @@ export default class NewMailMessage extends MailStatusMessage {
   constructor(unread = 0, total = 0, sendersAccountId: number[]) {
     super(unread, total);
     this.sendersAccountId = sendersAccountId;
-
   }
 }

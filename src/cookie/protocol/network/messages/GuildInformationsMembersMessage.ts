@@ -7,6 +7,5 @@ export default class GuildInformationsMembersMessage extends Message {
   constructor(members: GuildMember[]) {
     super();
     this.members = members;
-
   }
 }

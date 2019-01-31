@@ -8,6 +8,5 @@ export default class HouseGuildShareRequestMessage extends Message {
     super();
     this.enable = enable;
     this.rights = rights;
-
   }
 }

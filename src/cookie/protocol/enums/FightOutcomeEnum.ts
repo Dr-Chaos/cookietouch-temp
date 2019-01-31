@@ -3,5 +3,5 @@ export enum FightOutcomeEnum {
   RESULT_DRAW = 1,
   RESULT_VICTORY = 2,
   RESULT_TAX = 5,
-  RESULT_DEFENDER_GROUP = 6,
+  RESULT_DEFENDER_GROUP = 6
 }

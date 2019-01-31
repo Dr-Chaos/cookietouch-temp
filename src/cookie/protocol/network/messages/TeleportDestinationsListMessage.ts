@@ -7,13 +7,18 @@ export default class TeleportDestinationsListMessage extends Message {
   public destTeleporterType: number[];
   public teleporterType: number;
 
-  constructor(teleporterType = 0, mapIds: number[], subAreaIds: number[], costs: number[], destTeleporterType: number[]) {
+  constructor(
+    teleporterType = 0,
+    mapIds: number[],
+    subAreaIds: number[],
+    costs: number[],
+    destTeleporterType: number[]
+  ) {
     super();
     this.mapIds = mapIds;
     this.subAreaIds = subAreaIds;
     this.costs = costs;
     this.destTeleporterType = destTeleporterType;
     this.teleporterType = teleporterType;
-
   }
 }

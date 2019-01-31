@@ -6,6 +6,5 @@ export default class PartyFollowThisMemberRequestMessage extends PartyFollowMemb
   constructor(partyId = 0, playerId = 0, enabled = false) {
     super(partyId, playerId);
     this.enabled = enabled;
-
   }
 }

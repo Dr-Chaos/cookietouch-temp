@@ -6,6 +6,5 @@ export default class LifePointsRegenEndMessage extends UpdateLifePointsMessage {
   constructor(lifePoints = 0, maxLifePoints = 0, lifePointsGained = 0) {
     super(lifePoints, maxLifePoints);
     this.lifePointsGained = lifePointsGained;
-
   }
 }

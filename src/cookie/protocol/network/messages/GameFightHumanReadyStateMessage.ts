@@ -8,6 +8,5 @@ export default class GameFightHumanReadyStateMessage extends Message {
     super();
     this.characterId = characterId;
     this.isReady = isReady;
-
   }
 }

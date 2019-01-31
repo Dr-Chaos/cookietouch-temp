@@ -11,8 +11,15 @@ export default class PrismWorldInformationMessage extends Message {
   public nbConqsOwned: number;
   public conqsTotal: number;
 
-  constructor(nbSubOwned = 0, subTotal = 0, maxSub = 0, nbConqsOwned = 0,
-              conqsTotal = 0, subAreasInformation: PrismSubAreaInformation[], conquetesInformation: VillageConquestPrismInformation[]) {
+  constructor(
+    nbSubOwned = 0,
+    subTotal = 0,
+    maxSub = 0,
+    nbConqsOwned = 0,
+    conqsTotal = 0,
+    subAreasInformation: PrismSubAreaInformation[],
+    conquetesInformation: VillageConquestPrismInformation[]
+  ) {
     super();
     this.subAreasInformation = subAreasInformation;
     this.conquetesInformation = conquetesInformation;
@@ -21,6 +28,5 @@ export default class PrismWorldInformationMessage extends Message {
     this.maxSub = maxSub;
     this.nbConqsOwned = nbConqsOwned;
     this.conqsTotal = conqsTotal;
-
   }
 }

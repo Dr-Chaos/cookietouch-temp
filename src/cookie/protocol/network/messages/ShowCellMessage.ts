@@ -8,6 +8,5 @@ export default class ShowCellMessage extends Message {
     super();
     this.sourceId = sourceId;
     this.cellId = cellId;
-
   }
 }

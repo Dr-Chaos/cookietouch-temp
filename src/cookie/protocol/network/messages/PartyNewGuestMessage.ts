@@ -7,6 +7,5 @@ export default class PartyNewGuestMessage extends AbstractPartyEventMessage {
   constructor(partyId = 0, guest: PartyGuestInformations) {
     super(partyId);
     this.guest = guest;
-
   }
 }

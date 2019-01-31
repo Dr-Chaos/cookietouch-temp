@@ -6,6 +6,5 @@ export default class AbstractPartyMessage extends Message {
   constructor(partyId = 0) {
     super();
     this.partyId = partyId;
-
   }
 }

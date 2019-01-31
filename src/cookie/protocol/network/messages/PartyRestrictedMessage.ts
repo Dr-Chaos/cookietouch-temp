@@ -6,6 +6,5 @@ export default class PartyRestrictedMessage extends AbstractPartyMessage {
   constructor(partyId = 0, restricted = false) {
     super(partyId);
     this.restricted = restricted;
-
   }
 }

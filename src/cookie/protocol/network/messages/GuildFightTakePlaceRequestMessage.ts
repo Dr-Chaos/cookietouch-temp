@@ -6,6 +6,5 @@ export default class GuildFightTakePlaceRequestMessage extends GuildFightJoinReq
   constructor(taxCollectorId = 0, replacedCharacterId = 0) {
     super(taxCollectorId);
     this.replacedCharacterId = replacedCharacterId;
-
   }
 }

@@ -87,10 +87,10 @@ class Statistics extends React.Component<
                   <Table className={classes.table}>
                     <TableHead>
                       <TableRow>
-                        <TableCell numeric={true}>GID</TableCell>
+                        <TableCell align="center">GID</TableCell>
                         <TableCell>{LanguageManager.trans("name")}</TableCell>
-                        <TableCell numeric={true}>%</TableCell>
-                        <TableCell numeric={true}>
+                        <TableCell align="center">%</TableCell>
+                        <TableCell align="center">
                           {LanguageManager.trans("quantity")}
                         </TableCell>
                       </TableRow>
@@ -99,7 +99,7 @@ class Statistics extends React.Component<
                       {this.state.objectsObtainedInFights.map((o, index) => {
                         return (
                           <TableRow key={index}>
-                            <TableCell numeric={true}>{o.gid}</TableCell>
+                            <TableCell align="center">{o.gid}</TableCell>
                             <TableCell>{o.name}</TableCell>
                             <TableCell>
                               <Typography>
@@ -111,7 +111,7 @@ class Statistics extends React.Component<
                                 value={o.percentage}
                               />
                             </TableCell>
-                            <TableCell numeric={true}>{o.quantity}</TableCell>
+                            <TableCell align="center">{o.quantity}</TableCell>
                           </TableRow>
                         );
                       })}
@@ -148,10 +148,10 @@ class Statistics extends React.Component<
                   <Table className={classes.table}>
                     <TableHead>
                       <TableRow>
-                        <TableCell numeric={true}>GID</TableCell>
+                        <TableCell align="center">GID</TableCell>
                         <TableCell>{LanguageManager.trans("name")}</TableCell>
-                        <TableCell numeric={true}>%</TableCell>
-                        <TableCell numeric={true}>
+                        <TableCell align="center">%</TableCell>
+                        <TableCell align="center">
                           {LanguageManager.trans("quantity")}
                         </TableCell>
                       </TableRow>
@@ -160,7 +160,7 @@ class Statistics extends React.Component<
                       {this.state.objectsObtainedInGathers.map((o, index) => {
                         return (
                           <TableRow key={index}>
-                            <TableCell numeric={true}>{o.gid}</TableCell>
+                            <TableCell align="center">{o.gid}</TableCell>
                             <TableCell>{o.name}</TableCell>
                             <TableCell>
                               <Typography>
@@ -172,7 +172,7 @@ class Statistics extends React.Component<
                                 value={o.percentage}
                               />
                             </TableCell>
-                            <TableCell numeric={true}>{o.quantity}</TableCell>
+                            <TableCell align="center">{o.quantity}</TableCell>
                           </TableRow>
                         );
                       })}

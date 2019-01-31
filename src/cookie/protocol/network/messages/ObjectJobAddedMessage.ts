@@ -6,6 +6,5 @@ export default class ObjectJobAddedMessage extends Message {
   constructor(jobId = 0) {
     super();
     this.jobId = jobId;
-
   }
 }

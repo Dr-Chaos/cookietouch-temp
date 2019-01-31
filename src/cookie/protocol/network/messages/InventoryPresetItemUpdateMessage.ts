@@ -9,6 +9,5 @@ export default class InventoryPresetItemUpdateMessage extends Message {
     super();
     this.presetId = presetId;
     this.presetItem = presetItem;
-
   }
 }

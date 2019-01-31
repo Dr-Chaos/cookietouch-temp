@@ -8,6 +8,5 @@ export default class ContactLookRequestMessage extends Message {
     super();
     this.requestId = requestId;
     this.contactType = contactType;
-
   }
 }

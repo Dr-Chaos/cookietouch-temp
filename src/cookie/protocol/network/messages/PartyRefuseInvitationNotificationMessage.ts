@@ -6,6 +6,5 @@ export default class PartyRefuseInvitationNotificationMessage extends AbstractPa
   constructor(partyId = 0, guestId = 0) {
     super(partyId);
     this.guestId = guestId;
-
   }
 }

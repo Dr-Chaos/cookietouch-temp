@@ -10,6 +10,5 @@ export default class ExchangeOkMultiCraftMessage extends Message {
     this.initiatorId = initiatorId;
     this.otherId = otherId;
     this.role = role;
-
   }
 }

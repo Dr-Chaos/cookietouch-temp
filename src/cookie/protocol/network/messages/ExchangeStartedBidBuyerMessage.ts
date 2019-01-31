@@ -7,6 +7,5 @@ export default class ExchangeStartedBidBuyerMessage extends Message {
   constructor(buyerDescriptor: SellerBuyerDescriptor) {
     super();
     this.buyerDescriptor = buyerDescriptor;
-
   }
 }

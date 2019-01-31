@@ -6,6 +6,5 @@ export default class PrismsListRegisterMessage extends Message {
   constructor(listen = 0) {
     super();
     this.listen = listen;
-
   }
 }

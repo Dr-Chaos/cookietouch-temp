@@ -6,6 +6,5 @@ export default class CharacterSelectionWithRelookMessage extends CharacterSelect
   constructor(id = 0, cosmeticId = 0) {
     super(id);
     this.cosmeticId = cosmeticId;
-
   }
 }

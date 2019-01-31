@@ -2,7 +2,6 @@ import FightLoot from "@/protocol/network/types/FightLoot";
 import FightResultListEntry from "@/protocol/network/types/FightResultListEntry";
 
 export default class FightResultFighterListEntry extends FightResultListEntry {
-
   public id: number;
   public alive: boolean;
 

@@ -8,6 +8,5 @@ export default class BasicAckMessage extends Message {
     super();
     this.seq = seq;
     this.lastPacketId = lastPacketId;
-
   }
 }

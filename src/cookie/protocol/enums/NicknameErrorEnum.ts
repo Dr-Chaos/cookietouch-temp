@@ -3,5 +3,5 @@ export enum NicknameErrorEnum {
   SAME_AS_LOGIN = 2,
   TOO_SIMILAR_TO_LOGIN = 3,
   INVALID_NICK = 4,
-  UNKNOWN_NICK_ERROR = 99,
+  UNKNOWN_NICK_ERROR = 99
 }

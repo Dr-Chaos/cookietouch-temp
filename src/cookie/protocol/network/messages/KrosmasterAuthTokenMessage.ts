@@ -6,6 +6,5 @@ export default class KrosmasterAuthTokenMessage extends Message {
   constructor(token = "") {
     super();
     this.token = token;
-
   }
 }

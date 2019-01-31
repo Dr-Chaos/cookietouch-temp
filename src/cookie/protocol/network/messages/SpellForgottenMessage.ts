@@ -8,6 +8,5 @@ export default class SpellForgottenMessage extends Message {
     super();
     this.spellsId = spellsId;
     this.boostPoint = boostPoint;
-
   }
 }

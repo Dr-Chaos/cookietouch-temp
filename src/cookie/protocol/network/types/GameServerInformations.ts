@@ -9,7 +9,15 @@ export default class GameServerInformations extends Type {
   public date: number;
   public _name: string;
 
-  constructor(id = 0, status = 1, completion = 0, isSelectable = false, charactersCount = 0, date = 0, name = "") {
+  constructor(
+    id = 0,
+    status = 1,
+    completion = 0,
+    isSelectable = false,
+    charactersCount = 0,
+    date = 0,
+    name = ""
+  ) {
     super();
     this.id = id;
     this.status = status;

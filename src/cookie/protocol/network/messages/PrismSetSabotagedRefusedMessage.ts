@@ -8,6 +8,5 @@ export default class PrismSetSabotagedRefusedMessage extends Message {
     super();
     this.subAreaId = subAreaId;
     this.reason = reason;
-
   }
 }

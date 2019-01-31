@@ -7,6 +7,5 @@ export default class GameEntitiesDispositionMessage extends Message {
   constructor(dispositions: IdentifiedEntityDispositionInformations[]) {
     super();
     this.dispositions = dispositions;
-
   }
 }

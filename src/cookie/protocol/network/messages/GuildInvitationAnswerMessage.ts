@@ -6,6 +6,5 @@ export default class GuildInvitationAnswerMessage extends Message {
   constructor(accept = false) {
     super();
     this.accept = accept;
-
   }
 }

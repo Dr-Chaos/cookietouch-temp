@@ -7,6 +7,5 @@ export default class PaddockPropertiesMessage extends Message {
   constructor(properties: PaddockInformations) {
     super();
     this.properties = properties;
-
   }
 }

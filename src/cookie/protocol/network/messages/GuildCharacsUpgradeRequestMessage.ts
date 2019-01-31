@@ -6,6 +6,5 @@ export default class GuildCharacsUpgradeRequestMessage extends Message {
   constructor(charaTypeTarget = 0) {
     super();
     this.charaTypeTarget = charaTypeTarget;
-
   }
 }

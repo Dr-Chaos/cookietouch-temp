@@ -8,6 +8,5 @@ export default class PrismFightJoinLeaveRequestMessage extends Message {
     super();
     this.subAreaId = subAreaId;
     this.join = join;
-
   }
 }

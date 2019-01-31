@@ -6,6 +6,5 @@ export default class GuildHouseTeleportRequestMessage extends Message {
   constructor(houseId = 0) {
     super();
     this.houseId = houseId;
-
   }
 }

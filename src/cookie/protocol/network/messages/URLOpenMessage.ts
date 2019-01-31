@@ -6,6 +6,5 @@ export default class URLOpenMessage extends Message {
   constructor(urlId = 0) {
     super();
     this.urlId = urlId;
-
   }
 }

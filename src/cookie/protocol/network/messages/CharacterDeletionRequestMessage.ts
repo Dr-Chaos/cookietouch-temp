@@ -8,6 +8,5 @@ export default class CharacterDeletionRequestMessage extends Message {
     super();
     this.characterId = characterId;
     this.secretAnswerHash = secretAnswerHash;
-
   }
 }

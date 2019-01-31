@@ -10,6 +10,5 @@ export default class AlignmentSubAreaUpdateMessage extends Message {
     this.subAreaId = subAreaId;
     this.side = side;
     this.quiet = quiet;
-
   }
 }

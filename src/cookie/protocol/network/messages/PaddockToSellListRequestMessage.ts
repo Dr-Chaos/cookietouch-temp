@@ -6,6 +6,5 @@ export default class PaddockToSellListRequestMessage extends Message {
   constructor(pageIndex = 0) {
     super();
     this.pageIndex = pageIndex;
-
   }
 }

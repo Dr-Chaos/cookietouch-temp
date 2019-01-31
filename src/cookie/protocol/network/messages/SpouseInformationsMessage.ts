@@ -7,6 +7,5 @@ export default class SpouseInformationsMessage extends Message {
   constructor(spouse: FriendSpouseInformations) {
     super();
     this.spouse = spouse;
-
   }
 }

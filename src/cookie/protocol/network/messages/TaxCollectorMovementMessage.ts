@@ -7,12 +7,16 @@ export default class TaxCollectorMovementMessage extends Message {
   public playerId: number;
   public playerName: string;
 
-  constructor(hireOrFire = false, basicInfos: TaxCollectorBasicInformations, playerId = 0, playerName = "") {
+  constructor(
+    hireOrFire = false,
+    basicInfos: TaxCollectorBasicInformations,
+    playerId = 0,
+    playerName = ""
+  ) {
     super();
     this.hireOrFire = hireOrFire;
     this.basicInfos = basicInfos;
     this.playerId = playerId;
     this.playerName = playerName;
-
   }
 }

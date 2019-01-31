@@ -8,6 +8,5 @@ export default class GameFightTurnListMessage extends Message {
     super();
     this.ids = ids;
     this.deadsIds = deadsIds;
-
   }
 }

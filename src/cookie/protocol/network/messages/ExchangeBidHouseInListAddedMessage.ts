@@ -7,12 +7,16 @@ export default class ExchangeBidHouseInListAddedMessage extends Message {
   public itemUID: number;
   public objGenericId: number;
 
-  constructor(itemUID = 0, objGenericId = 0, effects: ObjectEffect[], prices: number[]) {
+  constructor(
+    itemUID = 0,
+    objGenericId = 0,
+    effects: ObjectEffect[],
+    prices: number[]
+  ) {
     super();
     this.effects = effects;
     this.prices = prices;
     this.itemUID = itemUID;
     this.objGenericId = objGenericId;
-
   }
 }

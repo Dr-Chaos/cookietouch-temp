@@ -9,6 +9,5 @@ export default class DungeonPartyFinderRoomContentMessage extends Message {
     super();
     this.players = players;
     this.dungeonId = dungeonId;
-
   }
 }

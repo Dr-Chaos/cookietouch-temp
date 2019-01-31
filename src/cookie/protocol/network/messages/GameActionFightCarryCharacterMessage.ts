@@ -8,6 +8,5 @@ export default class GameActionFightCarryCharacterMessage extends AbstractGameAc
     super(actionId, sourceId);
     this.targetId = targetId;
     this.cellId = cellId;
-
   }
 }

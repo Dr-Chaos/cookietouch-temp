@@ -6,6 +6,5 @@ export default class EmoteListMessage extends Message {
   constructor(emoteIds: number[]) {
     super();
     this.emoteIds = emoteIds;
-
   }
 }

@@ -6,6 +6,5 @@ export default class EmoteRemoveMessage extends Message {
   constructor(emoteId = 0) {
     super();
     this.emoteId = emoteId;
-
   }
 }

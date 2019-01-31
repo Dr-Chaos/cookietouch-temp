@@ -7,6 +7,5 @@ export default class FriendUpdateMessage extends Message {
   constructor(friendUpdated: FriendInformations) {
     super();
     this.friendUpdated = friendUpdated;
-
   }
 }

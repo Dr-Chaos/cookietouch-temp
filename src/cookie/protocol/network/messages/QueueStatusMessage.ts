@@ -8,6 +8,5 @@ export default class QueueStatusMessage extends Message {
     super();
     this.position = position;
     this.total = total;
-
   }
 }

@@ -8,6 +8,5 @@ export default class MountEmoteIconUsedOkMessage extends Message {
     super();
     this.mountId = mountId;
     this.reactionType = reactionType;
-
   }
 }

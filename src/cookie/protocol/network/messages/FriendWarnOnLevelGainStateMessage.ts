@@ -6,6 +6,5 @@ export default class FriendWarnOnLevelGainStateMessage extends Message {
   constructor(enable = false) {
     super();
     this.enable = enable;
-
   }
 }

@@ -8,6 +8,5 @@ export default class EnabledChannelsMessage extends Message {
     super();
     this.channels = channels;
     this.disallowed = disallowed;
-
   }
 }

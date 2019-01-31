@@ -8,6 +8,5 @@ export default class ObjectGroundAddedMessage extends Message {
     super();
     this.cellId = cellId;
     this.objectGID = objectGID;
-
   }
 }

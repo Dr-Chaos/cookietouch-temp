@@ -8,6 +8,5 @@ export default class DebugHighlightCellsMessage extends Message {
     super();
     this.cells = cells;
     this.color = color;
-
   }
 }

@@ -8,6 +8,5 @@ export default class GameActionFightCastRequestMessage extends Message {
     super();
     this.spellId = spellId;
     this.cellId = cellId;
-
   }
 }

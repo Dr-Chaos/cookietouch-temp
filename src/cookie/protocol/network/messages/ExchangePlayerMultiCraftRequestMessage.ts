@@ -8,6 +8,5 @@ export default class ExchangePlayerMultiCraftRequestMessage extends ExchangeRequ
     super(exchangeType);
     this.target = target;
     this.skillId = skillId;
-
   }
 }

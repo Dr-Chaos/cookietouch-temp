@@ -8,6 +8,5 @@ export default class MailStatusMessage extends Message {
     super();
     this.unread = unread;
     this.total = total;
-
   }
 }

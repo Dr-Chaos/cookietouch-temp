@@ -10,6 +10,5 @@ export default class ObjectFoundWhileRecoltingMessage extends Message {
     this.genericId = genericId;
     this.quantity = quantity;
     this.ressourceGenericId = ressourceGenericId;
-
   }
 }

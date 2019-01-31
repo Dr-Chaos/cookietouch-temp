@@ -6,6 +6,5 @@ export default class ExchangeClearPaymentForCraftMessage extends Message {
   constructor(paymentType = 0) {
     super();
     this.paymentType = paymentType;
-
   }
 }

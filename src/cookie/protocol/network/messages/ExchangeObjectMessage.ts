@@ -6,6 +6,5 @@ export default class ExchangeObjectMessage extends Message {
   constructor(remote = false) {
     super();
     this.remote = remote;
-
   }
 }

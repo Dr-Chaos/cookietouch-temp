@@ -6,6 +6,5 @@ export default class CharacterDeletionErrorMessage extends Message {
   constructor(reason = 1) {
     super();
     this.reason = reason;
-
   }
 }

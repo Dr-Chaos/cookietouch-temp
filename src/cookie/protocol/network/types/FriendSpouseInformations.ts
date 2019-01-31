@@ -13,8 +13,17 @@ export default class FriendSpouseInformations extends Type {
   public guildInfo: BasicGuildInformations;
   public alignmentSide: number;
 
-  constructor(spouseAccountId = 0, spouseId = 0, spouseName = "", spouseLevel = 0, breed = 0, sex = 0,
-              spouseEntityLook: EntityLook, guildInfo: BasicGuildInformations, alignmentSide = 0) {
+  constructor(
+    spouseAccountId = 0,
+    spouseId = 0,
+    spouseName = "",
+    spouseLevel = 0,
+    breed = 0,
+    sex = 0,
+    spouseEntityLook: EntityLook,
+    guildInfo: BasicGuildInformations,
+    alignmentSide = 0
+  ) {
     super();
     this.spouseAccountId = spouseAccountId;
     this.spouseId = spouseId;
@@ -25,6 +34,5 @@ export default class FriendSpouseInformations extends Type {
     this.spouseEntityLook = spouseEntityLook;
     this.guildInfo = guildInfo;
     this.alignmentSide = alignmentSide;
-
   }
 }

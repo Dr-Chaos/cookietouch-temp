@@ -6,12 +6,16 @@ export default class InventoryPresetSaveCustomMessage extends Message {
   public presetId: number;
   public symbolId: number;
 
-  constructor(presetId = 0, symbolId = 0, itemsPositions: number[], itemsUids: number[]) {
+  constructor(
+    presetId = 0,
+    symbolId = 0,
+    itemsPositions: number[],
+    itemsUids: number[]
+  ) {
     super();
     this.itemsPositions = itemsPositions;
     this.itemsUids = itemsUids;
     this.presetId = presetId;
     this.symbolId = symbolId;
-
   }
 }

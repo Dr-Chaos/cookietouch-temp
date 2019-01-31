@@ -6,6 +6,5 @@ export default class GameMapChangeOrientationRequestMessage extends Message {
   constructor(direction = 1) {
     super();
     this.direction = direction;
-
   }
 }

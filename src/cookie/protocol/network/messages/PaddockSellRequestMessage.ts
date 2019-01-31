@@ -6,6 +6,5 @@ export default class PaddockSellRequestMessage extends Message {
   constructor(price = 0) {
     super();
     this.price = price;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ExchangeErrorMessage extends Message {
   constructor(errorType = 0) {
     super();
     this.errorType = errorType;
-
   }
 }

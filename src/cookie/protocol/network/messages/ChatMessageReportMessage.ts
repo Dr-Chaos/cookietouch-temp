@@ -8,7 +8,14 @@ export default class ChatMessageReportMessage extends Message {
   public fingerprint: string;
   public reason: number;
 
-  constructor(senderName = "", content = "", timestamp = 0, channel = 0, fingerprint = "", reason = 0) {
+  constructor(
+    senderName = "",
+    content = "",
+    timestamp = 0,
+    channel = 0,
+    fingerprint = "",
+    reason = 0
+  ) {
     super();
     this.senderName = senderName;
     this.content = content;
@@ -16,6 +23,5 @@ export default class ChatMessageReportMessage extends Message {
     this.channel = channel;
     this.fingerprint = fingerprint;
     this.reason = reason;
-
   }
 }

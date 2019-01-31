@@ -6,6 +6,5 @@ export default class GameActionFightDispellMessage extends AbstractGameActionMes
   constructor(actionId = 0, sourceId = 0, targetId = 0) {
     super(actionId, sourceId);
     this.targetId = targetId;
-
   }
 }

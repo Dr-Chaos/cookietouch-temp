@@ -7,6 +7,5 @@ export default class KrosmasterInventoryMessage extends Message {
   constructor(figures: KrosmasterFigure[]) {
     super();
     this.figures = figures;
-
   }
 }

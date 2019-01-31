@@ -6,6 +6,5 @@ export default class ObjectUseOnCharacterMessage extends ObjectUseMessage {
   constructor(objectUID = 0, characterId = 0) {
     super(objectUID);
     this.characterId = characterId;
-
   }
 }

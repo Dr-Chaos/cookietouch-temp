@@ -6,6 +6,5 @@ export default class GameActionFightNoSpellCastMessage extends Message {
   constructor(spellLevelId = 0) {
     super();
     this.spellLevelId = spellLevelId;
-
   }
 }

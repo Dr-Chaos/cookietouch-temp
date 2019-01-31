@@ -9,8 +9,15 @@ export default class IdentificationMessage extends Message {
   public useLoginToken: boolean;
   public sessionOptionalSalt: number;
 
-  constructor(lang = "", serverId = 0, autoconnect = false, useCertificate = false,
-              useLoginToken = false, sessionOptionalSalt = 0, credentials: number[]) {
+  constructor(
+    lang = "",
+    serverId = 0,
+    autoconnect = false,
+    useCertificate = false,
+    useLoginToken = false,
+    sessionOptionalSalt = 0,
+    credentials: number[]
+  ) {
     super();
     this.credentials = credentials;
     this.lang = lang;

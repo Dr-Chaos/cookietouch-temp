@@ -6,6 +6,5 @@ export default class DownloadPartMessage extends Message {
   constructor(id = "") {
     super();
     this.id = id;
-
   }
 }

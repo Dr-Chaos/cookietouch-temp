@@ -8,6 +8,5 @@ export default class AllianceGuildLeavingMessage extends Message {
     super();
     this.kicked = kicked;
     this.guildId = guildId;
-
   }
 }

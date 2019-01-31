@@ -8,6 +8,5 @@ export default class GameActionAcknowledgementMessage extends Message {
     super();
     this.valid = valid;
     this.actionId = actionId;
-
   }
 }

@@ -8,6 +8,5 @@ export default class PartyFollowStatusUpdateMessage extends AbstractPartyMessage
     super(partyId);
     this.success = success;
     this.followedId = followedId;
-
   }
 }

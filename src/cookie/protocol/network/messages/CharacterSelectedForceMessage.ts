@@ -6,6 +6,5 @@ export default class CharacterSelectedForceMessage extends Message {
   constructor(id = 0) {
     super();
     this.id = id;
-
   }
 }

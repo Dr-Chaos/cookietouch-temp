@@ -6,6 +6,5 @@ export default class ChatSmileyRequestMessage extends Message {
   constructor(smileyId = 0) {
     super();
     this.smileyId = smileyId;
-
   }
 }

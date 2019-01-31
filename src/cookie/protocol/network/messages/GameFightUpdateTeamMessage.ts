@@ -9,6 +9,5 @@ export default class GameFightUpdateTeamMessage extends Message {
     super();
     this.fightId = fightId;
     this.team = team;
-
   }
 }

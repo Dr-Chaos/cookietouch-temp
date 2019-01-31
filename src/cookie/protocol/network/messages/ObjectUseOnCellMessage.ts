@@ -6,6 +6,5 @@ export default class ObjectUseOnCellMessage extends ObjectUseMessage {
   constructor(objectUID = 0, cells = 0) {
     super(objectUID);
     this.cells = cells;
-
   }
 }

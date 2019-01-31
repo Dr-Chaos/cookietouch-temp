@@ -6,6 +6,5 @@ export default class QuestStepInfoRequestMessage extends Message {
   constructor(questId = 0) {
     super();
     this.questId = questId;
-
   }
 }

@@ -8,6 +8,5 @@ export default class PrismBalanceResultMessage extends Message {
     super();
     this.totalBalanceValue = totalBalanceValue;
     this.subAreaBalanceValue = subAreaBalanceValue;
-
   }
 }

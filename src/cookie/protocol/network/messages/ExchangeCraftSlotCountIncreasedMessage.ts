@@ -6,6 +6,5 @@ export default class ExchangeCraftSlotCountIncreasedMessage extends Message {
   constructor(newMaxSlot = 0) {
     super();
     this.newMaxSlot = newMaxSlot;
-
   }
 }

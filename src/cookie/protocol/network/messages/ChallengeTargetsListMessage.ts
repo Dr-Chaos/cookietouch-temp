@@ -8,6 +8,5 @@ export default class ChallengeTargetsListMessage extends Message {
     super();
     this.targetIds = targetIds;
     this.targetCells = targetCells;
-
   }
 }

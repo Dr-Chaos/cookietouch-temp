@@ -6,6 +6,5 @@ export default class PartyPledgeLoyaltyRequestMessage extends AbstractPartyMessa
   constructor(partyId = 0, loyal = false) {
     super(partyId);
     this.loyal = loyal;
-
   }
 }

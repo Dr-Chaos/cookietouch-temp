@@ -7,6 +7,5 @@ export default class GameMapChangeOrientationMessage extends Message {
   constructor(orientation: ActorOrientation) {
     super();
     this.orientation = orientation;
-
   }
 }

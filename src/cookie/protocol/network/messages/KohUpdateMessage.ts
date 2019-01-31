@@ -12,9 +12,16 @@ export default class KohUpdateMessage extends Message {
   public allianceMapMyAllianceScore: number;
   public nextTickTime: number;
 
-  constructor(allianceMapWinner: BasicAllianceInformations, allianceMapWinnerScore = 0,
-              allianceMapMyAllianceScore = 0, nextTickTime = 0, alliances: AllianceInformations[],
-              allianceNbMembers: number[], allianceRoundWeigth: number[], allianceMatchScore: number[]) {
+  constructor(
+    allianceMapWinner: BasicAllianceInformations,
+    allianceMapWinnerScore = 0,
+    allianceMapMyAllianceScore = 0,
+    nextTickTime = 0,
+    alliances: AllianceInformations[],
+    allianceNbMembers: number[],
+    allianceRoundWeigth: number[],
+    allianceMatchScore: number[]
+  ) {
     super();
     this.alliances = alliances;
     this.allianceNbMembers = allianceNbMembers;
@@ -24,6 +31,5 @@ export default class KohUpdateMessage extends Message {
     this.allianceMapWinnerScore = allianceMapWinnerScore;
     this.allianceMapMyAllianceScore = allianceMapMyAllianceScore;
     this.nextTickTime = nextTickTime;
-
   }
 }

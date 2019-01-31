@@ -6,6 +6,5 @@ export default class ExchangeObjectRemovedFromBagMessage extends ExchangeObjectM
   constructor(remote = false, objectUID = 0) {
     super(remote);
     this.objectUID = objectUID;
-
   }
 }

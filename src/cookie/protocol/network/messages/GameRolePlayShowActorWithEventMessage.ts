@@ -7,6 +7,5 @@ export default class GameRolePlayShowActorWithEventMessage extends GameRolePlayS
   constructor(informations: GameRolePlayActorInformations, actorEventId = 0) {
     super(informations);
     this.actorEventId = actorEventId;
-
   }
 }

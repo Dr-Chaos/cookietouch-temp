@@ -10,6 +10,5 @@ export default class GameRolePlayDelayedActionMessage extends Message {
     this.delayedCharacterId = delayedCharacterId;
     this.delayTypeId = delayTypeId;
     this.delayEndTime = delayEndTime;
-
   }
 }

@@ -7,6 +7,5 @@ export default class MountDataMessage extends Message {
   constructor(mountData: MountClientData) {
     super();
     this.mountData = mountData;
-
   }
 }

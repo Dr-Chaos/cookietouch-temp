@@ -6,6 +6,5 @@ export default class CharacterReplayRequestMessage extends Message {
   constructor(characterId = 0) {
     super();
     this.characterId = characterId;
-
   }
 }

@@ -9,6 +9,5 @@ export default class GameContextRefreshEntityLookMessage extends Message {
     super();
     this.id = id;
     this.look = look;
-
   }
 }

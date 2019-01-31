@@ -7,6 +7,5 @@ export default class ServerSessionConstantsMessage extends Message {
   constructor(variables: ServerSessionConstant[]) {
     super();
     this.variables = variables;
-
   }
 }

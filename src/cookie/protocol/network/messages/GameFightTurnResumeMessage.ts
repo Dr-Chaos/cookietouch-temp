@@ -3,6 +3,5 @@ import GameFightTurnStartMessage from "@/protocol/network/messages/GameFightTurn
 export default class GameFightTurnResumeMessage extends GameFightTurnStartMessage {
   constructor(id = 0, waitTime = 0) {
     super(id, waitTime);
-
   }
 }

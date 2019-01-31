@@ -8,6 +8,5 @@ export default class PartyCancelInvitationNotificationMessage extends AbstractPa
     super(partyId);
     this.cancelerId = cancelerId;
     this.guestId = guestId;
-
   }
 }

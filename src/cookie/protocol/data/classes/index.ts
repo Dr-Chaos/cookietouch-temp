@@ -195,5 +195,5 @@ export default {
   Titles,
   TypeActions,
   Url,
-  WorldMaps,
+  WorldMaps
 };

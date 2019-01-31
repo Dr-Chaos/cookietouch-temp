@@ -9,6 +9,5 @@ export default class ExchangeModifiedPaymentForCraftMessage extends Message {
     super();
     this.onlySuccess = onlySuccess;
     this.objectPublic = object;
-
   }
 }

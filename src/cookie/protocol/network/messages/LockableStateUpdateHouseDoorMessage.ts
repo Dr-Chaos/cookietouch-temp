@@ -6,6 +6,5 @@ export default class LockableStateUpdateHouseDoorMessage extends LockableStateUp
   constructor(locked = false, houseId = 0) {
     super(locked);
     this.houseId = houseId;
-
   }
 }

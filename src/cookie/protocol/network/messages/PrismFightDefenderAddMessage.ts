@@ -6,11 +6,14 @@ export default class PrismFightDefenderAddMessage extends Message {
   public fightId: number;
   public defender: CharacterMinimalPlusLookInformations;
 
-  constructor(subAreaId = 0, fightId = 0, defender: CharacterMinimalPlusLookInformations) {
+  constructor(
+    subAreaId = 0,
+    fightId = 0,
+    defender: CharacterMinimalPlusLookInformations
+  ) {
     super();
     this.subAreaId = subAreaId;
     this.fightId = fightId;
     this.defender = defender;
-
   }
 }

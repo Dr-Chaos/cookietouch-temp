@@ -10,6 +10,5 @@ export default class SelectedServerRefusedMessage extends Message {
     this.serverId = serverId;
     this.error = error;
     this.serverStatus = serverStatus;
-
   }
 }

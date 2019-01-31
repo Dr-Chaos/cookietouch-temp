@@ -6,6 +6,5 @@ export default class GuildFightJoinRequestMessage extends Message {
   constructor(taxCollectorId = 0) {
     super();
     this.taxCollectorId = taxCollectorId;
-
   }
 }

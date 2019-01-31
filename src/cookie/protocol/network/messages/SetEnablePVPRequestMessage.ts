@@ -6,6 +6,5 @@ export default class SetEnablePVPRequestMessage extends Message {
   constructor(enable = false) {
     super();
     this.enable = enable;
-
   }
 }

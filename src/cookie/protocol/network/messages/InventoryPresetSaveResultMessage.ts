@@ -8,6 +8,5 @@ export default class InventoryPresetSaveResultMessage extends Message {
     super();
     this.presetId = presetId;
     this.code = code;
-
   }
 }

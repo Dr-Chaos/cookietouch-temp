@@ -10,6 +10,5 @@ export default class LivingObjectMessageRequestMessage extends Message {
     this.parameters = parameters;
     this.msgId = msgId;
     this.livingObject = livingObject;
-
   }
 }

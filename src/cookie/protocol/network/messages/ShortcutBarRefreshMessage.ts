@@ -9,6 +9,5 @@ export default class ShortcutBarRefreshMessage extends Message {
     super();
     this.barType = barType;
     this.shortcut = shortcut;
-
   }
 }

@@ -9,6 +9,5 @@ export default class GuildFightPlayersHelpersJoinMessage extends Message {
     super();
     this.fightId = fightId;
     this.playerInfo = playerInfo;
-
   }
 }

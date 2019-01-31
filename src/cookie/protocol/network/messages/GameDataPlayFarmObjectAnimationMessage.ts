@@ -6,6 +6,5 @@ export default class GameDataPlayFarmObjectAnimationMessage extends Message {
   constructor(cellId: number[]) {
     super();
     this.cellId = cellId;
-
   }
 }

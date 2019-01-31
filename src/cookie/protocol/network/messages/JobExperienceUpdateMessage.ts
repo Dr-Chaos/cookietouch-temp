@@ -7,6 +7,5 @@ export default class JobExperienceUpdateMessage extends Message {
   constructor(experiencesUpdate: JobExperience) {
     super();
     this.experiencesUpdate = experiencesUpdate;
-
   }
 }

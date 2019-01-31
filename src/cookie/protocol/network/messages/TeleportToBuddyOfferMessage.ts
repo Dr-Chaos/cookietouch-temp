@@ -10,6 +10,5 @@ export default class TeleportToBuddyOfferMessage extends Message {
     this.dungeonId = dungeonId;
     this.buddyId = buddyId;
     this.timeLeft = timeLeft;
-
   }
 }

@@ -6,6 +6,5 @@ export default class CharacterCapabilitiesMessage extends Message {
   constructor(guildEmblemSymbolCategories = 0) {
     super();
     this.guildEmblemSymbolCategories = guildEmblemSymbolCategories;
-
   }
 }

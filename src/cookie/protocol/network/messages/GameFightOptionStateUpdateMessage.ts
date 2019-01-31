@@ -12,6 +12,5 @@ export default class GameFightOptionStateUpdateMessage extends Message {
     this.teamId = teamId;
     this.option = option;
     this.state = state;
-
   }
 }

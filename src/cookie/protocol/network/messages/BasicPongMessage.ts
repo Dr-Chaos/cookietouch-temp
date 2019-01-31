@@ -6,6 +6,5 @@ export default class BasicPongMessage extends Message {
   constructor(quiet = false) {
     super();
     this.quiet = quiet;
-
   }
 }

@@ -12,5 +12,5 @@ export enum IdentificationFailureReasonEnum {
   OTP_TIMEOUT = 11,
   SERVICE_UNAVAILABLE = 53,
   UNKNOWN_AUTH_ERROR = 99,
-  SPARE = 100,
+  SPARE = 100
 }

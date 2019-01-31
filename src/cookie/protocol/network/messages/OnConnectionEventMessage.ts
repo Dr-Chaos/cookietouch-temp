@@ -6,6 +6,5 @@ export default class OnConnectionEventMessage extends Message {
   constructor(eventType = 0) {
     super();
     this.eventType = eventType;
-
   }
 }

@@ -6,6 +6,5 @@ export default class NpcDialogReplyMessage extends Message {
   constructor(replyId = 0) {
     super();
     this.replyId = replyId;
-
   }
 }

@@ -6,6 +6,5 @@ export default class IdentificationFailedMessage extends Message {
   constructor(reason = 99) {
     super();
     this.reason = reason;
-
   }
 }

@@ -6,6 +6,5 @@ export default class LockableCodeResultMessage extends Message {
   constructor(result = 0) {
     super();
     this.result = result;
-
   }
 }

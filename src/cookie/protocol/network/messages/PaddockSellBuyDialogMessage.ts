@@ -10,6 +10,5 @@ export default class PaddockSellBuyDialogMessage extends Message {
     this.bsell = bsell;
     this.ownerId = ownerId;
     this.price = price;
-
   }
 }

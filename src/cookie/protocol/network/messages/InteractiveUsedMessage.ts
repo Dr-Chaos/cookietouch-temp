@@ -12,6 +12,5 @@ export default class InteractiveUsedMessage extends Message {
     this.elemId = elemId;
     this.skillId = skillId;
     this.duration = duration;
-
   }
 }

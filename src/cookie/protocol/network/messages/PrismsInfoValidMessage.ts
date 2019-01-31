@@ -7,6 +7,5 @@ export default class PrismsInfoValidMessage extends Message {
   constructor(fights: PrismFightersInformation[]) {
     super();
     this.fights = fights;
-
   }
 }

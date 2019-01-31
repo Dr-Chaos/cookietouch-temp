@@ -6,6 +6,5 @@ export default class ChatAbstractClientMessage extends Message {
   constructor(content = "") {
     super();
     this.content = content;
-
   }
 }

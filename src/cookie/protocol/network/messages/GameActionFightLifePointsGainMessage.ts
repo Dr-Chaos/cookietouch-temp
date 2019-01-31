@@ -8,6 +8,5 @@ export default class GameActionFightLifePointsGainMessage extends AbstractGameAc
     super(actionId, sourceId);
     this.targetId = targetId;
     this.delta = delta;
-
   }
 }

@@ -8,6 +8,5 @@ export default class GameActionFightPointsVariationMessage extends AbstractGameA
     super(actionId, sourceId);
     this.targetId = targetId;
     this.delta = delta;
-
   }
 }

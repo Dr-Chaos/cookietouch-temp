@@ -8,6 +8,5 @@ export default class PaddockBuyableInformations extends PaddockInformations {
     super(maxOutdoorMount, maxItems);
     this.price = price;
     this.locked = locked;
-
   }
 }

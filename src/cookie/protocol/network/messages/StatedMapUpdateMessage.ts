@@ -7,6 +7,5 @@ export default class StatedMapUpdateMessage extends Message {
   constructor(statedElements: StatedElement[]) {
     super();
     this.statedElements = statedElements;
-
   }
 }

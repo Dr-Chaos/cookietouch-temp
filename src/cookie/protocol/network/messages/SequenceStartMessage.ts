@@ -8,6 +8,5 @@ export default class SequenceStartMessage extends Message {
     super();
     this.sequenceType = sequenceType;
     this.authorId = authorId;
-
   }
 }

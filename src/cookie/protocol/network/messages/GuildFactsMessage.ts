@@ -9,13 +9,18 @@ export default class GuildFactsMessage extends Message {
   public nbTaxCollectors: number;
   public enabled: boolean;
 
-  constructor(infos: GuildFactSheetInformations, creationDate = 0, nbTaxCollectors = 0, enabled = false, members: CharacterMinimalInformations[]) {
+  constructor(
+    infos: GuildFactSheetInformations,
+    creationDate = 0,
+    nbTaxCollectors = 0,
+    enabled = false,
+    members: CharacterMinimalInformations[]
+  ) {
     super();
     this.members = members;
     this.infos = infos;
     this.creationDate = creationDate;
     this.nbTaxCollectors = nbTaxCollectors;
     this.enabled = enabled;
-
   }
 }

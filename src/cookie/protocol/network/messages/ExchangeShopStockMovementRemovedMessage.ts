@@ -6,6 +6,5 @@ export default class ExchangeShopStockMovementRemovedMessage extends Message {
   constructor(objectId = 0) {
     super();
     this.objectId = objectId;
-
   }
 }

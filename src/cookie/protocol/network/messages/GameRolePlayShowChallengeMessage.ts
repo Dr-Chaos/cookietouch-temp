@@ -7,6 +7,5 @@ export default class GameRolePlayShowChallengeMessage extends Message {
   constructor(commonsInfos: FightCommonInformations) {
     super();
     this.commonsInfos = commonsInfos;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ContactLookRequestByIdMessage extends ContactLookRequestMes
   constructor(requestId = 0, contactType = 0, playerId = 0) {
     super(requestId, contactType);
     this.playerId = playerId;
-
   }
 }

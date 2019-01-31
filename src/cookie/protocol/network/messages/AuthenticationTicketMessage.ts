@@ -8,6 +8,5 @@ export default class AuthenticationTicketMessage extends Message {
     super();
     this.lang = lang;
     this.ticket = ticket;
-
   }
 }

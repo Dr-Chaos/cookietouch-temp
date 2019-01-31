@@ -8,6 +8,5 @@ export default class UpdateLifePointsMessage extends Message {
     super();
     this.lifePoints = lifePoints;
     this.maxLifePoints = maxLifePoints;
-
   }
 }

@@ -10,6 +10,5 @@ export default class PurchasableDialogMessage extends Message {
     this.buyOrSell = buyOrSell;
     this.purchasableId = purchasableId;
     this.price = price;
-
   }
 }

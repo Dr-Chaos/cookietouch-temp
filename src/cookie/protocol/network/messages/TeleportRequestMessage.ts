@@ -8,6 +8,5 @@ export default class TeleportRequestMessage extends Message {
     super();
     this.teleporterType = teleporterType;
     this.mapId = mapId;
-
   }
 }

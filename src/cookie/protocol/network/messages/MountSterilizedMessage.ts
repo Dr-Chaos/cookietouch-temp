@@ -6,6 +6,5 @@ export default class MountSterilizedMessage extends Message {
   constructor(mountId = 0) {
     super();
     this.mountId = mountId;
-
   }
 }

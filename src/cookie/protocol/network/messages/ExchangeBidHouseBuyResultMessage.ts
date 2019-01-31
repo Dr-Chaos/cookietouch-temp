@@ -8,6 +8,5 @@ export default class ExchangeBidHouseBuyResultMessage extends Message {
     super();
     this.uid = uid;
     this.bought = bought;
-
   }
 }

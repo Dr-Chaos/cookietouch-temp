@@ -7,6 +7,5 @@ export default class PartsListMessage extends Message {
   constructor(parts: ContentPart[]) {
     super();
     this.parts = parts;
-
   }
 }

@@ -9,6 +9,5 @@ export default class GuildCreationValidMessage extends Message {
     super();
     this.guildName = guildName;
     this.guildEmblem = guildEmblem;
-
   }
 }

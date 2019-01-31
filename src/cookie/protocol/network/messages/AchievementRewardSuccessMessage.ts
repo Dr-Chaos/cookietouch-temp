@@ -6,6 +6,5 @@ export default class AchievementRewardSuccessMessage extends Message {
   constructor(achievementId = 0) {
     super();
     this.achievementId = achievementId;
-
   }
 }

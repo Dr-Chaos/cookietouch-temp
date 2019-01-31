@@ -6,6 +6,5 @@ export default class NicknameChoiceRequestMessage extends Message {
   constructor(nickname = "") {
     super();
     this.nickname = nickname;
-
   }
 }

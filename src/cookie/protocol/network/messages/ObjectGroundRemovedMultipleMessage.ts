@@ -6,6 +6,5 @@ export default class ObjectGroundRemovedMultipleMessage extends Message {
   constructor(cells: number[]) {
     super();
     this.cells = cells;
-
   }
 }

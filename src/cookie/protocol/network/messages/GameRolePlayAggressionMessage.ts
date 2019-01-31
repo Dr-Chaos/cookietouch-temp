@@ -8,6 +8,5 @@ export default class GameRolePlayAggressionMessage extends Message {
     super();
     this.attackerId = attackerId;
     this.defenderId = defenderId;
-
   }
 }

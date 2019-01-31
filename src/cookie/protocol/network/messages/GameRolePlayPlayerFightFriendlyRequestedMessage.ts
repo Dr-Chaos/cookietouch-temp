@@ -10,6 +10,5 @@ export default class GameRolePlayPlayerFightFriendlyRequestedMessage extends Mes
     this.fightId = fightId;
     this.sourceId = sourceId;
     this.targetId = targetId;
-
   }
 }

@@ -8,6 +8,5 @@ export default class CharacterLevelUpInformationMessage extends CharacterLevelUp
     super(newLevel);
     this.name = name;
     this.id = id;
-
   }
 }

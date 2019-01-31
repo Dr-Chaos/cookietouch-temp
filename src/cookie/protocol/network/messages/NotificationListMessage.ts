@@ -6,6 +6,5 @@ export default class NotificationListMessage extends Message {
   constructor(flags: number[]) {
     super();
     this.flags = flags;
-
   }
 }

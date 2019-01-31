@@ -6,12 +6,19 @@ export default class AlignmentSubAreaUpdateExtendedMessage extends AlignmentSubA
   public mapId: number;
   public eventType: number;
 
-  constructor(subAreaId = 0, side = 0, quiet = false, worldX = 0, worldY = 0, mapId = 0, eventType = 0) {
+  constructor(
+    subAreaId = 0,
+    side = 0,
+    quiet = false,
+    worldX = 0,
+    worldY = 0,
+    mapId = 0,
+    eventType = 0
+  ) {
     super();
     this.worldX = worldX;
     this.worldY = worldY;
     this.mapId = mapId;
     this.eventType = eventType;
-
   }
 }

@@ -9,6 +9,5 @@ export default class GuildFightPlayersEnemiesListMessage extends Message {
     super();
     this.playerInfo = playerInfo;
     this.fightId = fightId;
-
   }
 }

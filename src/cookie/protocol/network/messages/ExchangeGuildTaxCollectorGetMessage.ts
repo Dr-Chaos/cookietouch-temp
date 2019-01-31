@@ -11,8 +11,16 @@ export default class ExchangeGuildTaxCollectorGetMessage extends Message {
   public userName: string;
   public experience: number;
 
-  constructor(collectorName = "", worldX = 0, worldY = 0, mapId = 0, subAreaId = 0,
-              userName = "", experience = 0, objectsInfos: ObjectItemQuantity[]) {
+  constructor(
+    collectorName = "",
+    worldX = 0,
+    worldY = 0,
+    mapId = 0,
+    subAreaId = 0,
+    userName = "",
+    experience = 0,
+    objectsInfos: ObjectItemQuantity[]
+  ) {
     super();
     this.objectsInfos = objectsInfos;
     this.collectorName = collectorName;
@@ -22,6 +30,5 @@ export default class ExchangeGuildTaxCollectorGetMessage extends Message {
     this.subAreaId = subAreaId;
     this.userName = userName;
     this.experience = experience;
-
   }
 }

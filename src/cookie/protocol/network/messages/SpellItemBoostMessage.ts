@@ -10,6 +10,5 @@ export default class SpellItemBoostMessage extends Message {
     this.statId = statId;
     this.spellId = spellId;
     this.value = value;
-
   }
 }

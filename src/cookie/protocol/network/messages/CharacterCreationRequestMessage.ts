@@ -7,13 +7,18 @@ export default class CharacterCreationRequestMessage extends Message {
   public sex: boolean;
   public cosmeticId: number;
 
-  constructor(name = "", breed = 0, sex = false, cosmeticId = 0, colors: number[]) {
+  constructor(
+    name = "",
+    breed = 0,
+    sex = false,
+    cosmeticId = 0,
+    colors: number[]
+  ) {
     super();
     this.colors = colors;
     this.name = name;
     this.breed = breed;
     this.sex = sex;
     this.cosmeticId = cosmeticId;
-
   }
 }

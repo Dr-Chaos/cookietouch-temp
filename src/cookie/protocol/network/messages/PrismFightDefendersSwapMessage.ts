@@ -12,6 +12,5 @@ export default class PrismFightDefendersSwapMessage extends Message {
     this.fightId = fightId;
     this.fighterId1 = fighterId1;
     this.fighterId2 = fighterId2;
-
   }
 }

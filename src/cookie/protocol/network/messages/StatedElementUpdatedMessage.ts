@@ -7,6 +7,5 @@ export default class StatedElementUpdatedMessage extends Message {
   constructor(statedElement: StatedElement) {
     super();
     this.statedElement = statedElement;
-
   }
 }

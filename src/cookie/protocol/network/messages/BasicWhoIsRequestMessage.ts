@@ -8,6 +8,5 @@ export default class BasicWhoIsRequestMessage extends Message {
     super();
     this.verbose = verbose;
     this.search = search;
-
   }
 }

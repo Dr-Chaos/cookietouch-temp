@@ -6,6 +6,5 @@ export default class NotificationUpdateFlagMessage extends Message {
   constructor(index = 0) {
     super();
     this.index = index;
-
   }
 }

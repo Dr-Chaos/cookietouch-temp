@@ -12,6 +12,5 @@ export default class ChallengeInfoMessage extends Message {
     this.targetId = targetId;
     this.xpBonus = xpBonus;
     this.dropBonus = dropBonus;
-
   }
 }

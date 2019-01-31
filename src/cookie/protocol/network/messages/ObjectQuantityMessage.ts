@@ -8,6 +8,5 @@ export default class ObjectQuantityMessage extends Message {
     super();
     this.objectUID = objectUID;
     this.quantity = quantity;
-
   }
 }

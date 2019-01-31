@@ -4,6 +4,5 @@ import PrismSubareaEmptyInfo from "@/protocol/network/types/PrismSubareaEmptyInf
 export default class PrismsListUpdateMessage extends PrismsListMessage {
   constructor(prisms: PrismSubareaEmptyInfo[]) {
     super(prisms);
-
   }
 }

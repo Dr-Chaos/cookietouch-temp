@@ -1,7 +1,6 @@
 import Message from "@/protocol/network/messages/Message";
 
 export default class InventoryWeightMessage extends Message {
-
   public weight: number;
   public weightMax: number;
 

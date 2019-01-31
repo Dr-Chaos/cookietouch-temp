@@ -12,6 +12,5 @@ export default class GameRolePlayPlayerFightFriendlyAnsweredMessage extends Mess
     this.sourceId = sourceId;
     this.targetId = targetId;
     this.accept = accept;
-
   }
 }

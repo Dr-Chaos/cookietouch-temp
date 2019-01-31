@@ -9,6 +9,5 @@ export default class CompassUpdatePvpSeekMessage extends CompassUpdateMessage {
     super(type, coords);
     this.memberId = memberId;
     this.memberName = memberName;
-
   }
 }

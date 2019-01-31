@@ -8,6 +8,5 @@ export default class InteractiveUseRequestMessage extends Message {
     super();
     this.elemId = elemId;
     this.skillInstanceUid = skillInstanceUid;
-
   }
 }

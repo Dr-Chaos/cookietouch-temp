@@ -6,6 +6,5 @@ export default class ExchangeCraftInformationObjectMessage extends ExchangeCraft
   constructor(craftResult = 0, objectGenericId = 0, playerId = 0) {
     super(craftResult, objectGenericId);
     this.playerId = playerId;
-
   }
 }

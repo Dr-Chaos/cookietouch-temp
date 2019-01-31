@@ -6,6 +6,5 @@ export default class ExchangeBidHouseGenericItemAddedMessage extends Message {
   constructor(objGenericId = 0) {
     super();
     this.objGenericId = objGenericId;
-
   }
 }

@@ -8,8 +8,14 @@ export default class GameFightJoinMessage extends Message {
   public timeMaxBeforeFightStart: number;
   public fightType: number;
 
-  constructor(canBeCancelled = false, canSayReady = false, isSpectator = false,
-              isFightStarted = false, timeMaxBeforeFightStart = 0, fightType = 0) {
+  constructor(
+    canBeCancelled = false,
+    canSayReady = false,
+    isSpectator = false,
+    isFightStarted = false,
+    timeMaxBeforeFightStart = 0,
+    fightType = 0
+  ) {
     super();
     this.canBeCancelled = canBeCancelled;
     this.canSayReady = canSayReady;
@@ -17,6 +23,5 @@ export default class GameFightJoinMessage extends Message {
     this.isFightStarted = isFightStarted;
     this.timeMaxBeforeFightStart = timeMaxBeforeFightStart;
     this.fightType = fightType;
-
   }
 }

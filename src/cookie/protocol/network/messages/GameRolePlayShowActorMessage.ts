@@ -7,6 +7,5 @@ export default class GameRolePlayShowActorMessage extends Message {
   constructor(informations: GameRolePlayActorInformations) {
     super();
     this.informations = informations;
-
   }
 }

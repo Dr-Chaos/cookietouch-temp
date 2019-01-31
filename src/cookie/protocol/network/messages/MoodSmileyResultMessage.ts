@@ -8,6 +8,5 @@ export default class MoodSmileyResultMessage extends Message {
     super();
     this.resultCode = resultCode;
     this.smileyId = smileyId;
-
   }
 }

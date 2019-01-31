@@ -11,6 +11,5 @@ export default class HouseGuildRightsMessage extends Message {
     this.houseId = houseId;
     this.guildInfo = guildInfo;
     this.rights = rights;
-
   }
 }

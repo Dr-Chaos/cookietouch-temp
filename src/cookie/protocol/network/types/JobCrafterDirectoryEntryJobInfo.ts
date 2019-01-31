@@ -1,7 +1,6 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class JobCrafterDirectoryEntryJobInfo extends Type {
-
   public jobId: number;
   public jobLevel: number;
   public userDefinedParams: number;

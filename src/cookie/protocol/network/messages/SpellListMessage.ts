@@ -9,6 +9,5 @@ export default class SpellListMessage extends Message {
     super();
     this.spells = spells;
     this.spellPrevisualization = spellPrevisualization;
-
   }
 }

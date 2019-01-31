@@ -8,6 +8,5 @@ export default class DungeonKeyRingUpdateMessage extends Message {
     super();
     this.dungeonId = dungeonId;
     this.available = available;
-
   }
 }

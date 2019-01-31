@@ -6,6 +6,5 @@ export default class ExchangeMultiCraftCrafterCanUseHisRessourcesMessage extends
   constructor(allowed = false) {
     super();
     this.allowed = allowed;
-
   }
 }

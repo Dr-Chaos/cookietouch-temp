@@ -7,6 +7,5 @@ export default class AccountHouseMessage extends Message {
   constructor(houses: AccountHouseInformations[]) {
     super();
     this.houses = houses;
-
   }
 }

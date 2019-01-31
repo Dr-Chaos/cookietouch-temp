@@ -8,6 +8,5 @@ export default class QuestObjectiveValidationMessage extends Message {
     super();
     this.questId = questId;
     this.objectiveId = objectiveId;
-
   }
 }

@@ -8,6 +8,5 @@ export default class ExchangeRemovedPaymentForCraftMessage extends Message {
     super();
     this.onlySuccess = onlySuccess;
     this.objectUID = objectUID;
-
   }
 }

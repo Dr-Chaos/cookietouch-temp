@@ -6,6 +6,5 @@ export default class PartyFollowMemberRequestMessage extends AbstractPartyMessag
   constructor(partyId = 0, playerId = 0) {
     super(partyId);
     this.playerId = playerId;
-
   }
 }

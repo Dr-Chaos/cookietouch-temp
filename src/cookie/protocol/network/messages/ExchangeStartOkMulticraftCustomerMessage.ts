@@ -10,6 +10,5 @@ export default class ExchangeStartOkMulticraftCustomerMessage extends Message {
     this.maxCase = maxCase;
     this.skillId = skillId;
     this.crafterJobLevel = crafterJobLevel;
-
   }
 }

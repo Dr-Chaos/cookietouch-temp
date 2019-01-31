@@ -8,6 +8,5 @@ export default class PrismSettingsRequestMessage extends Message {
     super();
     this.subAreaId = subAreaId;
     this.startDefenseTime = startDefenseTime;
-
   }
 }

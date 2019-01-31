@@ -6,6 +6,5 @@ export default class IdentifiedEntityDispositionInformations extends EntityDispo
   constructor(cellId = 0, direction = 1, id = 0) {
     super(cellId, direction);
     this.id = id;
-
   }
 }

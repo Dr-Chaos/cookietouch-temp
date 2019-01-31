@@ -1,7 +1,6 @@
 import ObjectEffect from "@/protocol/network/types/ObjectEffect";
 
 export default class ObjectEffectDuration extends ObjectEffect {
-
   public days: number;
   public hours: number;
   public minutes: number;

@@ -7,6 +7,5 @@ export default class ExchangeShopStockMovementUpdatedMessage extends Message {
   constructor(objectInfo: ObjectItemToSell) {
     super();
     this.objectInfo = objectInfo;
-
   }
 }

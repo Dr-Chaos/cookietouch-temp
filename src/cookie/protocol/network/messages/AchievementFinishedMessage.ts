@@ -8,6 +8,5 @@ export default class AchievementFinishedMessage extends Message {
     super();
     this.id = id;
     this.finishedlevel = finishedlevel;
-
   }
 }

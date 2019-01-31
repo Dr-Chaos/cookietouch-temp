@@ -6,6 +6,5 @@ export default class ClientKeyMessage extends Message {
   constructor(key = "") {
     super();
     this.key = key;
-
   }
 }

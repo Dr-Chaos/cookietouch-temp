@@ -6,6 +6,5 @@ export default class ExchangeStartedWithStorageMessage extends ExchangeStartedMe
   constructor(exchangeType = 0, storageMaxSlot = 0) {
     super(exchangeType);
     this.storageMaxSlot = storageMaxSlot;
-
   }
 }

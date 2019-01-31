@@ -6,6 +6,5 @@ export default class MapFightCountMessage extends Message {
   constructor(fightCount = 0) {
     super();
     this.fightCount = fightCount;
-
   }
 }

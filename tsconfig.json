@@ -5,6 +5,7 @@
     "removeComments": true,
     "sourceMap": true,
     "jsx": "react",
+    "skipLibCheck": true,
     "sourceRoot": "/",
     "baseUrl": "./src",
     "paths": {

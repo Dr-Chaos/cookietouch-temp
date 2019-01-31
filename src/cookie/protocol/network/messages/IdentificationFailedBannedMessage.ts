@@ -6,6 +6,5 @@ export default class IdentificationFailedBannedMessage extends IdentificationFai
   constructor(reason = 99, banEndDate = 0) {
     super(reason);
     this.banEndDate = banEndDate;
-
   }
 }

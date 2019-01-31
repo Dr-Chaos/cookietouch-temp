@@ -8,6 +8,5 @@ export default class JobCrafterDirectoryRemoveMessage extends Message {
     super();
     this.jobId = jobId;
     this.playerId = playerId;
-
   }
 }

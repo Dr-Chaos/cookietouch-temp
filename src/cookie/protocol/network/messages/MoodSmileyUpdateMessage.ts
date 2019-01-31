@@ -10,6 +10,5 @@ export default class MoodSmileyUpdateMessage extends Message {
     this.accountId = accountId;
     this.playerId = playerId;
     this.smileyId = smileyId;
-
   }
 }

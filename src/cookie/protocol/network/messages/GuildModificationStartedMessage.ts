@@ -8,6 +8,5 @@ export default class GuildModificationStartedMessage extends Message {
     super();
     this.canChangeName = canChangeName;
     this.canChangeEmblem = canChangeEmblem;
-
   }
 }

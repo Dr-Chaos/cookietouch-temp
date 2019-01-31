@@ -6,6 +6,5 @@ export default class SubscriptionZoneMessage extends Message {
   constructor(active = false) {
     super();
     this.active = active;
-
   }
 }

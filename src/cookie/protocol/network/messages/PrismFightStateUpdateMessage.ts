@@ -6,6 +6,5 @@ export default class PrismFightStateUpdateMessage extends Message {
   constructor(state = 0) {
     super();
     this.state = state;
-
   }
 }

@@ -10,6 +10,5 @@ export default class ExchangeBidHouseBuyMessage extends Message {
     this.uid = uid;
     this.qty = qty;
     this.price = price;
-
   }
 }

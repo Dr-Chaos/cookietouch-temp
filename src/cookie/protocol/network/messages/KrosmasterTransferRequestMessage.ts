@@ -6,6 +6,5 @@ export default class KrosmasterTransferRequestMessage extends Message {
   constructor(uid = "") {
     super();
     this.uid = uid;
-
   }
 }

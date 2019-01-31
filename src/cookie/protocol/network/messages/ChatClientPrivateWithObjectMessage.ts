@@ -7,6 +7,5 @@ export default class ChatClientPrivateWithObjectMessage extends ChatClientPrivat
   constructor(content = "", receiver = "", objects: ObjectItem[]) {
     super(content, receiver);
     this.objects = objects;
-
   }
 }

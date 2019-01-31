@@ -8,6 +8,5 @@ export default class QuestStepStartedMessage extends Message {
     super();
     this.questId = questId;
     this.stepId = stepId;
-
   }
 }

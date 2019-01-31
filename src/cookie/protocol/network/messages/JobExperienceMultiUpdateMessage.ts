@@ -7,6 +7,5 @@ export default class JobExperienceMultiUpdateMessage extends Message {
   constructor(experiencesUpdate: JobExperience[]) {
     super();
     this.experiencesUpdate = experiencesUpdate;
-
   }
 }

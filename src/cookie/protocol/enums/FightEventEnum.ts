@@ -100,5 +100,5 @@ export enum FightEventEnum {
   /** Un piège est apparu sur le terrain. */
   TRAP_APPEARED = "trapAppeared",
   /** Un piège a disparu du terrain. */
-  TRAP_DISAPPEARED = "trapDisappeared",
+  TRAP_DISAPPEARED = "trapDisappeared"
 }

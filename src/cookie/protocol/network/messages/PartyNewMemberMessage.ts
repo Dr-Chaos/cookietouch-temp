@@ -4,6 +4,5 @@ import PartyMemberInformations from "@/protocol/network/types/PartyMemberInforma
 export default class PartyNewMemberMessage extends PartyUpdateMessage {
   constructor(partyId = 0, memberInformations: PartyMemberInformations) {
     super(partyId, memberInformations);
-
   }
 }

@@ -1,7 +1,6 @@
 import ObjectEffect from "@/protocol/network/types/ObjectEffect";
 
 export default class ObjectEffectMinMax extends ObjectEffect {
-
   public min: number;
   public max: number;
 

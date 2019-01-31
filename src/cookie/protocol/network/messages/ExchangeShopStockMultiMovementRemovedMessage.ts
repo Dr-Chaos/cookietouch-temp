@@ -6,6 +6,5 @@ export default class ExchangeShopStockMultiMovementRemovedMessage extends Messag
   constructor(objectIdList: number[]) {
     super();
     this.objectIdList = objectIdList;
-
   }
 }

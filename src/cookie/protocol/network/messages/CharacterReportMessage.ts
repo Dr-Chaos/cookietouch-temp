@@ -8,6 +8,5 @@ export default class CharacterReportMessage extends Message {
     super();
     this.reportedId = reportedId;
     this.reason = reason;
-
   }
 }

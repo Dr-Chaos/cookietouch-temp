@@ -11,6 +11,5 @@ export default class GuildJoinedMessage extends Message {
     this.guildInfo = guildInfo;
     this.memberRights = memberRights;
     this.enabled = enabled;
-
   }
 }

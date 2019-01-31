@@ -30,18 +30,36 @@ export default class GameFightMinimalStats extends Type {
   public tackleEvade: number;
   public invisibilityState: number;
 
-  constructor(lifePoints = 0, maxLifePoints = 0, baseMaxLifePoints = 0,
-              permanentDamagePercent = 0, shieldPoints = 0, actionPoints = 0,
-              maxActionPoints = 0, movementPoints = 0, maxMovementPoints = 0,
-              summoner = 0, summoned = false, neutralElementResistPercent = 0,
-              earthElementResistPercent = 0, waterElementResistPercent = 0,
-              airElementResistPercent = 0, fireElementResistPercent = 0,
-              neutralElementReduction = 0, earthElementReduction = 0,
-              waterElementReduction = 0, airElementReduction = 0,
-              fireElementReduction = 0, criticalDamageFixedResist = 0,
-              pushDamageFixedResist = 0, dodgePALostProbability = 0,
-              dodgePMLostProbability = 0, tackleBlock = 0, tackleEvade = 0,
-              invisibilityState = 0) {
+  constructor(
+    lifePoints = 0,
+    maxLifePoints = 0,
+    baseMaxLifePoints = 0,
+    permanentDamagePercent = 0,
+    shieldPoints = 0,
+    actionPoints = 0,
+    maxActionPoints = 0,
+    movementPoints = 0,
+    maxMovementPoints = 0,
+    summoner = 0,
+    summoned = false,
+    neutralElementResistPercent = 0,
+    earthElementResistPercent = 0,
+    waterElementResistPercent = 0,
+    airElementResistPercent = 0,
+    fireElementResistPercent = 0,
+    neutralElementReduction = 0,
+    earthElementReduction = 0,
+    waterElementReduction = 0,
+    airElementReduction = 0,
+    fireElementReduction = 0,
+    criticalDamageFixedResist = 0,
+    pushDamageFixedResist = 0,
+    dodgePALostProbability = 0,
+    dodgePMLostProbability = 0,
+    tackleBlock = 0,
+    tackleEvade = 0,
+    invisibilityState = 0
+  ) {
     super();
     this.lifePoints = lifePoints;
     this.maxLifePoints = maxLifePoints;
@@ -71,6 +89,5 @@ export default class GameFightMinimalStats extends Type {
     this.tackleBlock = tackleBlock;
     this.tackleEvade = tackleEvade;
     this.invisibilityState = invisibilityState;
-
   }
 }

@@ -8,6 +8,5 @@ export default class NumericWhoIsMessage extends Message {
     super();
     this.playerId = playerId;
     this.accountId = accountId;
-
   }
 }

@@ -12,6 +12,5 @@ export default class GameRolePlaySpellAnimMessage extends Message {
     this.targetCellId = targetCellId;
     this.spellId = spellId;
     this.spellLevel = spellLevel;
-
   }
 }

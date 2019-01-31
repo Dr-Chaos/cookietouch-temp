@@ -8,6 +8,5 @@ export default class GameActionFightSpellImmunityMessage extends AbstractGameAct
     super(actionId, sourceId);
     this.targetId = targetId;
     this.spellId = spellId;
-
   }
 }

@@ -8,6 +8,5 @@ export default class ExchangeStartOkMulticraftCrafterMessage extends Message {
     super();
     this.maxCase = maxCase;
     this.skillId = skillId;
-
   }
 }

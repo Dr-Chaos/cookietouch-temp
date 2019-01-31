@@ -8,6 +8,5 @@ export default class GuildInvitationStateRecruterMessage extends Message {
     super();
     this.recrutedName = recrutedName;
     this.invitationState = invitationState;
-
   }
 }

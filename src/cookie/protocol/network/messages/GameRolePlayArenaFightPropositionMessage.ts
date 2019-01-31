@@ -10,6 +10,5 @@ export default class GameRolePlayArenaFightPropositionMessage extends Message {
     this.alliesId = alliesId;
     this.fightId = fightId;
     this.duration = duration;
-
   }
 }

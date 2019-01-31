@@ -40,8 +40,7 @@ class AccountMain extends React.Component<
             className={classes.tabs}
             value={value}
             onChange={this.handleChange}
-            fullWidth={true}
-            scrollable={true}
+            variant="scrollable"
             scrollButtons="auto"
           >
             <Tab

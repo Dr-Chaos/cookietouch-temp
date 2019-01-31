@@ -10,6 +10,5 @@ export default class IgnoredDeleteResultMessage extends Message {
     this.success = success;
     this.name = name;
     this.session = session;
-
   }
 }

@@ -10,6 +10,5 @@ export default class GameRolePlayArenaFighterStatusMessage extends Message {
     this.fightId = fightId;
     this.playerId = playerId;
     this.accepted = accepted;
-
   }
 }

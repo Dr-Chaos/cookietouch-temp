@@ -6,6 +6,5 @@ export default class GameActionFightInvisibleObstacleMessage extends AbstractGam
   constructor(actionId = 0, sourceId = 0, sourceSpellId = 0) {
     super(actionId, sourceId);
     this.sourceSpellId = sourceSpellId;
-
   }
 }

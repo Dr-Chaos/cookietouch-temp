@@ -8,6 +8,5 @@ export default class ExchangeReadyMessage extends Message {
     super();
     this.ready = ready;
     this.step = step;
-
   }
 }

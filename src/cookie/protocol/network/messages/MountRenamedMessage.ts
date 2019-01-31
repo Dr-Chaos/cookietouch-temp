@@ -8,6 +8,5 @@ export default class MountRenamedMessage extends Message {
     super();
     this.mountId = mountId;
     this.name = name;
-
   }
 }

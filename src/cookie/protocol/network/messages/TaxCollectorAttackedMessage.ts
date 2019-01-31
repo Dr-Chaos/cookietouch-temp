@@ -10,7 +10,15 @@ export default class TaxCollectorAttackedMessage extends Message {
   public subAreaId: number;
   public guild: BasicGuildInformations;
 
-  constructor(firstNameId = 0, lastNameId = 0, worldX = 0, worldY = 0, mapId = 0, subAreaId = 0, guild: BasicGuildInformations) {
+  constructor(
+    firstNameId = 0,
+    lastNameId = 0,
+    worldX = 0,
+    worldY = 0,
+    mapId = 0,
+    subAreaId = 0,
+    guild: BasicGuildInformations
+  ) {
     super();
     this.firstNameId = firstNameId;
     this.lastNameId = lastNameId;
@@ -19,6 +27,5 @@ export default class TaxCollectorAttackedMessage extends Message {
     this.mapId = mapId;
     this.subAreaId = subAreaId;
     this.guild = guild;
-
   }
 }

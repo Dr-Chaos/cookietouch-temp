@@ -8,6 +8,5 @@ export default class InteractiveUseEndedMessage extends Message {
     super();
     this.elemId = elemId;
     this.skillId = skillId;
-
   }
 }

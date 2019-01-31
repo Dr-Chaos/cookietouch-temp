@@ -6,11 +6,19 @@ export default class PartyInvitationDungeonDetailsMessage extends PartyInvitatio
   public playersDungeonReady: boolean[];
   public dungeonId: number;
 
-  constructor(partyId = 0, partyType = 0, fromId = 0, fromName = "", leaderId = 0,
-              dungeonId = 0, members: PartyInvitationMemberInformations[], guests: PartyGuestInformations[], playersDungeonReady: boolean[]) {
+  constructor(
+    partyId = 0,
+    partyType = 0,
+    fromId = 0,
+    fromName = "",
+    leaderId = 0,
+    dungeonId = 0,
+    members: PartyInvitationMemberInformations[],
+    guests: PartyGuestInformations[],
+    playersDungeonReady: boolean[]
+  ) {
     super(partyId, partyType, fromId, fromName, leaderId, members, guests);
     this.playersDungeonReady = playersDungeonReady;
     this.dungeonId = dungeonId;
-
   }
 }

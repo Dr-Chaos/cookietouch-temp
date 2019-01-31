@@ -9,6 +9,5 @@ export default class InventoryContentMessage extends Message {
     super();
     this.objects = objects;
     this.kamas = kamas;
-
   }
 }

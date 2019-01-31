@@ -135,19 +135,18 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
                 ).map((cellId, index) =>
                   this.props.account.game.map
                     .data!.midgroundLayer.get(cellId)!
-                    .map(
-                      (g, index2) =>
-                        g.g ? (
-                          <img
-                            key={`${index}-${index2}`}
-                            style={{ display: "none" }}
-                            id={`${
-                              this.props.account.accountConfig.username
-                            }-g-${cellId}-${g.g}`}
-                          />
-                        ) : (
-                          ""
-                        )
+                    .map((g, index2) =>
+                      g.g ? (
+                        <img
+                          key={`${index}-${index2}`}
+                          style={{ display: "none" }}
+                          id={`${
+                            this.props.account.accountConfig.username
+                          }-g-${cellId}-${g.g}`}
+                        />
+                      ) : (
+                        ""
+                      )
                     )
                 )
               : ""}

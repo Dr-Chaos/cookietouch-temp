@@ -6,6 +6,5 @@ export default class ObjectGroundRemovedMessage extends Message {
   constructor(cell = 0) {
     super();
     this.cell = cell;
-
   }
 }

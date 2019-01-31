@@ -6,6 +6,5 @@ export default class PartyInvitationCancelledForGuestMessage extends AbstractPar
   constructor(partyId = 0, cancelerId = 0) {
     super(partyId);
     this.cancelerId = cancelerId;
-
   }
 }

@@ -6,6 +6,5 @@ export default class JobAllowMultiCraftRequestSetMessage extends Message {
   constructor(enabled = false) {
     super();
     this.enabled = enabled;
-
   }
 }

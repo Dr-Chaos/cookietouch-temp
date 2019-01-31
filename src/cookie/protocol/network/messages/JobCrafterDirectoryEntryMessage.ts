@@ -8,11 +8,14 @@ export default class JobCrafterDirectoryEntryMessage extends Message {
   public playerInfo: JobCrafterDirectoryEntryPlayerInfo;
   public playerLook: EntityLook;
 
-  constructor(playerInfo: JobCrafterDirectoryEntryPlayerInfo, playerLook: EntityLook, jobInfoList: JobCrafterDirectoryEntryJobInfo[]) {
+  constructor(
+    playerInfo: JobCrafterDirectoryEntryPlayerInfo,
+    playerLook: EntityLook,
+    jobInfoList: JobCrafterDirectoryEntryJobInfo[]
+  ) {
     super();
     this.jobInfoList = jobInfoList;
     this.playerInfo = playerInfo;
     this.playerLook = playerLook;
-
   }
 }

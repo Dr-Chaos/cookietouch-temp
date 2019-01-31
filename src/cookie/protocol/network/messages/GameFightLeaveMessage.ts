@@ -6,6 +6,5 @@ export default class GameFightLeaveMessage extends Message {
   constructor(charId = 0) {
     super();
     this.charId = charId;
-
   }
 }

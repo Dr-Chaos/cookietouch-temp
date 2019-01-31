@@ -6,6 +6,5 @@ export default class GameRolePlayArenaRegisterMessage extends Message {
   constructor(battleMode = 3) {
     super();
     this.battleMode = battleMode;
-
   }
 }

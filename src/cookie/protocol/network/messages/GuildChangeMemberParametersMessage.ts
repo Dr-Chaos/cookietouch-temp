@@ -12,6 +12,5 @@ export default class GuildChangeMemberParametersMessage extends Message {
     this.rank = rank;
     this.experienceGivenPercent = experienceGivenPercent;
     this.rights = rights;
-
   }
 }

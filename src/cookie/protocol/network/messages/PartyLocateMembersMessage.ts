@@ -7,6 +7,5 @@ export default class PartyLocateMembersMessage extends AbstractPartyMessage {
   constructor(partyId = 0, geopositions: PartyMemberGeoPosition[]) {
     super(partyId);
     this.geopositions = geopositions;
-
   }
 }

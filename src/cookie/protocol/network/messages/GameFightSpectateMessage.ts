@@ -7,11 +7,14 @@ export default class GameFightSpectateMessage extends Message {
   public marks: GameActionMark[];
   public gameTurn: number;
 
-  constructor(gameTurn = 0, effects: FightDispellableEffectExtendedInformations[], marks: GameActionMark[]) {
+  constructor(
+    gameTurn = 0,
+    effects: FightDispellableEffectExtendedInformations[],
+    marks: GameActionMark[]
+  ) {
     super();
     this.effects = effects;
     this.marks = marks;
     this.gameTurn = gameTurn;
-
   }
 }

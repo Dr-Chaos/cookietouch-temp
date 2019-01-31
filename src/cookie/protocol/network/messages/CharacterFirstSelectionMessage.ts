@@ -6,6 +6,5 @@ export default class CharacterFirstSelectionMessage extends CharacterSelectionMe
   constructor(id = 0, doTutorial = false) {
     super(id);
     this.doTutorial = doTutorial;
-
   }
 }

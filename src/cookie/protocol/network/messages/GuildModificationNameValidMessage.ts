@@ -6,6 +6,5 @@ export default class GuildModificationNameValidMessage extends Message {
   constructor(guildName = "") {
     super();
     this.guildName = guildName;
-
   }
 }

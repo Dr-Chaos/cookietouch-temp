@@ -3,6 +3,5 @@ import AbstractPartyMessage from "@/protocol/network/messages/AbstractPartyMessa
 export default class PartyLeaveRequestMessage extends AbstractPartyMessage {
   constructor(partyId = 0) {
     super(partyId);
-
   }
 }

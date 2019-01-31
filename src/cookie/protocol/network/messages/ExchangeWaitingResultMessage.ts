@@ -6,6 +6,5 @@ export default class ExchangeWaitingResultMessage extends Message {
   constructor(bwait = false) {
     super();
     this.bwait = bwait;
-
   }
 }

@@ -6,6 +6,5 @@ export default class MimicryObjectAssociatedMessage extends Message {
   constructor(hostUID = 0) {
     super();
     this.hostUID = hostUID;
-
   }
 }

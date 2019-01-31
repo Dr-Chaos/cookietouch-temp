@@ -10,6 +10,5 @@ export default class ServerSettingsMessage extends Message {
     this.lang = lang;
     this.community = community;
     this.gameType = gameType;
-
   }
 }

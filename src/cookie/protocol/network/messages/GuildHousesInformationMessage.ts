@@ -7,6 +7,5 @@ export default class GuildHousesInformationMessage extends Message {
   constructor(housesInformations: HouseInformationsForGuild[]) {
     super();
     this.housesInformations = housesInformations;
-
   }
 }

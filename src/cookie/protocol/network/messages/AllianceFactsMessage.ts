@@ -7,8 +7,11 @@ export default class AllianceFactsMessage extends Message {
   public controlledSubareaIds: number[];
   public infos: AllianceFactSheetInformations;
 
-  constructor(infos: AllianceFactSheetInformations,
-              guilds: GuildInAllianceInformations[], controlledSubareaIds: number[]) {
+  constructor(
+    infos: AllianceFactSheetInformations,
+    guilds: GuildInAllianceInformations[],
+    controlledSubareaIds: number[]
+  ) {
     super();
     this.guilds = guilds;
     this.controlledSubareaIds = controlledSubareaIds;

@@ -6,6 +6,5 @@ export default class CharacterNameSuggestionSuccessMessage extends Message {
   constructor(suggestion = "") {
     super();
     this.suggestion = suggestion;
-
   }
 }

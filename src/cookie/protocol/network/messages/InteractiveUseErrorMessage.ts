@@ -8,6 +8,5 @@ export default class InteractiveUseErrorMessage extends Message {
     super();
     this.elemId = elemId;
     this.skillInstanceUid = skillInstanceUid;
-
   }
 }

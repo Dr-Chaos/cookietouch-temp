@@ -7,6 +7,5 @@ export default class StartupActionsListMessage extends Message {
   constructor(actions: StartupActionAddObject[]) {
     super();
     this.actions = actions;
-
   }
 }

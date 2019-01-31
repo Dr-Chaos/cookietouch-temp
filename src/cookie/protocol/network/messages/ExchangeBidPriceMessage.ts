@@ -8,6 +8,5 @@ export default class ExchangeBidPriceMessage extends Message {
     super();
     this.genericId = genericId;
     this.averagePrice = averagePrice;
-
   }
 }

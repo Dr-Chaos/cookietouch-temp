@@ -10,5 +10,5 @@ export enum ChatChannelsMultiEnum {
   CHANNEL_ADMIN = 8,
   PSEUDO_CHANNEL_PRIVATE = 9,
   CHANNEL_ADS = 12,
-  CHANNEL_ARENA = 13,
+  CHANNEL_ARENA = 13
 }

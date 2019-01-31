@@ -8,5 +8,5 @@ export enum ServerCompletionEnum {
   /** Le serveur n'est pas disponible pour l'instant ? */
   COMPLETION_COMING_SOON = 3,
   /** Le serveur est complet. */
-  COMPLETION_FULL = 4,
+  COMPLETION_FULL = 4
 }

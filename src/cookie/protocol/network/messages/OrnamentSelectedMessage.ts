@@ -6,6 +6,5 @@ export default class OrnamentSelectedMessage extends Message {
   constructor(ornamentId = 0) {
     super();
     this.ornamentId = ornamentId;
-
   }
 }

@@ -10,6 +10,5 @@ export default class ObjectFeedMessage extends Message {
     this.objectUID = objectUID;
     this.foodUID = foodUID;
     this.foodQuantity = foodQuantity;
-
   }
 }

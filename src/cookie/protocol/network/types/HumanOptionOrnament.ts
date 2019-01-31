@@ -6,6 +6,5 @@ export default class HumanOptionOrnament extends HumanOption {
   constructor(ornamentId = 0) {
     super();
     this.ornamentId = ornamentId;
-
   }
 }

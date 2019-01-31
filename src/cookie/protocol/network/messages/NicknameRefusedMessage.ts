@@ -6,6 +6,5 @@ export default class NicknameRefusedMessage extends Message {
   constructor(reason = 99) {
     super();
     this.reason = reason;
-
   }
 }

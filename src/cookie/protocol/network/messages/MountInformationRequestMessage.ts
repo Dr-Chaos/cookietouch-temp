@@ -8,6 +8,5 @@ export default class MountInformationRequestMessage extends Message {
     super();
     this.id = id;
     this.time = time;
-
   }
 }

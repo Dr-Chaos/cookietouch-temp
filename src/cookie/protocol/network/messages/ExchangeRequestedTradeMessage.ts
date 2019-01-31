@@ -8,6 +8,5 @@ export default class ExchangeRequestedTradeMessage extends ExchangeRequestedMess
     super(exchangeType);
     this.source = source;
     this.target = target;
-
   }
 }

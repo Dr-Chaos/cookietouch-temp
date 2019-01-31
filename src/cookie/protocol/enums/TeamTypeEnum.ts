@@ -4,5 +4,5 @@ export enum TeamTypeEnum {
   TEAM_TYPE_MUTANT = 2,
   TEAM_TYPE_TAXCOLLECTOR = 3,
   TEAM_TYPE_BAD_PLAYER = 4,
-  TEAM_TYPE_PRISM = 5,
+  TEAM_TYPE_PRISM = 5
 }

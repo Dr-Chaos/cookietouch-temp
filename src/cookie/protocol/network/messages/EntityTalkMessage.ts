@@ -10,6 +10,5 @@ export default class EntityTalkMessage extends Message {
     this.parameters = parameters;
     this.entityId = entityId;
     this.textId = textId;
-
   }
 }

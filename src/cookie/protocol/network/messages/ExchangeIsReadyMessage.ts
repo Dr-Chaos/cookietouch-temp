@@ -8,6 +8,5 @@ export default class ExchangeIsReadyMessage extends Message {
     super();
     this.id = id;
     this.ready = ready;
-
   }
 }

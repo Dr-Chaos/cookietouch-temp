@@ -8,6 +8,5 @@ export default class PrismFightSwapRequestMessage extends Message {
     super();
     this.subAreaId = subAreaId;
     this.targetId = targetId;
-
   }
 }

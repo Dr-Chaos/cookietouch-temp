@@ -12,6 +12,5 @@ export default class LivingObjectMessageMessage extends Message {
     this.timeStamp = timeStamp;
     this.owner = owner;
     this.objectGenericId = objectGenericId;
-
   }
 }

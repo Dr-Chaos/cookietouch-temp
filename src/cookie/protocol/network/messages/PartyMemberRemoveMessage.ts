@@ -6,6 +6,5 @@ export default class PartyMemberRemoveMessage extends AbstractPartyEventMessage 
   constructor(partyId = 0, leavingPlayerId = 0) {
     super(partyId);
     this.leavingPlayerId = leavingPlayerId;
-
   }
 }

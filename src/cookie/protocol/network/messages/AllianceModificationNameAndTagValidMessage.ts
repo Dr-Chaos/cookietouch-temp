@@ -8,6 +8,5 @@ export default class AllianceModificationNameAndTagValidMessage extends Message 
     super();
     this.allianceName = allianceName;
     this.allianceTag = allianceTag;
-
   }
 }

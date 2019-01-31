@@ -10,6 +10,5 @@ export default class GameRolePlayArenaRegistrationStatusMessage extends Message 
     this.registered = registered;
     this.step = step;
     this.battleMode = battleMode;
-
   }
 }

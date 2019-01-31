@@ -6,6 +6,5 @@ export default class AcquaintanceServerListMessage extends Message {
   constructor(servers: number[]) {
     super();
     this.servers = servers;
-
   }
 }

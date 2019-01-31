@@ -6,10 +6,15 @@ import GuildFactSheetInformations from "@/protocol/network/types/GuildFactSheetI
 export default class GuildInAllianceFactsMessage extends GuildFactsMessage {
   public allianceInfos: BasicNamedAllianceInformations;
 
-  constructor(infos: GuildFactSheetInformations, creationDate = 0, nbTaxCollectors = 0,
-              enabled = false, allianceInfos: BasicNamedAllianceInformations, members: CharacterMinimalInformations[]) {
+  constructor(
+    infos: GuildFactSheetInformations,
+    creationDate = 0,
+    nbTaxCollectors = 0,
+    enabled = false,
+    allianceInfos: BasicNamedAllianceInformations,
+    members: CharacterMinimalInformations[]
+  ) {
     super(infos, creationDate, nbTaxCollectors, enabled, members);
     this.allianceInfos = allianceInfos;
-
   }
 }

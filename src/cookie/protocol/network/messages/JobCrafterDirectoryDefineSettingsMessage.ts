@@ -7,6 +7,5 @@ export default class JobCrafterDirectoryDefineSettingsMessage extends Message {
   constructor(settings: JobCrafterDirectorySettings) {
     super();
     this.settings = settings;
-
   }
 }

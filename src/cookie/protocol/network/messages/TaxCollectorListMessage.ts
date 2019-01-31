@@ -7,11 +7,14 @@ export default class TaxCollectorListMessage extends Message {
   public fightersInformations: TaxCollectorFightersInformation[];
   public nbcollectorMax: number;
 
-  constructor(nbcollectorMax = 0, informations: TaxCollectorInformations[], fightersInformations: TaxCollectorFightersInformation[]) {
+  constructor(
+    nbcollectorMax = 0,
+    informations: TaxCollectorInformations[],
+    fightersInformations: TaxCollectorFightersInformation[]
+  ) {
     super();
     this.informations = informations;
     this.fightersInformations = fightersInformations;
     this.nbcollectorMax = nbcollectorMax;
-
   }
 }

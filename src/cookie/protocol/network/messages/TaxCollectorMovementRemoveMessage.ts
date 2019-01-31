@@ -6,6 +6,5 @@ export default class TaxCollectorMovementRemoveMessage extends Message {
   constructor(collectorId = 0) {
     super();
     this.collectorId = collectorId;
-
   }
 }

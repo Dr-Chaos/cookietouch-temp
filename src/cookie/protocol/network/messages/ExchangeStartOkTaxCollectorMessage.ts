@@ -11,6 +11,5 @@ export default class ExchangeStartOkTaxCollectorMessage extends Message {
     this.objectsInfos = objectsInfos;
     this.collectorId = collectorId;
     this.goldInfo = goldInfo;
-
   }
 }

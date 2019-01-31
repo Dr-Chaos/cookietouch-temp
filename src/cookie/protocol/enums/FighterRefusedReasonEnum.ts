@@ -21,5 +21,5 @@ export enum FighterRefusedReasonEnum {
   WRONG_ALLIANCE = 20,
   AVA_ZONE = 21,
   COMPANION_REFUSED = 22,
-  NOT_ENOUGH_ROOM = 23,
+  NOT_ENOUGH_ROOM = 23
 }

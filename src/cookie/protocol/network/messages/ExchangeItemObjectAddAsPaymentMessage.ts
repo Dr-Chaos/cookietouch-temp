@@ -12,6 +12,5 @@ export default class ExchangeItemObjectAddAsPaymentMessage extends Message {
     this.bAdd = bAdd;
     this.objectToMoveId = objectToMoveId;
     this.quantity = quantity;
-
   }
 }

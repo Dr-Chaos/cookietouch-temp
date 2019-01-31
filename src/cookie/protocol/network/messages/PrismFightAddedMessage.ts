@@ -7,6 +7,5 @@ export default class PrismFightAddedMessage extends Message {
   constructor(fight: PrismFightersInformation) {
     super();
     this.fight = fight;
-
   }
 }

@@ -8,6 +8,5 @@ export default class GameFightJoinRequestMessage extends Message {
     super();
     this.fighterId = fighterId;
     this.fightId = fightId;
-
   }
 }

@@ -7,6 +7,5 @@ export default class ServerStatusUpdateMessage extends Message {
   constructor(server: GameServerInformations) {
     super();
     this.server = server;
-
   }
 }

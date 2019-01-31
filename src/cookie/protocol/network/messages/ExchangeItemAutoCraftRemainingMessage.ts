@@ -6,6 +6,5 @@ export default class ExchangeItemAutoCraftRemainingMessage extends Message {
   constructor(count = 0) {
     super();
     this.count = count;
-
   }
 }

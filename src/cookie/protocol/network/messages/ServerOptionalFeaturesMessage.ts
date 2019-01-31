@@ -6,6 +6,5 @@ export default class ServerOptionalFeaturesMessage extends Message {
   constructor(features: number[]) {
     super();
     this.features = features;
-
   }
 }

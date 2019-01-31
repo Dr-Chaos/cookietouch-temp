@@ -1,13 +1,17 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class FightOptionsInformations extends Type {
-
   public issecret: boolean;
   public isrestrictedtopartyonly: boolean;
   public isclosed: boolean;
   public isaskingforhelp: boolean;
 
-  constructor(issecret = false, isrestrictedtopartyonly = false, isclosed = false, isaskingforhelp = false) {
+  constructor(
+    issecret = false,
+    isrestrictedtopartyonly = false,
+    isclosed = false,
+    isaskingforhelp = false
+  ) {
     super();
     this.issecret = issecret;
     this.isrestrictedtopartyonly = isrestrictedtopartyonly;

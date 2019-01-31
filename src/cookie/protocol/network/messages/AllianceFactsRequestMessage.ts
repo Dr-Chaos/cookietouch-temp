@@ -6,6 +6,5 @@ export default class AllianceFactsRequestMessage extends Message {
   constructor(allianceId = 0) {
     super();
     this.allianceId = allianceId;
-
   }
 }

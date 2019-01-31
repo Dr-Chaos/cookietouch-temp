@@ -6,6 +6,5 @@ export default class GetPartInfoMessage extends Message {
   constructor(id = "") {
     super();
     this.id = id;
-
   }
 }

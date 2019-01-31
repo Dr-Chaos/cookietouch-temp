@@ -10,6 +10,5 @@ export default class GameRolePlayPlayerFightRequestMessage extends Message {
     this.targetId = targetId;
     this.targetCellId = targetCellId;
     this.friendly = friendly;
-
   }
 }

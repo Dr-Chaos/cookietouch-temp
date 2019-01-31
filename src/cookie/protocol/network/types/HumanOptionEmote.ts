@@ -8,6 +8,5 @@ export default class HumanOptionEmote extends HumanOption {
     super();
     this.emoteId = emoteId;
     this.emoteStartTime = emoteStartTime;
-
   }
 }

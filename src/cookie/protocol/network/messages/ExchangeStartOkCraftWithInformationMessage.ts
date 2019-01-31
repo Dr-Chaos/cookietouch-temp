@@ -8,6 +8,5 @@ export default class ExchangeStartOkCraftWithInformationMessage extends Exchange
     super();
     this.nbCase = nbCase;
     this.skillId = skillId;
-
   }
 }

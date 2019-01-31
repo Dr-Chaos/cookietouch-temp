@@ -8,6 +8,5 @@ export default class ExchangeOnHumanVendorRequestMessage extends Message {
     super();
     this.humanVendorId = humanVendorId;
     this.humanVendorCell = humanVendorCell;
-
   }
 }

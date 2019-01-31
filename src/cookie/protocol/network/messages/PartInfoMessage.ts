@@ -9,6 +9,5 @@ export default class PartInfoMessage extends Message {
     super();
     this.part = part;
     this.installationPercent = installationPercent;
-
   }
 }

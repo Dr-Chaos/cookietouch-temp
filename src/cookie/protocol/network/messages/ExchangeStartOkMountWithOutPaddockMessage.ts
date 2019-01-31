@@ -7,6 +7,5 @@ export default class ExchangeStartOkMountWithOutPaddockMessage extends Message {
   constructor(stabledMountsDescription: MountClientData[]) {
     super();
     this.stabledMountsDescription = stabledMountsDescription;
-
   }
 }

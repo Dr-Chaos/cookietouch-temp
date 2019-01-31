@@ -6,6 +6,5 @@ export default class GameFightStartingMessage extends Message {
   constructor(fightType = 0) {
     super();
     this.fightType = fightType;
-
   }
 }

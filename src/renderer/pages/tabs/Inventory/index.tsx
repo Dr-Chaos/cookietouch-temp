@@ -60,7 +60,7 @@ class Inventory extends React.Component<
     return (
       <div className={classes.root}>
         <AppBar className={classes.appBar} position="static">
-          <Tabs value={value} onChange={this.handleChange} fullWidth={true}>
+          <Tabs value={value} onChange={this.handleChange} variant="fullWidth">
             <Tab
               className={classes.tab}
               label={LanguageManager.trans("equipments")}
@@ -86,13 +86,13 @@ class Inventory extends React.Component<
               <TableHead>
                 <TableRow>
                   <TableCell className={classes.tablecell} />
-                  <TableCell className={classes.tablecell} numeric={true}>
+                  <TableCell className={classes.tablecell} align="center">
                     ID
                   </TableCell>
                   <TableCell className={classes.tablecell}>
                     {LanguageManager.trans("name")}
                   </TableCell>
-                  <TableCell className={classes.tablecell} numeric={true}>
+                  <TableCell className={classes.tablecell} align="center">
                     {LanguageManager.trans("quantity")}
                   </TableCell>
                   <TableCell className={classes.tablecell}>
@@ -115,13 +115,13 @@ class Inventory extends React.Component<
                           alt={e.name}
                         />
                       </TableCell>
-                      <TableCell className={classes.tablecell} numeric={true}>
+                      <TableCell className={classes.tablecell} align="center">
                         {e.gid}
                       </TableCell>
                       <TableCell className={classes.tablecell}>
                         {e.name}
                       </TableCell>
-                      <TableCell className={classes.tablecell} numeric={true}>
+                      <TableCell className={classes.tablecell} align="center">
                         {e.quantity}
                       </TableCell>
                       <TableCell className={classes.tablecell}>
@@ -167,9 +167,9 @@ class Inventory extends React.Component<
               <TableHead>
                 <TableRow>
                   <TableCell />
-                  <TableCell numeric={true}>ID</TableCell>
+                  <TableCell align="center">ID</TableCell>
                   <TableCell>{LanguageManager.trans("name")}</TableCell>
-                  <TableCell numeric={true}>
+                  <TableCell align="center">
                     {LanguageManager.trans("quantity")}
                   </TableCell>
                   <TableCell>{LanguageManager.trans("actions")}</TableCell>
@@ -187,9 +187,9 @@ class Inventory extends React.Component<
                           alt={c.name}
                         />
                       </TableCell>
-                      <TableCell numeric={true}>{c.gid}</TableCell>
+                      <TableCell align="center">{c.gid}</TableCell>
                       <TableCell>{c.name}</TableCell>
-                      <TableCell numeric={true}>{c.quantity}</TableCell>
+                      <TableCell align="center">{c.quantity}</TableCell>
                       <TableCell>
                         <Button
                           variant="contained"
@@ -227,9 +227,9 @@ class Inventory extends React.Component<
               <TableHead>
                 <TableRow>
                   <TableCell />
-                  <TableCell numeric={true}>ID</TableCell>
+                  <TableCell align="center">ID</TableCell>
                   <TableCell>{LanguageManager.trans("name")}</TableCell>
-                  <TableCell numeric={true}>
+                  <TableCell align="center">
                     {LanguageManager.trans("quantity")}
                   </TableCell>
                   <TableCell>{LanguageManager.trans("actions")}</TableCell>
@@ -247,9 +247,9 @@ class Inventory extends React.Component<
                           alt={r.name}
                         />
                       </TableCell>
-                      <TableCell numeric={true}>{r.gid}</TableCell>
+                      <TableCell align="center">{r.gid}</TableCell>
                       <TableCell>{r.name}</TableCell>
-                      <TableCell numeric={true}>{r.quantity}</TableCell>
+                      <TableCell align="center">{r.quantity}</TableCell>
                       <TableCell>
                         <Button
                           variant="contained"
@@ -279,9 +279,9 @@ class Inventory extends React.Component<
               <TableHead>
                 <TableRow>
                   <TableCell />
-                  <TableCell numeric={true}>ID</TableCell>
+                  <TableCell align="center">ID</TableCell>
                   <TableCell>{LanguageManager.trans("name")}</TableCell>
-                  <TableCell numeric={true}>
+                  <TableCell align="center">
                     {LanguageManager.trans("quantity")}
                   </TableCell>
                 </TableRow>
@@ -298,9 +298,9 @@ class Inventory extends React.Component<
                           alt={q.name}
                         />
                       </TableCell>
-                      <TableCell numeric={true}>{q.gid}</TableCell>
+                      <TableCell align="center">{q.gid}</TableCell>
                       <TableCell>{q.name}</TableCell>
-                      <TableCell numeric={true}>{q.quantity}</TableCell>
+                      <TableCell align="center">{q.quantity}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -318,16 +318,16 @@ class Inventory extends React.Component<
             {this.state.deleteDropUseChoice === DeleteDropUseChoice.Delete
               ? LanguageManager.trans("delete")
               : this.state.deleteDropUseChoice === DeleteDropUseChoice.Drop
-                ? LanguageManager.trans("drop")
-                : LanguageManager.trans("use")}
+              ? LanguageManager.trans("drop")
+              : LanguageManager.trans("use")}
           </DialogTitle>
           <DialogContent>
             <DialogContentText>
               {this.state.deleteDropUseChoice === DeleteDropUseChoice.Delete
                 ? LanguageManager.trans("howManyDelete")
                 : this.state.deleteDropUseChoice === DeleteDropUseChoice.Drop
-                  ? LanguageManager.trans("howManyDrop")
-                  : LanguageManager.trans("howManyUse")}
+                ? LanguageManager.trans("howManyDrop")
+                : LanguageManager.trans("howManyUse")}
             </DialogContentText>
             <TextField
               autoFocus={true}
@@ -353,8 +353,8 @@ class Inventory extends React.Component<
               {this.state.deleteDropUseChoice === DeleteDropUseChoice.Delete
                 ? LanguageManager.trans("delete")
                 : this.state.deleteDropUseChoice === DeleteDropUseChoice.Drop
-                  ? LanguageManager.trans("drop")
-                  : LanguageManager.trans("use")}
+                ? LanguageManager.trans("drop")
+                : LanguageManager.trans("use")}
             </Button>
           </DialogActions>
         </Dialog>

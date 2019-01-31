@@ -6,6 +6,5 @@ export default class GuildKickRequestMessage extends Message {
   constructor(kickedId = 0) {
     super();
     this.kickedId = kickedId;
-
   }
 }

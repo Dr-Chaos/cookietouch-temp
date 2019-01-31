@@ -6,6 +6,5 @@ export default class AllianceInvitationAnswerMessage extends Message {
   constructor(accept = false) {
     super();
     this.accept = accept;
-
   }
 }

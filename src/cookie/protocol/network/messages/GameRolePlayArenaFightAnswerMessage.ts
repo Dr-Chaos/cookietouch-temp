@@ -8,6 +8,5 @@ export default class GameRolePlayArenaFightAnswerMessage extends Message {
     super();
     this.fightId = fightId;
     this.accept = accept;
-
   }
 }

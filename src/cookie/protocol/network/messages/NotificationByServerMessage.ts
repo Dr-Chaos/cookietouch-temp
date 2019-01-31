@@ -10,6 +10,5 @@ export default class NotificationByServerMessage extends Message {
     this.parameters = parameters;
     this.id = id;
     this.forceOpen = forceOpen;
-
   }
 }

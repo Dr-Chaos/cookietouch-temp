@@ -8,6 +8,5 @@ export default class KrosmasterTransferMessage extends Message {
     super();
     this.uid = uid;
     this.failure = failure;
-
   }
 }

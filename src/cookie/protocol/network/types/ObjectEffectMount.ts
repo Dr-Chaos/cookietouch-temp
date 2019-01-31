@@ -1,7 +1,6 @@
 import ObjectEffect from "@/protocol/network/types/ObjectEffect";
 
 export default class ObjectEffectMount extends ObjectEffect {
-
   public mountId: number;
   public date: number;
   public modelId: number;

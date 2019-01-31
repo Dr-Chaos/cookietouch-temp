@@ -10,6 +10,5 @@ export default class GameRolePlayFightRequestCanceledMessage extends Message {
     this.fightId = fightId;
     this.sourceId = sourceId;
     this.targetId = targetId;
-
   }
 }

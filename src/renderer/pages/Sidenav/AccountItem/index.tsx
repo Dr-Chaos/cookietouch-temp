@@ -77,8 +77,8 @@ class AccountItem extends React.Component<
     return state === AccountStates.DISCONNECTED
       ? "red"
       : state === AccountStates.CONNECTING
-        ? "orange"
-        : "green";
+      ? "orange"
+      : "green";
   }
 }
 

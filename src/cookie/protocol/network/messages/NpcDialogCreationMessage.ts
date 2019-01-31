@@ -8,6 +8,5 @@ export default class NpcDialogCreationMessage extends Message {
     super();
     this.mapId = mapId;
     this.npcId = npcId;
-
   }
 }

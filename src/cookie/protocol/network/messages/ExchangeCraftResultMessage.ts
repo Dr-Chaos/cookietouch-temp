@@ -6,6 +6,5 @@ export default class ExchangeCraftResultMessage extends Message {
   constructor(craftResult = 0) {
     super();
     this.craftResult = craftResult;
-
   }
 }

@@ -60,8 +60,8 @@ export default class ServerSelectionFrame implements IFrame {
           s => s.id === account.accountConfig.characterCreation.server
         )
       : account.accountConfig.server === -1
-        ? message.servers.find(s => s.charactersCount > 0)
-        : message.servers.find(s => s.id === account.accountConfig.server);
+      ? message.servers.find(s => s.charactersCount > 0)
+      : message.servers.find(s => s.id === account.accountConfig.server);
 
     if (
       server === undefined ||

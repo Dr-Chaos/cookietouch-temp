@@ -6,6 +6,5 @@ export default class ExchangeObjectMovePricedMessage extends ExchangeObjectMoveM
   constructor(objectUID = 0, quantity = 0, price = 0) {
     super(objectUID, quantity);
     this.price = price;
-
   }
 }

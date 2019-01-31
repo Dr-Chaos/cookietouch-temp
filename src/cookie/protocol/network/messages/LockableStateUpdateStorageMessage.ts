@@ -8,6 +8,5 @@ export default class LockableStateUpdateStorageMessage extends LockableStateUpda
     super(locked);
     this.mapId = mapId;
     this.elementId = elementId;
-
   }
 }

@@ -7,6 +7,5 @@ export default class GameContextMoveMultipleElementsMessage extends Message {
   constructor(movements: EntityMovementInformations[]) {
     super();
     this.movements = movements;
-
   }
 }

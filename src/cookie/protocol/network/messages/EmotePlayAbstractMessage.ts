@@ -8,6 +8,5 @@ export default class EmotePlayAbstractMessage extends Message {
     super();
     this.emoteId = emoteId;
     this.emoteStartTime = emoteStartTime;
-
   }
 }

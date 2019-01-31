@@ -7,6 +7,5 @@ export default class ExchangeBidHouseItemAddOkMessage extends Message {
   constructor(itemInfo: ObjectItemToSellInBid) {
     super();
     this.itemInfo = itemInfo;
-
   }
 }

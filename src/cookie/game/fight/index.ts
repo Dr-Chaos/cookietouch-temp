@@ -665,13 +665,12 @@ export default class Fight implements IClearable {
     message: GameEntitiesDispositionMessage
   ) {
     // TODO: Check the next line...
-    message.dispositions.forEach(
-      d =>
-        this.getFighter(d.id) !== null
-          ? this.getFighter(
-              d.id
-            )!.UpdateIdentifiedEntityDispositionInformations(d)
-          : d
+    message.dispositions.forEach(d =>
+      this.getFighter(d.id) !== null
+        ? this.getFighter(d.id)!.UpdateIdentifiedEntityDispositionInformations(
+            d
+          )
+        : d
     );
     this.onFightersUpdated.trigger();
   }

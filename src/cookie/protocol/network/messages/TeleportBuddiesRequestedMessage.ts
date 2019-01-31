@@ -10,6 +10,5 @@ export default class TeleportBuddiesRequestedMessage extends Message {
     this.invalidBuddiesIds = invalidBuddiesIds;
     this.dungeonId = dungeonId;
     this.inviterId = inviterId;
-
   }
 }

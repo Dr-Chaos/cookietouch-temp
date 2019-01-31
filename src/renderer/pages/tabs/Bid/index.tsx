@@ -288,18 +288,18 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                 <Table className={classes.table}>
                   <TableHead>
                     <TableRow>
-                      <TableCell numeric={true}>GID</TableCell>
+                      <TableCell align="center">GID</TableCell>
                       <TableCell>{LanguageManager.trans("name")}</TableCell>
-                      <TableCell numeric={true}>
+                      <TableCell align="center">
                         {LanguageManager.trans("lot")}
                       </TableCell>
-                      <TableCell numeric={true}>
+                      <TableCell align="center">
                         {LanguageManager.trans("quantity")}
                       </TableCell>
-                      <TableCell numeric={true}>
+                      <TableCell align="center">
                         {LanguageManager.trans("minPrice")}
                       </TableCell>
-                      <TableCell numeric={true}>
+                      <TableCell align="center">
                         {LanguageManager.trans("basePrice")}
                       </TableCell>
                       <TableCell>{LanguageManager.trans("actions")}</TableCell>
@@ -339,12 +339,12 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
                 <Table className={classes.table}>
                   <TableHead>
                     <TableRow>
-                      <TableCell numeric={true}>GID</TableCell>
+                      <TableCell align="center">GID</TableCell>
                       <TableCell>{LanguageManager.trans("name")}</TableCell>
-                      <TableCell numeric={true}>
+                      <TableCell align="center">
                         {LanguageManager.trans("lot")}
                       </TableCell>
-                      <TableCell numeric={true}>
+                      <TableCell align="center">
                         {LanguageManager.trans("price")}
                       </TableCell>
                       <TableCell>

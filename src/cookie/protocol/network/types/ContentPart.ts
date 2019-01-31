@@ -1,7 +1,6 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class ContentPart extends Type {
-
   public id: string;
   public state: number;
 

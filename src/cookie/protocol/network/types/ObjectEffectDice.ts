@@ -1,7 +1,6 @@
 import ObjectEffect from "@/protocol/network/types/ObjectEffect";
 
 export default class ObjectEffectDice extends ObjectEffect {
-
   public dicenum: number;
   public diceside: number;
   public diceconst: number;

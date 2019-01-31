@@ -7,6 +7,5 @@ export default class ExchangeTypesItemsExchangerDescriptionForUserMessage extend
   constructor(itemTypeDescriptions: BidExchangerObjectInfo[]) {
     super();
     this.itemTypeDescriptions = itemTypeDescriptions;
-
   }
 }

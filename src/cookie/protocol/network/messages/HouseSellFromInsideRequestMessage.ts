@@ -3,6 +3,5 @@ import HouseSellRequestMessage from "@/protocol/network/messages/HouseSellReques
 export default class HouseSellFromInsideRequestMessage extends HouseSellRequestMessage {
   constructor(amount = 0) {
     super(amount);
-
   }
 }

@@ -6,6 +6,5 @@ export default class ExchangeKamaModifiedMessage extends ExchangeObjectMessage {
   constructor(remote = false, quantity = 0) {
     super(remote);
     this.quantity = quantity;
-
   }
 }

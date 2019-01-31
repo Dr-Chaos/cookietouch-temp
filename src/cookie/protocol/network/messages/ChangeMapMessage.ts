@@ -6,6 +6,5 @@ export default class ChangeMapMessage extends Message {
   constructor(mapId = 0) {
     super();
     this.mapId = mapId;
-
   }
 }

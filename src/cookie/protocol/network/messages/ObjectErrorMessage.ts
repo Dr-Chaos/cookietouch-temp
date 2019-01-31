@@ -6,6 +6,5 @@ export default class ObjectErrorMessage extends Message {
   constructor(reason = 0) {
     super();
     this.reason = reason;
-
   }
 }

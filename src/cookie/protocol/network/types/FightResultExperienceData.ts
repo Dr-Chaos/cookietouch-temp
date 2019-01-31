@@ -1,7 +1,6 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class FightResultExperienceData extends Type {
-
   public experience: number;
   public showexperience: boolean;
   public experiencelevelfloor: number;
@@ -17,12 +16,22 @@ export default class FightResultExperienceData extends Type {
   public isincarnationexperience: boolean;
   public rerollexperiencemul: number;
 
-  constructor(experience = 0, showexperience = false, experiencelevelfloor = 0,
-              showexperiencelevelfloor = false, experiencenextlevelfloor = 0,
-              showexperiencenextlevelfloor = false, experiencefightdelta = 0,
-              showexperiencefightdelta = false, experienceforguild = 0, showexperienceforguild = false,
-              experienceformount = 0, showexperienceformount = false, isincarnationexperience = false,
-              rerollexperiencemul = 0) {
+  constructor(
+    experience = 0,
+    showexperience = false,
+    experiencelevelfloor = 0,
+    showexperiencelevelfloor = false,
+    experiencenextlevelfloor = 0,
+    showexperiencenextlevelfloor = false,
+    experiencefightdelta = 0,
+    showexperiencefightdelta = false,
+    experienceforguild = 0,
+    showexperienceforguild = false,
+    experienceformount = 0,
+    showexperienceformount = false,
+    isincarnationexperience = false,
+    rerollexperiencemul = 0
+  ) {
     super();
     this.experience = experience;
     this.showexperience = showexperience;

@@ -4,6 +4,5 @@ import GameFightFighterInformations from "@/protocol/network/types/GameFightFigh
 export default class GameFightShowFighterRandomStaticPoseMessage extends GameFightShowFighterMessage {
   constructor(informations: GameFightFighterInformations) {
     super(informations);
-
   }
 }

@@ -6,6 +6,5 @@ export default class GuildInvitationMessage extends Message {
   constructor(targetId = 0) {
     super();
     this.targetId = targetId;
-
   }
 }

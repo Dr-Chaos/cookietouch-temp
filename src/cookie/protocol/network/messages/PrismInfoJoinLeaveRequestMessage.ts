@@ -6,6 +6,5 @@ export default class PrismInfoJoinLeaveRequestMessage extends Message {
   constructor(join = false) {
     super();
     this.join = join;
-
   }
 }

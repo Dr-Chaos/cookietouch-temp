@@ -8,6 +8,5 @@ export default class IgnoredAddRequestMessage extends Message {
     super();
     this.name = name;
     this.session = session;
-
   }
 }

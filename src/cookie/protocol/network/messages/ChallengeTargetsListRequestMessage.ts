@@ -6,6 +6,5 @@ export default class ChallengeTargetsListRequestMessage extends Message {
   constructor(challengeId = 0) {
     super();
     this.challengeId = challengeId;
-
   }
 }

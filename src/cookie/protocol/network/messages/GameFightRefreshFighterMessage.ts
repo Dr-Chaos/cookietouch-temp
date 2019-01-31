@@ -7,6 +7,5 @@ export default class GameFightRefreshFighterMessage extends Message {
   constructor(informations: GameContextActorInformations) {
     super();
     this.informations = informations;
-
   }
 }

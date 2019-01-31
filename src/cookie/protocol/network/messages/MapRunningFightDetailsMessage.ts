@@ -6,7 +6,11 @@ export default class MapRunningFightDetailsMessage extends Message {
   public defenders: GameFightFighterLightInformations[];
   public fightId: number;
 
-  constructor(fightId = 0, attackers: GameFightFighterLightInformations[], defenders: GameFightFighterLightInformations[]) {
+  constructor(
+    fightId = 0,
+    attackers: GameFightFighterLightInformations[],
+    defenders: GameFightFighterLightInformations[]
+  ) {
     super();
     this.attackers = attackers;
     this.defenders = defenders;

@@ -6,11 +6,14 @@ export default class GuildInvitedMessage extends Message {
   public recruterName: string;
   public guildInfo: BasicGuildInformations;
 
-  constructor(recruterId = 0, recruterName = "", guildInfo: BasicGuildInformations) {
+  constructor(
+    recruterId = 0,
+    recruterName = "",
+    guildInfo: BasicGuildInformations
+  ) {
     super();
     this.recruterId = recruterId;
     this.recruterName = recruterName;
     this.guildInfo = guildInfo;
-
   }
 }

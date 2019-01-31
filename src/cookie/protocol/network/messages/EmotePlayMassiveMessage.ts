@@ -6,6 +6,5 @@ export default class EmotePlayMassiveMessage extends EmotePlayAbstractMessage {
   constructor(emoteId = 0, emoteStartTime = 0, actorIds: number[]) {
     super(emoteId, emoteStartTime);
     this.actorIds = actorIds;
-
   }
 }

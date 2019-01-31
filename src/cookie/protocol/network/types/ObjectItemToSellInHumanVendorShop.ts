@@ -2,7 +2,6 @@ import Item from "@/protocol/network/types/Item";
 import ObjectEffect from "@/protocol/network/types/ObjectEffect";
 
 export default class ObjectItemToSellInHumanVendorShop extends Item {
-
   public effects: ObjectEffect[];
   public objectgid: number;
   public objectuid: number;
@@ -10,7 +9,14 @@ export default class ObjectItemToSellInHumanVendorShop extends Item {
   public objectprice: number;
   public publicprice: number;
 
-  constructor(objectgid = 0, objectuid = 0, quantity = 0, objectprice = 0, publicprice = 0, effects: ObjectEffect[]) {
+  constructor(
+    objectgid = 0,
+    objectuid = 0,
+    quantity = 0,
+    objectprice = 0,
+    publicprice = 0,
+    effects: ObjectEffect[]
+  ) {
     super();
     this.effects = effects;
     this.objectgid = objectgid;

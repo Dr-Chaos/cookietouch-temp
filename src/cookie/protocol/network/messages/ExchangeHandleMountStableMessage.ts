@@ -8,6 +8,5 @@ export default class ExchangeHandleMountStableMessage extends Message {
     super();
     this.actionType = actionType;
     this.rideId = rideId;
-
   }
 }

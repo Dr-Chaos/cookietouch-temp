@@ -6,6 +6,5 @@ export default class ExchangeMultiCraftSetCrafterCanUseHisRessourcesMessage exte
   constructor(allow = false) {
     super();
     this.allow = allow;
-
   }
 }

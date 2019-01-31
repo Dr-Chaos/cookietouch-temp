@@ -7,6 +7,5 @@ export default class FriendsListMessage extends Message {
   constructor(friendsList: FriendInformations[]) {
     super();
     this.friendsList = friendsList;
-
   }
 }

@@ -10,6 +10,5 @@ export default class ChallengeDungeonStackedBonusMessage extends Message {
     this.dungeonId = dungeonId;
     this.xpBonus = xpBonus;
     this.dropBonus = dropBonus;
-
   }
 }

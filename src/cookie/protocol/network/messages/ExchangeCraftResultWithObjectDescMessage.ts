@@ -7,6 +7,5 @@ export default class ExchangeCraftResultWithObjectDescMessage extends ExchangeCr
   constructor(craftResult = 0, objectInfo: ObjectItemNotInContainer) {
     super(craftResult);
     this.objectInfo = objectInfo;
-
   }
 }

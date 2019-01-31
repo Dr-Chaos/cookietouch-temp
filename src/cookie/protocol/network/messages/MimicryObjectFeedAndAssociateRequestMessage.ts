@@ -9,7 +9,15 @@ export default class MimicryObjectFeedAndAssociateRequestMessage extends Message
   public hostPos: number;
   public preview: boolean;
 
-  constructor(mimicryUID = 0, mimicryPos = 0, foodUID = 0, foodPos = 0, hostUID = 0, hostPos = 0, preview = false) {
+  constructor(
+    mimicryUID = 0,
+    mimicryPos = 0,
+    foodUID = 0,
+    foodPos = 0,
+    hostUID = 0,
+    hostPos = 0,
+    preview = false
+  ) {
     super();
     this.mimicryUID = mimicryUID;
     this.mimicryPos = mimicryPos;
@@ -18,6 +26,5 @@ export default class MimicryObjectFeedAndAssociateRequestMessage extends Message
     this.hostUID = hostUID;
     this.hostPos = hostPos;
     this.preview = preview;
-
   }
 }

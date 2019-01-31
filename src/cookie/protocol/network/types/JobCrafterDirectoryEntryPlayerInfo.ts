@@ -2,7 +2,6 @@ import PlayerStatus from "@/protocol/network/types/PlayerStatus";
 import Type from "@/protocol/network/types/Type";
 
 export default class JobCrafterDirectoryEntryPlayerInfo extends Type {
-
   public playerId: number;
   public playerName: string;
   public alignmentSide: number;
@@ -15,9 +14,19 @@ export default class JobCrafterDirectoryEntryPlayerInfo extends Type {
   public subAreaId: number;
   public status: PlayerStatus;
 
-  constructor(playerId = 0, playerName = "", alignmentSide = 0, breed = 0,
-              sex = false, isInWorkShop = false, worldX = 0, worldY = 0, mapId = 0,
-              subAreaId = 0, status: PlayerStatus) {
+  constructor(
+    playerId = 0,
+    playerName = "",
+    alignmentSide = 0,
+    breed = 0,
+    sex = false,
+    isInWorkShop = false,
+    worldX = 0,
+    worldY = 0,
+    mapId = 0,
+    subAreaId = 0,
+    status: PlayerStatus
+  ) {
     super();
     this.playerId = playerId;
     this.playerName = playerName;

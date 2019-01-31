@@ -6,6 +6,5 @@ export default class LockableUseCodeMessage extends Message {
   constructor(code = "") {
     super();
     this.code = code;
-
   }
 }

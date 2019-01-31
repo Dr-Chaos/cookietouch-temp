@@ -7,6 +7,5 @@ export default class CharacterSelectedSuccessMessage extends Message {
   constructor(infos: CharacterBaseInformations) {
     super();
     this.infos = infos;
-
   }
 }

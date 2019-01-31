@@ -6,6 +6,5 @@ export default class QuestValidatedMessage extends Message {
   constructor(questId = 0) {
     super();
     this.questId = questId;
-
   }
 }

@@ -5,5 +5,5 @@ export enum BuildTypeEnum {
   TESTING = 3,
   INTERNAL = 4,
   DEBUG = 5,
-  EXPERIMENTAL = 6,
+  EXPERIMENTAL = 6
 }

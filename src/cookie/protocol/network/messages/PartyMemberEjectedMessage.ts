@@ -6,6 +6,5 @@ export default class PartyMemberEjectedMessage extends PartyMemberRemoveMessage 
   constructor(partyId = 0, leavingPlayerId = 0, kickerId = 0) {
     super(partyId, leavingPlayerId);
     this.kickerId = kickerId;
-
   }
 }

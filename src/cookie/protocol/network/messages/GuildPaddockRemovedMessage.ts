@@ -6,6 +6,5 @@ export default class GuildPaddockRemovedMessage extends Message {
   constructor(paddockId = 0) {
     super();
     this.paddockId = paddockId;
-
   }
 }

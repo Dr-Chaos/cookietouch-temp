@@ -8,6 +8,5 @@ export default class PaddockMoveItemRequestMessage extends Message {
     super();
     this.oldCellId = oldCellId;
     this.newCellId = newCellId;
-
   }
 }

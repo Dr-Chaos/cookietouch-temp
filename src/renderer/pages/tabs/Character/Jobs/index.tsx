@@ -39,9 +39,9 @@ class Jobs extends React.Component<
           <TableHead>
             <TableRow>
               <TableCell />
-              <TableCell numeric={true}>ID</TableCell>
+              <TableCell align="center">ID</TableCell>
               <TableCell>{LanguageManager.trans("name")}</TableCell>
-              <TableCell numeric={true}>
+              <TableCell align="center">
                 {LanguageManager.trans("level")}
               </TableCell>
               <TableCell>XP</TableCell>
@@ -54,9 +54,9 @@ class Jobs extends React.Component<
                   <TableCell>
                     <img width="40" height="40" src={j.iconUrl} alt={j.name} />
                   </TableCell>
-                  <TableCell numeric={true}>{j.id}</TableCell>
+                  <TableCell align="center">{j.id}</TableCell>
                   <TableCell>{j.name}</TableCell>
-                  <TableCell numeric={true}>{j.level}</TableCell>
+                  <TableCell align="center">{j.level}</TableCell>
                   <TableCell>
                     <Tooltip
                       title={`${j.experience} / ${j.experienceNextLevelFloor}`}

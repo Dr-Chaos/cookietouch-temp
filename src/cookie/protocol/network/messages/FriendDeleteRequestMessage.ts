@@ -6,6 +6,5 @@ export default class FriendDeleteRequestMessage extends Message {
   constructor(accountId = 0) {
     super();
     this.accountId = accountId;
-
   }
 }

@@ -6,6 +6,5 @@ export default class GameActionFightTackledMessage extends AbstractGameActionMes
   constructor(actionId = 0, sourceId = 0, tacklersIds: number[]) {
     super(actionId, sourceId);
     this.tacklersIds = tacklersIds;
-
   }
 }

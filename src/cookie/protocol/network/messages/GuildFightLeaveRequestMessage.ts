@@ -8,6 +8,5 @@ export default class GuildFightLeaveRequestMessage extends Message {
     super();
     this.taxCollectorId = taxCollectorId;
     this.characterId = characterId;
-
   }
 }

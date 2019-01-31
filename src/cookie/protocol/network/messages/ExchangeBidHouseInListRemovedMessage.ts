@@ -6,6 +6,5 @@ export default class ExchangeBidHouseInListRemovedMessage extends Message {
   constructor(itemUID = 0) {
     super();
     this.itemUID = itemUID;
-
   }
 }

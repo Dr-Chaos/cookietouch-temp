@@ -7,6 +7,5 @@ export default class TaxCollectorDialogQuestionBasicMessage extends Message {
   constructor(guildInfo: BasicGuildInformations) {
     super();
     this.guildInfo = guildInfo;
-
   }
 }

@@ -8,6 +8,5 @@ export default class GameActionFightReduceDamagesMessage extends AbstractGameAct
     super(actionId, sourceId);
     this.targetId = targetId;
     this.amount = amount;
-
   }
 }

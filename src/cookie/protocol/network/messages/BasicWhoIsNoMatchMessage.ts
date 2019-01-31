@@ -6,6 +6,5 @@ export default class BasicWhoIsNoMatchMessage extends Message {
   constructor(search = "") {
     super();
     this.search = search;
-
   }
 }

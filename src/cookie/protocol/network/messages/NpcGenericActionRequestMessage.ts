@@ -10,6 +10,5 @@ export default class NpcGenericActionRequestMessage extends Message {
     this.npcId = npcId;
     this.npcActionId = npcActionId;
     this.npcMapId = npcMapId;
-
   }
 }

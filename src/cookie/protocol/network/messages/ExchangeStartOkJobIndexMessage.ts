@@ -6,6 +6,5 @@ export default class ExchangeStartOkJobIndexMessage extends Message {
   constructor(jobs: number[]) {
     super();
     this.jobs = jobs;
-
   }
 }

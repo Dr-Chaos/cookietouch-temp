@@ -6,6 +6,5 @@ export default class InventoryPresetItemUpdateErrorMessage extends Message {
   constructor(code = 1) {
     super();
     this.code = code;
-
   }
 }

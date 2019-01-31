@@ -8,6 +8,5 @@ export default class AllianceChangeGuildRightsMessage extends Message {
     super();
     this.guildId = guildId;
     this.rights = rights;
-
   }
 }

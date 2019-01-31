@@ -8,6 +8,5 @@ export default class MimicryObjectErrorMessage extends ObjectErrorMessage {
     super(reason);
     this.preview = preview;
     this.errorCode = errorCode;
-
   }
 }

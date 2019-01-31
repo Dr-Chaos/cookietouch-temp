@@ -8,6 +8,5 @@ export default class DungeonKeyRingMessage extends Message {
     super();
     this.availables = availables;
     this.unavailables = unavailables;
-
   }
 }

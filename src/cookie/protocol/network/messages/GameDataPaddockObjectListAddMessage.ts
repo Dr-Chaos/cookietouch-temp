@@ -7,6 +7,5 @@ export default class GameDataPaddockObjectListAddMessage extends Message {
   constructor(paddockItemDescription: PaddockItem[]) {
     super();
     this.paddockItemDescription = paddockItemDescription;
-
   }
 }

@@ -8,6 +8,5 @@ export default class ExchangeReplyTaxVendorMessage extends Message {
     super();
     this.objectValue = objectValue;
     this.totalTaxValue = totalTaxValue;
-
   }
 }

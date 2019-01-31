@@ -6,5 +6,5 @@ export enum CharacterCreationResultEnum {
   ERR_TOO_MANY_CHARACTERS = 4,
   ERR_NOT_ALLOWED = 5,
   ERR_NEW_PLAYER_NOT_ALLOWED = 6,
-  ERR_RESTRICED_ZONE = 7,
+  ERR_RESTRICED_ZONE = 7
 }

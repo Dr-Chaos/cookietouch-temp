@@ -3,6 +3,5 @@ import AbstractPartyMessage from "@/protocol/network/messages/AbstractPartyMessa
 export default class AbstractPartyEventMessage extends AbstractPartyMessage {
   constructor(partyId = 0) {
     super();
-
   }
 }

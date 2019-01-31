@@ -14,6 +14,5 @@ export default class PrismFightAttackedMessage extends Message {
     this.mapId = mapId;
     this.subAreaId = subAreaId;
     this.prismSide = prismSide;
-
   }
 }

@@ -10,6 +10,5 @@ export default class StartupActionFinishedMessage extends Message {
     this.success = success;
     this.actionId = actionId;
     this.automaticAction = automaticAction;
-
   }
 }

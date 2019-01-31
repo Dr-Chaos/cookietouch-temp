@@ -8,6 +8,5 @@ export default class GameActionFightCastOnTargetRequestMessage extends Message {
     super();
     this.spellId = spellId;
     this.targetId = targetId;
-
   }
 }

@@ -6,6 +6,5 @@ export default class PartyInvitationDungeonRequestMessage extends PartyInvitatio
   constructor(name = "", dungeonId = 0) {
     super(name);
     this.dungeonId = dungeonId;
-
   }
 }

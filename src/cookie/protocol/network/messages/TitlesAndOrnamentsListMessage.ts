@@ -6,12 +6,16 @@ export default class TitlesAndOrnamentsListMessage extends Message {
   public activeTitle: number;
   public activeOrnament: number;
 
-  constructor(activeTitle = 0, activeOrnament = 0, titles: number[], ornaments: number[]) {
+  constructor(
+    activeTitle = 0,
+    activeOrnament = 0,
+    titles: number[],
+    ornaments: number[]
+  ) {
     super();
     this.titles = titles;
     this.ornaments = ornaments;
     this.activeTitle = activeTitle;
     this.activeOrnament = activeOrnament;
-
   }
 }

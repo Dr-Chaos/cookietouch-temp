@@ -8,6 +8,5 @@ export default class SpellUpgradeSuccessMessage extends Message {
     super();
     this.spellId = spellId;
     this.spellLevel = spellLevel;
-
   }
 }

@@ -6,6 +6,5 @@ export default class DungeonPartyFinderRegisterSuccessMessage extends Message {
   constructor(dungeonIds: number[]) {
     super();
     this.dungeonIds = dungeonIds;
-
   }
 }

@@ -10,6 +10,5 @@ export default class CheckFileMessage extends Message {
     this.filenameHash = filenameHash;
     this.type = type;
     this.value = value;
-
   }
 }

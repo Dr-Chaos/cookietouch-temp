@@ -8,6 +8,5 @@ export default class GameActionFightModifyEffectsDurationMessage extends Abstrac
     super(actionId, sourceId);
     this.targetId = targetId;
     this.delta = delta;
-
   }
 }

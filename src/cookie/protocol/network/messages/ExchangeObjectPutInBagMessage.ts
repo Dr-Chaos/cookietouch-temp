@@ -7,6 +7,5 @@ export default class ExchangeObjectPutInBagMessage extends ExchangeObjectMessage
   constructor(remote = false, object: ObjectItem) {
     super(remote);
     this.objectPublic = object;
-
   }
 }

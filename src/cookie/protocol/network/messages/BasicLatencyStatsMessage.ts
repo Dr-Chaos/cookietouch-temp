@@ -10,6 +10,5 @@ export default class BasicLatencyStatsMessage extends Message {
     this.latency = latency;
     this.sampleCount = sampleCount;
     this.max = max;
-
   }
 }

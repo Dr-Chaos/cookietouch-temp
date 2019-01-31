@@ -6,6 +6,5 @@ export default class DungeonPartyFinderListenRequestMessage extends Message {
   constructor(dungeonId = 0) {
     super();
     this.dungeonId = dungeonId;
-
   }
 }

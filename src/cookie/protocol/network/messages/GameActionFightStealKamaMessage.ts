@@ -8,6 +8,5 @@ export default class GameActionFightStealKamaMessage extends AbstractGameActionM
     super(actionId, sourceId);
     this.targetId = targetId;
     this.amount = amount;
-
   }
 }

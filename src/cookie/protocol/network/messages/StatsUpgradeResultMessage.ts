@@ -6,6 +6,5 @@ export default class StatsUpgradeResultMessage extends Message {
   constructor(nbCharacBoost = 0) {
     super();
     this.nbCharacBoost = nbCharacBoost;
-
   }
 }

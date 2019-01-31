@@ -8,6 +8,5 @@ export default class ExchangeObjectTransfertListWithQuantityToInvMessage extends
     super();
     this.ids = ids;
     this.qtys = qtys;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ChatClientPrivateMessage extends ChatAbstractClientMessage 
   constructor(content = "", receiver = "") {
     super(content);
     this.receiver = receiver;
-
   }
 }

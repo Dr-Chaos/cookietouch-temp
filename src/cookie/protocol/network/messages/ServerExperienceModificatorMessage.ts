@@ -6,6 +6,5 @@ export default class ServerExperienceModificatorMessage extends Message {
   constructor(experiencePercent = 0) {
     super();
     this.experiencePercent = experiencePercent;
-
   }
 }

@@ -8,6 +8,5 @@ export default class ChallengeTargetUpdateMessage extends Message {
     super();
     this.challengeId = challengeId;
     this.targetId = targetId;
-
   }
 }

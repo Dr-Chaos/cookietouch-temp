@@ -6,6 +6,5 @@ export default class GameFightTurnStartSlaveMessage extends GameFightTurnStartMe
   constructor(id = 0, waitTime = 0, idSummoner = 0) {
     super(id, waitTime);
     this.idSummoner = idSummoner;
-
   }
 }

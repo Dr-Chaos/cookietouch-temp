@@ -8,6 +8,5 @@ export default class TeleportToBuddyCloseMessage extends Message {
     super();
     this.dungeonId = dungeonId;
     this.buddyId = buddyId;
-
   }
 }

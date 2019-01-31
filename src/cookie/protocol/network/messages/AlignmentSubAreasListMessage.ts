@@ -8,6 +8,5 @@ export default class AlignmentSubAreasListMessage extends Message {
     super();
     this.angelsSubAreas = angelsSubAreas;
     this.evilsSubAreas = evilsSubAreas;
-
   }
 }

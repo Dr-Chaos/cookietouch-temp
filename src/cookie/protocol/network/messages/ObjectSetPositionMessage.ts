@@ -10,6 +10,5 @@ export default class ObjectSetPositionMessage extends Message {
     this.objectUID = objectUID;
     this.position = position;
     this.quantity = quantity;
-
   }
 }

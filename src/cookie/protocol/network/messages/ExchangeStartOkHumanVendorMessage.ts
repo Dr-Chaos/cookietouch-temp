@@ -9,6 +9,5 @@ export default class ExchangeStartOkHumanVendorMessage extends Message {
     super();
     this.objectsInfos = objectsInfos;
     this.sellerId = sellerId;
-
   }
 }

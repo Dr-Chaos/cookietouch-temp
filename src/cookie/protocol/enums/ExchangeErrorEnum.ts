@@ -9,5 +9,5 @@ export enum ExchangeErrorEnum {
   BUY_ERROR = 8,
   SELL_ERROR = 9,
   MOUNT_PADDOCK_ERROR = 10,
-  BID_SEARCH_ERROR = 11,
+  BID_SEARCH_ERROR = 11
 }

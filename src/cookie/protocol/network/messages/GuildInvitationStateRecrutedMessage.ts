@@ -6,6 +6,5 @@ export default class GuildInvitationStateRecrutedMessage extends Message {
   constructor(invitationState = 0) {
     super();
     this.invitationState = invitationState;
-
   }
 }

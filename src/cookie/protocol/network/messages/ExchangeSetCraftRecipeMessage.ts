@@ -6,6 +6,5 @@ export default class ExchangeSetCraftRecipeMessage extends Message {
   constructor(objectGID = 0) {
     super();
     this.objectGID = objectGID;
-
   }
 }

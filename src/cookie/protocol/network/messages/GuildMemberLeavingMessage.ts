@@ -8,6 +8,5 @@ export default class GuildMemberLeavingMessage extends Message {
     super();
     this.kicked = kicked;
     this.memberId = memberId;
-
   }
 }

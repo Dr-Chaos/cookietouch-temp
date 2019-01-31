@@ -6,6 +6,5 @@ export default class GuildSpellUpgradeRequestMessage extends Message {
   constructor(spellId = 0) {
     super();
     this.spellId = spellId;
-
   }
 }

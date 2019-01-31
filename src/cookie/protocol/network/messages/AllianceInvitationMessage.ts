@@ -6,6 +6,5 @@ export default class AllianceInvitationMessage extends Message {
   constructor(targetId = 0) {
     super();
     this.targetId = targetId;
-
   }
 }

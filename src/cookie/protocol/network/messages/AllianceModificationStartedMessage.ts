@@ -5,11 +5,14 @@ export default class AllianceModificationStartedMessage extends Message {
   public canChangeTag: boolean;
   public canChangeEmblem: boolean;
 
-  constructor(canChangeName = false, canChangeTag = false, canChangeEmblem = false) {
+  constructor(
+    canChangeName = false,
+    canChangeTag = false,
+    canChangeEmblem = false
+  ) {
     super();
     this.canChangeName = canChangeName;
     this.canChangeTag = canChangeTag;
     this.canChangeEmblem = canChangeEmblem;
-
   }
 }

@@ -53,8 +53,8 @@ export default class Storage {
       quantity === 0
         ? item.quantity
         : quantity > item.quantity
-          ? item.quantity
-          : quantity;
+        ? item.quantity
+        : quantity;
 
     this.account.network.sendMessageFree("ExchangeObjectMoveMessage", {
       objectUID: item.uid,
@@ -83,8 +83,8 @@ export default class Storage {
       quantity === 0
         ? item.quantity
         : quantity > item.quantity
-          ? item.quantity
-          : quantity;
+        ? item.quantity
+        : quantity;
 
     this.account.network.sendMessageFree("ExchangeObjectMoveMessage", {
       objectUID: item.uid,
@@ -107,8 +107,8 @@ export default class Storage {
       quantity === 0
         ? this.account.game.character.inventory.kamas
         : quantity > this.account.game.character.inventory.kamas
-          ? this.account.game.character.inventory.kamas
-          : quantity;
+        ? this.account.game.character.inventory.kamas
+        : quantity;
 
     // TODO: See if we really have to check the quantity here.
     if (quantity > 0) {
@@ -134,8 +134,8 @@ export default class Storage {
       quantity === 0
         ? this.kamas
         : quantity > this.kamas
-          ? this.kamas
-          : quantity;
+        ? this.kamas
+        : quantity;
 
     // TODO: See if we really have to check the quantity here.
     if (quantity > 0) {

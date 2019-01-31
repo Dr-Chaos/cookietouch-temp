@@ -6,6 +6,5 @@ export default class PartyInvitationRequestMessage extends Message {
   constructor(name = "") {
     super();
     this.name = name;
-
   }
 }

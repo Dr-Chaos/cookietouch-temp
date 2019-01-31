@@ -1,7 +1,6 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class JobCrafterDirectorySettings extends Type {
-
   public jobid: number;
   public minslot: number;
   public userdefinedparams: number;

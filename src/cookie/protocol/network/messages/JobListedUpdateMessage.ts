@@ -8,6 +8,5 @@ export default class JobListedUpdateMessage extends Message {
     super();
     this.addedOrDeleted = addedOrDeleted;
     this.jobId = jobId;
-
   }
 }

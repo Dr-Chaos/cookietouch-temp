@@ -46,9 +46,9 @@ class Spells extends React.Component<
           <TableHead>
             <TableRow>
               <TableCell />
-              <TableCell numeric={true}>ID</TableCell>
+              <TableCell align="center">ID</TableCell>
               <TableCell>{LanguageManager.trans("name")}</TableCell>
-              <TableCell numeric={true}>
+              <TableCell align="center">
                 {LanguageManager.trans("level")}
               </TableCell>
               <TableCell>{LanguageManager.trans("up")}</TableCell>
@@ -61,9 +61,9 @@ class Spells extends React.Component<
                   <TableCell>
                     <img width="40" height="40" src={s.iconUrl} alt={s.name} />
                   </TableCell>
-                  <TableCell numeric={true}>{s.id}</TableCell>
+                  <TableCell align="center">{s.id}</TableCell>
                   <TableCell>{s.name}</TableCell>
-                  <TableCell numeric={true}>{s.level}</TableCell>
+                  <TableCell align="center">{s.level}</TableCell>
                   <TableCell>
                     <Button
                       variant="contained"

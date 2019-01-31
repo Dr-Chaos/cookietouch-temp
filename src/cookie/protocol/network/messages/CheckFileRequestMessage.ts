@@ -8,6 +8,5 @@ export default class CheckFileRequestMessage extends Message {
     super();
     this.filename = filename;
     this.type = type;
-
   }
 }

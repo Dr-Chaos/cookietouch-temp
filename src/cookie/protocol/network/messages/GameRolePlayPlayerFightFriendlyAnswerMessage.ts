@@ -8,6 +8,5 @@ export default class GameRolePlayPlayerFightFriendlyAnswerMessage extends Messag
     super();
     this.fightId = fightId;
     this.accept = accept;
-
   }
 }

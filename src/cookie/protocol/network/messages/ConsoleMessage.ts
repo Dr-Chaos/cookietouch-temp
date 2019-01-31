@@ -8,6 +8,5 @@ export default class ConsoleMessage extends Message {
     super();
     this.type = type;
     this.content = content;
-
   }
 }

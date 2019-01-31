@@ -10,6 +10,5 @@ export default class DisplayNumericalValueMessage extends Message {
     this.entityId = entityId;
     this.value = value;
     this.type = type;
-
   }
 }

@@ -10,6 +10,5 @@ export default class ConsoleCommandsListMessage extends Message {
     this.aliases = aliases;
     this.args = args;
     this.descriptions = descriptions;
-
   }
 }

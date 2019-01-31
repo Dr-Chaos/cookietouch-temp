@@ -7,6 +7,5 @@ export default class PrismsListMessage extends Message {
   constructor(prisms: PrismSubareaEmptyInfo[]) {
     super();
     this.prisms = prisms;
-
   }
 }

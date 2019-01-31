@@ -6,6 +6,5 @@ export default class MountXpRatioMessage extends Message {
   constructor(ratio = 0) {
     super();
     this.ratio = ratio;
-
   }
 }

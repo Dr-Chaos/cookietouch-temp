@@ -6,6 +6,5 @@ export default class FriendGuildWarnOnAchievementCompleteStateMessage extends Me
   constructor(enable = false) {
     super();
     this.enable = enable;
-
   }
 }

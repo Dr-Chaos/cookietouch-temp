@@ -10,6 +10,5 @@ export default class LivingObjectChangeSkinRequestMessage extends Message {
     this.livingUID = livingUID;
     this.livingPosition = livingPosition;
     this.skinId = skinId;
-
   }
 }

@@ -1,7 +1,6 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class ObjectItemInRolePlay extends Type {
-
   public cellId: number;
   public objectGid: number;
 

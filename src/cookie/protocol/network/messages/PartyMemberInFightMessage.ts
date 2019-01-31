@@ -10,8 +10,16 @@ export default class PartyMemberInFightMessage extends AbstractPartyMessage {
   public fightMap: MapCoordinatesExtended;
   public secondsBeforeFightStart: number;
 
-  constructor(partyId = 0, reason = 0, memberId = 0, memberAccountId = 0, memberName = "",
-              fightId = 0, fightMap: MapCoordinatesExtended, secondsBeforeFightStart = 0) {
+  constructor(
+    partyId = 0,
+    reason = 0,
+    memberId = 0,
+    memberAccountId = 0,
+    memberName = "",
+    fightId = 0,
+    fightMap: MapCoordinatesExtended,
+    secondsBeforeFightStart = 0
+  ) {
     super(partyId);
     this.reason = reason;
     this.memberId = memberId;
@@ -20,6 +28,5 @@ export default class PartyMemberInFightMessage extends AbstractPartyMessage {
     this.fightId = fightId;
     this.fightMap = fightMap;
     this.secondsBeforeFightStart = secondsBeforeFightStart;
-
   }
 }

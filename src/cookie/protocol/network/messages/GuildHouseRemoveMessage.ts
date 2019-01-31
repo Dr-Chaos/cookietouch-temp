@@ -6,6 +6,5 @@ export default class GuildHouseRemoveMessage extends Message {
   constructor(houseId = 0) {
     super();
     this.houseId = houseId;
-
   }
 }

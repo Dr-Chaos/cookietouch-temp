@@ -6,6 +6,5 @@ export default class ChatErrorMessage extends Message {
   constructor(reason = "") {
     super();
     this.reason = reason;
-
   }
 }

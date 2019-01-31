@@ -6,6 +6,5 @@ export default class MountRidingMessage extends Message {
   constructor(isRiding = false) {
     super();
     this.isRiding = isRiding;
-
   }
 }

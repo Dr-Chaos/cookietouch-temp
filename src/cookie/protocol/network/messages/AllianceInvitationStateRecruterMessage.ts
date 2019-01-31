@@ -8,6 +8,5 @@ export default class AllianceInvitationStateRecruterMessage extends Message {
     super();
     this.recrutedName = recrutedName;
     this.invitationState = invitationState;
-
   }
 }

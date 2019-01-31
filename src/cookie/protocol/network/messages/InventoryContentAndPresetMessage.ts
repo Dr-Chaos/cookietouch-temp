@@ -8,6 +8,5 @@ export default class InventoryContentAndPresetMessage extends InventoryContentMe
   constructor(kamas = 0, objects: ObjectItem[], presets: Preset[]) {
     super(kamas, objects);
     this.presets = presets;
-
   }
 }

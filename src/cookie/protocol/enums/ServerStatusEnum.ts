@@ -6,5 +6,5 @@ export enum ServerStatusEnum {
   NOJOIN = 4,
   SAVING = 5,
   STOPING = 6,
-  FULL = 7,
+  FULL = 7
 }

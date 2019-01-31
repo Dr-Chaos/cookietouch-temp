@@ -6,6 +6,5 @@ export default class CharacterReplayWithRecolorRequestMessage extends CharacterR
   constructor(characterId = 0, indexedColor: number[]) {
     super(characterId);
     this.indexedColor = indexedColor;
-
   }
 }

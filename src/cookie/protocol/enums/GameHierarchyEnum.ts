@@ -3,5 +3,5 @@ export enum GameHierarchyEnum {
   MODERATOR = 10,
   GAMEMASTER_PADAWAN = 20,
   GAMEMASTER = 30,
-  ADMIN = 40,
+  ADMIN = 40
 }

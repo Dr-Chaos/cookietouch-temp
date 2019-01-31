@@ -7,6 +7,5 @@ export default class StorageObjectsUpdateMessage extends Message {
   constructor(objectList: ObjectItem[]) {
     super();
     this.objectList = objectList;
-
   }
 }

@@ -8,5 +8,5 @@ export enum FightTypeEnum {
   FIGHT_TYPE_PvMU = 6,
   FIGHT_TYPE_PVP_ARENA = 7,
   FIGHT_TYPE_Koh = 8,
-  FIGHT_TYPE_PvPr = 9,
+  FIGHT_TYPE_PvPr = 9
 }

@@ -14,5 +14,5 @@ export enum PlayableBreedEnum {
   Pandawa = 12,
   Roublard = 13,
   Zobal = 14,
-  Steamer = 15,
+  Steamer = 15
 }

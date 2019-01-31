@@ -6,6 +6,5 @@ export default class ContactLookErrorMessage extends Message {
   constructor(requestId = 0) {
     super();
     this.requestId = requestId;
-
   }
 }

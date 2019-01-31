@@ -7,11 +7,14 @@ export default class TaxCollectorAttackedResultMessage extends Message {
   public basicInfos: TaxCollectorBasicInformations;
   public guild: BasicGuildInformations;
 
-  constructor(deadOrAlive = false, basicInfos: TaxCollectorBasicInformations, guild: BasicGuildInformations) {
+  constructor(
+    deadOrAlive = false,
+    basicInfos: TaxCollectorBasicInformations,
+    guild: BasicGuildInformations
+  ) {
     super();
     this.deadOrAlive = deadOrAlive;
     this.basicInfos = basicInfos;
     this.guild = guild;
-
   }
 }

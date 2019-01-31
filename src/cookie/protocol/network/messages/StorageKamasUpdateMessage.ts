@@ -6,6 +6,5 @@ export default class StorageKamasUpdateMessage extends Message {
   constructor(kamasTotal = 0) {
     super();
     this.kamasTotal = kamasTotal;
-
   }
 }

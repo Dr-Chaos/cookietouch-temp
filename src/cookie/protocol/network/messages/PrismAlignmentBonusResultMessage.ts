@@ -7,6 +7,5 @@ export default class PrismAlignmentBonusResultMessage extends Message {
   constructor(alignmentBonus: AlignmentBonusInformations) {
     super();
     this.alignmentBonus = alignmentBonus;
-
   }
 }

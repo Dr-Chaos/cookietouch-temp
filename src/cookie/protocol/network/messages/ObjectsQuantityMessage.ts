@@ -7,6 +7,5 @@ export default class ObjectsQuantityMessage extends Message {
   constructor(objectsUIDAndQty: ObjectItemQuantity[]) {
     super();
     this.objectsUIDAndQty = objectsUIDAndQty;
-
   }
 }

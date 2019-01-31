@@ -8,7 +8,13 @@ export default class GameActionMark extends Type {
   public markId: number;
   public markType: number;
 
-  constructor(markAuthorId = 0, markSpellId = 0, markId = 0, markType = 0, cells: GameActionMarkedCell[]) {
+  constructor(
+    markAuthorId = 0,
+    markSpellId = 0,
+    markId = 0,
+    markType = 0,
+    cells: GameActionMarkedCell[]
+  ) {
     super();
     this.cells = cells;
     this.markAuthorId = markAuthorId;

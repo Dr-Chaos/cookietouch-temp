@@ -6,6 +6,5 @@ export default class GameFightOptionToggleMessage extends Message {
   constructor(option = 3) {
     super();
     this.option = option;
-
   }
 }

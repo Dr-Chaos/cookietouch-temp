@@ -5,11 +5,14 @@ export default class GameFightPlacementPossiblePositionsMessage extends Message 
   public positionsForDefenders: number[];
   public teamNumber: number;
 
-  constructor(teamNumber = 2, positionsForChallengers: number[], positionsForDefenders: number[]) {
+  constructor(
+    teamNumber = 2,
+    positionsForChallengers: number[],
+    positionsForDefenders: number[]
+  ) {
     super();
     this.positionsForChallengers = positionsForChallengers;
     this.positionsForDefenders = positionsForDefenders;
     this.teamNumber = teamNumber;
-
   }
 }

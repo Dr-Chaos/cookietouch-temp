@@ -6,6 +6,5 @@ export default class PrismSetSabotagedRequestMessage extends Message {
   constructor(subAreaId = 0) {
     super();
     this.subAreaId = subAreaId;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ServerSelectionMessage extends Message {
   constructor(serverId = 0) {
     super();
     this.serverId = serverId;
-
   }
 }

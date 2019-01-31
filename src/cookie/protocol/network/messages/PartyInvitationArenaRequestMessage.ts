@@ -3,6 +3,5 @@ import PartyInvitationRequestMessage from "@/protocol/network/messages/PartyInvi
 export default class PartyInvitationArenaRequestMessage extends PartyInvitationRequestMessage {
   constructor(name = "") {
     super(name);
-
   }
 }

@@ -8,6 +8,5 @@ export default class AlignmentRankUpdateMessage extends Message {
     super();
     this.alignmentRank = alignmentRank;
     this.verbose = verbose;
-
   }
 }

@@ -12,5 +12,5 @@ export enum CharacterSpellModificationTypeEnum {
   LOS = 10,
   MAX_CAST_PER_TURN = 11,
   MAX_CAST_PER_TARGET = 12,
-  RANGE = 13,
+  RANGE = 13
 }

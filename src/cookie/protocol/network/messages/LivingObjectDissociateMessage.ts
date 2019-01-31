@@ -8,6 +8,5 @@ export default class LivingObjectDissociateMessage extends Message {
     super();
     this.livingUID = livingUID;
     this.livingPosition = livingPosition;
-
   }
 }

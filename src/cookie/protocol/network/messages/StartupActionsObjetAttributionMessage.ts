@@ -8,6 +8,5 @@ export default class StartupActionsObjetAttributionMessage extends Message {
     super();
     this.actionId = actionId;
     this.characterId = characterId;
-
   }
 }

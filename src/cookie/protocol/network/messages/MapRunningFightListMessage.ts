@@ -7,6 +7,5 @@ export default class MapRunningFightListMessage extends Message {
   constructor(fights: FightExternalInformations[]) {
     super();
     this.fights = fights;
-
   }
 }

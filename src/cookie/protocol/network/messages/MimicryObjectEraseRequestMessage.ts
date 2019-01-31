@@ -8,6 +8,5 @@ export default class MimicryObjectEraseRequestMessage extends Message {
     super();
     this.hostUID = hostUID;
     this.hostPos = hostPos;
-
   }
 }

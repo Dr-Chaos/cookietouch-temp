@@ -6,6 +6,5 @@ export default class ShowCellSpectatorMessage extends ShowCellMessage {
   constructor(sourceId = 0, cellId = 0, playerName = "") {
     super(sourceId, cellId);
     this.playerName = playerName;
-
   }
 }

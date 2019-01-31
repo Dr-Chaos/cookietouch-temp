@@ -8,6 +8,5 @@ export default class CurrentMapMessage extends Message {
     super();
     this.mapId = mapId;
     this.mapKey = mapKey;
-
   }
 }

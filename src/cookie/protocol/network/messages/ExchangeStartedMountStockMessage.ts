@@ -7,6 +7,5 @@ export default class ExchangeStartedMountStockMessage extends Message {
   constructor(objectsInfos: ObjectItem[]) {
     super();
     this.objectsInfos = objectsInfos;
-
   }
 }

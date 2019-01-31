@@ -6,6 +6,5 @@ export default class CharacterSelectionWithRecolorMessage extends CharacterSelec
   constructor(id = 0, indexedColor: number[]) {
     super(id);
     this.indexedColor = indexedColor;
-
   }
 }

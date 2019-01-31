@@ -8,6 +8,5 @@ export default class ObjectAveragePricesMessage extends Message {
     super();
     this.ids = ids;
     this.avgPrices = avgPrices;
-
   }
 }

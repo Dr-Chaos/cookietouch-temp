@@ -7,6 +7,5 @@ export default class MapObstacleUpdateMessage extends Message {
   constructor(obstacles: MapObstacle[]) {
     super();
     this.obstacles = obstacles;
-
   }
 }

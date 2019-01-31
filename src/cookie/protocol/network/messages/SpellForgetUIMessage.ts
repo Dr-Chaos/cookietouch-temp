@@ -6,6 +6,5 @@ export default class SpellForgetUIMessage extends Message {
   constructor(open = false) {
     super();
     this.open = open;
-
   }
 }

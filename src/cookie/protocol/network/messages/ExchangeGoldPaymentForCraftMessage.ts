@@ -8,6 +8,5 @@ export default class ExchangeGoldPaymentForCraftMessage extends Message {
     super();
     this.onlySuccess = onlySuccess;
     this.goldSum = goldSum;
-
   }
 }

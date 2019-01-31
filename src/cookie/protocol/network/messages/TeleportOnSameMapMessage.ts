@@ -8,6 +8,5 @@ export default class TeleportOnSameMapMessage extends Message {
     super();
     this.targetId = targetId;
     this.cellId = cellId;
-
   }
 }

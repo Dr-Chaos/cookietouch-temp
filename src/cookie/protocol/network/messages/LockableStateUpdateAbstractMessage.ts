@@ -6,6 +6,5 @@ export default class LockableStateUpdateAbstractMessage extends Message {
   constructor(locked = false) {
     super();
     this.locked = locked;
-
   }
 }

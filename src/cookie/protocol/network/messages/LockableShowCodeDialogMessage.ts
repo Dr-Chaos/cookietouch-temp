@@ -8,6 +8,5 @@ export default class LockableShowCodeDialogMessage extends Message {
     super();
     this.changeOrUse = changeOrUse;
     this.codeSize = codeSize;
-
   }
 }

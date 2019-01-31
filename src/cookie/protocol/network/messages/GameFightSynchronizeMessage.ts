@@ -7,6 +7,5 @@ export default class GameFightSynchronizeMessage extends Message {
   constructor(fighters: GameFightFighterInformations[]) {
     super();
     this.fighters = fighters;
-
   }
 }

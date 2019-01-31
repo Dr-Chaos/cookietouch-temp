@@ -6,6 +6,5 @@ export default class GameActionFightUnmarkCellsMessage extends AbstractGameActio
   constructor(actionId = 0, sourceId = 0, markId = 0) {
     super(actionId, sourceId);
     this.markId = markId;
-
   }
 }

@@ -6,6 +6,5 @@ export default class PauseDialogMessage extends Message {
   constructor(dialogType = 0) {
     super();
     this.dialogType = dialogType;
-
   }
 }

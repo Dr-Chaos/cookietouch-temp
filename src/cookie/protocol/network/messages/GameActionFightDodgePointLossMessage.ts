@@ -8,6 +8,5 @@ export default class GameActionFightDodgePointLossMessage extends AbstractGameAc
     super(actionId, sourceId);
     this.targetId = targetId;
     this.amount = amount;
-
   }
 }

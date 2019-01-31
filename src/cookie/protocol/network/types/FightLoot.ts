@@ -1,7 +1,6 @@
 import Type from "@/protocol/network/types/Type";
 
 export default class FightLoot extends Type {
-
   public objects: number[];
   public kamas: number;
 

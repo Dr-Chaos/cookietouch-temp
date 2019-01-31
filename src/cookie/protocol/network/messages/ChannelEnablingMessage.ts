@@ -8,6 +8,5 @@ export default class ChannelEnablingMessage extends Message {
     super();
     this.channel = channel;
     this.enable = enable;
-
   }
 }

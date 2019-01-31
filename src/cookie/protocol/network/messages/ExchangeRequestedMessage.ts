@@ -6,6 +6,5 @@ export default class ExchangeRequestedMessage extends Message {
   constructor(exchangeType = 0) {
     super();
     this.exchangeType = exchangeType;
-
   }
 }

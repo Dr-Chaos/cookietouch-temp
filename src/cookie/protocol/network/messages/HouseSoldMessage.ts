@@ -10,6 +10,5 @@ export default class HouseSoldMessage extends Message {
     this.houseId = houseId;
     this.realPrice = realPrice;
     this.buyerName = buyerName;
-
   }
 }

@@ -6,6 +6,5 @@ export default class PartyModifiableStatusMessage extends AbstractPartyMessage {
   constructor(partyId = 0, enabled = false) {
     super(partyId);
     this.enabled = enabled;
-
   }
 }

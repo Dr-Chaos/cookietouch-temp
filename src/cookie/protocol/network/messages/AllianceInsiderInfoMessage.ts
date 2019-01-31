@@ -8,12 +8,14 @@ export default class AllianceInsiderInfoMessage extends Message {
   public prisms: PrismSubareaEmptyInfo[];
   public allianceInfos: AllianceFactSheetInformations;
 
-  constructor(allianceInfos: AllianceFactSheetInformations,
-              guilds: GuildInsiderFactSheetInformations[], prisms: PrismSubareaEmptyInfo[]) {
+  constructor(
+    allianceInfos: AllianceFactSheetInformations,
+    guilds: GuildInsiderFactSheetInformations[],
+    prisms: PrismSubareaEmptyInfo[]
+  ) {
     super();
     this.guilds = guilds;
     this.prisms = prisms;
     this.allianceInfos = allianceInfos;
-
   }
 }

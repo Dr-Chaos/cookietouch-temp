@@ -12,6 +12,5 @@ export default class ExchangeMountTakenFromPaddockMessage extends Message {
     this.worldX = worldX;
     this.worldY = worldY;
     this.ownername = ownername;
-
   }
 }

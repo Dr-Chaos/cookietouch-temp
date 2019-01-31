@@ -7,6 +7,5 @@ export default class CompassUpdatePartyMemberMessage extends CompassUpdateMessag
   constructor(type = 0, coords: MapCoordinates, memberId = 0) {
     super(type, coords);
     this.memberId = memberId;
-
   }
 }

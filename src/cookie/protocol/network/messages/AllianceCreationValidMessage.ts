@@ -6,11 +6,14 @@ export default class AllianceCreationValidMessage extends Message {
   public allianceTag: string;
   public allianceEmblem: GuildEmblem;
 
-  constructor(allianceName = "", allianceTag = "", allianceEmblem: GuildEmblem) {
+  constructor(
+    allianceName = "",
+    allianceTag = "",
+    allianceEmblem: GuildEmblem
+  ) {
     super();
     this.allianceName = allianceName;
     this.allianceTag = allianceTag;
     this.allianceEmblem = allianceEmblem;
-
   }
 }

@@ -16,9 +16,16 @@ export default class MapComplementaryInformationsDataMessage extends Message {
   public subAreaId: number;
   public mapId: number;
 
-  constructor(subAreaId = 0, mapId = 0, houses: HouseInformations[],
-              actors: GameRolePlayActorInformations[], interactiveElements: InteractiveElement[],
-              statedElements: StatedElement[], obstacles: MapObstacle[], fights: FightCommonInformations[]) {
+  constructor(
+    subAreaId = 0,
+    mapId = 0,
+    houses: HouseInformations[],
+    actors: GameRolePlayActorInformations[],
+    interactiveElements: InteractiveElement[],
+    statedElements: StatedElement[],
+    obstacles: MapObstacle[],
+    fights: FightCommonInformations[]
+  ) {
     super();
     this.houses = houses;
     this.actors = actors;
@@ -28,6 +35,5 @@ export default class MapComplementaryInformationsDataMessage extends Message {
     this.fights = fights;
     this.subAreaId = subAreaId;
     this.mapId = mapId;
-
   }
 }

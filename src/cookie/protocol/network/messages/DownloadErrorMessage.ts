@@ -10,6 +10,5 @@ export default class DownloadErrorMessage extends Message {
     this.errorId = errorId;
     this.message = message;
     this.helpUrl = helpUrl;
-
   }
 }

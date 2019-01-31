@@ -7,6 +7,5 @@ export default class ExchangeShopStockMultiMovementUpdatedMessage extends Messag
   constructor(objectInfoList: ObjectItemToSell[]) {
     super();
     this.objectInfoList = objectInfoList;
-
   }
 }

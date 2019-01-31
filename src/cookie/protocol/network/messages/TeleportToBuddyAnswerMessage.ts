@@ -10,6 +10,5 @@ export default class TeleportToBuddyAnswerMessage extends Message {
     this.dungeonId = dungeonId;
     this.buddyId = buddyId;
     this.accept = accept;
-
   }
 }

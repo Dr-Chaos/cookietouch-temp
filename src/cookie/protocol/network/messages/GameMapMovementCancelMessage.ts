@@ -6,6 +6,5 @@ export default class GameMapMovementCancelMessage extends Message {
   constructor(cellId = 0) {
     super();
     this.cellId = cellId;
-
   }
 }

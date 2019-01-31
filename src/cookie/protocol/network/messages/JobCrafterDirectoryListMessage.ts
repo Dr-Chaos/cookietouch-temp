@@ -7,6 +7,5 @@ export default class JobCrafterDirectoryListMessage extends Message {
   constructor(listEntries: JobCrafterDirectoryListEntry[]) {
     super();
     this.listEntries = listEntries;
-
   }
 }

@@ -7,6 +7,5 @@ export default class InventoryPresetUpdateMessage extends Message {
   constructor(preset: Preset) {
     super();
     this.preset = preset;
-
   }
 }

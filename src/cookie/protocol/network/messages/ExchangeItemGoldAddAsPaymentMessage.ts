@@ -8,6 +8,5 @@ export default class ExchangeItemGoldAddAsPaymentMessage extends Message {
     super();
     this.paymentType = paymentType;
     this.quantity = quantity;
-
   }
 }

@@ -10,8 +10,15 @@ export default class PartyJoinMessage extends AbstractPartyMessage {
   public maxParticipants: number;
   public restricted: boolean;
 
-  constructor(partyId = 0, partyType = 0, partyLeaderId = 0, maxParticipants = 0,
-              restricted = false, members: PartyMemberInformations[], guests: PartyGuestInformations[]) {
+  constructor(
+    partyId = 0,
+    partyType = 0,
+    partyLeaderId = 0,
+    maxParticipants = 0,
+    restricted = false,
+    members: PartyMemberInformations[],
+    guests: PartyGuestInformations[]
+  ) {
     super(partyId);
     this.members = members;
     this.guests = guests;
@@ -19,6 +26,5 @@ export default class PartyJoinMessage extends AbstractPartyMessage {
     this.partyLeaderId = partyLeaderId;
     this.maxParticipants = maxParticipants;
     this.restricted = restricted;
-
   }
 }

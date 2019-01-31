@@ -6,6 +6,5 @@ export default class TaxCollectorErrorMessage extends Message {
   constructor(reason = 0) {
     super();
     this.reason = reason;
-
   }
 }

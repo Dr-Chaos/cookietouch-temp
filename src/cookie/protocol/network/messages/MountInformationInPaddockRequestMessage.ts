@@ -6,6 +6,5 @@ export default class MountInformationInPaddockRequestMessage extends Message {
   constructor(mapRideId = 0) {
     super();
     this.mapRideId = mapRideId;
-
   }
 }

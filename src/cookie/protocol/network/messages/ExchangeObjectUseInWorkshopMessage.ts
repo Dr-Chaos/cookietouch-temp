@@ -8,6 +8,5 @@ export default class ExchangeObjectUseInWorkshopMessage extends Message {
     super();
     this.objectUID = objectUID;
     this.quantity = quantity;
-
   }
 }

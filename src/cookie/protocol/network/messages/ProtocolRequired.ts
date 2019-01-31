@@ -8,6 +8,5 @@ export default class ProtocolRequired extends Message {
     super();
     this.requiredVersion = requiredVersion;
     this.currentVersion = currentVersion;
-
   }
 }

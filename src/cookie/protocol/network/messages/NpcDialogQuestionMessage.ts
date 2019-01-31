@@ -10,6 +10,5 @@ export default class NpcDialogQuestionMessage extends Message {
     this.dialogParams = dialogParams;
     this.visibleReplies = visibleReplies;
     this.messageId = messageId;
-
   }
 }

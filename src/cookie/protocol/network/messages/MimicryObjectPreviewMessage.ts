@@ -7,6 +7,5 @@ export default class MimicryObjectPreviewMessage extends Message {
   constructor(result: ObjectItem) {
     super();
     this.result = result;
-
   }
 }

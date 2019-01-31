@@ -6,6 +6,5 @@ export default class BasicWhoAmIRequestMessage extends Message {
   constructor(verbose = false) {
     super();
     this.verbose = verbose;
-
   }
 }

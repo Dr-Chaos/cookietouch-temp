@@ -6,6 +6,5 @@ export default class ExchangeObjectTransfertListFromInvMessage extends Message {
   constructor(ids: number[]) {
     super();
     this.ids = ids;
-
   }
 }

@@ -8,6 +8,5 @@ export default class AlignmentAreaUpdateMessage extends Message {
     super();
     this.areaId = areaId;
     this.side = side;
-
   }
 }

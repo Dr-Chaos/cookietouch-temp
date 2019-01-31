@@ -6,6 +6,5 @@ export default class LeaveDialogMessage extends Message {
   constructor(dialogType = 0) {
     super();
     this.dialogType = dialogType;
-
   }
 }

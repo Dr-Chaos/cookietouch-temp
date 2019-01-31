@@ -7,6 +7,5 @@ export default class PlayerStatusUpdateRequestMessage extends Message {
   constructor(status: PlayerStatus) {
     super();
     this.status = status;
-
   }
 }

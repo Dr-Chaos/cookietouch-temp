@@ -6,6 +6,5 @@ export default class TitleSelectedMessage extends Message {
   constructor(titleId = 0) {
     super();
     this.titleId = titleId;
-
   }
 }

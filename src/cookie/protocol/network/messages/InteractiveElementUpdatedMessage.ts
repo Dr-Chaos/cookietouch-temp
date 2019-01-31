@@ -7,6 +7,5 @@ export default class InteractiveElementUpdatedMessage extends Message {
   constructor(interactiveElement: InteractiveElement) {
     super();
     this.interactiveElement = interactiveElement;
-
   }
 }

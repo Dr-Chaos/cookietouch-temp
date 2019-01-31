@@ -6,6 +6,5 @@ export default class CharacterSelectionWithRenameMessage extends CharacterSelect
   constructor(id = 0, name = "") {
     super(id);
     this.name = name;
-
   }
 }

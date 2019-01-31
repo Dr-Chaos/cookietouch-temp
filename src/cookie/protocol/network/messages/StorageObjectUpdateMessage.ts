@@ -7,6 +7,5 @@ export default class StorageObjectUpdateMessage extends Message {
   constructor(object: ObjectItem) {
     super();
     this.object = object;
-
   }
 }

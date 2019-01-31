@@ -6,6 +6,5 @@ export default class AlmanachCalendarDateMessage extends Message {
   constructor(date = 0) {
     super();
     this.date = date;
-
   }
 }

@@ -6,6 +6,5 @@ export default class HouseSellRequestMessage extends Message {
   constructor(amount = 0) {
     super();
     this.amount = amount;
-
   }
 }

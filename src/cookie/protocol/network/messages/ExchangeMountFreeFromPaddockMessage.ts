@@ -12,6 +12,5 @@ export default class ExchangeMountFreeFromPaddockMessage extends Message {
     this.worldX = worldX;
     this.worldY = worldY;
     this.liberator = liberator;
-
   }
 }

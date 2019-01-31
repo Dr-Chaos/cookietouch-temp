@@ -9,6 +9,5 @@ export default class CompassUpdateMessage extends Message {
     super();
     this.type = type;
     this.coords = coords;
-
   }
 }

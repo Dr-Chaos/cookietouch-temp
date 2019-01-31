@@ -7,6 +7,5 @@ export default class GameMapChangeOrientationsMessage extends Message {
   constructor(orientations: ActorOrientation[]) {
     super();
     this.orientations = orientations;
-
   }
 }

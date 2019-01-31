@@ -6,6 +6,5 @@ export default class NumericWhoIsRequestMessage extends Message {
   constructor(playerId = 0) {
     super();
     this.playerId = playerId;
-
   }
 }

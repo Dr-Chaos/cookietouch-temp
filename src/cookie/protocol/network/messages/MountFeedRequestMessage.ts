@@ -12,6 +12,5 @@ export default class MountFeedRequestMessage extends Message {
     this.mountLocation = mountLocation;
     this.mountFoodUid = mountFoodUid;
     this.quantity = quantity;
-
   }
 }

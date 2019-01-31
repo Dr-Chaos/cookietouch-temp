@@ -6,6 +6,5 @@ export default class GameContextCreateMessage extends Message {
   constructor(context = 1) {
     super();
     this.context = context;
-
   }
 }

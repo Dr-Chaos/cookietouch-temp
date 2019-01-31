@@ -9,6 +9,5 @@ export default class IgnoredAddedMessage extends Message {
     super();
     this.ignoreAdded = ignoreAdded;
     this.session = session;
-
   }
 }

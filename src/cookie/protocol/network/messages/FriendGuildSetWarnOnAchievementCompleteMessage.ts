@@ -6,6 +6,5 @@ export default class FriendGuildSetWarnOnAchievementCompleteMessage extends Mess
   constructor(enable = false) {
     super();
     this.enable = enable;
-
   }
 }

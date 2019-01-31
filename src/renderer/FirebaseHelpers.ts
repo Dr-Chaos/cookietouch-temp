@@ -15,8 +15,8 @@ export function initialize() {
 
   const app = firebase.initializeApp(config);
 
-  const settings = { timestampsInSnapshots: true };
-  app.firestore().settings(settings);
+  // const settings = { timestampsInSnapshots: true };
+  // app.firestore().settings(settings);
 
   return app;
 }

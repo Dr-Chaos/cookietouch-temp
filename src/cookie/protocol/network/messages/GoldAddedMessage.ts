@@ -7,6 +7,5 @@ export default class GoldAddedMessage extends Message {
   constructor(gold: GoldItem) {
     super();
     this.gold = gold;
-
   }
 }

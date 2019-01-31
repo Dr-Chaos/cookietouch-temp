@@ -8,6 +8,5 @@ export default class ObjectDropMessage extends Message {
     super();
     this.objectUID = objectUID;
     this.quantity = quantity;
-
   }
 }

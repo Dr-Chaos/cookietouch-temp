@@ -6,6 +6,5 @@ export default class ChatClientMultiMessage extends ChatAbstractClientMessage {
   constructor(content = "", channel = 0) {
     super(content);
     this.channel = channel;
-
   }
 }

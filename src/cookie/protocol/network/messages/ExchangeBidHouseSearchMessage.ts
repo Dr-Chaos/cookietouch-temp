@@ -8,6 +8,5 @@ export default class ExchangeBidHouseSearchMessage extends Message {
     super();
     this.type = type;
     this.genId = genId;
-
   }
 }

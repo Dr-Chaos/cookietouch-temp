@@ -10,6 +10,5 @@ export default class ShortcutBarSwapRequestMessage extends Message {
     this.barType = barType;
     this.firstSlot = firstSlot;
     this.secondSlot = secondSlot;
-
   }
 }

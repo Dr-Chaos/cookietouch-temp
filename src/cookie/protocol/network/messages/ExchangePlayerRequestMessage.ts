@@ -6,6 +6,5 @@ export default class ExchangePlayerRequestMessage extends ExchangeRequestMessage
   constructor(exchangeType = 0, target = 0) {
     super(exchangeType);
     this.target = target;
-
   }
 }

@@ -6,6 +6,5 @@ export default class CharacterReplayWithRenameRequestMessage extends CharacterRe
   constructor(characterId = 0, name = "") {
     super(characterId);
     this.name = name;
-
   }
 }

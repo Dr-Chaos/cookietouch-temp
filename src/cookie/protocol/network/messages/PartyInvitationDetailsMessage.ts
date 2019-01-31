@@ -10,8 +10,15 @@ export default class PartyInvitationDetailsMessage extends AbstractPartyMessage 
   public fromName: string;
   public leaderId: number;
 
-  constructor(partyId = 0, partyType = 0, fromId = 0, fromName = "", leaderId = 0,
-              members: PartyInvitationMemberInformations[], guests: PartyGuestInformations[]) {
+  constructor(
+    partyId = 0,
+    partyType = 0,
+    fromId = 0,
+    fromName = "",
+    leaderId = 0,
+    members: PartyInvitationMemberInformations[],
+    guests: PartyGuestInformations[]
+  ) {
     super(partyId);
     this.members = members;
     this.guests = guests;
@@ -19,6 +26,5 @@ export default class PartyInvitationDetailsMessage extends AbstractPartyMessage 
     this.fromId = fromId;
     this.fromName = fromName;
     this.leaderId = leaderId;
-
   }
 }

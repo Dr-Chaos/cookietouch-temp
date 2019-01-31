@@ -8,6 +8,5 @@ export default class BasicSetAwayModeRequestMessage extends Message {
     super();
     this.enable = enable;
     this.invisible = invisible;
-
   }
 }

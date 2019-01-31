@@ -9,6 +9,5 @@ export default class UpdateMountBoostMessage extends Message {
     super();
     this.boostToUpdateList = boostToUpdateList;
     this.rideId = rideId;
-
   }
 }

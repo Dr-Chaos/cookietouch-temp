@@ -1,14 +1,20 @@
 import ObjectEffect from "@/protocol/network/types/ObjectEffect";
 
 export default class ObjectEffectDate extends ObjectEffect {
-
   public year: number;
   public month: number;
   public day: number;
   public hour: number;
   public minute: number;
 
-  constructor(actionid = 0, year = 0, month = 0, day = 0, hour = 0, minute = 0) {
+  constructor(
+    actionid = 0,
+    year = 0,
+    month = 0,
+    day = 0,
+    hour = 0,
+    minute = 0
+  ) {
     super(actionid);
     this.year = year;
     this.month = month;

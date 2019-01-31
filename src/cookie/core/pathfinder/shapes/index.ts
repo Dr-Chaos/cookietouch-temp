@@ -70,14 +70,14 @@ export default class SpellShapes {
         targetCoords.x === casterCoords.x
           ? 0
           : targetCoords.x > casterCoords.x
-            ? 1
-            : -1;
+          ? 1
+          : -1;
       dirY =
         targetCoords.y === casterCoords.y
           ? 0
           : targetCoords.y > casterCoords.y
-            ? 1
-            : -1;
+          ? 1
+          : -1;
     }
 
     const radiusMin = shaper.withoutCenter

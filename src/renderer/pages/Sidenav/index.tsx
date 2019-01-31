@@ -1,50 +1,43 @@
+import Account from "@/account";
 import ListRender from "@material-ui/core/List";
 import withStyles from "@material-ui/core/styles/withStyles";
-import * as React from "react";
+import { List } from "linqts";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import CookieMain from "renderer/CookieMain";
 import AccountItem from "renderer/pages/Sidenav/AccountItem";
 import GroupItem from "renderer/pages/Sidenav/GroupItem";
-import {
-  ISidenavProps,
-  ISidenavState,
-  sidenavStyles
-} from "renderer/pages/Sidenav/types";
+import { ISidenavProps, sidenavStyles } from "renderer/pages/Sidenav/types";
 
-class Sidenav extends React.Component<ISidenavProps, ISidenavState> {
-  public state: ISidenavState = {
-    connectedAccounts: CookieMain.connectedAccounts
-  };
+const Sidenav: FunctionComponent<ISidenavProps> = props => {
+  const [connectedAccounts, setConnectedAccounts] = useState<List<Account>>(
+    CookieMain.connectedAccounts
+  );
 
-  public componentDidMount() {
-    CookieMain.EntitiesUpdated.on(this.entitiesUpdated);
-  }
+  useEffect(() => {
+    const entitiesUpdated = () => {
+      setConnectedAccounts(CookieMain.connectedAccounts);
+    };
+    CookieMain.EntitiesUpdated.on(entitiesUpdated);
+    return () => {
+      CookieMain.EntitiesUpdated.off(entitiesUpdated);
+    };
+  }, []);
 
-  public componentWillUnmount() {
-    CookieMain.EntitiesUpdated.off(this.entitiesUpdated);
-  }
+  const { classes } = props;
 
-  public render() {
-    const { classes } = this.props;
-    const { connectedAccounts } = this.state;
-
-    return (
-      <div className={classes.root}>
-        <ListRender component="nav">
-          {connectedAccounts.ToArray().map((a, idx) => {
-            if (a.hasGroup) {
-              return <GroupItem key={idx} group={a.group!} />;
-            } else {
-              return <AccountItem key={idx} account={a} />;
-            }
-          })}
-        </ListRender>
-      </div>
-    );
-  }
-
-  private entitiesUpdated = () => {
-    this.setState({ connectedAccounts: CookieMain.connectedAccounts });
-  };
-}
+  return (
+    <div className={classes.root}>
+      <ListRender component="nav">
+        {connectedAccounts.ToArray().map((a, idx) => {
+          if (a.hasGroup) {
+            return <GroupItem key={idx} group={a.group!} />;
+          } else {
+            return <AccountItem key={idx} account={a} />;
+          }
+        })}
+      </ListRender>
+    </div>
+  );
+};
 
 export default withStyles(sidenavStyles)(Sidenav);

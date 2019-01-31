@@ -1,7 +1,6 @@
 import FightTeamMemberInformations from "@/protocol/network/types/FightTeamMemberInformations";
 
 export default class FightTeamMemberCompanionInformations extends FightTeamMemberInformations {
-
   public companionId: number;
   public level: number;
   public masterId: number;

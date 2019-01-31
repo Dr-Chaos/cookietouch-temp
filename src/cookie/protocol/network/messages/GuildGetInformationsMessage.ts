@@ -6,6 +6,5 @@ export default class GuildGetInformationsMessage extends Message {
   constructor(infoType = 0) {
     super();
     this.infoType = infoType;
-
   }
 }

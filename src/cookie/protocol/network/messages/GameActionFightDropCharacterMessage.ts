@@ -8,6 +8,5 @@ export default class GameActionFightDropCharacterMessage extends AbstractGameAct
     super(actionId, sourceId);
     this.targetId = targetId;
     this.cellId = cellId;
-
   }
 }

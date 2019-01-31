@@ -7,6 +7,5 @@ export default class JobDescriptionMessage extends Message {
   constructor(jobsDescription: JobDescription[]) {
     super();
     this.jobsDescription = jobsDescription;
-
   }
 }

@@ -8,6 +8,5 @@ export default class DebugInClientMessage extends Message {
     super();
     this.level = level;
     this.message = message;
-
   }
 }

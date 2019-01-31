@@ -8,6 +8,5 @@ export default class GameMapMovementRequestMessage extends Message {
     super();
     this.keyMovements = keyMovements;
     this.mapId = mapId;
-
   }
 }

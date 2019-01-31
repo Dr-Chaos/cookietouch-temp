@@ -6,6 +6,5 @@ export default class GuildFactsErrorMessage extends Message {
   constructor(guildId = 0) {
     super();
     this.guildId = guildId;
-
   }
 }

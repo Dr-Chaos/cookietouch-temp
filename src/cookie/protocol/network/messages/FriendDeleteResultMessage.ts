@@ -8,6 +8,5 @@ export default class FriendDeleteResultMessage extends Message {
     super();
     this.success = success;
     this.name = name;
-
   }
 }

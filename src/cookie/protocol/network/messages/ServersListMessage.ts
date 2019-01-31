@@ -7,6 +7,5 @@ export default class ServersListMessage extends Message {
   constructor(servers: GameServerInformations[]) {
     super();
     this.servers = servers;
-
   }
 }

@@ -8,6 +8,5 @@ export default class TaxCollectorStateUpdateMessage extends Message {
     super();
     this.uniqueId = uniqueId;
     this.state = state;
-
   }
 }

@@ -6,6 +6,5 @@ export default class StorageObjectsRemoveMessage extends Message {
   constructor(objectUIDList: number[]) {
     super();
     this.objectUIDList = objectUIDList;
-
   }
 }

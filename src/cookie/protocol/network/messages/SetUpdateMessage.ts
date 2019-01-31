@@ -11,6 +11,5 @@ export default class SetUpdateMessage extends Message {
     this.setObjects = setObjects;
     this.setEffects = setEffects;
     this.setId = setId;
-
   }
 }

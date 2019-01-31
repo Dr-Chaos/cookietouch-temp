@@ -6,6 +6,5 @@ export default class InventoryPresetUseMessage extends Message {
   constructor(presetId = 0) {
     super();
     this.presetId = presetId;
-
   }
 }

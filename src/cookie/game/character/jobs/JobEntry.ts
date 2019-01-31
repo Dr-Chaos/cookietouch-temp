@@ -58,10 +58,10 @@ export default class JobEntry {
     return this.experience === 0
       ? 0
       : this.experienceNextLevelFloor === 0
-        ? 100
-        : ((this.experience - this.experienceLevelFloor) /
-            (this.experienceNextLevelFloor - this.experienceLevelFloor)) *
-          100;
+      ? 100
+      : ((this.experience - this.experienceLevelFloor) /
+          (this.experienceNextLevelFloor - this.experienceLevelFloor)) *
+        100;
   }
 
   get iconUrl() {

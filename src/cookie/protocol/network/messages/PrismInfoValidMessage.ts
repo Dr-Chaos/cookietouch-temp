@@ -7,6 +7,5 @@ export default class PrismInfoValidMessage extends Message {
   constructor(waitingForHelpInfo: ProtectedEntityWaitingForHelpInfo) {
     super();
     this.waitingForHelpInfo = waitingForHelpInfo;
-
   }
 }

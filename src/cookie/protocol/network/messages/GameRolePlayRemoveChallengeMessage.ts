@@ -6,6 +6,5 @@ export default class GameRolePlayRemoveChallengeMessage extends Message {
   constructor(fightId = 0) {
     super();
     this.fightId = fightId;
-
   }
 }

@@ -12,6 +12,5 @@ export default class ExchangeMountSterilizeFromPaddockMessage extends Message {
     this.worldX = worldX;
     this.worldY = worldY;
     this.sterilizator = sterilizator;
-
   }
 }

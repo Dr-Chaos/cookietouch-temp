@@ -10,6 +10,5 @@ export default class InventoryPresetSaveMessage extends Message {
     this.presetId = presetId;
     this.symbolId = symbolId;
     this.saveEquipment = saveEquipment;
-
   }
 }

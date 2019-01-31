@@ -1,7 +1,6 @@
 import FightTeamMemberInformations from "@/protocol/network/types/FightTeamMemberInformations";
 
 export default class FightTeamMemberMonsterInformations extends FightTeamMemberInformations {
-
   public monsterId: number;
   public grade: number;
 

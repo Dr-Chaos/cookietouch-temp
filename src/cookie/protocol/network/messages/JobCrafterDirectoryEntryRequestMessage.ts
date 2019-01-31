@@ -6,6 +6,5 @@ export default class JobCrafterDirectoryEntryRequestMessage extends Message {
   constructor(playerId = 0) {
     super();
     this.playerId = playerId;
-
   }
 }

@@ -10,6 +10,5 @@ export default class GameFightRemoveTeamMemberMessage extends Message {
     this.fightId = fightId;
     this.teamId = teamId;
     this.charId = charId;
-
   }
 }

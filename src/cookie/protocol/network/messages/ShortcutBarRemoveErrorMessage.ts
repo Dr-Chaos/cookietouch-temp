@@ -6,6 +6,5 @@ export default class ShortcutBarRemoveErrorMessage extends Message {
   constructor(error = 0) {
     super();
     this.error = error;
-
   }
 }

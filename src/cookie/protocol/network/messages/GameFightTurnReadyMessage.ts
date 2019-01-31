@@ -6,6 +6,5 @@ export default class GameFightTurnReadyMessage extends Message {
   constructor(isReady = false) {
     super();
     this.isReady = isReady;
-
   }
 }

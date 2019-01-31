@@ -12,6 +12,5 @@ export default class ChatAbstractServerMessage extends Message {
     this.content = content;
     this.timestamp = timestamp;
     this.fingerprint = fingerprint;
-
   }
 }

@@ -6,6 +6,5 @@ export default class PaddockRemoveItemRequestMessage extends Message {
   constructor(cellId = 0) {
     super();
     this.cellId = cellId;
-
   }
 }

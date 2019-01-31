@@ -7,6 +7,5 @@ export default class ChatClientMultiWithObjectMessage extends ChatClientMultiMes
   constructor(content = "", channel = 0, objects: ObjectItem[]) {
     super(content, channel);
     this.objects = objects;
-
   }
 }

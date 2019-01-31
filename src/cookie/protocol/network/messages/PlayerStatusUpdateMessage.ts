@@ -11,6 +11,5 @@ export default class PlayerStatusUpdateMessage extends Message {
     this.accountId = accountId;
     this.playerId = playerId;
     this.status = status;
-
   }
 }

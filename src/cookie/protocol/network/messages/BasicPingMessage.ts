@@ -6,6 +6,5 @@ export default class BasicPingMessage extends Message {
   constructor(quiet = false) {
     super();
     this.quiet = quiet;
-
   }
 }

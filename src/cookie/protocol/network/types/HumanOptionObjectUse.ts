@@ -10,6 +10,5 @@ export default class HumanOptionObjectUse extends HumanOption {
     this.delayTypeId = delayTypeId;
     this.delayEndTime = delayEndTime;
     this.objectGID = objectGID;
-
   }
 }

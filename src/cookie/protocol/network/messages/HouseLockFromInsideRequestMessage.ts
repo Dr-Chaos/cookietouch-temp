@@ -3,6 +3,5 @@ import LockableChangeCodeMessage from "@/protocol/network/messages/LockableChang
 export default class HouseLockFromInsideRequestMessage extends LockableChangeCodeMessage {
   constructor(code = "") {
     super(code);
-
   }
 }

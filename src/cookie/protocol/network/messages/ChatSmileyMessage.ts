@@ -10,6 +10,5 @@ export default class ChatSmileyMessage extends Message {
     this.entityId = entityId;
     this.smileyId = smileyId;
     this.accountId = accountId;
-
   }
 }

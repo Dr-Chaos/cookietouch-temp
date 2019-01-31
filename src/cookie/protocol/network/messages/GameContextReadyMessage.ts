@@ -6,6 +6,5 @@ export default class GameContextReadyMessage extends Message {
   constructor(mapId = 0) {
     super();
     this.mapId = mapId;
-
   }
 }

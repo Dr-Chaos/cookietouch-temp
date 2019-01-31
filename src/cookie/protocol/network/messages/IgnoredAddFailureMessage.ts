@@ -6,6 +6,5 @@ export default class IgnoredAddFailureMessage extends Message {
   constructor(reason = 0) {
     super();
     this.reason = reason;
-
   }
 }

@@ -7,6 +7,5 @@ export default class GuildVersatileInfoListMessage extends Message {
   constructor(guilds: GuildVersatileInformations[]) {
     super();
     this.guilds = guilds;
-
   }
 }

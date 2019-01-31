@@ -10,6 +10,5 @@ export default class PopupWarningMessage extends Message {
     this.lockDuration = lockDuration;
     this.author = author;
     this.content = content;
-
   }
 }

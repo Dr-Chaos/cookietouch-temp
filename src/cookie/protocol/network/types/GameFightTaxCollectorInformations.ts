@@ -8,13 +8,20 @@ export default class GameFightTaxCollectorInformations extends GameFightAIInform
   public lastNameId: number;
   public level: number;
 
-  constructor(contextualId = 0, look: EntityLook, disposition: EntityDispositionInformations,
-              teamId = 2, alive = false, stats: GameFightMinimalStats, firstNameId = 0,
-              lastNameId = 0, level = 0) {
+  constructor(
+    contextualId = 0,
+    look: EntityLook,
+    disposition: EntityDispositionInformations,
+    teamId = 2,
+    alive = false,
+    stats: GameFightMinimalStats,
+    firstNameId = 0,
+    lastNameId = 0,
+    level = 0
+  ) {
     super(contextualId, look, disposition, teamId, alive, stats);
     this.firstNameId = firstNameId;
     this.lastNameId = lastNameId;
     this.level = level;
-
   }
 }

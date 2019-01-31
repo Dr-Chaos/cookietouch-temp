@@ -8,6 +8,5 @@ export default class ObjectMovementMessage extends Message {
     super();
     this.objectUID = objectUID;
     this.position = position;
-
   }
 }

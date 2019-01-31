@@ -8,6 +8,5 @@ export default class GuildMemberOnlineStatusMessage extends Message {
     super();
     this.memberId = memberId;
     this.online = online;
-
   }
 }

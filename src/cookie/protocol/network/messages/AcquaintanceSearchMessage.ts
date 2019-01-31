@@ -6,6 +6,5 @@ export default class AcquaintanceSearchMessage extends Message {
   constructor(nickname = "") {
     super();
     this.nickname = nickname;
-
   }
 }

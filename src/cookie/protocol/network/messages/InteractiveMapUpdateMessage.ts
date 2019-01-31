@@ -7,6 +7,5 @@ export default class InteractiveMapUpdateMessage extends Message {
   constructor(interactiveElements: InteractiveElement[]) {
     super();
     this.interactiveElements = interactiveElements;
-
   }
 }

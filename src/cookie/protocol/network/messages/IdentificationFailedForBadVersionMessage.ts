@@ -3,6 +3,5 @@ import IdentificationFailedMessage from "@/protocol/network/messages/Identificat
 export default class IdentificationFailedForBadVersionMessage extends IdentificationFailedMessage {
   constructor(reason = 99) {
     super(reason);
-
   }
 }

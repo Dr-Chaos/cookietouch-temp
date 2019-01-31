@@ -6,6 +6,5 @@ export default class ExchangeLeaveMessage extends LeaveDialogMessage {
   constructor(dialogType = 0, success = false) {
     super(dialogType);
     this.success = success;
-
   }
 }

@@ -13,6 +13,5 @@ export default class ContactLookMessage extends Message {
     this.playerName = playerName;
     this.playerId = playerId;
     this.look = look;
-
   }
 }

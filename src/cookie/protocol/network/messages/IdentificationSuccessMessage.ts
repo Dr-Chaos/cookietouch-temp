@@ -11,8 +11,17 @@ export default class IdentificationSuccessMessage extends Message {
   public wasAlreadyConnected: boolean;
   public accountCreation: number;
 
-  constructor(login = "", nickname = "", accountId = 0, communityId = 0, hasRights = false,
-              secretQuestion = "", subscriptionEndDate = 0, wasAlreadyConnected = false, accountCreation = 0) {
+  constructor(
+    login = "",
+    nickname = "",
+    accountId = 0,
+    communityId = 0,
+    hasRights = false,
+    secretQuestion = "",
+    subscriptionEndDate = 0,
+    wasAlreadyConnected = false,
+    accountCreation = 0
+  ) {
     super();
     this.login = login;
     this.nickname = nickname;
@@ -23,6 +32,5 @@ export default class IdentificationSuccessMessage extends Message {
     this.subscriptionEndDate = subscriptionEndDate;
     this.wasAlreadyConnected = wasAlreadyConnected;
     this.accountCreation = accountCreation;
-
   }
 }

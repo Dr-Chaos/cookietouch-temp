@@ -6,6 +6,5 @@ export default class DocumentReadingBeginMessage extends Message {
   constructor(documentId = 0) {
     super();
     this.documentId = documentId;
-
   }
 }

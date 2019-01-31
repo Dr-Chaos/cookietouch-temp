@@ -6,6 +6,5 @@ export default class DisplayNumericalValueWithAgeBonusMessage extends DisplayNum
   constructor(entityId = 0, value = 0, type = 0, valueOfBonus = 0) {
     super(entityId, value, type);
     this.valueOfBonus = valueOfBonus;
-
   }
 }

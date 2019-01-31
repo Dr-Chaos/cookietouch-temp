@@ -9,7 +9,15 @@ export default class PaddockInformationsForSell extends Type {
   public nbObject: number;
   public price: number;
 
-  constructor(guildOwner = "", worldX = 0, worldY = 0, subAreaId = 0, nbMount = 0, nbObject = 0, price = 0) {
+  constructor(
+    guildOwner = "",
+    worldX = 0,
+    worldY = 0,
+    subAreaId = 0,
+    nbMount = 0,
+    nbObject = 0,
+    price = 0
+  ) {
     super();
     this.guildOwner = guildOwner;
     this.worldX = worldX;

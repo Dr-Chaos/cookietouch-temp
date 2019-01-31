@@ -6,7 +6,14 @@ export default class AbstractGameActionFightTargetedAbilityMessage extends Abstr
   public critical: number;
   public silentCast: boolean;
 
-  constructor(actionId = 0, sourceId = 0, targetId = 0, destinationCellId = 0, critical = 1, silentCast = false) {
+  constructor(
+    actionId = 0,
+    sourceId = 0,
+    targetId = 0,
+    destinationCellId = 0,
+    critical = 1,
+    silentCast = false
+  ) {
     super();
     this.targetId = targetId;
     this.destinationCellId = destinationCellId;

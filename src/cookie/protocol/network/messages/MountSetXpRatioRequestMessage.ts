@@ -6,6 +6,5 @@ export default class MountSetXpRatioRequestMessage extends Message {
   constructor(xpRatio = 0) {
     super();
     this.xpRatio = xpRatio;
-
   }
 }

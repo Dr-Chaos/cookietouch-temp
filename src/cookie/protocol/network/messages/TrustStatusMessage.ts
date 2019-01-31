@@ -6,6 +6,5 @@ export default class TrustStatusMessage extends Message {
   constructor(trusted = false) {
     super();
     this.trusted = trusted;
-
   }
 }

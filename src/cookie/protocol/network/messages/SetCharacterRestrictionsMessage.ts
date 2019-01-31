@@ -7,6 +7,5 @@ export default class SetCharacterRestrictionsMessage extends Message {
   constructor(restrictions: ActorRestrictionsInformations) {
     super();
     this.restrictions = restrictions;
-
   }
 }

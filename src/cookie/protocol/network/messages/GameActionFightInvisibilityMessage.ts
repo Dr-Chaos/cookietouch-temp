@@ -8,6 +8,5 @@ export default class GameActionFightInvisibilityMessage extends AbstractGameActi
     super(actionId, sourceId);
     this.targetId = targetId;
     this.state = state;
-
   }
 }

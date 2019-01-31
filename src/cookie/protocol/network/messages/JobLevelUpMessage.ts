@@ -9,6 +9,5 @@ export default class JobLevelUpMessage extends Message {
     super();
     this.newLevel = newLevel;
     this.jobsDescription = jobsDescription;
-
   }
 }

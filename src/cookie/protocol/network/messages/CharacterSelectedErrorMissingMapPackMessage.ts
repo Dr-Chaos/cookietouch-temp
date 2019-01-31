@@ -6,6 +6,5 @@ export default class CharacterSelectedErrorMissingMapPackMessage extends Charact
   constructor(subAreaId = 0) {
     super();
     this.subAreaId = subAreaId;
-
   }
 }

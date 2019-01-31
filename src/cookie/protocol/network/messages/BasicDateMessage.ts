@@ -10,6 +10,5 @@ export default class BasicDateMessage extends Message {
     this.day = day;
     this.month = month;
     this.year = year;
-
   }
 }

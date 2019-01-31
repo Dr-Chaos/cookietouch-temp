@@ -7,6 +7,5 @@ export default class ExchangeMountPaddockAddMessage extends Message {
   constructor(mountDescription: MountClientData) {
     super();
     this.mountDescription = mountDescription;
-
   }
 }

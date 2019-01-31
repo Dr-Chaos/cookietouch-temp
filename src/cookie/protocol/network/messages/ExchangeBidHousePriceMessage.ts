@@ -6,6 +6,5 @@ export default class ExchangeBidHousePriceMessage extends Message {
   constructor(genId = 0) {
     super();
     this.genId = genId;
-
   }
 }

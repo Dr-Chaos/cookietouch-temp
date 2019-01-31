@@ -6,6 +6,5 @@ export default class CinematicMessage extends Message {
   constructor(cinematicId = 0) {
     super();
     this.cinematicId = cinematicId;
-
   }
 }

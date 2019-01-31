@@ -9,14 +9,18 @@ export default class CharactersListWithModificationsMessage extends CharactersLi
   public unusableCharacters: number[];
   public charactersToRelook: CharacterToRelookInformation[];
 
-  constructor(hasStartupActions = false, characters: CharacterBaseInformations[],
-              charactersToRecolor: CharacterToRecolorInformation[], charactersToRename: number[],
-              unusableCharacters: number[], charactersToRelook: CharacterToRelookInformation[]) {
+  constructor(
+    hasStartupActions = false,
+    characters: CharacterBaseInformations[],
+    charactersToRecolor: CharacterToRecolorInformation[],
+    charactersToRename: number[],
+    unusableCharacters: number[],
+    charactersToRelook: CharacterToRelookInformation[]
+  ) {
     super(hasStartupActions, characters);
     this.charactersToRecolor = charactersToRecolor;
     this.charactersToRename = charactersToRename;
     this.unusableCharacters = unusableCharacters;
     this.charactersToRelook = charactersToRelook;
-
   }
 }

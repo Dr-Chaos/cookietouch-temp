@@ -8,6 +8,5 @@ export default class ObjectGroundListAddedMessage extends Message {
     super();
     this.cells = cells;
     this.referenceIds = referenceIds;
-
   }
 }

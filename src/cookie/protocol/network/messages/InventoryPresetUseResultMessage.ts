@@ -10,6 +10,5 @@ export default class InventoryPresetUseResultMessage extends Message {
     this.unlinkedPosition = unlinkedPosition;
     this.presetId = presetId;
     this.code = code;
-
   }
 }

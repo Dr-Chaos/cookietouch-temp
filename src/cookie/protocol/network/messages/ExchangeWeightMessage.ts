@@ -8,6 +8,5 @@ export default class ExchangeWeightMessage extends Message {
     super();
     this.currentWeight = currentWeight;
     this.maxWeight = maxWeight;
-
   }
 }

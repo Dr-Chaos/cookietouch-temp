@@ -6,6 +6,5 @@ export default class KrosmasterPlayingStatusMessage extends Message {
   constructor(playing = false) {
     super();
     this.playing = playing;
-
   }
 }

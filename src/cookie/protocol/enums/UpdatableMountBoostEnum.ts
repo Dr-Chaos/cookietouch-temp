@@ -4,5 +4,5 @@ export enum UpdatableMountBoostEnum {
   ENERGY = 1,
   SERENITY = 2,
   LOVE = 4,
-  TIREDNESS = 6,
+  TIREDNESS = 6
 }

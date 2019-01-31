@@ -18,5 +18,5 @@ export enum ExchangeTypeEnum {
   NPC_RESURECT_PET = 17,
   NPC_TRADE_MOUNT = 18,
   REALESTATE_HOUSE = 19,
-  REALESTATE_FARM = 20,
+  REALESTATE_FARM = 20
 }

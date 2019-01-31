@@ -7,6 +7,5 @@ export default class GuildPaddockBoughtMessage extends Message {
   constructor(paddockInfo: PaddockContentInformations) {
     super();
     this.paddockInfo = paddockInfo;
-
   }
 }

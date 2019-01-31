@@ -14,5 +14,5 @@ export enum PingSmileysEnum {
   retreat = 63,
   lightBulb = 80,
   yes = 88,
-  no = 89,
+  no = 89
 }

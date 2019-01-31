@@ -6,6 +6,5 @@ export default class AdminCommandMessage extends Message {
   constructor(content = "") {
     super();
     this.content = content;
-
   }
 }

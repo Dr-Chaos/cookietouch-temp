@@ -8,6 +8,5 @@ export default class GameActionFightTeleportOnSameMapMessage extends AbstractGam
     super(actionId, sourceId);
     this.targetId = targetId;
     this.cellId = cellId;
-
   }
 }

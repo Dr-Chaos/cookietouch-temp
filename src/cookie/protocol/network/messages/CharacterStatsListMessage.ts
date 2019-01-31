@@ -7,6 +7,5 @@ export default class CharacterStatsListMessage extends Message {
   constructor(stats: CharacterCharacteristicsInformations) {
     super();
     this.stats = stats;
-
   }
 }

@@ -10,6 +10,5 @@ export default class PrismFightAttackerRemoveMessage extends Message {
     this.subAreaId = subAreaId;
     this.fightId = fightId;
     this.fighterToRemoveId = fighterToRemoveId;
-
   }
 }

@@ -13,11 +13,29 @@ export default class FriendOnlineInformations extends FriendInformations {
   public moodSmileyId: number;
   public status: PlayerStatus;
 
-  constructor(accountId = 0, accountName = "", playerState = 99, lastConnection = 0,
-              achievementPoints = 0, playerId = 0, playerName = "", level = 0,
-              alignmentSide = 0, breed = 0, sex = false, guildInfo: BasicGuildInformations, moodSmileyId = 0,
-              status: PlayerStatus) {
-    super(accountId, accountName, playerState, lastConnection, achievementPoints);
+  constructor(
+    accountId = 0,
+    accountName = "",
+    playerState = 99,
+    lastConnection = 0,
+    achievementPoints = 0,
+    playerId = 0,
+    playerName = "",
+    level = 0,
+    alignmentSide = 0,
+    breed = 0,
+    sex = false,
+    guildInfo: BasicGuildInformations,
+    moodSmileyId = 0,
+    status: PlayerStatus
+  ) {
+    super(
+      accountId,
+      accountName,
+      playerState,
+      lastConnection,
+      achievementPoints
+    );
     this.playerId = playerId;
     this.playerName = playerName;
     this.level = level;
@@ -27,6 +45,5 @@ export default class FriendOnlineInformations extends FriendInformations {
     this.guildInfo = guildInfo;
     this.moodSmileyId = moodSmileyId;
     this.status = status;
-
   }
 }

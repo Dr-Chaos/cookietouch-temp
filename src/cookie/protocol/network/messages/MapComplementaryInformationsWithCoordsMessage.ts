@@ -10,12 +10,29 @@ export default class MapComplementaryInformationsWithCoordsMessage extends MapCo
   public worldX: number;
   public worldY: number;
 
-  constructor(subAreaId = 0, mapId = 0, worldX = 0, worldY = 0, houses: HouseInformations[],
-              actors: GameRolePlayActorInformations[], interactiveElements: InteractiveElement[],
-              statedElements: StatedElement[], obstacles: MapObstacle[], fights: FightCommonInformations[]) {
-    super(subAreaId, mapId, houses, actors, interactiveElements, statedElements, obstacles, fights);
+  constructor(
+    subAreaId = 0,
+    mapId = 0,
+    worldX = 0,
+    worldY = 0,
+    houses: HouseInformations[],
+    actors: GameRolePlayActorInformations[],
+    interactiveElements: InteractiveElement[],
+    statedElements: StatedElement[],
+    obstacles: MapObstacle[],
+    fights: FightCommonInformations[]
+  ) {
+    super(
+      subAreaId,
+      mapId,
+      houses,
+      actors,
+      interactiveElements,
+      statedElements,
+      obstacles,
+      fights
+    );
     this.worldX = worldX;
     this.worldY = worldY;
-
   }
 }

@@ -8,6 +8,5 @@ export default class UpdateSelfAgressableStatusMessage extends Message {
     super();
     this.status = status;
     this.probationTime = probationTime;
-
   }
 }

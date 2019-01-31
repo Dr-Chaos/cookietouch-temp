@@ -4,6 +4,5 @@ import AllianceFactSheetInformations from "@/protocol/network/types/AllianceFact
 export default class AlliancePartialListMessage extends AllianceListMessage {
   constructor(alliances: AllianceFactSheetInformations[]) {
     super(alliances);
-
   }
 }

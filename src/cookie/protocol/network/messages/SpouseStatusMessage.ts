@@ -6,6 +6,5 @@ export default class SpouseStatusMessage extends Message {
   constructor(hasSpouse = false) {
     super();
     this.hasSpouse = hasSpouse;
-
   }
 }

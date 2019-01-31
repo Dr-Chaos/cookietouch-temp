@@ -8,6 +8,5 @@ export default class UpdateMapPlayersAgressableStatusMessage extends Message {
     super();
     this.playerIds = playerIds;
     this.enable = enable;
-
   }
 }

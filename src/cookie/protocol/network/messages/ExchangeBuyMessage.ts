@@ -8,6 +8,5 @@ export default class ExchangeBuyMessage extends Message {
     super();
     this.objectToBuyId = objectToBuyId;
     this.quantity = quantity;
-
   }
 }

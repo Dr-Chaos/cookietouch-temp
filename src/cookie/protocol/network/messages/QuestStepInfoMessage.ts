@@ -7,6 +7,5 @@ export default class QuestStepInfoMessage extends Message {
   constructor(infos: QuestActiveInformations) {
     super();
     this.infos = infos;
-
   }
 }

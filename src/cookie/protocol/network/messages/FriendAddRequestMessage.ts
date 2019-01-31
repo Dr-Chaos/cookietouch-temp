@@ -6,6 +6,5 @@ export default class FriendAddRequestMessage extends Message {
   constructor(name = "") {
     super();
     this.name = name;
-
   }
 }

@@ -6,6 +6,5 @@ export default class ErrorMapNotFoundMessage extends Message {
   constructor(mapId = 0) {
     super();
     this.mapId = mapId;
-
   }
 }

@@ -10,6 +10,5 @@ export default class InventoryPresetItemUpdateRequestMessage extends Message {
     this.presetId = presetId;
     this.position = position;
     this.objUid = objUid;
-
   }
 }

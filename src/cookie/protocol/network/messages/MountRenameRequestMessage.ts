@@ -8,6 +8,5 @@ export default class MountRenameRequestMessage extends Message {
     super();
     this.name = name;
     this.mountId = mountId;
-
   }
 }

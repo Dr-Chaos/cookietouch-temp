@@ -29,7 +29,7 @@ class Character extends React.Component<
     return (
       <Paper className={classes.root}>
         <AppBar className={classes.appBar} position="static">
-          <Tabs value={value} onChange={this.handleChange} fullWidth={true}>
+          <Tabs value={value} onChange={this.handleChange} variant="fullWidth">
             <Tab
               className={classes.tab}
               label={LanguageManager.trans("stats")}

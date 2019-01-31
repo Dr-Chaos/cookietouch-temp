@@ -7,6 +7,5 @@ export default class HousePropertiesMessage extends Message {
   constructor(properties: HouseInformations) {
     super();
     this.properties = properties;
-
   }
 }

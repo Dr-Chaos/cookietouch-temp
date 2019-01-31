@@ -8,6 +8,5 @@ export default class ShortcutBarRemovedMessage extends Message {
     super();
     this.barType = barType;
     this.slot = slot;
-
   }
 }

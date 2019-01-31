@@ -4,9 +4,12 @@ import ObjectItemNotInContainer from "@/protocol/network/types/ObjectItemNotInCo
 export default class ExchangeCraftResultMagicWithObjectDescMessage extends ExchangeCraftResultWithObjectDescMessage {
   public magicPoolStatus: number;
 
-  constructor(craftResult = 0, objectInfo: ObjectItemNotInContainer, magicPoolStatus = 0) {
+  constructor(
+    craftResult = 0,
+    objectInfo: ObjectItemNotInContainer,
+    magicPoolStatus = 0
+  ) {
     super(craftResult, objectInfo);
     this.magicPoolStatus = magicPoolStatus;
-
   }
 }

@@ -1,7 +1,6 @@
 import Message from "@/protocol/network/messages/Message";
 
 export default class HelloConnectMessage extends Message {
-
   public key: number[];
   public salt: string;
 

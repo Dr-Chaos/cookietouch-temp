@@ -8,6 +8,5 @@ export default class ChallengeFightJoinRefusedMessage extends Message {
     super();
     this.playerId = playerId;
     this.reason = reason;
-
   }
 }

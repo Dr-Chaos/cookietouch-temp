@@ -7,6 +7,5 @@ export default class GuildModificationEmblemValidMessage extends Message {
   constructor(guildEmblem: GuildEmblem) {
     super();
     this.guildEmblem = guildEmblem;
-
   }
 }

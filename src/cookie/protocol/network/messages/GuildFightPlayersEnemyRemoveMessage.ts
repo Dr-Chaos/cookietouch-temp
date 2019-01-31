@@ -8,6 +8,5 @@ export default class GuildFightPlayersEnemyRemoveMessage extends Message {
     super();
     this.fightId = fightId;
     this.playerId = playerId;
-
   }
 }

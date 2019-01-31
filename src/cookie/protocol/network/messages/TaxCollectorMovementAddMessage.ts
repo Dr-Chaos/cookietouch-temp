@@ -7,6 +7,5 @@ export default class TaxCollectorMovementAddMessage extends Message {
   constructor(informations: TaxCollectorInformations) {
     super();
     this.informations = informations;
-
   }
 }

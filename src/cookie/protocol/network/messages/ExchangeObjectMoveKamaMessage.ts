@@ -6,6 +6,5 @@ export default class ExchangeObjectMoveKamaMessage extends Message {
   constructor(quantity = 0) {
     super();
     this.quantity = quantity;
-
   }
 }

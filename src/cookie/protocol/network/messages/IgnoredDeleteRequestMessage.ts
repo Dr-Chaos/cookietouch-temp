@@ -8,6 +8,5 @@ export default class IgnoredDeleteRequestMessage extends Message {
     super();
     this.accountId = accountId;
     this.session = session;
-
   }
 }

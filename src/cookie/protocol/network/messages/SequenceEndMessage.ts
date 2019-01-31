@@ -10,6 +10,5 @@ export default class SequenceEndMessage extends Message {
     this.actionId = actionId;
     this.authorId = authorId;
     this.sequenceType = sequenceType;
-
   }
 }
