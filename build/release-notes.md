@@ -6,6 +6,7 @@
 - Nouvelle page de chargement
 - L'icone de l'application s'affiche désormais correctement sur Linux
 - Corrections de fautes d'orthographe
+- Bug de la banque lors d'une première ouverture
 
 ## EN
 

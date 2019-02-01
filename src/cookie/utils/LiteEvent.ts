@@ -1,8 +1,9 @@
-export type LiteEventHandler<T> = (data?: T) => void | Promise<void>;
+export type LiteEventHandler<T> = (data: T) => void | Promise<void>;
 
 export interface ILiteEvent<T> {
   on(handler: LiteEventHandler<T>): void;
   off(handler: LiteEventHandler<T>): void;
+  once(handler: LiteEventHandler<T>): void;
 }
 
 export default class LiteEvent<T> implements ILiteEvent<T> {
@@ -16,7 +17,15 @@ export default class LiteEvent<T> implements ILiteEvent<T> {
     this.handlers = this.handlers.filter(h => h !== handler);
   }
 
-  public async trigger(data?: T) {
+  public once(handler: LiteEventHandler<T>): void {
+    const newHandler = (data: T) => {
+      handler(data);
+      this.off(newHandler);
+    };
+    this.on(newHandler);
+  }
+
+  public async trigger(data: T) {
     // TODO: Maybe await all call to this method?
     const handlers = this.handlers.slice(0).map(async h => h(data));
     await Promise.all(handlers);

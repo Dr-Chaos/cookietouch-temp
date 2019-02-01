@@ -19,6 +19,7 @@ import { LoadingPage } from "renderer/LoadingPage";
 import Main from "renderer/pages/Main";
 import { spinnerService } from "renderer/Spinner/Service";
 import "typeface-roboto/index.css";
+import CookieMain from "./CookieMain";
 
 // Spark.setAgent("http://186.193.186.3:20183");
 // Spark.get("ip.jsontest.com").then(res => {
@@ -89,4 +90,13 @@ ipcRenderer.on("go-update", (event: any, info: any) => {
       }
     }
   );
+});
+
+ipcRenderer.on("clean-accounts", () => {
+  CookieMain.connectedAccounts.ForEach(a => {
+    if (!a) {
+      return;
+    }
+    a.stop();
+  });
 });

@@ -22,7 +22,7 @@ export default class AccountData {
     return new Date() < this.subscriptionEndDate;
   }
 
-  private readonly onGoultinesUpdated = new LiteEvent();
+  private readonly onGoultinesUpdated = new LiteEvent<void>();
 
   public get GoultinesUpdated() {
     return this.onGoultinesUpdated.expose();

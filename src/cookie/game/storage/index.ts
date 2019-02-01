@@ -222,15 +222,17 @@ export default class Storage {
     this.kamas = message.kamas;
     this.objects = new List<ObjectEntry>();
 
-    const objects = await DataManager.get<Items>(
-      DataTypes.Items,
-      ...message.objects.map(o => o.objectGID)
-    );
+    if (message.objects.length > 0) {
+      const objects = await DataManager.get<Items>(
+        DataTypes.Items,
+        ...message.objects.map(o => o.objectGID)
+      );
 
-    for (const obj of message.objects) {
-      const oeRes = objects.find(f => f.id === obj.objectGID);
-      const oe = oeRes && oeRes.object;
-      this.objects.Add(await ObjectEntry.setup(obj, oe));
+      for (const obj of message.objects) {
+        const oeRes = objects.find(f => f.id === obj.objectGID);
+        const oe = oeRes && oeRes.object;
+        this.objects.Add(await ObjectEntry.setup(obj, oe));
+      }
     }
 
     this.onStorageStarted.trigger();

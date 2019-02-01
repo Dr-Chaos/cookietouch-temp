@@ -48,7 +48,7 @@ export default class ScriptsManager {
   public paused: boolean = false;
   private api: API;
   private readonly onScriptLoaded = new LiteEvent<string>();
-  private readonly onScriptStarted = new LiteEvent<any>();
+  private readonly onScriptStarted = new LiteEvent<void>();
   private readonly onScriptStopped = new LiteEvent<string>();
   private account: Account;
   private entryFlags: List<IFlag>;

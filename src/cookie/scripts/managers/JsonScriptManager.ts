@@ -97,5 +97,7 @@ export default class JsonScriptManager {
     // API
     const regexAPI = /API/g;
     this.script = this.script.replace(regexAPI, `API["${this.username}"]`);
+    (global as any)[this.username] = {};
+    this.script = this.script.replace(/global/g, `global["${this.username}"]`);
   }
 }

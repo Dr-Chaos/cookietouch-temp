@@ -444,6 +444,8 @@ export default class Character {
     await this.account.extensions.flood.config.load();
 
     this.isSelected = true;
+    this.account.accountStats.connected = true;
+    this.account.accountStats.save();
     this.onCharacterSelected.trigger();
   }
 

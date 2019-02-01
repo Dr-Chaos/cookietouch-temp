@@ -23,10 +23,12 @@ import { randomString } from "@/utils/Random";
 import { displayTime, sleep } from "@/utils/Time";
 import TimerWrapper from "@/utils/TimerWrapper";
 import moment from "moment";
+import AccountStats from "./AccountStats";
 import { BonusPackDuration, BonusPackMoney, buyBonusPack } from "./bonusPack";
 
 export default class Account implements IEntity {
   public accountConfig: AccountConfiguration;
+  public accountStats: AccountStats;
   public game: Game;
   public data: AccountData;
   public network: Network;
@@ -52,6 +54,7 @@ export default class Account implements IEntity {
 
   constructor(config: AccountConfiguration) {
     this.logger = new Logger();
+    this.accountStats = new AccountStats(this);
     this.data = new AccountData();
     this.accountConfig = config;
     this.config = new Configuration(this);
@@ -68,7 +71,9 @@ export default class Account implements IEntity {
       this,
       30000
     );
-
+    this.game.character.CharacterSelected.on(() => {
+      this.accountStats.load();
+    });
     this.network.Disconnected.on(this.onNetworkDisconnected);
     this.game.map.MapLoaded.on(this.onMapLoaded);
   }
@@ -145,10 +150,7 @@ export default class Account implements IEntity {
         this.accountConfig.username,
         this.accountConfig.password
       );
-      this.network.connect(
-        randomString(16),
-        DTConstants.config.dataUrl
-      );
+      this.network.connect(randomString(16), DTConstants.config.dataUrl);
       // this.network.connect(DTConstants.config.sessionId, DTConstants.config.dataUrl);
     } catch (error) {
       this.logger.logError("", error.message);
@@ -160,6 +162,9 @@ export default class Account implements IEntity {
     this.extensions.bid.config.removeListeners();
     this.extensions.fights.config.removeListeners();
     this.extensions.flood.config.removeListeners();
+    this.accountStats.connected = false;
+    this.accountStats.save();
+    this.accountStats.removeListeners();
     this.network.close();
   }
 
