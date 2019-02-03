@@ -24,4 +24,5 @@ export interface IBottomAppBarProps
 export interface IBottomAppBarState {
   totalUsers: number;
   usersConnected: number;
+  botsConnected: number;
 }

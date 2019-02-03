@@ -71,9 +71,7 @@ export default class Account implements IEntity {
       this,
       30000
     );
-    this.game.character.CharacterSelected.on(() => {
-      this.accountStats.load();
-    });
+
     this.network.Disconnected.on(this.onNetworkDisconnected);
     this.game.map.MapLoaded.on(this.onMapLoaded);
   }
@@ -157,13 +155,13 @@ export default class Account implements IEntity {
     }
   }
 
-  public stop() {
+  public async stop() {
     this.config.removeListeners();
     this.extensions.bid.config.removeListeners();
     this.extensions.fights.config.removeListeners();
     this.extensions.flood.config.removeListeners();
     this.accountStats.connected = false;
-    this.accountStats.save();
+    await this.accountStats.save();
     this.accountStats.removeListeners();
     this.network.close();
   }
@@ -261,7 +259,7 @@ export default class Account implements IEntity {
         "planification",
         LanguageManager.trans("autoDisconnect")
       );
-      this.stop();
+      await this.stop();
     } else if (
       this.state === AccountStates.DISCONNECTED &&
       this.accountConfig.planification[hour]

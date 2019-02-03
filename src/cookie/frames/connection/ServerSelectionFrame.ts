@@ -72,7 +72,7 @@ export default class ServerSelectionFrame implements IFrame {
         LanguageManager.trans("serverSelection"),
         LanguageManager.trans("cantSelectServer")
       );
-      account.stop();
+      await account.stop();
       return;
     }
 
@@ -85,7 +85,7 @@ export default class ServerSelectionFrame implements IFrame {
         LanguageManager.trans("serverSelection"),
         `${server._name} ${ServerStatusEnum[server.status]}`
       );
-      account.stop();
+      await account.stop();
       return;
     }
 
@@ -130,10 +130,10 @@ export default class ServerSelectionFrame implements IFrame {
   private async HandleserverDisconnecting(account: Account, message: any) {
     switch (message.reason) {
       case "SERVER_GONE":
-        account.stop();
+        await account.stop();
         break;
       case "CONNECTION_FAILED":
-        account.stop();
+        await account.stop();
         break;
       default:
         break;
@@ -177,6 +177,6 @@ export default class ServerSelectionFrame implements IFrame {
     account: Account,
     message: AuthenticationTicketRefusedMessage
   ) {
-    account.stop();
+    await account.stop();
   }
 }

@@ -84,7 +84,7 @@ export default class SecurityFrame implements IFrame {
         LanguageManager.trans("dailyFightsLimit")
       );
       if (account.config.disconnectUponFightsLimit) {
-        account.stop();
+        await account.stop();
       }
     }
   }

@@ -89,9 +89,11 @@ export default class Group implements IEntity {
     this.members.ForEach(async t => t !== undefined && t.start());
   }
 
-  public disconnect() {
-    this.chief.stop();
-    this.members.ForEach(t => t !== undefined && t.stop());
+  public async disconnect() {
+    await this.chief.stop();
+    for (const m of this.members.ToArray()) {
+      await m.stop();
+    }
   }
 
   public membersCleaningAndClearing() {

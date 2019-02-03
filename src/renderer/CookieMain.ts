@@ -115,7 +115,7 @@ export default class CookieMain {
 
   public static async disconnectAccount(account: Account) {
     if (account.network.connected) {
-      account.stop();
+      await account.stop();
       await sleep(400);
     }
   }

@@ -115,7 +115,6 @@ function createMainWindow() {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
-    ipcMain.emit("clean-accounts");
     app.quit();
   }
 });

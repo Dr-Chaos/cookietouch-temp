@@ -439,6 +439,7 @@ export default class Character {
     this.lifeStatus = PlayerLifeStatusEnum.STATUS_ALIVE_AND_KICKING;
 
     await this.account.config.load();
+    await this.account.accountStats.load();
     await this.account.extensions.fights.config.load();
     await this.account.extensions.bid.config.load();
     await this.account.extensions.flood.config.load();

@@ -72,7 +72,7 @@ export default class AccountStats implements IAccountStatsJSON {
     const toSave: IAccountStatsJSON = {
       connected: this.connected
     };
-
+    this.updateBotsConnected(this.connected);
     await this.globalDoc.set(toSave);
   }
 
@@ -84,5 +84,25 @@ export default class AccountStats implements IAccountStatsJSON {
     this.connected = json.connected;
 
     this.onUpdated.trigger();
+  }
+
+  private async updateBotsConnected(connected: boolean) {
+    const ref = firebase
+      .firestore()
+      .collection("stats")
+      .doc("users");
+
+    await firebase.firestore().runTransaction(async transaction => {
+      const doc = await transaction.get(ref);
+      if (!doc.exists) {
+        transaction.set(ref, { connected: 0 });
+        return 0;
+      }
+      const newConnected = Number(doc.data()!.connected) + (connected ? 1 : -1);
+      transaction.update(ref, {
+        connected: newConnected
+      });
+      return newConnected;
+    });
   }
 }

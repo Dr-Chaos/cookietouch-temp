@@ -320,9 +320,9 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
     );
   }
 
-  private startStop = () => {
+  private startStop = async () => {
     if (this.props.account.network.connected) {
-      this.stop();
+      await this.stop();
       this.props.account.planificationTimer.stop();
     } else {
       this.start();
@@ -370,8 +370,8 @@ class Infos extends React.Component<IInfosProps, IInfosState> {
     await this.props.account.start();
   };
 
-  private stop = () => {
-    this.props.account.stop();
+  private stop = async () => {
+    await this.props.account.stop();
     this.setState(this.idleState);
   };
 

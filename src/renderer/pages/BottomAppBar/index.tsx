@@ -16,11 +16,19 @@ class BottomAppBar extends React.Component<
   IBottomAppBarState
 > {
   public state: IBottomAppBarState = {
+    botsConnected: 0,
     totalUsers: 0,
     usersConnected: 0
   };
 
   public componentDidMount() {
+    firebase
+      .firestore()
+      .doc("/stats/users")
+      .onSnapshot(snap => {
+        const users = snap.data();
+        this.setState({ botsConnected: users!.connected });
+      });
     const listRef = firebase.database().ref("status");
     listRef.on("value", snap => {
       if (!snap) {
@@ -52,7 +60,8 @@ class BottomAppBar extends React.Component<
               {LanguageManager.trans(
                 "usersConnected",
                 usersConnected,
-                totalUsers
+                totalUsers,
+                "X"
               )}
             </Typography>
           </Toolbar>
