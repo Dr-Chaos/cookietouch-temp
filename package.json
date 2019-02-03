@@ -41,13 +41,14 @@
     "@types/react": "^16.7.22",
     "@types/react-dom": "^16.0.11",
     "awesome-typescript-loader": "^5.2.0",
-    "electron": "^4.0.3",
+    "electron": "^5.0.0-beta.1",
     "electron-builder": "^20.38.5",
     "electron-download": "^4.1.1",
     "electron-webpack": "^2.6.1",
     "electron-webpack-ts": "^3.1.1",
     "prettier": "^1.16.3",
     "sass-loader": "^7.1.0",
+    "terser": "3.14.1",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.16.0",
     "tslint-loader": "^3.6.0",
@@ -80,5 +81,8 @@
     "react-dom": "^16.8.0-alpha.0",
     "source-map-support": "^0.5.10",
     "typeface-roboto": "^0.0.54"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
   }
 }
