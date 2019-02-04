@@ -49,43 +49,44 @@ class TopAppBar extends React.Component<ITopAppBarProps, ITopAppBarState> {
               CookieTouch
             </Typography>
             {user ? (
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  horizontal: "right",
-                  vertical: "top"
-                }}
-                transformOrigin={{
-                  horizontal: "right",
-                  vertical: "top"
-                }}
-                open={open}
-                onClose={this.handleClose}
-              >
-                <MenuItem onClick={this.handleMenu}>
-                  <IconButton
-                    aria-owns={open ? "menu-appbar" : undefined}
-                    aria-haspopup="true"
-                    color="inherit"
-                  >
-                    {user && user.photoURL ? (
-                      <Avatar src={user.photoURL} />
-                    ) : (
-                      <AccountCircle />
-                    )}
-                  </IconButton>
-                </MenuItem>
-                <MenuItem onClick={this.toggleAccountsManager(true)}>
-                  {LanguageManager.trans("accountsManager")}
-                </MenuItem>
-                <MenuItem onClick={this.toggleConfiguration(true)}>
-                  Configuration
-                </MenuItem>
-                <MenuItem onClick={this.signout}>
-                  {LanguageManager.trans("disconnect")}
-                </MenuItem>
-              </Menu>
+              <div>
+                <IconButton
+                  aria-owns={open ? "menu-appbar" : undefined}
+                  aria-haspopup="true"
+                  onClick={this.handleMenu}
+                  color="inherit"
+                >
+                  {user && user.photoURL ? (
+                    <Avatar src={user.photoURL} />
+                  ) : (
+                    <AccountCircle />
+                  )}
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    horizontal: "right",
+                    vertical: "top"
+                  }}
+                  transformOrigin={{
+                    horizontal: "right",
+                    vertical: "top"
+                  }}
+                  open={open}
+                  onClose={this.handleClose}
+                >
+                  <MenuItem onClick={this.toggleAccountsManager(true)}>
+                    {LanguageManager.trans("accountsManager")}
+                  </MenuItem>
+                  <MenuItem onClick={this.toggleConfiguration(true)}>
+                    Configuration
+                  </MenuItem>
+                  <MenuItem onClick={this.signout}>
+                    {LanguageManager.trans("disconnect")}
+                  </MenuItem>
+                </Menu>
+              </div>
             ) : (
               <Button color="inherit" onClick={this.toggleLoginForm(true)}>
                 {LanguageManager.trans("connect")}
