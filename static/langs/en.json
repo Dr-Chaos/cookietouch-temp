@@ -507,5 +507,6 @@
   "scriptError": "Script error",
   "scriptErrorBody": "Your script have an error : ?",
   "jobNotFound": "Job #? doesn't found",
-  "objectNotFound": "Object #? doesn't found"
+  "objectNotFound": "Object #? doesn't found",
+  "themeError": "There was an error parsing your theme, the default theme will be used."
 }

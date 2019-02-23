@@ -467,5 +467,6 @@
   "emailValidated": "Bestätigen sie ihre E-mail-adresse  !",
   "price": "Preis",
   "salesDelay": "Verkaufsfrist",
-  "BuyBonusPack": "Bonus Paket Kaufen"
+  "BuyBonusPack": "Bonus Paket Kaufen",
+  "themeError": "There was an error parsing your theme, the default theme will be used."
 }
