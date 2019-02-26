@@ -8,11 +8,12 @@ import amber from "@material-ui/core/colors/amber";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { remote } from "electron";
 import fs from "fs";
 import * as React from "react";
 // Define the default theme
-let defaultTheme = {
+let defaultTheme: ThemeOptions = {
   palette: {
       primary: blueGrey,
       secondary: amber,
