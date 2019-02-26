@@ -4,6 +4,7 @@
 @last-desc: Implement the base of the themeing engine
 */
 import LanguageManager from "@/configurations/language/LanguageManager";
+import { staticPath } from "@/utils/staticPath";
 import amber from "@material-ui/core/colors/amber";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -11,6 +12,7 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 import { remote } from "electron";
 import fs from "fs";
+import * as path from "path";
 import * as React from "react";
 // Define the default theme
 let defaultTheme: ThemeOptions = {
@@ -30,7 +32,8 @@ let defaultTheme: ThemeOptions = {
 // Try to read the file theme.json
 let fileContents;
 try {
-  fileContents = fs.readFileSync('./resources/themes/theme.json', 'utf8');
+  fileContents = fs.readFileSync(path.join(staticPath, "./themes/theme.json"), 'utf8');
+
 } catch (err) {
   // Here you get the error when the file was not found,
   // Don't need to do anything since defaultTheme is already loaded

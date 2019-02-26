@@ -1,3 +1,4 @@
+import Account from "@/account";
 import { UpdatesChannel } from "@/configurations/GlobalConfiguration";
 import { Languages } from "@/configurations/language/Languages";
 import { createStyles, Theme, WithStyles } from "@material-ui/core";
@@ -14,13 +15,17 @@ export interface IConfigurationProps
   closeDialog: () => void;
 }
 
+export interface IInfosProps  {
+  account: Account;
+}
+
 export interface IConfigurationState {
   anticaptchaKey: string;
   anticaptchaBalance: number;
   lang: Languages;
   pushBulletAccessToken: string;
+  themeName: string;
   pushBulletEmail: string;
   showDebugMessages: boolean;
-
   updatesChannel: UpdatesChannel;
 }

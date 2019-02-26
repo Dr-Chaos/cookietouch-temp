@@ -19,6 +19,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import { AntiCaptcha } from "anticaptcha";
+import { remote } from "electron";
 import * as React from "react";
 import {
   configurationStyles,
@@ -37,6 +38,7 @@ class Configuration extends React.Component<
     pushBulletAccessToken: GlobalConfiguration.pushBulletAccessToken,
     pushBulletEmail: "",
     showDebugMessages: GlobalConfiguration.showDebugMessages,
+    themeName: "",
     updatesChannel: GlobalConfiguration.updatesChannel
   };
 
@@ -165,6 +167,17 @@ class Configuration extends React.Component<
               {LanguageManager.trans("close")}
             </Button>
           </DialogActions>
+          <Button
+            size="small"
+            variant="contained"
+            style={{
+              margin: "5px 15px"
+            }}
+            onClick={this.openDialog}
+            color="primary"
+          >
+            {LanguageManager.trans("load")}
+          </Button>
         </Dialog>
       </div>
     );
@@ -183,6 +196,21 @@ class Configuration extends React.Component<
     this.setState({ lang: e.target.value });
     GlobalConfiguration.lang = e.target.value;
     GlobalConfiguration.save();
+  };
+  private openDialog = () => {
+    remote.dialog.showOpenDialog(
+      {
+        filters: [{ name: "Cookie Scripts Format", extensions: ["js"] }],
+        properties: ["openFile"]
+      },
+      filepaths => {
+        if (!filepaths) {
+          return;
+        }
+        const filepath = filepaths[0];
+        this.props.account.theme.fromFile(filepath);
+      }
+    );
   };
 
   private updatesChannelChanged = (e: any) => {
