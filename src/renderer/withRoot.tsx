@@ -47,6 +47,7 @@ if (fileContents && fileContents !== undefined) {
     } catch(e) {
         // Show error on unsuccessful parsing
         remote.dialog.showErrorBox(
+          LanguageManager.trans("error"),
           LanguageManager.trans("themeError")
         );
        // alert(`${LanguageManager.trans("themeError")}\n${e}`);
