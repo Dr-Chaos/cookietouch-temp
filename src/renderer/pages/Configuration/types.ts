@@ -1,4 +1,3 @@
-import Account from "@/account";
 import { UpdatesChannel } from "@/configurations/GlobalConfiguration";
 import { Languages } from "@/configurations/language/Languages";
 import { createStyles, Theme, WithStyles } from "@material-ui/core";
@@ -13,10 +12,7 @@ export interface IConfigurationProps
   extends WithStyles<typeof configurationStyles> {
   dialogOpen: boolean;
   closeDialog: () => void;
-}
-
-export interface IInfosProps  {
-  account: Account;
+  setTheme: (theme: Theme) => void;
 }
 
 export interface IConfigurationState {
@@ -24,7 +20,6 @@ export interface IConfigurationState {
   anticaptchaBalance: number;
   lang: Languages;
   pushBulletAccessToken: string;
-  themeName: string;
   pushBulletEmail: string;
   showDebugMessages: boolean;
   updatesChannel: UpdatesChannel;

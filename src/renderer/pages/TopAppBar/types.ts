@@ -24,6 +24,7 @@ export const topAppBarStyles = (theme: Theme) =>
 export interface ITopAppBarProps extends WithStyles<typeof topAppBarStyles> {
   clickMenu: () => void;
   user: firebase.User | null;
+  setTheme: (theme: Theme) => void;
 }
 
 export interface ITopAppBarState {

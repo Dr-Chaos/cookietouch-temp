@@ -19,6 +19,7 @@ import { LoadingPage } from "renderer/LoadingPage";
 import Main from "renderer/pages/Main";
 import { spinnerService } from "renderer/Spinner/Service";
 import "typeface-roboto/index.css";
+import "./workertest";
 
 // Spark.setAgent("http://186.193.186.3:20183");
 // Spark.get("ip.jsontest.com").then(res => {

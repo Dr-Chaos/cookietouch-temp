@@ -4,7 +4,6 @@ import { spinnerService } from "renderer/Spinner/Service";
 import "./LoadingPage.scss";
 
 export function LoadingPage() {
-    // ss
   return (
     <div
       style={{
@@ -20,13 +19,13 @@ export function LoadingPage() {
       }}
     >
       <Spinner spinnerService={spinnerService} name="mySpinner" group="foo">
-          <div className="cssload-dots">
-          <div className="cssload-dot"/>
-          <div className="cssload-dot"/>
-          <div className="cssload-dot"/>
-          <div className="cssload-dot"/>
-          <div className="cssload-dot"/>
-          </div>
+        <div className="cssload-dots">
+          <div className="cssload-dot" />
+          <div className="cssload-dot" />
+          <div className="cssload-dot" />
+          <div className="cssload-dot" />
+          <div className="cssload-dot" />
+        </div>
       </Spinner>
     </div>
   );

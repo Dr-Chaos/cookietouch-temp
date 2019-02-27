@@ -105,6 +105,7 @@ class TopAppBar extends React.Component<ITopAppBarProps, ITopAppBarState> {
         <Configuration
           dialogOpen={this.state.configuration}
           closeDialog={this.closeDialogConfiguration}
+          setTheme={this.props.setTheme}
         />
       </div>
     );

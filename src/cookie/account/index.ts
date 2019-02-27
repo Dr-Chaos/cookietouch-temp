@@ -17,7 +17,6 @@ import { NetworkPhases } from "@/network/NetworkPhases";
 import DTConstants from "@/protocol/DTConstants";
 import ScriptsManager from "@/scripts/ScriptsManager";
 import StatisticsManager from "@/statistics/StatisticsManager";
-import ThemeManager from "@/themes/ThemeManager";
 import IEntity from "@/utils/IEntity";
 import LiteEvent from "@/utils/LiteEvent";
 import { randomString } from "@/utils/Random";
@@ -39,7 +38,6 @@ export default class Account implements IEntity {
   public config: Configuration;
   public extensions: Extensions;
   public scripts: ScriptsManager;
-  public theme: ThemeManager;
   public group: Group | null = null;
   public planificationTimer: TimerWrapper;
   public statistics: StatisticsManager;
@@ -66,7 +64,6 @@ export default class Account implements IEntity {
     this.network = new Network(this);
     this.game = new Game(this);
     this.scripts = new ScriptsManager(this);
-    this.theme = new ThemeManager(this);
     this.extensions = new Extensions(this);
     this.statistics = new StatisticsManager(this);
     this.planificationTimer = new TimerWrapper(
