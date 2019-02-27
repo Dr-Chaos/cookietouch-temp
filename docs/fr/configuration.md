@@ -79,7 +79,7 @@ Cette variable permet de configurer le nombre de monstres maximum à attaquer (l
 const config = { MAX_MONSTERS: 5 } // Combattre les groupes de 5 monstres maximum
 ```
 *Valeur par défaut: 8.*
-  
+
 <hr>
 
 ## MIN_MONSTERS_LEVEL
@@ -105,7 +105,7 @@ Cette variable permet de configurer le niveau maximum d'un groupe de monstres à
 const config = { MAX_MONSTERS_LEVEL: 500 } // Combattre les groupes de niveau 500 maximum
 ```
 *Valeur par défaut: niveau 1000.*
-  
+
 <hr>
 
 ## FORBIDDEN_MONSTERS
@@ -169,8 +169,8 @@ Cette variable permet de configurer les éléments à déposer en banque (lorsqu
 ```js
 const config = {
   BANK_PUT_ITEMS: [
-    { item: 289, quantity: 0 }, // Dépose tout le blé en banque
-    { item: 6965, quantity: 5 } // Dépose 5 Potion de cité : Bonta en banque
+    { id: 289, quantity: 0 }, // Dépose tout le blé en banque
+    { id: 6965, quantity: 5 } // Dépose 5 Potion de cité : Bonta en banque
   ]
 }
 ```
@@ -189,7 +189,7 @@ Cette variable permet de configurer les éléments à récupérer en banque (lor
 ```js
 const config = {
   BANK_GET_ITEMS: [
-    { item: 6964, quantity: 5 } // Récupère 5 Potion de cité : Brâkmar
+    { id: 6964, quantity: 5 } // Récupère 5 Potion de cité : Brâkmar
   ]
 }
 ```

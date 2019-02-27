@@ -22,6 +22,7 @@ interface IGlobalConfigurationJSON {
   accounts: IAccountConfiguration[];
   showDebugMessages: boolean;
   updatesChannel: UpdatesChannel;
+  themeFile?: string;
 }
 
 export default class GlobalConfiguration {
@@ -32,6 +33,7 @@ export default class GlobalConfiguration {
   public static lang: Languages = Languages.FRENCH;
   public static showDebugMessages = false;
   public static updatesChannel: UpdatesChannel = UpdatesChannel.LATEST;
+  public static themeFile?: string;
 
   private static globalDoc: firebase.firestore.DocumentReference | undefined;
   private static authChangedUnsuscribe: firebase.Unsubscribe | undefined;
@@ -134,6 +136,7 @@ export default class GlobalConfiguration {
       lang: this.lang,
       pushBulletAccessToken: this.pushBulletAccessToken,
       showDebugMessages: this.showDebugMessages,
+      themeFile: this.themeFile,
       updatesChannel: this.updatesChannel
     };
 
@@ -150,6 +153,7 @@ export default class GlobalConfiguration {
     this.pushBulletAccessToken = json.pushBulletAccessToken || "";
     this.lang = json.lang;
     this.showDebugMessages = json.showDebugMessages;
+    this.themeFile = json.themeFile;
     this.updatesChannel = json.updatesChannel;
     this.onUpdated.trigger();
   }

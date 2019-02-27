@@ -466,5 +466,6 @@
   "invalidCredentials": "Credenciales incorrectas.",
   "emailValidated": "Debes revisar tu correo electrónico !",
   "price": "Precio",
-  "salesDelay": "Hora de venta"
+  "salesDelay": "Hora de venta",
+  "themeError": "Ha ocurrido un error al analizar tu estilo, usaremos el estilo por defecto."
 }

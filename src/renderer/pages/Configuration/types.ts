@@ -12,6 +12,7 @@ export interface IConfigurationProps
   extends WithStyles<typeof configurationStyles> {
   dialogOpen: boolean;
   closeDialog: () => void;
+  setTheme: (theme: Theme) => void;
 }
 
 export interface IConfigurationState {
@@ -21,6 +22,5 @@ export interface IConfigurationState {
   pushBulletAccessToken: string;
   pushBulletEmail: string;
   showDebugMessages: boolean;
-
   updatesChannel: UpdatesChannel;
 }

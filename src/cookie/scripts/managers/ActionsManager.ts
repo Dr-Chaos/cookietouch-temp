@@ -179,10 +179,6 @@ export default class ActionsManager {
       const name = this.currentAction
         ? this.currentAction._name
         : LanguageManager.trans("unknown");
-      this.account.logger.logDofus(
-        "MDF",
-        `coucou t vachement mignon walla ${name}`
-      );
 
       const result = await this.currentCoroutine!.next();
       this.account.logger.logDebug(

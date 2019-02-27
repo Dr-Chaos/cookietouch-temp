@@ -58,7 +58,7 @@ export default class MapsManager {
       if (json.midgroundLayer.hasOwnProperty(key)) {
         const values = json.midgroundLayer[key];
         for (let i = 0; i < values.length; i++) {
-          values[i] = { id: parseInt(key, 10), ...values[i] };
+          values[i] = { ...values[i] };
         }
         map.midgroundLayer.set(parseInt(key, 10), values);
       }

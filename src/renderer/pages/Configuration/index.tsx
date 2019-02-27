@@ -4,6 +4,7 @@ import GlobalConfiguration, {
 import LanguageManager from "@/configurations/language/LanguageManager";
 import Pushbullet from "@/core/pushbullet";
 import { isEmpty } from "@/utils/String";
+import { createMuiTheme } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -19,12 +20,16 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Switch from "@material-ui/core/Switch";
 import Typography from "@material-ui/core/Typography";
 import { AntiCaptcha } from "anticaptcha";
+import { remote } from "electron";
+import { readFileSync } from "fs";
+import { join } from "path";
 import * as React from "react";
 import {
   configurationStyles,
   IConfigurationProps,
   IConfigurationState
 } from "renderer/pages/Configuration/types";
+import { defaultTheme } from "../Main";
 
 class Configuration extends React.Component<
   IConfigurationProps,
@@ -165,6 +170,17 @@ class Configuration extends React.Component<
               {LanguageManager.trans("close")}
             </Button>
           </DialogActions>
+          <Button
+            size="small"
+            variant="contained"
+            style={{
+              margin: "10px 15px"
+            }}
+            onClick={this.openDialog}
+            color="primary"
+          >
+            {LanguageManager.trans("loadTheme")}
+          </Button>
         </Dialog>
       </div>
     );
@@ -183,6 +199,22 @@ class Configuration extends React.Component<
     this.setState({ lang: e.target.value });
     GlobalConfiguration.lang = e.target.value;
     GlobalConfiguration.save();
+  };
+
+  private openDialog = () => {
+    remote.dialog.showOpenDialog(
+      {
+        filters: [{ name: "Cookie Themes Format", extensions: ["json"] }],
+        properties: ["openFile"]
+      },
+      filepaths => {
+        if (!filepaths) {
+          return;
+        }
+        const filepath = filepaths[0];
+        this.setTheme(filepath);
+      }
+    );
   };
 
   private updatesChannelChanged = (e: any) => {
@@ -213,6 +245,9 @@ class Configuration extends React.Component<
   };
 
   private globalConfigurationUpdated = () => {
+    if (GlobalConfiguration.themeFile) {
+      this.setTheme(GlobalConfiguration.themeFile);
+    }
     this.setState({
       anticaptchaKey: GlobalConfiguration.anticaptchaKey,
       lang: GlobalConfiguration.lang,
@@ -220,6 +255,31 @@ class Configuration extends React.Component<
       showDebugMessages: GlobalConfiguration.showDebugMessages,
       updatesChannel: GlobalConfiguration.updatesChannel
     });
+  };
+
+  private setTheme = async (filepath: string) => {
+    // Try to read the file theme.json
+    const fileContents = readFileSync(join(filepath), "utf8");
+    if (fileContents !== "") {
+      // Handle exceptions of JSON formating
+      const jsonStr = fileContents.replace(/(\w+:)|(\w+ :)/g, s => {
+        return '"' + s.substring(0, s.length - 1) + '":';
+      });
+      // Try to parse the json
+      try {
+        // Merge parsed JSON with the defaultTheme
+        const newTheme = { ...defaultTheme, ...JSON.parse(jsonStr) };
+        this.props.setTheme(createMuiTheme(newTheme));
+        GlobalConfiguration.themeFile = filepath;
+        await GlobalConfiguration.save();
+      } catch (e) {
+        // Show error on unsuccessful parsing
+        remote.dialog.showErrorBox(
+          LanguageManager.trans("error"),
+          LanguageManager.trans("themeError")
+        );
+      }
+    }
   };
 }
 

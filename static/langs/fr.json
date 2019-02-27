@@ -507,5 +507,7 @@
   "scriptError": "Erreur de script",
   "scriptErrorBody": "Votre script rencontre une erreur : ?",
   "jobNotFound": "Métier #? introuvable",
-  "objectNotFound": "Objet #? introuvable"
+  "objectNotFound": "Objet #? introuvable",
+  "themeError": "Il y a  eu une erreur pendant le chargement du thème, le thème par default sera utilisé.",
+  "loadTheme": "Charger un Theme"
 }

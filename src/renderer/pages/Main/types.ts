@@ -4,7 +4,7 @@ import firebase from "firebase/app";
 export const mainStyles = (theme: Theme) =>
   createStyles({
     paper: {
-      color: theme.palette.text.secondary,
+      color: "white",
       margin: theme.spacing.unit,
       marginTop: 120,
       padding: theme.spacing.unit * 2,
@@ -23,4 +23,5 @@ export interface IMainProps extends WithStyles<typeof mainStyles> {
 export interface IMainState {
   sidenavStatus: number;
   user: firebase.User | null;
+  currentTheme: Theme;
 }

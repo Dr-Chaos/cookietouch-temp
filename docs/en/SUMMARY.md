@@ -21,4 +21,4 @@
 * [NPC](npc.md)
 * [Paths](paths.md)
 * [Storage](storage.md)
-
+* [Cookie Themes](themes.md)
