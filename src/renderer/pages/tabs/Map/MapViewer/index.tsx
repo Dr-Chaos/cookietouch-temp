@@ -49,6 +49,7 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
   private readonly monstersGroupsBrush = new Color(255, 139, 0, 0);
   private readonly playersBrush = new Color(255, 81, 113, 202);
   private readonly doorsBrush = new Color(255, 150, 75, 133);
+  private readonly othersBrush = new Color(45, 90, 175, 183);
   private readonly interactivesBrush = new Color(255, 1, 143, 140);
   private readonly npcsBrush = new Color(255, 179, 120, 211);
   private readonly sunImage = "21000.png";
@@ -299,6 +300,14 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
           .ElementAt(cellId)
           .DrawRectangle(drawingContext, this.doorsBrush);
       } else if (
+        this.props.account.game.map.othersInteractives.find(
+          d => d.cellId === cellId
+        ) !== undefined
+      ) {
+        this.cells
+          .ElementAt(cellId)
+          .DrawRectangle(drawingContext, this.othersBrush);
+      } else if (
         this.props.account.game.map.statedElements.find(
           se => se.cellId === cellId
         ) !== undefined ||
@@ -533,6 +542,18 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
           ) {
             this.showCellInfo(
               this.props.account.game.map.doors.find(d => d.cellId === cellId)!,
+              cell.mid
+            );
+            return;
+          } else if (
+            this.props.account.game.map.othersInteractives.find(
+              d => d.cellId === cellId
+            ) !== undefined
+          ) {
+            this.showCellInfo(
+              this.props.account.game.map.othersInteractives.find(
+                d => d.cellId === cellId
+              )!,
               cell.mid
             );
             return;
