@@ -3,6 +3,8 @@ import { AccountStates } from "@/account/AccountStates";
 import ObjectEntry from "@/game/character/inventory/ObjectEntry";
 import ExchangeCraftResultMessage from "@/protocol/network/messages/ExchangeCraftResultMessage";
 import ExchangeCraftResultWithObjectDescMessage from "@/protocol/network/messages/ExchangeCraftResultWithObjectDescMessage";
+import ExchangeItemAutoCraftRemainingMessage from "@/protocol/network/messages/ExchangeItemAutoCraftRemainingMessage";
+import ExchangeItemAutoCraftStopedMessage from "@/protocol/network/messages/ExchangeItemAutoCraftStopedMessage";
 import ExchangeObjectAddedMessage from "@/protocol/network/messages/ExchangeObjectAddedMessage";
 import ExchangeReplayCountModifiedMessage from "@/protocol/network/messages/ExchangeReplayCountModifiedMessage";
 import ExchangeStartOkCraftMessage from "@/protocol/network/messages/ExchangeStartOkCraftMessage";
@@ -18,11 +20,13 @@ export default class Craft {
   public currentWeight: number = 0;
   public nbCase: number = 0;
   public skillid: number = 0;
+  public count: number = 0;
 
   private account: Account;
   private readonly onCraftStarted = new LiteEvent<void>();
   private readonly onCraftLeft = new LiteEvent<void>();
   private readonly onCraftQuantityChanged = new LiteEvent<void>();
+  private readonly onCraftUpdated = new LiteEvent<void>();
 
   constructor(account: Account) {
     this.account = account;
@@ -88,7 +92,7 @@ export default class Craft {
   public async UpdateExchangeStartOkCraftWithInformationMessage(
     message: ExchangeStartOkCraftWithInformationMessage
   ) {
-    this.account.state = AccountStates.EXCHANGE;
+    this.account.state = AccountStates.CRAFTING;
     this.nbCase = message.nbCase;
     this.skillid = message.skillId;
     this.onCraftStarted.trigger();
@@ -97,19 +101,32 @@ export default class Craft {
   public async UpdateExchangeCraftResultMessage(
     message: ExchangeCraftResultMessage
   ) {
-    this.onCraftLeft.trigger();
+    this.onCraftUpdated.trigger();
   }
 
   public async UpdateExchangeCraftResultWithObjectDescMessage(
     message: ExchangeCraftResultWithObjectDescMessage
   ) {
-    this.onCraftLeft.trigger();
+    this.onCraftUpdated.trigger();
   }
 
   public async UpdateExchangeStartOkCraftMessage(
     message: ExchangeStartOkCraftMessage
   ) {
-    this.account.state = AccountStates.EXCHANGE;
+    this.account.state = AccountStates.CRAFTING;
     this.onCraftStarted.trigger();
+  }
+
+  public async UpdateExchangeItemAutoCraftRemainingMessage(
+    message: ExchangeItemAutoCraftRemainingMessage
+  ) {
+    this.count = message.count;
+  }
+
+  public async UpdateExchangeItemAutoCraftStopedMessage(
+    message: ExchangeItemAutoCraftStopedMessage
+  ) {
+    this.account.state = AccountStates.NONE;
+    this.onCraftLeft.trigger();
   }
 }

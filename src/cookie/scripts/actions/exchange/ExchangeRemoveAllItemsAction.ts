@@ -8,8 +8,7 @@ export default class ExchangeRemoveAllItemsAction extends ScriptAction {
   public _name: string = "ExchangeRemoveAllItemsAction";
 
   public async process(account: Account): Promise<ScriptActionResults> {
-    const res = await account.game.exchange.removeAllItems();
-    if (res) {
+    if (await account.game.exchange.removeAllItems()) {
       await sleep(2000);
     }
     return ScriptAction.doneResult();

@@ -1,6 +1,13 @@
 import * as crypto from "crypto";
 
 export default class Crypto {
+  public static createHash(text: string) {
+    return crypto
+      .createHash("md5")
+      .update(text)
+      .digest("hex");
+  }
+
   private static algorithm = "aes-256-ctr";
 
   private key: Buffer;
@@ -28,13 +35,6 @@ export default class Crypto {
     let dec = decipher.update(text, "hex", "utf8");
     dec += decipher.final("utf8");
     return dec;
-  }
-
-  public createHash(text: string) {
-    return crypto
-      .createHash("md5")
-      .update(text)
-      .digest("hex");
   }
 
   private static compute(cipher: string, passphrase: string) {

@@ -11,6 +11,7 @@ import UseLockedHouseAction from "@/scripts/actions/map/UseLockedHouseAction";
 import UseLockedStorageAction from "@/scripts/actions/map/UseLockedStorageAction";
 import UseTeleportableAction from "@/scripts/actions/map/UseTeleportableAction";
 import WaitMapChangeAction from "@/scripts/actions/map/WaitMapChangeAction";
+import UsePaddockAction from "../actions/map/UsePaddockAction";
 
 export default class MapAPI {
   private account: Account;
@@ -187,6 +188,21 @@ export default class MapAPI {
     }
     await this.account.scripts.actionsManager.enqueueAction(
       new UseTeleportableAction(TeleportablesEnum.ZAAPI, destinationMapId),
+      true
+    );
+    return true;
+  }
+
+  public async usePaddock(): Promise<boolean> {
+    if (!this.account.game.map.paddock) {
+      this.account.logger.logWarning(
+        LanguageManager.trans("breeding"),
+        LanguageManager.trans("noPaddock")
+      );
+      return false;
+    }
+    await this.account.scripts.actionsManager.enqueueAction(
+      new UsePaddockAction(),
       true
     );
     return true;

@@ -21,10 +21,11 @@ import LifePointsRegenEndMessage from "@/protocol/network/messages/LifePointsReg
 import PlayerStatusUpdateMessage from "@/protocol/network/messages/PlayerStatusUpdateMessage";
 import SpellListMessage from "@/protocol/network/messages/SpellListMessage";
 import EntityLook from "@/protocol/network/types/EntityLook";
+import IClearable from "@/utils/IClearable";
 import LiteEvent from "@/utils/LiteEvent";
 import UnreachableCaseError from "@/utils/UnreachableCaseError";
 
-export default class Character {
+export default class Character implements IClearable {
   public breedData: Breeds | null = null;
   public isSelected: boolean = false;
   public name: string = "";
@@ -439,14 +440,15 @@ export default class Character {
     this.lifeStatus = PlayerLifeStatusEnum.STATUS_ALIVE_AND_KICKING;
 
     await this.account.config.load();
-    await this.account.accountStats.load();
+    await this.account.stats.load();
     await this.account.extensions.fights.config.load();
     await this.account.extensions.bid.config.load();
     await this.account.extensions.flood.config.load();
 
+    this.account.stats.connected = true;
+    await this.account.stats.save();
+
     this.isSelected = true;
-    this.account.accountStats.connected = true;
-    this.account.accountStats.save();
     this.onCharacterSelected.trigger();
   }
 

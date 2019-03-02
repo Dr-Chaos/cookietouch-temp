@@ -1,6 +1,6 @@
-import Account from "@/account";
 import LiteEvent, { ILiteEvent } from "@/utils/LiteEvent";
 import firebase from "firebase/app";
+import Account from ".";
 
 interface IAccountStatsJSON {
   connected: boolean;
@@ -41,10 +41,10 @@ export default class AccountStats implements IAccountStatsJSON {
     this.authChangedUnsuscribe = firebase
       .auth()
       .onAuthStateChanged(async user => {
-        console.log("mdr ce que je veux il a dit le mosneiru");
         if (!user) {
           return;
         }
+
         this.globalDoc = firebase
           .firestore()
           .doc(
@@ -69,11 +69,15 @@ export default class AccountStats implements IAccountStatsJSON {
     if (!this.globalDoc) {
       return;
     }
+
     const toSave: IAccountStatsJSON = {
       connected: this.connected
     };
-    this.updateBotsConnected(this.connected);
+
+    await this.updateBotsConnected(this.connected);
+
     await this.globalDoc.set(toSave);
+    console.log("has saved", toSave);
   }
 
   private updateFields(snapshot: firebase.firestore.DocumentSnapshot) {
@@ -81,6 +85,9 @@ export default class AccountStats implements IAccountStatsJSON {
       return;
     }
     const json = snapshot.data() as IAccountStatsJSON;
+
+    console.log("update", json);
+
     this.connected = json.connected;
 
     this.onUpdated.trigger();
@@ -92,17 +99,24 @@ export default class AccountStats implements IAccountStatsJSON {
       .collection("stats")
       .doc("users");
 
-    await firebase.firestore().runTransaction(async transaction => {
-      const doc = await transaction.get(ref);
-      if (!doc.exists) {
-        transaction.set(ref, { connected: 0 });
-        return 0;
-      }
-      const newConnected = Number(doc.data()!.connected) + (connected ? 1 : -1);
-      transaction.update(ref, {
-        connected: newConnected
+    const newConnectedd = await firebase
+      .firestore()
+      .runTransaction(async transaction => {
+        const doc = await transaction.get(ref);
+        if (!doc.exists) {
+          transaction.set(ref, { connected: 0 });
+          return 0;
+        }
+        const newConnected =
+          Number(doc.data()!.connected) + (connected ? 1 : -1);
+        transaction.update(ref, {
+          connected: newConnected
+        });
+        return newConnected;
       });
-      return newConnected;
-    });
+
+    console.log(
+      `Transaction successfully committed and new connected bots is '${newConnectedd}'.`
+    );
   }
 }

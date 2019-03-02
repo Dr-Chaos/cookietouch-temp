@@ -19,6 +19,7 @@ import NpcsFrame from "@/frames/game/NpcsFrame";
 import QuestsFrame from "@/frames/game/QuestsFrame";
 import StorageFrame from "@/frames/game/StorageFrame";
 import Dispatcher from "@/utils/Dispatcher";
+import BreedingFrame from "./game/BreedingFrame";
 
 export interface IFrame {
   register: () => void;
@@ -47,7 +48,8 @@ export default class Frames {
     new AveragePricesFrame(),
     new GoultinesFrame(),
     new MountFrame(),
-    new CraftFrame()
+    new CraftFrame(),
+    new BreedingFrame()
   ];
 
   public static Init() {

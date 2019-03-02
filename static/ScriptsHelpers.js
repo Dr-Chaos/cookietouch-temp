@@ -128,6 +128,12 @@ async function* useZaap(destinationMapId) {
     yield;
   }
 }
+async function* usePaddock() {
+  if (await API.map.usePaddock.bind(API.map)()) {
+    yield true;
+  }
+  return false;
+}
 async function* useZaapi(destinationMapId) {
   if (await API.map.useZaapi.bind(API.map)(destinationMapId)) {
     yield;

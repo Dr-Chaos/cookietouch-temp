@@ -331,10 +331,6 @@ export default class ScriptsManager {
     this.entryFlags = new List();
     this.entryFlagsIndex = 0;
 
-    if (entry.custom) {
-      this.entryFlags.Add(new CustomFlag(entry.custom));
-    }
-
     if (this.currentFunctionType === FunctionTypes.MOVE) {
       if (entry.gather) {
         this.entryFlags.Add(new GatherFlag());
@@ -354,6 +350,10 @@ export default class ScriptsManager {
       if (entry.phenix) {
         this.entryFlags.Add(new PhenixFlag(entry.phenix));
       }
+    }
+
+    if (entry.custom) {
+      this.entryFlags.Add(new CustomFlag(entry.custom));
     }
 
     if (entry.door) {

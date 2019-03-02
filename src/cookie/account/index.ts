@@ -28,7 +28,6 @@ import { BonusPackDuration, BonusPackMoney, buyBonusPack } from "./bonusPack";
 
 export default class Account implements IEntity {
   public accountConfig: AccountConfiguration;
-  public accountStats: AccountStats;
   public game: Game;
   public data: AccountData;
   public network: Network;
@@ -36,11 +35,13 @@ export default class Account implements IEntity {
   public framesData: FramesData;
   public logger: Logger;
   public config: Configuration;
+  public stats: AccountStats;
   public extensions: Extensions;
   public scripts: ScriptsManager;
   public group: Group | null = null;
   public planificationTimer: TimerWrapper;
   public statistics: StatisticsManager;
+
   private readonly onStateChanged = new LiteEvent<void>();
   // private readonly onDisconnected = new LiteEvent<void>();
   private readonly onRecaptchaReceived = new LiteEvent<Account>();
@@ -54,10 +55,10 @@ export default class Account implements IEntity {
 
   constructor(config: AccountConfiguration) {
     this.logger = new Logger();
-    this.accountStats = new AccountStats(this);
     this.data = new AccountData();
     this.accountConfig = config;
     this.config = new Configuration(this);
+    this.stats = new AccountStats(this);
     this.framesData = new FramesData();
     this.state = AccountStates.DISCONNECTED;
     this.haapi = new HaapiConnection(this);
@@ -127,7 +128,9 @@ export default class Account implements IEntity {
       this.state === AccountStates.TALKING ||
       this.state === AccountStates.EXCHANGE ||
       this.state === AccountStates.BUYING ||
-      this.state === AccountStates.SELLING
+      this.state === AccountStates.SELLING ||
+      this.state === AccountStates.CRAFTING ||
+      this.state === AccountStates.PADDOCK
     );
   }
 
@@ -156,13 +159,14 @@ export default class Account implements IEntity {
   }
 
   public async stop() {
+    this.stats.connected = false;
+    await this.stats.save();
+
     this.config.removeListeners();
+    this.stats.removeListeners();
     this.extensions.bid.config.removeListeners();
     this.extensions.fights.config.removeListeners();
     this.extensions.flood.config.removeListeners();
-    this.accountStats.connected = false;
-    await this.accountStats.save();
-    this.accountStats.removeListeners();
     this.network.close();
   }
 

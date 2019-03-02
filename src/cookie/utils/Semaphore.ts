@@ -1,6 +1,6 @@
 export default class Semaphore {
   public count: number;
-  private tasks: Array<(() => void)> = [];
+  private tasks: Array<() => void> = [];
 
   constructor(count: number) {
     this.count = count;

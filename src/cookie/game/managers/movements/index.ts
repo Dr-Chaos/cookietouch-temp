@@ -8,6 +8,7 @@ import { MapChangeDirections } from "@/game/managers/movements/MapChangeDirectio
 import { MovementRequestResults } from "@/game/managers/movements/MovementRequestResults";
 import MapGame from "@/game/map";
 import { PlayerLifeStatusEnum } from "@/protocol/enums/PlayerLifeStatusEnum";
+import GameMapMovementMessage from "@/protocol/network/messages/GameMapMovementMessage";
 import IClearable from "@/utils/IClearable";
 import LiteEvent from "@/utils/LiteEvent";
 import { getRandomInt } from "@/utils/Random";
@@ -258,7 +259,10 @@ export default class MovementsManager implements IClearable {
     return this.moveToChangeMap(cellId);
   }
 
-  public async UpdateGameMapMovementMessage(account: Account, data: any) {
+  public async UpdateGameMapMovementMessage(
+    account: Account,
+    data: GameMapMovementMessage
+  ) {
     if (
       this.currentPath &&
       data.actorId === account.game.character.id &&

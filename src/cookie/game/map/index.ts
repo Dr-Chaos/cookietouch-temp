@@ -100,6 +100,10 @@ export default class MapGame implements IClearable {
     return Array.from(this._doors.values());
   }
 
+  get othersInteractives() {
+    return Array.from(this._othersInteractives.values());
+  }
+
   get statedElements() {
     return Array.from(this._statedElements.values());
   }
@@ -124,6 +128,7 @@ export default class MapGame implements IClearable {
   public blacklistedMonsters: number[] = [];
   public zaap: ElementInCellEntry | null = null;
   public zaapi: ElementInCellEntry | null = null;
+  public paddock: ElementInCellEntry | null = null;
   private _players = new Map<number, PlayerEntry>();
   private _npcs = new Map<number, NpcEntry>();
   private _monstersGroups = new Map<number, MonstersGroupEntry>();
@@ -132,6 +137,7 @@ export default class MapGame implements IClearable {
   private _statedElements = new Map<number, StatedElementEntry>();
   private _phenixs = new Map<number, ElementInCellEntry>();
   private _lockedStorages = new Map<number, ElementInCellEntry>();
+  private _othersInteractives = new Map<number, ElementInCellEntry>();
   private readonly onMapChanged = new LiteEvent<void>();
   private readonly onMapLoaded = new LiteEvent<void>();
   private readonly onPlayerJoined = new LiteEvent<PlayerEntry>();
@@ -308,12 +314,6 @@ export default class MapGame implements IClearable {
     this.posX = mp.object.posX;
     this.posY = mp.object.posY;
 
-    const stop = performance.now();
-    this.account.logger.logDebug(
-      LanguageManager.trans("map"),
-      LanguageManager.trans("gotMapInfos", this.currentPosition, stop - start)
-    );
-
     this._players = new Map<number, PlayerEntry>();
     this._npcs = new Map<number, NpcEntry>();
     this._monstersGroups = new Map<number, MonstersGroupEntry>();
@@ -322,10 +322,12 @@ export default class MapGame implements IClearable {
     this._statedElements = new Map<number, StatedElementEntry>();
     this._phenixs = new Map<number, ElementInCellEntry>();
     this._lockedStorages = new Map<number, ElementInCellEntry>();
+    this._othersInteractives = new Map<number, ElementInCellEntry>();
     this.teleportableCells = [];
     this.blacklistedMonsters = [];
     this.zaap = null;
     this.zaapi = null;
+    this.paddock = null;
 
     // Entities
     for (const actor of message.actors) {
@@ -381,6 +383,10 @@ export default class MapGame implements IClearable {
       );
     }
 
+    const _zaap = this.interactives.find(i => i.elementTypeId === 16);
+    const _zaapi = this.interactives.find(i => i.elementTypeId === 106);
+    const _paddock = this.interactives.find(i => i.elementTypeId === 120);
+
     // Doors
     for (const [
       cellId,
@@ -393,7 +399,6 @@ export default class MapGame implements IClearable {
         } else {
           // Check for other usable interactives (like doors)
           const interactive = this.getInteractiveElement(graph.id);
-
           if (!interactive) {
             continue;
           }
@@ -412,11 +417,14 @@ export default class MapGame implements IClearable {
           }
 
           // Zaap
-          if (graph.g === 15363 || graph.g === 38003) {
+          if (_zaap && graph.id === _zaap.id) {
             this.zaap = new ElementInCellEntry(interactive, cellId);
-          } else if (graph.g === 15004 || graph.g === 9541) {
+          } else if (_zaapi && graph.id === _zaapi.id) {
             // Zaapi
             this.zaapi = new ElementInCellEntry(interactive, cellId);
+          } else if (_paddock && graph.id === _paddock.id) {
+            // Paddock
+            this.paddock = new ElementInCellEntry(interactive, cellId);
           } else if (graph.g === 12367) {
             // Locked Storages
             this._lockedStorages.set(
@@ -431,10 +439,22 @@ export default class MapGame implements IClearable {
               graph.id,
               new ElementInCellEntry(interactive, cellId)
             );
+          } else {
+            // Others
+            this._othersInteractives.set(
+              graph.id,
+              new ElementInCellEntry(interactive, cellId)
+            );
           }
         }
       }
     }
+
+    const stop = performance.now();
+    this.account.logger.logDebug(
+      LanguageManager.trans("map"),
+      LanguageManager.trans("gotMapInfos", this.currentPosition, stop - start)
+    );
 
     // Only trigger the event when we actually changed the map
     // IDK why DT has this, but there is a possibility that we get a second MCIDM for the same map

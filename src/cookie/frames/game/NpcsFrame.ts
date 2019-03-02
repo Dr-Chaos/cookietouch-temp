@@ -1,9 +1,9 @@
 import Account from "@/account";
 import Frames, { IFrame } from "@/frames";
 import ExchangeBuyOkMessage from "@/protocol/network/messages/ExchangeBuyOkMessage";
+import ExchangeLeaveMessage from "@/protocol/network/messages/ExchangeLeaveMessage";
 import ExchangeSellOkMessage from "@/protocol/network/messages/ExchangeSellOkMessage";
 import ExchangeStartOkNpcShopMessage from "@/protocol/network/messages/ExchangeStartOkNpcShopMessage";
-import LeaveDialogMessage from "@/protocol/network/messages/LeaveDialogMessage";
 import NpcDialogCreationMessage from "@/protocol/network/messages/NpcDialogCreationMessage";
 import NpcDialogQuestionMessage from "@/protocol/network/messages/NpcDialogQuestionMessage";
 
@@ -20,8 +20,8 @@ export default class NpcsFrame implements IFrame {
       this
     );
     Frames.dispatcher.register(
-      "LeaveDialogMessage",
-      this.HandleLeaveDialogMessage,
+      "ExchangeLeaveMessage",
+      this.HandleExchangeLeaveMessage,
       this
     );
     Frames.dispatcher.register(
@@ -55,11 +55,11 @@ export default class NpcsFrame implements IFrame {
     account.game.npcs.UpdateNpcDialogQuestionMessage(message);
   }
 
-  private async HandleLeaveDialogMessage(
+  private async HandleExchangeLeaveMessage(
     account: Account,
-    message: LeaveDialogMessage
+    message: ExchangeLeaveMessage
   ) {
-    account.game.npcs.UpdateLeaveDialogMessage(message);
+    account.game.npcs.UpdateExchangeLeaveMessage(message);
   }
 
   private async HandleExchangeStartOkNpcShopMessage(

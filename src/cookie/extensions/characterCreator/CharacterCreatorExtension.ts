@@ -75,7 +75,7 @@ export default class CharacterCreatorExtension implements IClearable {
       GlobalConfiguration._accounts.find(
         a => a.username === this.account.accountConfig.username
       )!.characterCreation.create = false;
-      GlobalConfiguration.save();
+      await GlobalConfiguration.save();
       this.account.network.sendMessageFree("CharacterFirstSelectionMessage", {
         doTutorial: true,
         id: message.characters[0].id
@@ -406,7 +406,7 @@ export default class CharacterCreatorExtension implements IClearable {
       this.account.game.map.id === TutorialHelper.mapIdSecondAfterFight
     ) {
       await sleep(1600);
-      console.log("used?", this.account.game.npcs.useNpc(-1, 1));
+      this.account.game.npcs.useNpc(-1, 1);
     } else if (
       this.currentStepNumber === 14 &&
       this.account.game.map.id === TutorialHelper.mapIdThirdAfterFight

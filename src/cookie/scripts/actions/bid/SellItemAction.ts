@@ -2,7 +2,6 @@ import Account from "@/account";
 import ScriptAction, {
   ScriptActionResults
 } from "@/scripts/actions/ScriptAction";
-import { sleep } from "@/utils/Time";
 
 export default class SellItemAction extends ScriptAction {
   public _name: string = "SellItemAction";
@@ -18,9 +17,8 @@ export default class SellItemAction extends ScriptAction {
   }
 
   public async process(account: Account): Promise<ScriptActionResults> {
-    const res = account.game.bid.sellItem(this.gid, this.lot, this.price);
-    if (res) {
-      await sleep(1500);
+    if (account.game.bid.sellItem(this.gid, this.lot, this.price)) {
+      return ScriptAction.processingResult();
     }
     return ScriptAction.doneResult();
   }

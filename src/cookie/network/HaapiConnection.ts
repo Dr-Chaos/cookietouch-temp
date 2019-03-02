@@ -47,6 +47,8 @@ export default class HaapiConnection {
             throw new Error(LanguageManager.trans("wrongCredentials"));
           case HaapiErrorReasons.BAN:
             throw new Error(LanguageManager.trans("accountBan"));
+          case HaapiErrorReasons.BRUTEFORCE:
+            throw new Error(LanguageManager.trans("bruteforce"));
         }
       }
 

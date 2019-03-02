@@ -1,6 +1,7 @@
 export enum HaapiErrorReasons {
   FAILED = "FAILED",
-  BAN = "BAN"
+  BAN = "BAN",
+  BRUTEFORCE = "BRUTEFORCE"
 }
 
 export interface IHaapi {

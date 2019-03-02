@@ -13,19 +13,25 @@ import { randomString } from "@/utils/Random";
 
 const Primus = require("./primus"); // tslint:disable-line
 
+export interface IServer {
+  address: string;
+  id: number;
+  port: number;
+}
+
 export default class Network implements IClearable {
   public connected: boolean = false;
   private account: Account;
   private socket: any;
   private sessionId: string | null = null;
-  private server: any;
+  private server: IServer | null = null;
   private _phase: NetworkPhases;
   private readonly onPhaseChanged = new LiteEvent<NetworkPhases>();
   private readonly onDisconnected = new LiteEvent<void>();
-  private readonly onMessageSent = new LiteEvent<{ type: string; data: any }>();
+  private readonly onMessageSent = new LiteEvent<{ data: any }>();
   private readonly onMessageReceived = new LiteEvent<{
     type: string;
-    data: any;
+    data: Message;
   }>();
 
   private _registeredMessages: Map<string, RegisteredMessage<any>>;
@@ -105,7 +111,7 @@ export default class Network implements IClearable {
     }
   }
 
-  public switchToGameServer(url: string, server: any) {
+  public switchToGameServer(url: string, server: IServer) {
     this.server = server;
     if (!this.connected || this.phase !== NetworkPhases.LOGIN) {
       return;
@@ -140,7 +146,7 @@ export default class Network implements IClearable {
     }
 
     console.log("Sent", msg);
-    this.onMessageSent.trigger({ type: msgName, data });
+    this.onMessageSent.trigger({ data: msg });
     Frames.dispatcher.emit(msgName, this.account, data);
     this.socket.write(msg);
   }
@@ -168,7 +174,7 @@ export default class Network implements IClearable {
         this.send("connecting", {
           appVersion: DTConstants.appVersion,
           buildVersion: DTConstants.buildVersion,
-          client: "android",
+          client: "ios",
           language: GlobalConfiguration.lang,
           server: "login"
         });
@@ -176,7 +182,7 @@ export default class Network implements IClearable {
         this.send("connecting", {
           appVersion: DTConstants.appVersion,
           buildVersion: DTConstants.buildVersion,
-          client: "android",
+          client: "ios",
           language: GlobalConfiguration.lang,
           server: this.server
         });

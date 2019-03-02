@@ -4,7 +4,6 @@ import LanguageManager from "@/configurations/language/LanguageManager";
 import { GatherResults } from "@/game/managers/gathers";
 import StartBuyingAction from "@/scripts/actions/bid/StartBuyingAction";
 import StartSellingAction from "@/scripts/actions/bid/StartSellingAction";
-import CraftAction from "@/scripts/actions/craft/CraftAction";
 import ExchangePutItemAction from "@/scripts/actions/exchange/ExchangePutItemAction";
 import ExchangeRemoveItemAction from "@/scripts/actions/exchange/ExchangeRemoveItemAction";
 import SendReadyAction from "@/scripts/actions/exchange/SendReadyAction";
@@ -26,12 +25,17 @@ import NpcAction from "@/scripts/actions/npcs/NpcAction";
 import NpcBankAction from "@/scripts/actions/npcs/NpcBankAction";
 import ReplyAction from "@/scripts/actions/npcs/ReplyAction";
 import SellAction from "@/scripts/actions/npcs/SellAction";
+
+import CraftAction from "@/scripts/actions/craft/CraftAction";
 import ScriptAction, {
   ScriptActionResults
 } from "@/scripts/actions/ScriptAction";
 import LiteEvent from "@/utils/LiteEvent";
 import { sleep } from "@/utils/Time";
 import TimerWrapper from "@/utils/TimerWrapper";
+import BuyItemAction from "../actions/bid/BuyItemAction";
+import SellItemAction from "../actions/bid/SellItemAction";
+import UsePaddockAction from "../actions/map/UsePaddockAction";
 
 export interface IActionsManagerEventData {
   account: Account;
@@ -87,6 +91,8 @@ export default class ActionsManager {
     this.account.game.exchange.ExchangeLeft.on(this.exchange_exchangeLeft);
     this.account.game.bid.StartedBuying.on(this.bid_startedBuying);
     this.account.game.bid.StartedSelling.on(this.bid_startedSelling);
+    this.account.game.bid.ItemBought.on(this.bid_itemBought);
+    this.account.game.bid.ItemSold.on(this.bid_itemSold);
     this.account.game.bid.BidLeft.on(this.bid_bidLeft);
     this.account.game.managers.teleportables.UseFinished.on(
       this.teleportables_useFinished
@@ -96,6 +102,8 @@ export default class ActionsManager {
       this.exchange_exchangeChanged
     );
     this.account.game.craft.CraftLeft.on(this.craft_craftLeft);
+    this.account.game.breeding.PaddockOpened.on(this.breeding_paddockOpened);
+    this.account.game.breeding.PaddockLeft.on(this.breeding_paddockLeft);
   }
 
   public get ActionsFinished() {
@@ -120,7 +128,7 @@ export default class ActionsManager {
   ) {
     this.actionsQueue.push(action);
     if (startDequeuingActions) {
-      await this.dequeueActions(0);
+      this.dequeueActions(0);
     }
 
     // If this account is a group chief, enqueue the action to the others members
@@ -179,8 +187,11 @@ export default class ActionsManager {
       const name = this.currentAction
         ? this.currentAction._name
         : LanguageManager.trans("unknown");
-
-      const result = await this.currentCoroutine!.next();
+      if (!this.currentCoroutine) {
+        this.account.logger.logDofus("COROUTINE", "Hum hum hum...");
+        return;
+      }
+      const result = await this.currentCoroutine.next();
       this.account.logger.logDebug(
         LanguageManager.trans("scripts"),
         LanguageManager.trans("processingCoroutine", name, result.done)
@@ -213,7 +224,7 @@ export default class ActionsManager {
           LanguageManager.trans("actionsManager"),
           LanguageManager.trans("actionDone", type)
         );
-        await this.dequeueActions(100);
+        this.dequeueActions(100);
         break;
       case ScriptActionResults.FAILED:
         this.account.logger.logDebug(
@@ -296,7 +307,7 @@ export default class ActionsManager {
     }
 
     this.clearActions();
-    await this.dequeueActions(1500);
+    this.dequeueActions(1500);
   };
 
   private movements_movementFinished = async (success?: boolean) => {
@@ -328,7 +339,7 @@ export default class ActionsManager {
             LanguageManager.trans("scripts"),
             LanguageManager.trans("errorLaunchFight")
           );
-          await this.dequeueActions(0);
+          this.dequeueActions(0);
         }
 
         this.monstersGroupToAttack = 0;
@@ -339,7 +350,7 @@ export default class ActionsManager {
       this.account.scripts.stopScript();
     } else if (this.currentAction instanceof MoveToCellAction) {
       if (success) {
-        await this.dequeueActions(0);
+        this.dequeueActions(0);
       } else {
         this.account.scripts.stopScript();
       }
@@ -354,12 +365,13 @@ export default class ActionsManager {
       this.currentAction instanceof UseAction ||
       this.currentAction instanceof UseByIdAction ||
       this.currentAction instanceof SaveZaapAction ||
-      this.currentAction instanceof UseLockedHouseAction
+      this.currentAction instanceof UseLockedHouseAction ||
+      this.currentAction instanceof UsePaddockAction
     ) {
       if (!success) {
         this.account.scripts.stopScript();
       } else {
-        await this.dequeueActions(this.actionsQueue.length > 0 ? 0 : 500);
+        this.dequeueActions(this.actionsQueue.length > 0 ? 0 : 500);
       }
     }
   };
@@ -400,7 +412,7 @@ export default class ActionsManager {
           break;
         default:
           // GATHERED, STOLEN, BLACKLISTED, or TIMED_OUT
-          await this.dequeueActions(1000);
+          this.dequeueActions(1000);
           break;
       }
     }
@@ -441,7 +453,7 @@ export default class ActionsManager {
       this.currentAction instanceof NpcAction ||
       this.currentAction instanceof ReplyAction
     ) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -453,7 +465,7 @@ export default class ActionsManager {
       this.currentAction instanceof NpcBankAction ||
       this.currentAction instanceof UseLockedStorageAction
     ) {
-      await this.dequeueActions(200);
+      this.dequeueActions(200);
     }
   };
 
@@ -462,7 +474,7 @@ export default class ActionsManager {
       return;
     }
     if (this.currentAction instanceof LeaveDialogAction) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -475,7 +487,7 @@ export default class ActionsManager {
       this.currentAction instanceof ReplyAction ||
       this.currentAction instanceof LeaveDialogAction
     ) {
-      await this.dequeueActions(200);
+      this.dequeueActions(200);
     }
   };
 
@@ -484,7 +496,7 @@ export default class ActionsManager {
       return;
     }
     if (this.currentAction instanceof StartExchangeAction) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -496,7 +508,7 @@ export default class ActionsManager {
       this.currentAction instanceof SendReadyAction ||
       this.currentAction instanceof LeaveDialogAction
     ) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -505,7 +517,7 @@ export default class ActionsManager {
       return;
     }
     if (this.currentAction instanceof StartBuyingAction) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -514,7 +526,25 @@ export default class ActionsManager {
       return;
     }
     if (this.currentAction instanceof StartSellingAction) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
+    }
+  };
+
+  private bid_itemBought = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof BuyItemAction) {
+      this.dequeueActions(400);
+    }
+  };
+
+  private bid_itemSold = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof SellItemAction) {
+      this.dequeueActions(400);
     }
   };
 
@@ -523,7 +553,7 @@ export default class ActionsManager {
       return;
     }
     if (this.currentAction instanceof LeaveDialogAction) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -533,13 +563,10 @@ export default class ActionsManager {
     }
     if (this.currentAction instanceof UseTeleportableAction) {
       if (success) {
-        await this.dequeueActions(1500);
+        this.dequeueActions(1500);
       } else {
         this.account.scripts.stopScript(
-          LanguageManager.trans(
-            "cantUseTeleportable",
-            (this.currentAction as UseTeleportableAction).type
-          )
+          LanguageManager.trans("cantUseTeleportable", this.currentAction.type)
         );
       }
     }
@@ -553,7 +580,7 @@ export default class ActionsManager {
       this.currentAction instanceof SellAction ||
       this.currentAction instanceof BuyAction
     ) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -565,7 +592,7 @@ export default class ActionsManager {
       this.currentAction instanceof ExchangePutItemAction ||
       this.currentAction instanceof ExchangeRemoveItemAction
     ) {
-      await this.dequeueActions(400);
+      this.dequeueActions(400);
     }
   };
 
@@ -573,8 +600,29 @@ export default class ActionsManager {
     if (!this.account.scripts.running) {
       return;
     }
-    if (this.currentAction instanceof CraftAction) {
-      await this.dequeueActions(400);
+    if (
+      this.currentAction instanceof CraftAction ||
+      this.currentAction instanceof LeaveDialogAction
+    ) {
+      this.dequeueActions(400);
+    }
+  };
+
+  private breeding_paddockOpened = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof UsePaddockAction) {
+      this.dequeueActions(400);
+    }
+  };
+
+  private breeding_paddockLeft = async () => {
+    if (!this.account.scripts.running) {
+      return;
+    }
+    if (this.currentAction instanceof LeaveDialogAction) {
+      this.dequeueActions(200);
     }
   };
 

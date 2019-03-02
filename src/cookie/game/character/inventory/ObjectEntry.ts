@@ -83,7 +83,7 @@ export default class ObjectEntry {
     return `${DTConstants.config.assetsUrl}/gfx/items/${this.iconId}.png`;
   }
 
-  public async UpdateObjectItem(item: ObjectItem) {
+  public UpdateObjectItem(item: ObjectItem) {
     this.gid = item.objectGID;
     this.uid = item.objectUID;
     this.quantity = item.quantity;

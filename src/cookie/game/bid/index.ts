@@ -5,6 +5,7 @@ import DataManager from "@/protocol/data";
 import Items from "@/protocol/data/classes/Items";
 import { DataTypes } from "@/protocol/data/DataTypes";
 import { ExchangeErrorEnum } from "@/protocol/enums/ExchangeErrorEnum";
+import ExchangeTypesItemsExchangerDescriptionForUserMessage from "@/protocol/network/messages/ExchangeTypesItemsExchangerDescriptionForUserMessage";
 import BidExchangerObjectInfo from "@/protocol/network/types/BidExchangerObjectInfo";
 import ObjectItemToSellInBid from "@/protocol/network/types/ObjectItemToSellInBid";
 import { Deferred, IDeferred } from "@/utils/Deferred";
@@ -25,6 +26,8 @@ export default class Bid implements IClearable {
   private readonly onStartedBuying = new LiteEvent<void>();
   private readonly onStartedSelling = new LiteEvent<void>();
   private readonly onBidLeft = new LiteEvent<void>();
+  private readonly onItemBought = new LiteEvent<number>();
+  private readonly onItemSold = new LiteEvent<number>();
 
   constructor(account: Account) {
     this.account = account;
@@ -40,6 +43,14 @@ export default class Bid implements IClearable {
 
   public get BidLeft() {
     return this.onBidLeft.expose();
+  }
+
+  public get ItemBought() {
+    return this.onItemBought.expose();
+  }
+
+  public get ItemSold() {
+    return this.onItemSold.expose();
   }
 
   public clear() {
@@ -115,9 +126,7 @@ export default class Bid implements IClearable {
       return false;
     }
 
-    console.log(cheapestItem);
-
-    const price = await cheapestItem.prices[lot === 1 ? 0 : lot === 10 ? 1 : 2];
+    const price = cheapestItem.prices[lot === 1 ? 0 : lot === 10 ? 1 : 2];
 
     // Not enough kamas
     if (price > this.account.game.character.inventory.kamas) {
@@ -128,11 +137,13 @@ export default class Bid implements IClearable {
       return false;
     }
 
-    await this.account.network.sendMessageFree("ExchangeBidHouseBuyMessage", {
+    this.account.network.sendMessageFree("ExchangeBidHouseBuyMessage", {
       price,
       qty: lot,
       uid: cheapestItem.objectUID
     });
+
+    this.onItemBought.trigger(gid);
 
     return true;
   }
@@ -171,6 +182,9 @@ export default class Bid implements IClearable {
       LanguageManager.trans("bid"),
       LanguageManager.trans("bidSale", lot, item.name, price)
     );
+
+    this.onItemSold.trigger(gid);
+
     return true;
   }
 
@@ -230,7 +244,7 @@ export default class Bid implements IClearable {
   }
 
   public async UpdateExchangeTypesItemsExchangerDescriptionForUserMessage(
-    message: any
+    message: ExchangeTypesItemsExchangerDescriptionForUserMessage
   ) {
     if (!this._itemDescription) {
       return;

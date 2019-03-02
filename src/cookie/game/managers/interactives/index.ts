@@ -91,6 +91,21 @@ export default class InteractivesManager implements IClearable {
       return lockedStorage.element;
     }
 
+    // Search for others interactives in the cellId
+    const otherInteractive = this._account.game.map.othersInteractives.find(
+      l => l.cellId === cellId
+    );
+    if (otherInteractive !== undefined) {
+      return otherInteractive.element;
+    }
+
+    // Search for a paddock in the cellId
+    if (this._account.game.map.paddock) {
+      if (this._account.game.map.paddock.cellId === cellId) {
+        return this._account.game.map.paddock.element;
+      }
+    }
+
     return null;
   }
 

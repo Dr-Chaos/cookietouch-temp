@@ -139,11 +139,10 @@ export default class Npcs {
     this.onQuestionReceived.trigger();
   }
 
-  public async UpdateLeaveDialogMessage(message: any) {
+  public async UpdateExchangeLeaveMessage(message: any) {
     if (this.account.state !== AccountStates.TALKING) {
       return;
     }
-
     this.account.state = AccountStates.NONE;
     this.possibleReplies = [];
     this.onDialogLeft.trigger();

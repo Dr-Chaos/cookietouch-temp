@@ -1,4 +1,4 @@
-export function sleep(ms = 0): any {
+export function sleep(ms = 0) {
   if (ms <= 0) {
     return;
   }
