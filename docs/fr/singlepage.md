@@ -93,6 +93,7 @@
   - [useLockedStorage](map.md#uselockedstorageelementcellid-number-lockcode-string)
   - [useZaap](map.md#usezaapdestinationmapid-number)
   - [useZaapi](map.md#usezaapidestinationmapid-number)
+  - [usePaddock](map.md#usepaddock)
   - [saveZaap](map.md#savezaapdestinationmapid-number)
   - [waitMapChange](map.md#waitmapchangedelay-number)
   - [joinFriend](map.md#joinfriendname-string)

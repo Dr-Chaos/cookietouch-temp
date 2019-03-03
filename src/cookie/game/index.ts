@@ -12,6 +12,7 @@ import Server from "@/game/server";
 import Storage from "@/game/storage";
 import IClearable from "@/utils/IClearable";
 import Breeding from "./breeding";
+import Quests from "./quests";
 
 export default class Game implements IClearable {
   public managers: Managers;
@@ -26,6 +27,7 @@ export default class Game implements IClearable {
   public fight: Fight;
   public craft: Craft;
   public breeding: Breeding;
+  public quests: Quests;
 
   constructor(account: Account) {
     this.server = new Server(account);
@@ -40,6 +42,7 @@ export default class Game implements IClearable {
     this.bid = new Bid(account);
     this.craft = new Craft(account);
     this.breeding = new Breeding(account);
+    this.quests = new Quests(account);
   }
 
   public clear() {

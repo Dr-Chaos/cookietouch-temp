@@ -15,6 +15,7 @@
   - [useLockedStorage](#map-use-locked-storage)
   - [useZaap](#map-use-zaap)
   - [useZaapi](#map-use-zaapi)
+  - [usePaddock](#map-use-paddock)
   - [saveZaap](#savezaap)
   - [waitMapChange](#map-wait-map-change)
   - [joinFriend](#map-join-friend)
@@ -184,6 +185,26 @@ Retourne true si le bot a pu utiliser le zaapi, sinon retourne false.
 
 ```js
 yield * (await useZaapi(3545)); // se téléporte sur le zaapi de la map 3545.
+```
+
+<hr>
+
+<hr>
+
+<h2 id="map-use-paddock">
+  usePaddock()
+</h2>
+
+- Return type: <a href="https://developer.mozilla.org/fr-Fr/docs/Web/JavaScript/Data_structures#Boolean_type">boolean</a>
+
+Permet d’utiliser un enclos.
+
+Retourne true si le bot a pu utiliser l'enclos, sinon retourne false.
+
+**Exemple:**
+
+```js
+yield * (await usePaddock()); // ouvre l'enclos présent sur la map
 ```
 
 <hr>

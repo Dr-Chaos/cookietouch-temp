@@ -49,7 +49,7 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
   private readonly monstersGroupsBrush = new Color(255, 139, 0, 0);
   private readonly playersBrush = new Color(255, 81, 113, 202);
   private readonly doorsBrush = new Color(255, 150, 75, 133);
-  private readonly othersBrush = new Color(45, 90, 175, 183);
+  private readonly othersBrush = new Color(104, 247, 38, 183);
   private readonly interactivesBrush = new Color(255, 1, 143, 140);
   private readonly npcsBrush = new Color(255, 179, 120, 211);
   private readonly sunImage = "21000.png";

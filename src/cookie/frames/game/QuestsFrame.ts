@@ -1,5 +1,6 @@
 import Account from "@/account";
 import Frames, { IFrame } from "@/frames";
+import QuestListMessage from "@/protocol/network/messages/QuestListMessage";
 import QuestStartedMessage from "@/protocol/network/messages/QuestStartedMessage";
 import QuestStepInfoMessage from "@/protocol/network/messages/QuestStepInfoMessage";
 import QuestStepValidatedMessage from "@/protocol/network/messages/QuestStepValidatedMessage";
@@ -27,6 +28,11 @@ export default class QuestsFrame implements IFrame {
       this.HandleQuestValidatedMessage,
       this
     );
+    Frames.dispatcher.register(
+      "QuestListMessage",
+      this.HandleQuestListMessage,
+      this
+    );
   }
 
   private async HandleQuestStartedMessage(
@@ -34,6 +40,7 @@ export default class QuestsFrame implements IFrame {
     message: QuestStartedMessage
   ) {
     account.extensions.characterCreation.UpdateQuestStartedMessage(message);
+    account.game.quests.UpdateQuestStartedMessage(message);
   }
 
   private async HandleQuestStepInfoMessage(
@@ -41,6 +48,7 @@ export default class QuestsFrame implements IFrame {
     message: QuestStepInfoMessage
   ) {
     account.extensions.characterCreation.UpdateQuestStepInfoMessage(message);
+    account.game.quests.UpdateQuestStepInfoMessage(message);
   }
 
   private async HandleQuestStepValidatedMessage(
@@ -57,5 +65,13 @@ export default class QuestsFrame implements IFrame {
     message: QuestValidatedMessage
   ) {
     account.extensions.characterCreation.UpdateQuestValidatedMessage(message);
+    account.game.quests.UpdateQuestValidatedMessage(message);
+  }
+
+  private async HandleQuestListMessage(
+    account: Account,
+    message: QuestListMessage
+  ) {
+    account.game.quests.UpdateQuestListMessage(message);
   }
 }
