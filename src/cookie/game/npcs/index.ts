@@ -148,6 +148,10 @@ export default class Npcs {
     this.onDialogLeft.trigger();
   }
 
+  public async UpdateLeaveDialogMessage(message: any) {
+    this.UpdateExchangeLeaveMessage(message);
+  }
+
   public async UpdateNpcShopMessage(message: any) {
     this.objectsInSale = message.objectsInfos;
     this.onQuestionReceived.trigger();

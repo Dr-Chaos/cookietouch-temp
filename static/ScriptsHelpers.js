@@ -342,9 +342,9 @@ const craft = {
 }
 // Quests
 const quests = {
-  isOngoing: API.quests.isOngoing.bind(API.quests)(questId),
-  isCompleted: API.quests.isCompleted.bind(API.quests)(questId),
-  currentStep: API.quests.currentStep.bind(API.quests)(questId),
-  objectivesNeeded: API.quests.objectivesNeeded.bind(API.quests)(questId),
-  needObjective: API.quests.needObjective.bind(API.quests)(questId, objectiveId)
+  isOngoing: API.quests.isOngoing.bind(API.quests),
+  isCompleted: API.quests.isCompleted.bind(API.quests),
+  currentStep: API.quests.currentStep.bind(API.quests),
+  objectivesNeeded: API.quests.objectivesNeeded.bind(API.quests),
+  needObjective: API.quests.needObjective.bind(API.quests)
 }
