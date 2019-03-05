@@ -12,23 +12,18 @@ import axios from "axios";
 import { remote } from "electron";
 import { join } from "path";
 
-export interface IDataResponse<T> {
-  id: number;
-  object: T;
-}
-
 export default class DataManager {
   public static async get<T extends Data>(
     type: DataTypes,
     ...ids: number[]
-  ): Promise<Array<IDataResponse<T>>> {
-    const myArray: Array<IDataResponse<T>> = [];
+  ): Promise<T[]> {
+    const myArray: T[] = [];
     const newIds = [];
     for (const id of ids) {
       const filePath = await DataManager.getFilePath(DataTypes[type], id);
       if (await existsAsync(filePath)) {
-        const file = await readFileAsync(filePath);
-        myArray.push(JSON.parse(file.toString()));
+        const file = await readFileAsync(filePath, "utf8");
+        myArray.push(JSON.parse(file));
       } else {
         newIds.push(id);
       }
@@ -50,17 +45,10 @@ export default class DataManager {
       }
     );
 
-    for (const item of Object.entries(response.data)) {
-      const dataRes = {
-        id: parseInt(item["0"], 10),
-        object: item["1"]
-      } as IDataResponse<T>;
-      myArray.push(dataRes);
-      const filePath = await DataManager.getFilePath(
-        DataTypes[type],
-        dataRes.id
-      );
-      await writeFileAsync(filePath, JSON.stringify(dataRes));
+    for (const item of Object.values<T>(response.data)) {
+      myArray.push(item);
+      const filePath = await DataManager.getFilePath(DataTypes[type], item.id);
+      await writeFileAsync(filePath, JSON.stringify(item));
     }
 
     return myArray;

@@ -36,7 +36,7 @@ export default class AchievementsFrame implements IFrame {
       DataTypes.Achievements,
       message.achievementId
     );
-    const a = achievementResp[0].object;
+    const a = achievementResp[0];
     account.logger.logInfo(
       "AchievementsFrame",
       LanguageManager.trans("achievementReward", a.nameId, a.points)

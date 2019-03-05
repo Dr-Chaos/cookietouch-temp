@@ -1,4 +1,6 @@
 import Account from "@/account";
+import { AccountStates } from "@/account/AccountStates";
+import DocumentReadingBeginMessage from "@/protocol/network/messages/DocumentReadingBeginMessage";
 import QuestListMessage from "@/protocol/network/messages/QuestListMessage";
 import QuestStartedMessage from "@/protocol/network/messages/QuestStartedMessage";
 import QuestStepInfoMessage from "@/protocol/network/messages/QuestStepInfoMessage";
@@ -42,8 +44,9 @@ export default class Quests {
   }
 
   public async objectivesNeeded(questId: number): Promise<number[]> {
-    const infos = await this.questInfos(questId);
-    if (infos instanceof QuestActiveDetailedInformations) {
+    const info = await this.questInfos(questId);
+    if (info._type === "QuestActiveDetailedInformations") {
+      const infos = info as QuestActiveDetailedInformations;
       return infos.objectives
         .filter(objective => objective.objectiveStatus)
         .map(objective => objective.objectiveId);
@@ -83,6 +86,12 @@ export default class Quests {
     if (index > -1) {
       this.account.game.quests.ongoingQuests.splice(index, 1);
     }
+  }
+
+  public UpdateDocumentReadingBeginMessage(
+    message: DocumentReadingBeginMessage
+  ) {
+    this.account.state = AccountStates.TALKING;
   }
 
   private questInfos(

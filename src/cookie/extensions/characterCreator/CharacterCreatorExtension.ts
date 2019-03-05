@@ -104,8 +104,8 @@ export default class CharacterCreatorExtension implements IClearable {
       this.account.accountConfig.characterCreation.colors.length === 5
         ? this.account.accountConfig.characterCreation.colors
         : sex
-        ? breedClass[0].object.femaleColors
-        : breedClass[0].object.maleColors;
+        ? breedClass[0].femaleColors
+        : breedClass[0].maleColors;
     // If the user want a random name, use DT's random name generator
     if (name === "") {
       this.name = Deferred<string>();

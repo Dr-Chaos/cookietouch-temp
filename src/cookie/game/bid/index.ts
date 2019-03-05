@@ -3,8 +3,13 @@ import { AccountStates } from "@/account/AccountStates";
 import LanguageManager from "@/configurations/language/LanguageManager";
 import DataManager from "@/protocol/data";
 import Items from "@/protocol/data/classes/Items";
+import ItemTypes from "@/protocol/data/classes/ItemTypes";
 import { DataTypes } from "@/protocol/data/DataTypes";
 import { ExchangeErrorEnum } from "@/protocol/enums/ExchangeErrorEnum";
+import ExchangeBidHouseInListUpdatedMessage from "@/protocol/network/messages/ExchangeBidHouseInListUpdatedMessage";
+import ExchangeStartedBidBuyerMessage from "@/protocol/network/messages/ExchangeStartedBidBuyerMessage";
+import ExchangeStartedBidSellerMessage from "@/protocol/network/messages/ExchangeStartedBidSellerMessage";
+import ExchangeTypesExchangerDescriptionForUserMessage from "@/protocol/network/messages/ExchangeTypesExchangerDescriptionForUserMessage";
 import ExchangeTypesItemsExchangerDescriptionForUserMessage from "@/protocol/network/messages/ExchangeTypesItemsExchangerDescriptionForUserMessage";
 import BidExchangerObjectInfo from "@/protocol/network/types/BidExchangerObjectInfo";
 import ObjectItemToSellInBid from "@/protocol/network/types/ObjectItemToSellInBid";
@@ -21,6 +26,7 @@ export default class Bid implements IClearable {
   private _itemDescription: IDeferred<
     List<BidExchangerObjectInfo>
   > | null = Deferred<List<BidExchangerObjectInfo>>();
+  private _typeDescription: IDeferred<number[]> | null = Deferred<number[]>();
   private _lastSearchedGID: number = 0;
   private account: Account;
   private readonly onStartedBuying = new LiteEvent<void>();
@@ -55,6 +61,7 @@ export default class Bid implements IClearable {
 
   public clear() {
     this._itemDescription = null;
+    this._typeDescription = null;
     this._lastSearchedGID = 0;
     this.maxItemPerAccount = 0;
   }
@@ -237,7 +244,19 @@ export default class Bid implements IClearable {
     return true;
   }
 
-  public async UpdateExchangeStartedBidBuyerMessage(message: any) {
+  public async getItemsForType(type: ItemTypes): Promise<number[]> {
+    this._typeDescription = Deferred();
+
+    this.account.network.sendMessageFree("ExchangeBidHouseTypeMessage", {
+      type: type.id
+    });
+
+    return this._typeDescription.promise;
+  }
+
+  public async UpdateExchangeStartedBidBuyerMessage(
+    message: ExchangeStartedBidBuyerMessage
+  ) {
     this.account.state = AccountStates.BUYING;
     this.maxItemPerAccount = message.buyerDescriptor.maxItemPerAccount;
     this.onStartedBuying.trigger();
@@ -252,7 +271,9 @@ export default class Bid implements IClearable {
     this._itemDescription.resolve(new List(message.itemTypeDescriptions));
   }
 
-  public async UpdateExchangeStartedBidSellerMessage(message: any) {
+  public async UpdateExchangeStartedBidSellerMessage(
+    message: ExchangeStartedBidSellerMessage
+  ) {
     this.account.state = AccountStates.SELLING;
     this.maxItemPerAccount = message.sellerDescriptor.maxItemPerAccount;
     this.objectsInSale = new List(message.objectsInfos);
@@ -264,7 +285,10 @@ export default class Bid implements IClearable {
       "ExchangeError",
       `${ExchangeErrorEnum[message.errorType]}`
     );
-    if (message.errorType !== 11 || this._itemDescription === null) {
+    if (
+      message.errorType !== ExchangeErrorEnum.BID_SEARCH_ERROR ||
+      this._itemDescription === null
+    ) {
       return;
     }
     this._itemDescription.resolve(new List());
@@ -281,6 +305,21 @@ export default class Bid implements IClearable {
     this.account.state = AccountStates.NONE;
     this.clear();
     this.onBidLeft.trigger();
+  }
+
+  public async UpdateExchangeTypesExchangerDescriptionForUserMessage(
+    message: ExchangeTypesExchangerDescriptionForUserMessage
+  ) {
+    if (!this._typeDescription) {
+      return;
+    }
+    this._typeDescription.resolve(message.typeDescription);
+  }
+
+  public async UpdateExchangeBidHouseInListUpdatedMessage(
+    message: ExchangeBidHouseInListUpdatedMessage
+  ) {
+    //
   }
 
   private async getCheapestItem(
@@ -314,10 +353,10 @@ export default class Bid implements IClearable {
       return false;
     }
 
-    const item = itemRes[0].object;
+    const item = itemRes[0];
 
     if (this._lastSearchedGID !== gid || this._itemDescription === null) {
-      this._itemDescription = Deferred<List<BidExchangerObjectInfo>>();
+      this._itemDescription = Deferred();
       this.account.network.sendMessageFree("ExchangeBidHouseSearchMessage", {
         genId: gid,
         type: item.typeId

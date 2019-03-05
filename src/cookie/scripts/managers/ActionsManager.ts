@@ -167,7 +167,9 @@ export default class ActionsManager {
     // If the queue still have actions
     if (this.actionsQueue.length > 0) {
       this.currentAction = this.actionsQueue.shift() || null;
-      await this.processCurrentAction();
+      if (this.currentAction) {
+        await this.processCurrentAction();
+      }
     } else {
       // If there is a coroutine currently being handled, process it
       // Otherwise tell the scripts manager that we're done

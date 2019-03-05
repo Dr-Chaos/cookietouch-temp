@@ -25,7 +25,7 @@ export default class FightMonsterEntry extends FighterEntry {
       f.creatureGenericId
     );
 
-    const m = data[0].object;
+    const m = data[0];
     f.name = m.nameId;
     f.isBoss = m.isBoss;
     f.isMiniBoss = m.isMiniBoss;

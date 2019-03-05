@@ -435,7 +435,7 @@ export default class Character implements IClearable {
       DataTypes.Breeds,
       message.infos.breed
     );
-    this.breedData = breedResponse[0].object;
+    this.breedData = breedResponse[0];
     this.status = PlayerStatusEnum.PLAYER_STATUS_AVAILABLE;
     this.lifeStatus = PlayerLifeStatusEnum.STATUS_ALIVE_AND_KICKING;
 
@@ -483,7 +483,7 @@ export default class Character implements IClearable {
 
     for (const sp of message.spells) {
       const spell = spells.find(f => f.id === sp.spellId);
-      const spellx = (spell && spell.object) || sp.spellId;
+      const spellx = spell || sp.spellId;
       this.spells.push(await SpellEntry.setup(sp, spellx));
     }
     this.onSpellsUpdated.trigger();

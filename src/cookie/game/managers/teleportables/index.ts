@@ -2,8 +2,8 @@ import Account from "@/account";
 import LanguageManager from "@/configurations/language/LanguageManager";
 import InteractivesManager from "@/game/managers/interactives";
 import MapGame from "@/game/map";
+import ZaapListMessage from "@/protocol/network/messages/ZaapListMessage";
 import LiteEvent from "@/utils/LiteEvent";
-import { sleep } from "@/utils/Time";
 
 export enum TeleportablesEnum {
   ZAAP,
@@ -147,9 +147,10 @@ export default class TeleportablesManager {
     this.onUseFinished.trigger(success);
   }
 
-  private handleZaapListMessage = async (account: Account, message: any) => {
-    await sleep(1000);
-
+  private handleZaapListMessage = async (
+    account: Account,
+    message: ZaapListMessage
+  ) => {
     if (
       this._teleportable !== TeleportablesEnum.ZAAP ||
       this._destinationMapId === 0
@@ -162,7 +163,7 @@ export default class TeleportablesManager {
       return;
     }
 
-    await this._account.network.sendMessageFree("TeleportRequestMessage", {
+    this._account.network.sendMessageFree("TeleportRequestMessage", {
       mapId: this._destinationMapId,
       teleporterType: this._teleportable
     });
@@ -172,8 +173,6 @@ export default class TeleportablesManager {
     account: Account,
     message: any
   ) => {
-    await sleep(1000);
-
     if (
       this._teleportable !== TeleportablesEnum.ZAAPI ||
       this._destinationMapId === 0
@@ -186,7 +185,7 @@ export default class TeleportablesManager {
       return;
     }
 
-    await this._account.network.sendMessageFree("TeleportRequestMessage", {
+    this._account.network.sendMessageFree("TeleportRequestMessage", {
       mapId: this._destinationMapId,
       teleporterType: this._teleportable
     });

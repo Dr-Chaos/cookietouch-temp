@@ -18,7 +18,7 @@ export default class SpellEntry {
     const spellEntry = new SpellEntry();
     if (typeof s === "number" && typeof spell === "number") {
       const data = await DataManager.get<Spells>(DataTypes.Spells, s);
-      const o = data[0].object;
+      const o = data[0];
       spellEntry.id = o.id;
       spellEntry.level = spell;
       spellEntry.name = o.nameId;
@@ -48,6 +48,6 @@ export default class SpellEntry {
       DataTypes.SpellLevels,
       spell.spellLevels[this.level - 1]
     );
-    this.minPlayerLevel = spellLevel[0].object.minPlayerLevel;
+    this.minPlayerLevel = spellLevel[0].minPlayerLevel;
   }
 }

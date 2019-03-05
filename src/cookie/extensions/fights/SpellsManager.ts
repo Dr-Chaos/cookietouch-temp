@@ -119,12 +119,12 @@ export default class SpellsManager {
       DataTypes.Spells,
       spell.spellId
     );
-    const spellData = spellDataResp[0].object;
+    const spellData = spellDataResp[0];
     const spellLevelResp = await DataManager.get<SpellLevels>(
       DataTypes.SpellLevels,
       spellData.spellLevels[spellEntry!.level - 1]
     );
-    const spellLevel = spellLevelResp[0].object;
+    const spellLevel = spellLevelResp[0];
 
     // Get all the possible ranges
     const entries: RangeNodeEntry[] = [];
@@ -436,12 +436,12 @@ export default class SpellsManager {
       DataTypes.Spells,
       spell.spellId
     );
-    const spellData = spellDataResp[0].object;
+    const spellData = spellDataResp[0];
     const spellLevelResp = await DataManager.get<SpellLevels>(
       DataTypes.SpellLevels,
       spellData.spellLevels[spellEntry.level - 1]
     );
-    const spellLevel = spellLevelResp[0].object;
+    const spellLevel = spellLevelResp[0];
 
     const range = this.account.game.fight.getSpellRange(
       this.account.game.fight.playedFighter.cellId,

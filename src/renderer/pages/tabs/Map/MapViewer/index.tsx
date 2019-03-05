@@ -8,7 +8,7 @@ import NpcEntry from "@/game/map/entities/NpcEntry";
 import PlayerEntry from "@/game/map/entities/PlayerEntry";
 import ElementInCellEntry from "@/game/map/interactives/ElementInCellEntry";
 import StatedElementEntry from "@/game/map/interactives/StatedElementEntry";
-import DataManager, { IDataResponse } from "@/protocol/data";
+import DataManager from "@/protocol/data";
 import Items from "@/protocol/data/classes/Items";
 import Skills from "@/protocol/data/classes/Skills";
 import { DataTypes } from "@/protocol/data/DataTypes";
@@ -649,7 +649,7 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
       if (!interactive) {
         return;
       }
-      let resp: Array<IDataResponse<Skills>>;
+      let resp: Skills[];
       let usable: string;
       if (interactive.enabledSkills.length === 0) {
         resp = await DataManager.get<Skills>(
@@ -666,9 +666,9 @@ class MapViewer extends React.Component<IMapViewerProps, IMapViewerState> {
       }
       const respItem = await DataManager.get<Items>(
         DataTypes.Items,
-        resp[0].object.gatheredRessourceItem
+        resp[0].gatheredRessourceItem
       );
-      const obj = respItem[0].object;
+      const obj = respItem[0];
       htmlBuffer += `<img height="25" width="25" src="${`${
         DTConstants.config.assetsUrl
       }/gfx/items/${obj.iconId}.png`}">`;

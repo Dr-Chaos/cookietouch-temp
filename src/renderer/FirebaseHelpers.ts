@@ -5,12 +5,12 @@ import "firebase/firestore";
 
 export function initialize() {
   const config = {
-    apiKey: "AIzaSyDWK5MrCUhiluOfj8emZT_ARUpbkzbwKTE",
-    authDomain: "cookietouch-52c0c.firebaseapp.com",
-    databaseURL: "https://cookietouch-52c0c.firebaseio.com",
-    messagingSenderId: "423749577733",
-    projectId: "cookietouch-52c0c",
-    storageBucket: "cookietouch-52c0c.appspot.com"
+    apiKey: "AIzaSyB6VbyTfEmqscCaA-ihdYjlOhcE1v3-4Dc",
+    authDomain: "deerbot-project.firebaseapp.com",
+    databaseURL: "https://deerbot-project.firebaseio.com",
+    messagingSenderId: "257195103524",
+    projectId: "deerbot-project",
+    storageBucket: "deerbot-project.appspot.com"
   };
 
   const app = firebase.initializeApp(config);
@@ -44,7 +44,7 @@ export function presence() {
     if (!user) {
       return;
     }
-    // Fetch the current user's ID from Firebase Authentication.
+    // Fetch the current user's ID from Firebase Authenticfiresation.
     const uid = user.uid;
 
     // Create a reference to this user's specific status node.

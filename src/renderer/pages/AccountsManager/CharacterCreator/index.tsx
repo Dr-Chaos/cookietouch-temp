@@ -298,7 +298,7 @@ class CharacterCreator extends React.Component<
 
     const servers = new Map<number, string>();
     for (const server of data) {
-      servers.set(server.id, server.object.nameId);
+      servers.set(server.id, server.nameId);
     }
     this.setState({ servers });
   };

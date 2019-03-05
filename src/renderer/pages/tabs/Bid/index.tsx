@@ -424,7 +424,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
     if (objResp.length === 0) {
       return;
     }
-    const name = objResp[0].object.nameId;
+    const name = objResp[0].nameId;
 
     this.props.account.extensions.bid.config.objectsToSell.push(
       new ObjectToSellEntry(
@@ -568,7 +568,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
       ...inventoryItems
     );
     this.setState({
-      allItems: res.map(o => o.object)
+      allItems: res
     });
   };
 
@@ -592,7 +592,7 @@ class Bid extends React.Component<IBidTabProps, IBidTabState> {
         .ToArray()
         .map(o => o.objectGID)
     );
-    const names = response.map(o => o.object.nameId);
+    const names = response.map(o => o.nameId);
     this.setState({
       objectsInSale: this.props.account.game.bid.objectsInSale.ToArray(),
       objectsInSaleNames: names

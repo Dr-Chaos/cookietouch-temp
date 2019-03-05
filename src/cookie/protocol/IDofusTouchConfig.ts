@@ -46,6 +46,7 @@ export interface IDofusTouchConfig {
   haapi: {
     id: number;
     url: string;
+    hostname: string;
   };
   serverLanguages: string[];
   notification: {

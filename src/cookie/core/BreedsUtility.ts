@@ -13,7 +13,7 @@ export default class BreedsUtility {
       DataTypes.Breeds,
       ...Enumerable.Range(1, 15).ToArray()
     );
-    this.breeds = new List(response.map(r => r.object));
+    this.breeds = new List(response);
   }
 
   public static getBreedHeads(breedId: number, sex: number): List<string> {

@@ -4,6 +4,7 @@ import MountSetMessage from "@/protocol/network/messages/MountSetMessage";
 import MountXpRatioMessage from "@/protocol/network/messages/MountXpRatioMessage";
 import MountClientData from "@/protocol/network/types/MountClientData";
 import IClearable from "@/utils/IClearable";
+import LiteEvent from "@/utils/LiteEvent";
 
 export default class Mount implements IClearable {
   public hasMount: boolean = false;
@@ -11,9 +12,14 @@ export default class Mount implements IClearable {
   public currentRatio: number = 0;
   public data: MountClientData | undefined;
   private account: Account;
+  private onMountSet = new LiteEvent<void>();
 
   constructor(account: Account) {
     this.account = account;
+  }
+
+  public get MountSet() {
+    return this.onMountSet.expose();
   }
 
   public toggleRiding() {
@@ -21,7 +27,7 @@ export default class Mount implements IClearable {
       return;
     }
 
-    this.account.network.sendMessageFree("MountToggleRidingMessage");
+    this.account.network.sendMessageFree("MountToggleRidingRequestMessage");
   }
 
   public setRatio(ratio: number) {
@@ -42,6 +48,7 @@ export default class Mount implements IClearable {
   public UpdateMountSetMessage(message: MountSetMessage) {
     this.hasMount = true;
     this.data = message.mountData;
+    this.onMountSet.trigger();
   }
 
   public UpdateMountRidingMessage(message: MountRidingMessage) {

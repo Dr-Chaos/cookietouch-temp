@@ -1,9 +1,11 @@
 import Account from "@/account";
 import Frames, { IFrame } from "@/frames";
+import ExchangeBidHouseInListUpdatedMessage from "@/protocol/network/messages/ExchangeBidHouseInListUpdatedMessage";
 import ExchangeErrorMessage from "@/protocol/network/messages/ExchangeErrorMessage";
 import ExchangeLeaveMessage from "@/protocol/network/messages/ExchangeLeaveMessage";
 import ExchangeStartedBidBuyerMessage from "@/protocol/network/messages/ExchangeStartedBidBuyerMessage";
 import ExchangeStartedBidSellerMessage from "@/protocol/network/messages/ExchangeStartedBidSellerMessage";
+import ExchangeTypesExchangerDescriptionForUserMessage from "@/protocol/network/messages/ExchangeTypesExchangerDescriptionForUserMessage";
 import ExchangeTypesItemsExchangerDescriptionForUserMessage from "@/protocol/network/messages/ExchangeTypesItemsExchangerDescriptionForUserMessage";
 
 export default class BidFrame implements IFrame {
@@ -31,6 +33,16 @@ export default class BidFrame implements IFrame {
     Frames.dispatcher.register(
       "ExchangeLeaveMessage",
       this.HandleExchangeLeaveMessage,
+      this
+    );
+    Frames.dispatcher.register(
+      "ExchangeTypesExchangerDescriptionForUserMessage",
+      this.HandleExchangeTypesExchangerDescriptionForUserMessage,
+      this
+    );
+    Frames.dispatcher.register(
+      "ExchangeBidHouseInListUpdatedMessage",
+      this.HandleExchangeBidHouseInListUpdatedMessage,
       this
     );
   }
@@ -70,5 +82,21 @@ export default class BidFrame implements IFrame {
     message: ExchangeLeaveMessage
   ) {
     account.game.bid.UpdateExchangeLeaveMessage(message);
+  }
+
+  private async HandleExchangeTypesExchangerDescriptionForUserMessage(
+    account: Account,
+    message: ExchangeTypesExchangerDescriptionForUserMessage
+  ) {
+    account.game.bid.UpdateExchangeTypesExchangerDescriptionForUserMessage(
+      message
+    );
+  }
+
+  private async HandleExchangeBidHouseInListUpdatedMessage(
+    account: Account,
+    message: ExchangeBidHouseInListUpdatedMessage
+  ) {
+    account.game.bid.UpdateExchangeBidHouseInListUpdatedMessage(message);
   }
 }

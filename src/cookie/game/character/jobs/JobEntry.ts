@@ -39,13 +39,12 @@ export default class JobEntry {
       for (const skill of job.skills) {
         if (skill._type === "SkillActionDescriptionCollect") {
           const item = skillsResp.find(s => s.id === skill.skillId);
-          const object = item && item.object;
-          if (!object) {
+          if (!item) {
             continue;
           }
           const c = new CollectSkillEntry(
             skill as SkillActionDescriptionCollect,
-            object
+            item
           );
           jobEntry.collectSkills.Add(c);
         }

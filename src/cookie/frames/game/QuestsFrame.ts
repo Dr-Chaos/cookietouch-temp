@@ -1,5 +1,6 @@
 import Account from "@/account";
 import Frames, { IFrame } from "@/frames";
+import DocumentReadingBeginMessage from "@/protocol/network/messages/DocumentReadingBeginMessage";
 import QuestListMessage from "@/protocol/network/messages/QuestListMessage";
 import QuestStartedMessage from "@/protocol/network/messages/QuestStartedMessage";
 import QuestStepInfoMessage from "@/protocol/network/messages/QuestStepInfoMessage";
@@ -31,6 +32,11 @@ export default class QuestsFrame implements IFrame {
     Frames.dispatcher.register(
       "QuestListMessage",
       this.HandleQuestListMessage,
+      this
+    );
+    Frames.dispatcher.register(
+      "DocumentReadingBeginMessage",
+      this.HandleDocumentReadingBeginMessage,
       this
     );
   }
@@ -73,5 +79,12 @@ export default class QuestsFrame implements IFrame {
     message: QuestListMessage
   ) {
     account.game.quests.UpdateQuestListMessage(message);
+  }
+
+  private async HandleDocumentReadingBeginMessage(
+    account: Account,
+    message: DocumentReadingBeginMessage
+  ) {
+    account.game.quests.UpdateDocumentReadingBeginMessage(message);
   }
 }

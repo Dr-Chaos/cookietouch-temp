@@ -411,7 +411,7 @@ export default class FightsExtension implements IClearable {
       DataTypes.Spells,
       this.config.spellToApproach
     );
-    const spell = spellResp[0].object;
+    const spell = spellResp[0];
     const spellCharacter = this.account.game.character.getSpell(spell.id);
     if (!spellCharacter) {
       return false;
@@ -420,7 +420,7 @@ export default class FightsExtension implements IClearable {
       DataTypes.SpellLevels,
       spell.spellLevels[spellCharacter.level - 1]
     );
-    const spellLevel = spellLevelResp[0].object;
+    const spellLevel = spellLevelResp[0];
 
     // Check if we can cast the spell from our current position
     if (
