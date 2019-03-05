@@ -180,7 +180,7 @@ export default class StatisticsManager {
     let elem = list.FirstOrDefault(o => o !== undefined && o.gid === gid);
     if (!elem) {
       const itemResp = await DataManager.get<Items>(DataTypes.Items, gid);
-      elem = new ObjectObtainedEntry(gid, itemResp[0].object.nameId, 0);
+      elem = new ObjectObtainedEntry(gid, itemResp[0].nameId, 0);
       list.Add(elem);
     }
     elem.quantity += qty;

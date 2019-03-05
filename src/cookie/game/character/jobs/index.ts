@@ -58,15 +58,14 @@ export default class Job {
 
     for (const job of message.jobsDescription) {
       const item = jobsData.find(f => f.id === job.jobId);
-      const object = item && item.object;
-      if (!object) {
+      if (!item) {
         this.account.logger.logWarning(
           LanguageManager.trans("jobs"),
           LanguageManager.trans("jobNotFound", job.jobId)
         );
         continue;
       }
-      const jobEntry = await JobEntry.setup(job, object);
+      const jobEntry = await JobEntry.setup(job, item);
       this.jobs.Add(jobEntry);
     }
 
@@ -114,10 +113,7 @@ export default class Job {
     if (job) {
       this.jobs.Remove(job);
     }
-    const newJob = await JobEntry.setup(
-      message.jobsDescription,
-      jobsData[0].object
-    );
+    const newJob = await JobEntry.setup(message.jobsDescription, jobsData[0]);
     Pushbullet.sendNotification(NotificationType.LEVEL_JOB, this.account, {
       jobName: newJob.name,
       levelJob: newJob.level

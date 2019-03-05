@@ -3,35 +3,18 @@
 <center>
 	<h1>
     CookieTouch
-    <a href="https://travis-ci.org/cookie-project/cookietouch">
-      <img src="https://travis-ci.org/cookie-project/cookietouch.svg?branch=master" alt="Travis">
-    </a>
-		<a href="https://github.com/prettier/prettier">
-      <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="Prettier">
-    </a>
-    <a href="https://github.styleci.io/repos/101233419">
-      <img src="https://github.styleci.io/repos/101233419/shield?branch=master"	alt="StyleCI">
-    </a>
-  </a>
   </h1>
 </center>
 
-You need **Yarn** in order to use this bot properly.
-
-[Yarn Install](https://yarnpkg.com/lang/en/docs/install/)
-
 # Installation
 
-```bash
-git clone https://github.com/yovanoc/cookietouch/
-cd cookietouch && yarn
-```
+Les instructions complètes pour compiler et utiliser le projet avec votre propre base de données seront ajoutés dans la journée.
+En attendant, vous pouvez télécharger et installer la version 0.1.5 en suivant ce lien :
 
-## Documentation
+- [Release v 0.1.5](https://github.com/NewtFr/cookietouch-temp/releases/tag/v0.1.5)
 
-The documentation is available on https://docs.cookietouch.com/
-To update the documentation you just have to modify the /docs/ folder.
+Les utilisateurs sous OSX devront compiler eux-même le projet car je n'ai pas de compte Apple Developper.
 
-## Socials Links
+## Contact
 
-- [Discord](https://discord.gg/R7HsTnD)
+N'hésitez-pas à me contacter sur Discord pour toute question (Newt#3684)

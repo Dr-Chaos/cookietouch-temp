@@ -263,8 +263,7 @@ export default class Inventory {
     );
     for (const obj of message.objects) {
       const item = items.find(f => f.id === obj.objectGID);
-      const object = item && item.object;
-      const entry = await ObjectEntry.setup(obj, object);
+      const entry = await ObjectEntry.setup(obj, item);
       this._objects.set(obj.objectUID, entry);
     }
     this.onInventoryUpdated.trigger(true);
@@ -285,8 +284,7 @@ export default class Inventory {
 
     for (const obj of message.object) {
       const item = items.find(f => f.id === obj.objectGID);
-      const object = item && item.object;
-      const entry = await ObjectEntry.setup(obj, object);
+      const entry = await ObjectEntry.setup(obj, item);
       this._objects.set(obj.objectUID, entry);
     }
 

@@ -229,8 +229,7 @@ export default class Storage {
       );
 
       for (const obj of message.objects) {
-        const oeRes = objects.find(f => f.id === obj.objectGID);
-        const oe = oeRes && oeRes.object;
+        const oe = objects.find(f => f.id === obj.objectGID);
         this.objects.Add(await ObjectEntry.setup(obj, oe));
       }
     }
@@ -254,7 +253,7 @@ export default class Storage {
         DataTypes.Items,
         message.object.objectGID
       );
-      this.objects.Add(await ObjectEntry.setup(message.object, data[0].object));
+      this.objects.Add(await ObjectEntry.setup(message.object, data[0]));
     } else {
       // Needs to be updated
       obj.UpdateObjectItem(message.object);
@@ -281,7 +280,7 @@ export default class Storage {
           DataTypes.Items,
           item.objectGID
         );
-        this.objects.Add(await ObjectEntry.setup(item, data[0].object));
+        this.objects.Add(await ObjectEntry.setup(item, data[0]));
       } else {
         // Needs to be updated
         obj.UpdateObjectItem(item);

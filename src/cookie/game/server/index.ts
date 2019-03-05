@@ -26,7 +26,7 @@ export default class Server {
       DataTypes.Servers,
       this.id
     );
-    this.name = serverResp[0].object.nameId;
+    this.name = serverResp[0].nameId;
     this.onServerSelected.trigger();
   }
 

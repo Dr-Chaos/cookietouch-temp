@@ -418,11 +418,10 @@ class Configuration extends React.Component<
     const breedSpellId = BreedsUtility.breeds.First(
       b => b !== undefined && b.id === this.props.account.game.character.breed
     ).breedSpellsId;
-    const breedSpellsResponse = await DataManager.get<Spells>(
+    const breedSpells = await DataManager.get<Spells>(
       DataTypes.Spells,
       ...breedSpellId
     );
-    const breedSpells = breedSpellsResponse.map(b => b.object);
 
     this.setState({
       acceptAchievements: this.props.account.config.acceptAchievements,
@@ -450,7 +449,7 @@ class Configuration extends React.Component<
     if (resp.length === 0) {
       return;
     }
-    const name = resp[0].object.nameId;
+    const name = resp[0].nameId;
     const spellsAdded = this.props.account.config.spellsToBoost.map(s => s.id);
     if (spellsAdded.includes(this.state.spellId)) {
       alert(LanguageManager.trans("alreadyAddSpell"));
@@ -460,7 +459,7 @@ class Configuration extends React.Component<
       DataTypes.Breeds,
       this.props.account.game.character.breed
     );
-    const spellsIds = respBreeds[0].object.breedSpellsId;
+    const spellsIds = respBreeds[0].breedSpellsId;
     if (!spellsIds.includes(this.state.spellId)) {
       alert(LanguageManager.trans("spellNotBreed"));
       console.log(spellsIds, this.state.spellId);

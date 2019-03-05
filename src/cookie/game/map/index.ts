@@ -306,13 +306,13 @@ export default class MapGame implements IClearable {
     ))[0];
     const area = (await DataManager.get<Areas>(
       DataTypes.Areas,
-      subArea.object.areaId
+      subArea.areaId
     ))[0];
 
-    this.subArea = subArea.object.nameId;
-    this.area = area.object.nameId;
-    this.posX = mp.object.posX;
-    this.posY = mp.object.posY;
+    this.subArea = subArea.nameId;
+    this.area = area.nameId;
+    this.posX = mp.posX;
+    this.posY = mp.posY;
 
     this._players = new Map<number, PlayerEntry>();
     this._npcs = new Map<number, NpcEntry>();

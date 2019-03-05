@@ -12,7 +12,7 @@ export default class NpcEntry {
       infos.contextualId,
       infos.npcId,
       infos.disposition.cellId,
-      data[0].object
+      data[0]
     );
   }
 

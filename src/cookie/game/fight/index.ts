@@ -418,7 +418,7 @@ export default class Fight implements IClearable {
       }
 
       const response = await DataManager.get<Spells>(DataTypes.Spells, spellId);
-      const spell = response[0].object;
+      const spell = response[0];
 
       if (spell === null) {
         return null;
@@ -428,7 +428,7 @@ export default class Fight implements IClearable {
         DataTypes.SpellLevels,
         spell.spellLevels[spellEntry.level - 1]
       );
-      spellLevel = response2[0].object;
+      spellLevel = response2[0];
     }
     return SpellShapes.getSpellEffectZone(
       this.account.game.map.data!,
@@ -446,12 +446,12 @@ export default class Fight implements IClearable {
     }
 
     const spellResp = await DataManager.get<Spells>(DataTypes.Spells, spellId);
-    const spell = spellResp[0].object;
+    const spell = spellResp[0];
     const spellLevelResp = await DataManager.get<SpellLevels>(
       DataTypes.SpellLevels,
       spell.spellLevels[spellEntry.level - 1]
     );
-    const spellLevel = spellLevelResp[0].object;
+    const spellLevel = spellLevelResp[0];
 
     if (this.playedFighter.actionPoints < spellLevel.apCost) {
       return SpellInabilityReasons.ACTION_POINTS;
@@ -516,14 +516,14 @@ export default class Fight implements IClearable {
     }
 
     const response = await DataManager.get<Spells>(DataTypes.Spells, spellId);
-    const spell = response[0].object;
+    const spell = response[0];
 
     const response2 = await DataManager.get<SpellLevels>(
       DataTypes.SpellLevels,
       spell.spellLevels[spellEntry.level - 1]
     );
 
-    const spellLevel = response2[0].object;
+    const spellLevel = response2[0];
 
     if (
       spellLevel.maxCastPerTarget > 0 &&
@@ -919,12 +919,12 @@ export default class Fight implements IClearable {
         DataTypes.Spells,
         message.spellId
       );
-      const spell = spellResp[0].object;
+      const spell = spellResp[0];
       const spellLevelResp = await DataManager.get<SpellLevels>(
         DataTypes.SpellLevels,
         spell.spellLevels[message.spellLevel - 1]
       );
-      const spellLevel = spellLevelResp[0].object;
+      const spellLevel = spellLevelResp[0];
 
       if (
         spellLevel.minCastInterval > 0 &&

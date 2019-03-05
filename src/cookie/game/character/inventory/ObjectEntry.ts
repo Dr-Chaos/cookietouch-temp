@@ -14,7 +14,7 @@ export default class ObjectEntry {
   public static async setup(o: ObjectItem, item?: Items) {
     if (!item) {
       const data = await DataManager.get<Items>(DataTypes.Items, o.objectGID);
-      item = data[0].object;
+      item = data[0];
     }
 
     const data2 = await DataManager.get<ItemTypes>(
@@ -22,7 +22,7 @@ export default class ObjectEntry {
       item.typeId
     );
 
-    const type = data2[0].object;
+    const type = data2[0];
 
     // Check if this item gives hp back (BOOST_HP 110)
     let regenValue = 0;

@@ -23,7 +23,7 @@ export default class MonsterEntry {
       DataTypes.Monsters,
       monsterEntry.genericId
     );
-    const m = data[0].object;
+    const m = data[0];
     monsterEntry.name = m.nameId;
     monsterEntry.level = m.grades[monsterEntry.grade - 1].level;
     monsterEntry.boss = m.isBoss;
