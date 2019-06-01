@@ -15,7 +15,7 @@ En attendant, vous pouvez télécharger et installer la version 0.1.5 en suivant
 
 Les utilisateurs sous OSX devront compiler eux-même le projet car je n'ai pas de compte Apple Developper.
 
-## IMPORTANT
+# IMPORTANT
 
 Les builds disponibles sur ce repo pointent sur ma propre base de données Firebase (et non celle de CookieTouch)
 Afin de préserver votre sécurité, la configuration globale de CookieTouch ne sera pas sauvegardée sur le base de données.
