@@ -33,7 +33,7 @@ export default class GlobalConfiguration {
   public static lang: Languages = Languages.FRENCH;
   public static showDebugMessages = false;
   public static updatesChannel: UpdatesChannel = UpdatesChannel.LATEST;
-  public static themeFile?: string;
+  public static themeFile?: string = "";
 
   private static globalDoc: firebase.firestore.DocumentReference | undefined;
   private static authChangedUnsuscribe: firebase.Unsubscribe | undefined;
